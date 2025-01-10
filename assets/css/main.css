@@ -1,3 +1,94 @@
+.text-a {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.text-ia {
+  font-size: 2rem;
+  line-height: 1;
+}
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolumny */
+  gap: 10px; /* Odstęp między przyciskami */
+}
+@media (min-width: 1100px) {
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Dwie kolumny o równych szerokościach */
+    grid-template-rows: repeat(
+      2,
+      auto
+    ); /* Dwa rzędy o automatycznej wysokości */
+    gap: 10px; /* Odstępy między przyciskami */
+    justify-content: end; /* Wyrównanie całej siatki do prawej */
+  }
+
+  .btn:nth-child(1) {
+    grid-column: 1 / 2; /* Pierwszy przycisk w prawej kolumnie */
+  }
+
+  .btn:nth-child(2) {
+    grid-column: 2 / 3; /* Drugi przycisk w lewej kolumnie */
+  }
+
+  .btn:nth-child(3) {
+    grid-column: 2 / 3; /* Trzeci przycisk w prawej kolumnie */
+  }
+
+  .btn:nth-child(4) {
+    grid-column: 4 / 3; /* Czwarty przycisk zaczyna się w tej samej kolumnie co drugi */
+  }
+}
+@media (max-width: 500px) {
+  .button-grid {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
+.setupb {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 25px !important;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 30vw;
+  width: 30vw;
+  max-height: 25vh;
+  max-width: 25vh;
+  margin: 2vw;
+  display: flex;
+  flex-direction: column; /* Ustawia układ wewnętrzny na kolumnowy */
+  align-items: center; /* Wyrównuje zawartość do środka poziomo */
+  justify-content: center; /* Opcjonalne: wyrównanie do środka pionowo */
+  padding: 10px; /* Daje przestrzeń wokół tekstu i ikony */
+  text-align: center; /* Wyrównuje tekst */
+}
+.wb1 {
+  background: linear-gradient(135deg, #ff0000, #270000);
+}
+.wb2 {
+  background: linear-gradient(135deg, #00ff00, #002700);
+}
+.wb3 {
+  background: linear-gradient(135deg, #1418fc, #000027);
+}
+.wb4 {
+  background: linear-gradient(135deg, #eefd1f, #2b3000);
+}
+.setupbody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 *,
 ::after,
 ::before {
@@ -1290,6 +1381,14 @@ ol {
     font-size: 1rem;
     line-height: 1.5rem;
   }
+  .sm\:text-asm {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .sm\:text-iasm {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 @media (min-width: 768px) {
   .md\:fixed {
@@ -1427,6 +1526,14 @@ ol {
     font-size: 0.75rem;
     line-height: 1rem;
   }
+  .md\:text-amd {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .md\:text-iamd {
+    font-size: 3rem;
+    line-height: 1;
+  }
 }
 @media (min-width: 1024px) {
   .lg\:fixed {
@@ -1488,6 +1595,18 @@ ol {
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+  .lg\:text-alg {
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+  .lg\:text-ialg {
+    font-size: 3.75rem;
+    line-height: 1;
   }
 }
 @media (min-width: 1280px) {
