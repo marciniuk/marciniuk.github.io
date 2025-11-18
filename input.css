@@ -208,10 +208,9 @@ body.page-ready footer {
 /*setup*/
 .section-btn {
   @apply ripple-btn btn-scale
-  aspect-square xl:aspect-[2/1] h-32 md:h-44
-   backdrop-blur-sm
-  text-white text-lg font-semibold
-  border-2  rounded-3xl
+  aspect-square xl:aspect-[2/1]
+  backdrop-blur-sm text-lg font-semibold
+  border-2 rounded-3xl
   flex items-center justify-center
   transition-all duration-200 cursor-pointer select-none;
 }
