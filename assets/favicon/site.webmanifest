@@ -1,5 +1,5 @@
 {
-  "name": "Marciniu.k",
+  "name": "Marcini.uk",
   "short_name": "Marcini.uk",
   "icons": [
     {
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#0f175c",
-  "background_color": "#0f175c",
+  "theme_color": "#020b1b",
+  "background_color": "#020b1b",
   "display": "standalone"
 }
