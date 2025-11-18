@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pl" class="h-full max-w-full overflow-x-clip scroll-smooth">
+  <head>
+    <!-- Main -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Adrian Marcini.uk</title>
+    <!-- Opis dla SEO -->
+    <meta
+      name="description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta name="author" content="Adrian Marciniuk" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marcini.uk/" />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <!-- Linki do zasobów -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/fontawesome.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="/assets/css/fontawesome.css" />
+    </noscript>
+    <link rel="preload" href="/assets/css/fonts.css" as="style" />
+    <script>
+      function loadFontsCSS(href) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = href;
+        link.media = "print";
+        link.onload = () => (link.media = "all");
+        document.head.appendChild(link);
+      }
+      loadFontsCSS("/assets/css/fonts.css");
+    </script>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://marcini.uk/" />
+    <!-- Dane strukturalne JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrian Marciniuk",
+        "url": "https://marcini.uk",
+        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
+        "sameAs": ["https://github.com/marciniuk"],
+        "jobTitle": "Frontend Developer",
+        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
+      }
+    </script>
+    <!-- Fadein body -->
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => document.body.classList.add("page-ready"), 100);
+      });
+    </script>
+  </head>
+
+  <body class="bg-blue-900 min-h-full max-w-full overflow-x-clip">
+    <stars></stars>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
+    >
+      <div
+        class="h-20 w-full bg-gradient-to-b from-blue-900/100 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+      ></div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="main-header"
+      class="h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-[all] duration-500 ease-in-out"
+    >
+      <div class="flex justify-between w-full items-center z-30">
+        <!-- LOGO -->
+        <a
+          href="/pl/"
+          class="flex flex-row gap-2 text-3xl lg:text-4xl italic items-center"
+        >
+          <img src="/assets/img/logo3.svg" alt="logo" class="h-8 lg:h-10" />
+          Marcini.uk
+        </a>
+
+        <!-- HAMBURGER -->
+        <div
+          id="menu-toggle"
+          class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+        >
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+        </div>
+
+        <!-- WSPÓLNE MENU (desktop + mobile) -->
+        <nav
+          id="mobile-menu"
+          class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+          style="height: calc(var(--vh, 1vh) * 100 - 2.75rem)"
+        >
+          <a href="/pl/profile/" class="nav-link hover:text-rose-400"
+            ><i class="fa-duotone fa-solid fa-address-card"></i> Profile</a
+          >
+          <a href="/pl/projekty/" class="nav-link hover:text-emerald-400"
+            ><i class="fa-duotone fa-solid fa-diagram-project"></i> Projekty</a
+          >
+          <a href="/pl/setup/" class="nav-link hover:text-amber-400"
+            ><i class="fa-duotone fa-solid fa-display-code"></i> Setup</a
+          >
+          <a href="/pl/kontakt/" class="nav-link hover:text-sky-400"
+            ><i class="fa-duotone fa-solid fa-envelope-open-text"></i>
+            Kontakt</a
+          >
+          <a href="/pl/polecajki/" class="nav-link hover:text-fuchsia-400"
+            ><i class="fa-duotone fa-solid fa-heart"></i> Polecajki</a
+          >
+          <a href="/pl/ksiazki/" class="nav-link hover:text-indigo-400"
+            ><i class="fa-duotone fa-solid fa-books"></i> Książki</a
+          >
+        </nav>
+      </div>
+
+      <!-- VH FIX -->
+      <script>
+        (function () {
+          function setVh() {
+            document.documentElement.style.setProperty(
+              "--vh",
+              `${window.innerHeight * 0.01}px`
+            );
+          }
+          setVh();
+          window.addEventListener("resize", setVh);
+        })();
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main class="z-10 p-8 flex items-center justify-center w-full h-full">
+      <section
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12 xl:gap-16 w-full max-w-[100rem] mx-auto p-4"
+      >
+        <!-- === GitHub === -->
+        <a
+          href="https://github.com/marciniuk"
+          class="group flex flex-col items-center hover:scale-[1.04] transition-transform duration-500 max-w-[30rem] w-full transform rotate-[-1deg] -translate-y-1"
+        >
+          <div
+            class="w-3/4 self-start text-white font-bold text-2xl lg:text-3xl py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg bg-gradient-to-r from-gray-900 via-gray-800 to-black bg-[length:200%_200%] bg-right-bottom group-hover:bg-left-top transition-all duration-700 ease-out"
+          >
+            <i class="fab fa-github"></i> GitHub
+          </div>
+          <div class="-mt-3 w-3/4 self-end">
+            <div
+              class="bg-blue-900 text-white py-2 lg:py-3 rounded-2xl border-4 border-gray-600 text-xl lg:text-2xl text-center transition-all duration-500 ease-in-out group-hover:border-gray-300"
+            >
+              marciniuk
+            </div>
+          </div>
+        </a>
+
+        <!-- === GitLab === -->
+        <a
+          href="https://gitlab.com/marciniuk"
+          class="group flex flex-col items-center hover:scale-[1.04] transition-transform duration-500 max-w-[30rem] w-full transform rotate-[1deg] translate-y-2"
+        >
+          <div
+            class="w-3/4 self-start text-white font-bold text-2xl lg:text-3xl py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg bg-gradient-to-r from-orange-700 via-orange-600 to-yellow-600 bg-[length:200%_200%] bg-right-bottom group-hover:bg-left-top transition-all duration-700 ease-out"
+          >
+            <i class="fab fa-gitlab"></i> GitLab
+          </div>
+          <div class="-mt-3 w-3/4 self-end">
+            <div
+              class="bg-blue-900 text-white py-2 lg:py-3 rounded-2xl border-4 border-orange-400 text-xl lg:text-2xl text-center transition-all duration-500 ease-in-out group-hover:border-yellow-400"
+            >
+              marciniuk
+            </div>
+          </div>
+        </a>
+
+        <!-- === Telegram === -->
+        <a
+          href="https://t.me/AdrianMarciniuk"
+          class="group flex flex-col items-center hover:scale-[1.04] transition-transform duration-500 max-w-[30rem] w-full transform rotate-[-2deg] translate-x-1"
+        >
+          <div
+            class="w-3/4 self-start text-white font-bold text-2xl lg:text-3xl py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg bg-gradient-to-r from-sky-600 via-sky-500 to-sky-400 bg-[length:200%_200%] bg-right-bottom group-hover:bg-left-top transition-all duration-700 ease-out"
+          >
+            <i class="fab fa-telegram-plane"></i> Telegram
+          </div>
+          <div class="-mt-3 w-3/4 self-end">
+            <div
+              class="bg-blue-900 text-white py-2 lg:py-3 rounded-2xl border-4 border-sky-400 text-xl lg:text-2xl text-center transition-all duration-500 ease-in-out group-hover:border-sky-300"
+            >
+              AdrianMarciniuk
+            </div>
+          </div>
+        </a>
+
+        <!-- === LubimyCzytac === -->
+        <a
+          href="https://lubimyczytac.pl/profil/1846946/adrian"
+          class="group flex flex-col items-center hover:scale-[1.04] transition-transform duration-500 max-w-[30rem] w-full transform rotate-[2deg] -translate-x-2"
+        >
+          <div
+            class="w-3/4 self-start text-white font-bold text-2xl lg:text-3xl py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg bg-gradient-to-r from-yellow-600 via-orange-500 to-yellow-400 bg-[length:200%_200%] bg-right-bottom group-hover:bg-left-top transition-all duration-700 ease-out"
+          >
+            <img src="/assets/img/ikony/lc.png" class="w-8 h-8" /> LC.pl
+          </div>
+          <div class="-mt-3 w-3/4 self-end">
+            <div
+              class="bg-blue-900 text-white py-2 lg:py-3 rounded-2xl border-4 border-yellow-400 text-xl lg:text-2xl text-center transition-all duration-500 ease-in-out group-hover:border-orange-300"
+            >
+              Adrian
+            </div>
+          </div>
+        </a>
+
+        <!-- === Facebook === -->
+        <a
+          href="https://www.facebook.com/marciniuk.adrian"
+          class="group flex flex-col items-center hover:scale-[1.04] transition-transform duration-500 max-w-[30rem] w-full transform rotate-[-1deg] translate-y-3"
+        >
+          <div
+            class="w-3/4 self-start text-white font-bold text-2xl lg:text-3xl py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg bg-gradient-to-r from-blue-700 via-blue-600 to-blue-400 bg-[length:200%_200%] bg-right-bottom group-hover:bg-left-top transition-all duration-700 ease-out"
+          >
+            <i class="fab fa-facebook"></i> Facebook
+          </div>
+          <div class="-mt-3 w-3/4 self-end">
+            <div
+              class="bg-blue-900 text-white py-2 lg:py-3 rounded-2xl border-4 border-blue-500 text-xl lg:text-2xl text-center transition-all duration-500 ease-in-out group-hover:border-blue-300"
+            >
+              AdrianMarciniuk
+            </div>
+          </div>
+        </a>
+
+        <!-- === Instagram === -->
+        <a
+          href="https://www.instagram.com/adrian.marciniuk/"
+          class="group flex flex-col items-center hover:scale-[1.04] transition-transform duration-500 max-w-[30rem] w-full transform rotate-[1deg] translate-x-2"
+        >
+          <div
+            class="w-3/4 self-start text-white font-bold text-2xl lg:text-3xl py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] bg-[length:200%_200%] bg-right-bottom group-hover:bg-left-top transition-all duration-700 ease-out"
+          >
+            <i class="fab fa-instagram"></i> Instagram
+          </div>
+          <div class="-mt-3 w-3/4 self-end">
+            <div
+              class="bg-blue-900 text-white py-2 lg:py-3 rounded-2xl border-4 border-pink-400 text-xl lg:text-2xl text-center transition-all duration-500 ease-in-out group-hover:border-purple-400"
+            >
+              adrian.marciniuk
+            </div>
+          </div>
+        </a>
+
+        <!-- === Twitter === -->
+        <a
+          href="https://twitter.com/AdrianMarciniuk"
+          class="group flex flex-col items-center hover:scale-[1.04] transition-transform duration-500 max-w-[30rem] w-full transform rotate-[-2deg] -translate-x-1"
+        >
+          <div
+            class="w-3/4 self-start text-white font-bold text-2xl lg:text-3xl py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg bg-gradient-to-r from-sky-600 via-sky-500 to-sky-300 bg-[length:200%_200%] bg-right-bottom group-hover:bg-left-top transition-all duration-700 ease-out"
+          >
+            <i class="fab fa-twitter"></i> Twitter
+          </div>
+          <div class="-mt-3 w-3/4 self-end">
+            <div
+              class="bg-blue-900 text-white py-2 lg:py-3 rounded-2xl border-4 border-sky-400 text-xl lg:text-2xl text-center transition-all duration-500 ease-in-out group-hover:border-sky-200"
+            >
+              AdrianMarciniuk
+            </div>
+          </div>
+        </a>
+
+        <!-- === YouTube === -->
+        <a
+          href="https://www.youtube.com/channel/UCyBNWIYSqEHZccUlUQLbHdA"
+          class="group flex flex-col items-center hover:scale-[1.04] transition-transform duration-500 max-w-[30rem] w-full transform rotate-[2deg] translate-y-1"
+        >
+          <div
+            class="w-3/4 self-start text-white font-bold text-2xl lg:text-3xl py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg bg-gradient-to-r from-red-700 via-red-600 to-red-400 bg-[length:200%_200%] bg-right-bottom group-hover:bg-left-top transition-all duration-700 ease-out"
+          >
+            <i class="fab fa-youtube"></i> YouTube
+          </div>
+          <div class="-mt-3 w-3/4 self-end">
+            <div
+              class="bg-blue-900 text-white py-2 lg:py-3 rounded-2xl border-4 border-red-500 text-xl lg:text-2xl text-center transition-all duration-500 ease-in-out group-hover:border-red-300"
+            >
+              Adrian Marciniuk
+            </div>
+          </div>
+        </a>
+
+        <!-- === Spotify === -->
+        <a
+          href="https://open.spotify.com/user/x1oih2osaymkynculsj9x5lxm/"
+          class="group flex flex-col items-center hover:scale-[1.04] transition-transform duration-500 max-w-[30rem] w-full transform rotate-[-1deg] -translate-y-2"
+        >
+          <div
+            class="w-3/4 self-start text-white font-bold text-2xl lg:text-3xl py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg bg-gradient-to-r from-green-700 via-green-600 to-green-400 bg-[length:200%_200%] bg-right-bottom group-hover:bg-left-top transition-all duration-700 ease-out"
+          >
+            <i class="fab fa-spotify"></i> Spotify
+          </div>
+          <div class="-mt-3 w-3/4 self-end">
+            <div
+              class="bg-blue-900 text-white py-2 lg:py-3 rounded-2xl border-4 border-green-400 text-xl lg:text-2xl text-center transition-all duration-500 ease-in-out group-hover:border-green-300"
+            >
+              Adrian Marciniuk
+            </div>
+          </div>
+        </a>
+      </section>
+
+      <style>
+        .group:hover {
+          transform: rotate(0deg) translate(0, 0) scale(1.04);
+          transition: transform 0.6s ease-in-out;
+        }
+      </style>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="z-50">
+      <div
+        id="footer"
+        class="h-16 xs:h-12 text-sm sm:text-base flex flex-col xs:flex-row bg-blue-700/60 backdrop-blur-[2px] md:my-4 md:mx-3 md:rounded-full p-2 justify-center xs:justify-evenly items-center gap-1 md:gap-0"
+      >
+        <div class="flex flex-row justify-center items-center">
+          2019-<full-year></full-year>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            class="w-5 h-5 mx-1 fill-white inline-block align-middle"
+          >
+            <path
+              d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM205.1 306.9c-28.1-28.1-28.1-73.7 0-101.8s73.7-28.1 101.8 0c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9c-46.9-46.9-122.8-46.9-169.7 0s-46.9 122.8 0 169.7 122.8 46.9 169.7 0c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0c-28.1 28.1-73.7 28.1-101.8 0z"
+            />
+          </svg>
+          <strong>Adrian Marciniuk</strong>
+        </div>
+
+        <a
+          href="/pl/polityka-prywatności/"
+          class="flex flex-row justify-center items-center"
+          ><i class="fa-duotone fa-regular fa-user-secret"></i> Polityka
+          prywatności</a
+        >
+      </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>

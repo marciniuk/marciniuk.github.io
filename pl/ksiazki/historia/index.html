@@ -1,0 +1,2455 @@
+<!DOCTYPE html>
+<html lang="pl" class="h-full max-w-full overflow-x-clip scroll-smooth">
+  <head>
+    <!-- Main -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Adrian Marcini.uk</title>
+    <!-- Opis dla SEO -->
+    <meta
+      name="description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta name="author" content="Adrian Marciniuk" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marcini.uk/" />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <!-- Linki do zasobów -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/fontawesome.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="/assets/css/fontawesome.css" />
+    </noscript>
+    <link rel="preload" href="/assets/css/fonts.css" as="style" />
+    <script>
+      function loadFontsCSS(href) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = href;
+        link.media = "print";
+        link.onload = () => (link.media = "all");
+        document.head.appendChild(link);
+      }
+      loadFontsCSS("/assets/css/fonts.css");
+    </script>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://marcini.uk/" />
+    <!-- Dane strukturalne JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrian Marciniuk",
+        "url": "https://marcini.uk",
+        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
+        "sameAs": ["https://github.com/marciniuk"],
+        "jobTitle": "Frontend Developer",
+        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
+      }
+    </script>
+    <!-- Fadein body -->
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => document.body.classList.add("page-ready"), 100);
+      });
+    </script>
+  </head>
+
+  <body class="bg-blue-900 min-h-full max-w-full overflow-x-clip">
+    <stars></stars>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
+    >
+      <div
+        class="h-20 w-full bg-gradient-to-b from-blue-900/100 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+      ></div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="main-header"
+      class="h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-[all] duration-500 ease-in-out"
+    >
+      <div class="flex justify-between w-full items-center z-30">
+        <!-- LOGO -->
+        <a
+          href="/pl/"
+          class="flex flex-row gap-2 text-3xl lg:text-4xl italic items-center"
+        >
+          <img src="/assets/img/logo3.svg" alt="logo" class="h-8 lg:h-10" />
+          Marcini.uk
+        </a>
+
+        <!-- HAMBURGER -->
+        <div
+          id="menu-toggle"
+          class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+        >
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+        </div>
+
+        <!-- WSPÓLNE MENU (desktop + mobile) -->
+        <nav
+          id="mobile-menu"
+          class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+          style="height: calc(var(--vh, 1vh) * 100 - 2.75rem)"
+        >
+          <a href="/pl/profile/" class="nav-link hover:text-rose-400"
+            ><i class="fa-duotone fa-solid fa-address-card"></i> Profile</a
+          >
+          <a href="/pl/projekty/" class="nav-link hover:text-emerald-400"
+            ><i class="fa-duotone fa-solid fa-diagram-project"></i> Projekty</a
+          >
+          <a href="/pl/setup/" class="nav-link hover:text-amber-400"
+            ><i class="fa-duotone fa-solid fa-display-code"></i> Setup</a
+          >
+          <a href="/pl/kontakt/" class="nav-link hover:text-sky-400"
+            ><i class="fa-duotone fa-solid fa-envelope-open-text"></i>
+            Kontakt</a
+          >
+          <a href="/pl/polecajki/" class="nav-link hover:text-fuchsia-400"
+            ><i class="fa-duotone fa-solid fa-heart"></i> Polecajki</a
+          >
+          <a href="/pl/ksiazki/" class="nav-link hover:text-indigo-400"
+            ><i class="fa-duotone fa-solid fa-books"></i> Książki</a
+          >
+        </nav>
+      </div>
+
+      <!-- VH FIX -->
+      <script>
+        (function () {
+          function setVh() {
+            document.documentElement.style.setProperty(
+              "--vh",
+              `${window.innerHeight * 0.01}px`
+            );
+          }
+          setVh();
+          window.addEventListener("resize", setVh);
+        })();
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main class="z-10 px-3 md:px-5 xl:px-6 py-8 lg:pt-12">
+      <!-- WZÓR
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div
+            class="w-fit m-2 flex flex-col place-content-between"
+          >
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/"
+                loading="lazy"
+                alt="deadpool9"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div class="flex flex-col place-content-center place-items-center h-full"><div class="mt-2">o</div>
+            <div class="bold text-sm sm:text-base lg:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-star"></i> 15.02.2025
+            </div></div>
+          </div>
+        </div>
+      -->
+
+      <!--DATA-->
+      <div
+        id="Oceny"
+        class="grid grid-cols-[repeat(auto-fit,minmax(auto,116px))] xs:grid-cols-[repeat(auto-fit,minmax(auto,136px))] md:grid-cols-[repeat(auto-fit,minmax(auto,152px))] lg:grid-cols-[repeat(auto-fit,minmax(auto,168px))] gap-3 xs:gap-4 lg:gap-6 justify-center justify-items-center"
+      >
+        <!--92-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/deadpool10.jpg"
+                loading="lazy"
+                alt="deadpool9"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 15.02.2025
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--91-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/smiercdulgath.jpg"
+                loading="lazy"
+                alt="Śmierć Dulgath"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 12.04.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--90-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/rozaiciern.jpg"
+                loading="lazy"
+                alt="Róża i cierń"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 11.04.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--89-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/wiezakoronna.jpg"
+                loading="lazy"
+                alt="wieża koronna"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 06.04.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--88-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/niebianskarzeka.jpg"
+                loading="lazy"
+                alt="Niebiańska rzeka"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o7</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 24.03.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--87-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/wszystkieteswiaty.jpg"
+                loading="lazy"
+                alt="wszystkie te światy"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 15.03.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--86-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/gdyzjestnaswielu.jpg"
+                loading="lazy"
+                alt="gdyż jest nas wielu"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 14.03.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--85-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/mapawnetrza.jpg"
+                loading="lazy"
+                alt="mapa wnętrza"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 13.03.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--84-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/naszeimielegion.jpg"
+                loading="lazy"
+                alt="nasze imie legion, nasze imie bob"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 10.03.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--83-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/rozjemca.jpg"
+                loading="lazy"
+                alt="rozjemca"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o6</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 07.03.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--82-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/ostatecznyargument.jpg"
+                loading="lazy"
+                alt="ostateczny argument"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 26.02.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--81-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/demonimrocznaton.jpg"
+                loading="lazy"
+                alt="demon i mroczna toń"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 18.02.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--80-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/azyl.jpg"
+                loading="lazy"
+                alt="azyl"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o7</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 11.02.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--79-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/mrocznytalent.jpg"
+                loading="lazy"
+                alt="mroczny talent"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o10</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 08.02.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--78-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/zakonrozbitejsoczewki.jpg"
+                loading="lazy"
+                alt="zakon rozbitej soczewki"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 04.02.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--77-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/popiolikurz.jpg"
+                loading="lazy"
+                alt="popiół i kurz"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o10</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 03.02.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--76-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/wspomnieniash.jpg"
+                loading="lazy"
+                alt="wspomnienia sherlocka holmesa"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 31.01.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--75-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/rycerzekrystali.jpg"
+                loading="lazy"
+                alt="rycerze krystali"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 27.01.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--74-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/hyperion.jpg"
+                loading="lazy"
+                alt="hyperion"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o10</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 25.01.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--73-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/nimzawisna.jpg"
+                loading="lazy"
+                alt="nim zawisną"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 22.01.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--72-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/kosciskryby.jpg"
+                loading="lazy"
+                alt="kości skryby"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o10</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 18.01.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--71-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/piasekraszida.jpg"
+                loading="lazy"
+                alt="piasek raszida"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o10</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 12.01.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--70-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/przygodysh.jpg"
+                loading="lazy"
+                alt="przygody sherlocka holmesa"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o7</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 11.01.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--69-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/dolinastrachu.jpg"
+                loading="lazy"
+                alt="dolina strachu"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 07.01.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--68-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/piesbaskervillow.jpg"
+                loading="lazy"
+                alt="pies baskervillów"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 07.01.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--67-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/znakczterech.jpg"
+                loading="lazy"
+                alt="znak czterech"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 06.01.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--66-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/studiumwszkarlacie.jpg"
+                loading="lazy"
+                alt="studium w szkarłacie"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 03.01.2023
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--65-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/ostrze.jpg"
+                loading="lazy"
+                alt="ostrze"
+                class="rounded-xl h-full w-auto"
+              />
+            </div>
+            <div>oS</div>
+            <div class="bold text-sm sm:text-base lg:text-lg" id="2022">
+              <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.01.2023
+            </div>
+          </div>
+        </div>
+
+        <!--64-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/decimusfate2.jpg"
+                loading="lazy"
+                alt="decimus fate 2"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 21.12.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--63-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/decimusfate1.jpg"
+                loading="lazy"
+                alt="decimus fate 1"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 19.12.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--62-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/basniowaopowiesc.jpg"
+                loading="lazy"
+                alt="baśniowa opowieść"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 12.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--61-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/wampirzecesarstwo.jpg"
+                loading="lazy"
+                alt="wampirze cesarstwo"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 11.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--60-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/pacjent.jpg"
+                loading="lazy"
+                alt="pacjent"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o10</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 02.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--59-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/tedni.jpg"
+                loading="lazy"
+                alt="te dni którcyh nie znamy"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 02.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--58-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/psyradrobnych.jpg"
+                loading="lazy"
+                alt="psy ras drobnych"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--57-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/deadpool9.jpg"
+                loading="lazy"
+                alt="deadpool9"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--56-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/deadpool8.jpg"
+                loading="lazy"
+                alt="deadpool8"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--55-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/deadpool7.jpg"
+                loading="lazy"
+                alt="deadpool7"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--54-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/deadpool6.jpg"
+                loading="lazy"
+                alt="deadpool6"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--53-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/deadpool5.jpg"
+                loading="lazy"
+                alt="deadpool5"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--52-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/deadpool4.jpg"
+                loading="lazy"
+                alt="deadpool4"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--51-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/deadpool3.jpg"
+                loading="lazy"
+                alt="deadpool3"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--50-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/deadpool2.jpg"
+                loading="lazy"
+                alt="deadpool2"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2022
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--49-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/deadpool1.jpg"
+                loading="lazy"
+                alt="deadpool1"
+                class="rounded-xl h-full w-auto"
+              />
+            </div>
+            <div>o9</div>
+            <div class="bold text-sm sm:text-base lg:text-lg" id="2020">
+              <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2022
+            </div>
+          </div>
+        </div>
+
+        <!--48-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/czarnamadonna.jpg"
+                loading="lazy"
+                alt="czarna madonna"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 17.05.2020
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--47-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/jajko.jpg"
+                loading="lazy"
+                alt="the egg"
+                class="rounded-xl h-full w-auto"
+              />
+            </div>
+            <div>o10</div>
+            <div class="bold text-sm sm:text-base lg:text-lg" id="2019">
+              <i class="fa-duotone fa-solid fa-calendar-star"></i> 08.01.2020
+            </div>
+          </div>
+        </div>
+
+        <!--46-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/iluzjonista.jpg"
+                loading="lazy"
+                alt="iluzjonista"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o10</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 02.12.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--45-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/hp1.jpg"
+                loading="lazy"
+                alt="harry potter i kamień filozoficzny"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 22.09.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--44-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/basniebardabeedlea.jpg"
+                loading="lazy"
+                alt="basnie barda beedlea"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 12.09.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--43-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/duszacesarza.jpg"
+                loading="lazy"
+                alt="dusza cesarza"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 07.09.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--42-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/legion.jpg"
+                loading="lazy"
+                alt="legion"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 21.08.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--41-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/idealnystan.jpg"
+                loading="lazy"
+                alt="idealny stan"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 25.07.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--40-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/vicious.jpg"
+                loading="lazy"
+                alt="vicious"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o10</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 16.07.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--39-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/listyzzagrobu.jpg"
+                loading="lazy"
+                alt="listy zza grobu"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 29.06.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--38-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/siedemsmiercievelynhardcastle.jpg"
+                loading="lazy"
+                alt="siedem śmierci evelyn hardcastle"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 10.03.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--37-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/dyskretneszalenstwo.jpg"
+                loading="lazy"
+                alt="dyskretne szalenstwo"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o6</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 22.02.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--36-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/spetaniprzeznaczeniem.jpg"
+                loading="lazy"
+                alt="spetani przeznaczeniem"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o6</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--35-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/naznaczenismiercia.jpg"
+                loading="lazy"
+                alt="naznaczeni śmiercią"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o6</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--34-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/demonluster.jpg"
+                loading="lazy"
+                alt="demon luster"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--33-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/szamankaodumarlakow.jpg"
+                loading="lazy"
+                alt="szamanka od umarlaków"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 01.2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--32-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/wiezaswitu.jpg"
+                loading="lazy"
+                alt="wieża świtu"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--31-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/imperiumburz.jpg"
+                loading="lazy"
+                alt="imperium burz"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o10</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--30-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/krolowacieni.jpg"
+                loading="lazy"
+                alt="królowa cieni"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o10</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--29-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/dziedzictwoognia.jpg"
+                loading="lazy"
+                alt="dziedzictwo ognia"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o10</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--28-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/koronawmroku.jpg"
+                loading="lazy"
+                alt="korona w mroku"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--27-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/szklanytron.jpg"
+                loading="lazy"
+                alt="szklany tron"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--26-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/zabojczyni.jpg"
+                loading="lazy"
+                alt="zabójczyni"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div>o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2019
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--25-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/krolestwokanciarzy.jpg"
+                loading="lazy"
+                alt="krolestwo kanciarzy"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 18.09.2018
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--24-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/behawiorysta.jpg"
+                loading="lazy"
+                alt="behawiorysta"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 02.07.2018
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--23-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/szostkawron.jpg"
+                loading="lazy"
+                alt="szóstka wron"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 06.2018
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--22-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/outsider.jpg"
+                loading="lazy"
+                alt="outsider"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o4</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 06.2018
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--21-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/nibynoc.jpg"
+                loading="lazy"
+                alt="nibynoc"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2018
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--20-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/lowcyglow.jpg"
+                loading="lazy"
+                alt="łowcy głów"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div>o7</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2018
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--19-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/koniecwarty.jpg"
+                loading="lazy"
+                alt="koniec warty"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o10</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2016
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--18-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/znalezioneniekradzione.jpg"
+                loading="lazy"
+                alt="znalezione nie kradzoine"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2016
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--17-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/panmercedes.jpg"
+                loading="lazy"
+                alt="pan mercedes"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o9</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2016
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--16-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/calamity.jpg"
+                loading="lazy"
+                alt="calamity"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2016
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--15-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/pozar.jpg"
+                loading="lazy"
+                alt="pożar"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2016
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--14-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/staloweserce.jpg"
+                loading="lazy"
+                alt="stalowe serce"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o8</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2016
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--13-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/japotepiona.jpg"
+                loading="lazy"
+                alt="ja potępiona"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o6</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2016
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--12-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/jaanielica.jpg"
+                loading="lazy"
+                alt="ja anielica"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o6</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2016
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--11-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/jadiablica.jpg"
+                loading="lazy"
+                alt="ja diablica"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div>o7</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2016
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--10-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/cztery.jpg"
+                loading="lazy"
+                alt="cztery"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o7</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2015
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--9-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/wierna.jpg"
+                loading="lazy"
+                alt="wierna"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o7</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2015
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--8-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/zbuntowana.jpg"
+                loading="lazy"
+                alt="zbuntowana"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o7</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2015
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--7-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/niezgodna.jpg"
+                loading="lazy"
+                alt="niezgodna"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o7</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2015
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--6-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/boggraz10.jpg"
+                loading="lazy"
+                alt="bóg gra z 10"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o6</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2015
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--5-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/kosoglos.jpg"
+                loading="lazy"
+                alt="kosogłos"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o7</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2015
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--4-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/wpierscieniuognia.jpg"
+                loading="lazy"
+                alt="w pierscieniu ognia"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o7</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2015
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--3-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/igrzyskasmierci.jpg"
+                loading="lazy"
+                alt="igrzyska śmierci"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">o7</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2015
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--2-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/slowaswiatlosci.jpg"
+                loading="lazy"
+                alt="słowa światłości"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2015
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--1-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit"
+        >
+          <div class="w-fit m-2 flex flex-col place-content-between">
+            <div class="max-h-[75%] h-full">
+              <img
+                src="/assets/img/ksiazki/drogakrolow.jpg"
+                loading="lazy"
+                alt="droga królów"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div
+              class="flex flex-col place-content-center place-items-center h-full"
+            >
+              <div class="mt-2">oS</div>
+              <div class="bold text-sm sm:text-base lg:text-lg">
+                <i class="fa-duotone fa-solid fa-calendar-star"></i> 2015
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="z-50">
+      <div
+        id="footer"
+        class="h-16 xs:h-12 text-sm sm:text-base flex flex-col xs:flex-row bg-blue-700/60 backdrop-blur-[2px] md:my-4 md:mx-3 md:rounded-full p-2 justify-center xs:justify-evenly items-center gap-1 md:gap-0"
+      >
+        <div class="flex flex-row justify-center items-center">
+          2019-<full-year></full-year>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            class="w-5 h-5 mx-1 fill-white inline-block align-middle"
+          >
+            <path
+              d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM205.1 306.9c-28.1-28.1-28.1-73.7 0-101.8s73.7-28.1 101.8 0c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9c-46.9-46.9-122.8-46.9-169.7 0s-46.9 122.8 0 169.7 122.8 46.9 169.7 0c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0c-28.1 28.1-73.7 28.1-101.8 0z"
+            />
+          </svg>
+          <strong>Adrian Marciniuk</strong>
+        </div>
+
+        <a
+          href="/pl/polityka-prywatności/"
+          class="flex flex-row justify-center items-center"
+          ><i class="fa-duotone fa-regular fa-user-secret"></i> Polityka
+          prywatności</a
+        >
+      </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/oceny.js" defer></script>
+  </body>
+</html>

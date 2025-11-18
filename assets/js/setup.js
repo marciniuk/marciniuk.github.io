@@ -1,0 +1,79 @@
+// ZAWARTOŚCI POPUPÓW
+const SECTION_FILES = {
+  telefony: "/assets/setup/telefony.html",
+  laptopy: "/assets/setup/laptopy.html",
+  handheldy: "/assets/setup/handheldy.html",
+  sluchawki: "/assets/setup/sluchawki.html",
+  myszki: "/assets/setup/myszki.html",
+  klawiatury: "/assets/setup/klawiatury.html",
+  gamepady: "/assets/setup/gamepady.html",
+  zegarki: "/assets/setup/zegarki.html",
+  dyski: "/assets/setup/dyski.html",
+  akcesoria: "/assets/setup/akcesoria.html",
+};
+
+const overlay = document.getElementById("popup-overlay");
+const popupContent = document.getElementById("popup-content");
+const popupInner = document.getElementById("popup-inner");
+const closeBtn = document.getElementById("popup-close");
+
+// --- ANIMACJE ---
+function openPopup() {
+  overlay.classList.add("flex");
+  overlay.classList.remove("opacity-0", "pointer-events-none");
+
+  requestAnimationFrame(() => {
+    popupContent.classList.remove("opacity-0", "scale-95");
+  });
+
+  document.documentElement.classList.add("overflow-hidden");
+}
+
+function closePopup() {
+  overlay.classList.add("opacity-0", "pointer-events-none");
+  popupContent.classList.add("opacity-0", "scale-95");
+
+  setTimeout(() => {
+    overlay.classList.remove("flex");
+  }, 300);
+
+  document.documentElement.classList.remove("overflow-hidden");
+}
+
+// --- OTWIERANIE SEKCJI ---
+document.querySelectorAll(".section-btn").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    const key = btn.dataset.section;
+    const file = SECTION_FILES[key];
+    const color = btn.dataset.color; // <- pobrany kolor
+
+    // USUWANIE STARYCH KOLORÓW
+    popupContent.classList.remove(
+      ...Array.from(popupContent.classList).filter(
+        (c) => c.startsWith("border-") || c.startsWith("bg-")
+      )
+    );
+
+    // wczytywanie z pliku
+    const html = await fetch(file).then((res) => res.text());
+    popupInner.innerHTML = html;
+
+    // DODANIE NOWYCH
+    popupContent.classList.add(`border-${color}`, `bg-${color}/10`, `border-2`);
+
+    // DODAWANIE KOLORÓW TEKSTU
+    popupInner.querySelectorAll(".colorize").forEach((el) => {
+      el.classList.add(`text-${color}`);
+    });
+
+    openPopup();
+  });
+});
+
+// --- ZAMYKANIE ---
+closeBtn.addEventListener("click", closePopup);
+
+// --- KLIK POZA POPUPEM ---
+overlay.addEventListener("click", (e) => {
+  if (e.target === overlay) closePopup();
+});

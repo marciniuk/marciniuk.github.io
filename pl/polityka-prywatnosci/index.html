@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pl" class="h-full max-w-full overflow-x-clip scroll-smooth">
+  <head>
+    <!-- Main -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Adrian Marcini.uk</title>
+    <!-- Opis dla SEO -->
+    <meta
+      name="description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta name="author" content="Adrian Marciniuk" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marcini.uk/" />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <!-- Linki do zasobów -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/fontawesome.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="/assets/css/fontawesome.css" />
+    </noscript>
+    <link rel="preload" href="/assets/css/fonts.css" as="style" />
+    <script>
+      function loadFontsCSS(href) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = href;
+        link.media = "print";
+        link.onload = () => (link.media = "all");
+        document.head.appendChild(link);
+      }
+      loadFontsCSS("/assets/css/fonts.css");
+    </script>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://marcini.uk/" />
+    <!-- Dane strukturalne JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrian Marciniuk",
+        "url": "https://marcini.uk",
+        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
+        "sameAs": ["https://github.com/marciniuk"],
+        "jobTitle": "Frontend Developer",
+        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
+      }
+    </script>
+    <!-- Fadein body -->
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => document.body.classList.add("page-ready"), 100);
+      });
+    </script>
+  </head>
+
+  <body class="bg-blue-900 min-h-full max-w-full overflow-x-clip">
+    <stars></stars>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
+    >
+      <div
+        class="h-20 w-full bg-gradient-to-b from-blue-900/100 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+      ></div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="main-header"
+      class="h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-[all] duration-500 ease-in-out"
+    >
+      <div class="flex justify-between w-full items-center z-30">
+        <!-- LOGO -->
+        <a
+          href="/pl/"
+          class="flex flex-row gap-2 text-3xl lg:text-4xl italic items-center"
+        >
+          <img src="/assets/img/logo3.svg" alt="logo" class="h-8 lg:h-10" />
+          Marcini.uk
+        </a>
+
+        <!-- HAMBURGER -->
+        <div
+          id="menu-toggle"
+          class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+        >
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+        </div>
+
+        <!-- WSPÓLNE MENU (desktop + mobile) -->
+        <nav
+          id="mobile-menu"
+          class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+          style="height: calc(var(--vh, 1vh) * 100 - 2.75rem)"
+        >
+          <a href="/pl/profile/" class="nav-link hover:text-rose-400"
+            ><i class="fa-duotone fa-solid fa-address-card"></i> Profile</a
+          >
+          <a href="/pl/projekty/" class="nav-link hover:text-emerald-400"
+            ><i class="fa-duotone fa-solid fa-diagram-project"></i> Projekty</a
+          >
+          <a href="/pl/setup/" class="nav-link hover:text-amber-400"
+            ><i class="fa-duotone fa-solid fa-display-code"></i> Setup</a
+          >
+          <a href="/pl/kontakt/" class="nav-link hover:text-sky-400"
+            ><i class="fa-duotone fa-solid fa-envelope-open-text"></i>
+            Kontakt</a
+          >
+          <a href="/pl/polecajki/" class="nav-link hover:text-fuchsia-400"
+            ><i class="fa-duotone fa-solid fa-heart"></i> Polecajki</a
+          >
+          <a href="/pl/ksiazki/" class="nav-link hover:text-indigo-400"
+            ><i class="fa-duotone fa-solid fa-books"></i> Książki</a
+          >
+        </nav>
+      </div>
+
+      <!-- VH FIX -->
+      <script>
+        (function () {
+          function setVh() {
+            document.documentElement.style.setProperty(
+              "--vh",
+              `${window.innerHeight * 0.01}px`
+            );
+          }
+          setVh();
+          window.addEventListener("resize", setVh);
+        })();
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main
+      class="z-10 p-6 flex flex-col gap-6 items-center justify-center h-full"
+    >
+      <section class="flex flex-col text-center items-center w-full my-2">
+        <h1 class="text-3xl text-sky-300">Polityka prywatności</h1>
+        <h3 class="text-xl text-amber-200">oraz przepis na naleśniki.</h3>
+      </section>
+
+      <section
+        class="gap-6 flex flex-col lg:flex-row items-center justify-center w-full lg:w-5/6 xl:3/4"
+      >
+        <!-- POLITYKA -->
+        <div class="flex flex-col w-full lg:w-1/2">
+          <button
+            class="flex items-center justify-between gap-4 w-full p-4 rounded-full bg-sky-500/70 hover:bg-sky-600/75 transition-colors duration-300 ease-in-out"
+            onclick="toggleAccordion(this)"
+          >
+            <span class="text-lg font-semibold">Polityka prywatności</span>
+            <svg
+              class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <!-- ROZWIJANY PANEL -->
+          <div
+            class="mx-1 accordion-content border-2 border-sky-400 text-white bg-sky-800/25 backdrop-blur-sm rounded-3xl mt-2 text-base lg:text-lg"
+          >
+            <div class="p-4 flex flex-col gap-3">
+              <p>
+                Hej!
+                <i class="fa-duotone fa-solid fa-hand-wave text-amber-400"></i>
+                Nie mam czasu ani ochoty śledzić ludzi po internecie, więc ta
+                strona nie używa ciasteczek, reklam ani żadnych magicznych
+                trackerów.
+              </p>
+
+              <h2 class="-mb-2 text-lg lg:text-xl font-semibold text-sky-300">
+                <i class="fa-duotone fa-regular fa-globe-pointer"></i> Linki
+                zewnętrzne
+              </h2>
+              <p>
+                Jeśli klikniesz link wychodzący z tej strony (np. do GitHuba),
+                to pamiętaj – tam obowiązują
+                <em><strong>ich</strong></em> zasady prywatności. Klikaj mądrze!
+              </p>
+
+              <h2 class="-mb-2 text-lg lg:text-xl font-semibold text-sky-300">
+                <i class="fa-duotone fa-solid fa-mailbox-open-letter"></i>
+                Formularz kontaktowy
+              </h2>
+              <p>
+                Jeśli jednak napiszesz do mnie przez formularz kontaktowy – to
+                aby zobaczyć dane które zostały wysłane (imię, e-mail i treść
+                wiadomości) muszą zostać przetworzone przez
+                <a
+                  href="https://staticforms.xyz/privacy-policy"
+                  target="_blank"
+                  class="text-sky-400 hover:text-sky-300 transition-colors whitespace-nowrap"
+                  ><i class="fa-solid fa-link"></i> StaticForms</a
+                >, które po prostu wysyła mi maila z zawartością która została
+                wpisana. Jedyną "bazą danych" jest skrzynka mailowa, z której
+                nic nie sprzedaję, nie analizuję – po prostu odpisuję. Albo i
+                nie, bo często maile znikają w odmętach spamu. Dodatkowo:
+              </p>
+
+              <h2 class="-mb-2 text-lg lg:text-xl font-semibold text-sky-300">
+                <i class="fa-brands fa-google"></i> reCAPTCHA
+              </h2>
+              <p>
+                Ponieważ internet pełen jest botów, które mają więcej wolnego
+                czasu niż Ty i ja razem wzięci, formularz kontaktowy jest
+                chroniony przez <strong>Google reCAPTCHA</strong>.
+              </p>
+
+              <h2 class="-mb-2 text-base lg:text-lg font-semibold text-sky-200">
+                <i class="fa-duotone fa-solid fa-question"></i>
+                Co to oznacza?
+              </h2>
+              <p>
+                Google sprawdza, czy jesteś człowiekiem, patrząc na takie rzeczy
+                jak: jak ruszasz myszką, jakie masz ustawienia przeglądarki, z
+                jakiego IP piszesz itd. — wszystko po to, żeby jakiś robocik z
+                Uzbekistanu nie zaczął mi wysyłać reklam ViagraMax™. Tak, już
+                były takie reklamy. Nie, nie potrzebowałem korzystać.
+              </p>
+
+              <p>
+                Używając formularza, zgadzasz się, że Google może przetwarzać te
+                dane zgodnie ze swoją polityką. Tu ich papierologia: <br />
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  class="text-sky-400 hover:text-sky-300 transition-colors whitespace-nowrap"
+                  ><i class="fa-solid fa-link"></i>Polityka prywatności
+                  Google</a
+                >
+                <br />
+                <a
+                  href="https://policies.google.com/terms"
+                  target="_blank"
+                  class="text-sky-400 hover:text-sky-300 transition-colors whitespace-nowrap"
+                  ><i class="fa-solid fa-link"></i> Warunki reCAPTCHA</a
+                >
+              </p>
+
+              <h2 class="-mb-2 text-lg lg:text-xl font-semibold text-sky-300">
+                <i
+                  class="fa-duotone fa-solid fa-down-left-and-up-right-to-center"
+                ></i>
+                Podsumowując:
+              </h2>
+              <p>
+                Innymi słowy: nie śledzę, nie profiluję, nie analizuję.
+                Zapewniam jedynie funkcjonowanie strony oraz formy kontaktu.
+              </p>
+
+              <div class="flex flex-col w-full items-end">
+                <div class="text-right">
+                  <span class="italic text-2xl lg:text-3xl"
+                    >Adrian Marciniuk</span
+                  >
+                  <div class="w-full flex justify-center">
+                    <div class="text-center text-inherit">
+                      Bo
+                      <i class="fa-duotone fa-solid fa-cookie-bite"></i> tylko
+                      do
+                      <i class="fa-duotone fa-solid fa-mug-hot"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NALEŚNIKI -->
+        <div class="flex flex-col w-full lg:w-1/2">
+          <button
+            class="flex items-center justify-between gap-4 w-full p-4 rounded-full bg-amber-500/70 hover:bg-amber-600/75 transition-colors duration-300 ease-in-out"
+            onclick="toggleAccordion(this)"
+          >
+            <span class="text-xl lg:text-2xl font-semibold"
+              >Przepis na naleśniki</span
+            >
+            <svg
+              class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <!-- ROZWIJANY PANEL -->
+          <div
+            class="mx-1 accordion-content border-2 border-amber-400 text-white bg-amber-800/25 backdrop-blur-sm rounded-3xl mt-2 text-base lg:text-lg xl:text-xl"
+          >
+            <div class="p-4 flex flex-col gap-3">
+              <p class="text-lg lg:text-xl text-amber-400">
+                <strong
+                  ><i class="fa-regular fa-pancakes"></i> Naleśniki z
+                  Klasą™</strong
+                >
+              </p>
+
+              <p class="text-amber-200 -mt-3">
+                <em
+                  >Bo kto powiedział, że królewski posiłek musi mieć trufle i
+                  foie gras?</em
+                >
+              </p>
+
+              <p class="text-amber-400 text-lg -mb-3">
+                <strong
+                  ><i class="fa-duotone fa-solid fa-list-check"></i>
+                  Składniki:</strong
+                >
+              </p>
+              <ul class="list-disc list-inside">
+                <li>1 szklanka mąki pszennej typu „jakakolwiek jest w domu”</li>
+                <li>
+                  1 szklanka mleka – może być 2%, 3,2%, albo po terminie (nie
+                  oceniamy)
+                </li>
+                <li>
+                  ½ szklanki wody gazowanej – dla lekkości i odrobiny bąbelkowej
+                  ekstrawagancji
+                </li>
+                <li>
+                  2 jajka z wolnego wybiegu (lub po prostu z lodówki, też ujdą)
+                </li>
+                <li>
+                  Szczypta soli – obowiązkowo z palcami w stylu „Salt Bae”
+                </li>
+                <li>
+                  1 łyżka cukru (chyba że naleśniki traktujesz jako dodatek do
+                  karkówki)
+                </li>
+                <li>
+                  2 łyżki oleju lub masła – bo fitness poczeka, a naleśnik się
+                  przypali.
+                </li>
+              </ul>
+
+              <p class="text-amber-400 text-lg -mb-3">
+                <strong
+                  ><i class="fa-duotone fa-solid fa-fire"></i>
+                  Przygotowanie:</strong
+                >
+              </p>
+              <ol class="list-decimal list-inside">
+                <li>
+                  Połącz składniki z gracją alchemika – niech powstanie eliksir
+                  lekkości, nie breja rozpaczy. Trzepaczka to twoja różdżka.
+                </li>
+                <li>
+                  Odstaw ciasto na 10 minut. Niech odpocznie. Ty też możesz.
+                </li>
+                <li>
+                  Rozgrzej patelnię, ale nie tak, żeby świeciła jak Słońce.
+                </li>
+                <li>
+                  Wylej porcję ciasta, rozprowadź jak Picasso i smaż do momentu,
+                  aż się zarumieni.
+                </li>
+                <li>
+                  Odwróć naleśnik jednym płynnym ruchem – najlepiej przy
+                  widowni, niech zazdroszczą umięjętności.
+                </li>
+                <li>
+                  Podaj z czym chcesz: dżem, nutella, ser, owoce, a jak głód
+                  doskwiera – to nawet z parówką.
+                </li>
+              </ol>
+
+              <p class="text-amber-400 text-lg">
+                <em
+                  ><i class="fa-duotone fa-solid fa-lightbulb-on"></i> Pro
+                  tip:</em
+                >
+                jeśli pierwszy naleśnik się nie uda – to nie błąd, to tradycja.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="z-50">
+      <div
+        id="footer"
+        class="h-16 xs:h-12 text-sm sm:text-base flex flex-col xs:flex-row bg-blue-700/60 backdrop-blur-[2px] md:my-4 md:mx-3 md:rounded-full p-2 justify-center xs:justify-evenly items-center gap-1 md:gap-0"
+      >
+        <div class="flex flex-row justify-center items-center">
+          2019-<full-year></full-year>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            class="w-5 h-5 mx-1 fill-white inline-block align-middle"
+          >
+            <path
+              d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM205.1 306.9c-28.1-28.1-28.1-73.7 0-101.8s73.7-28.1 101.8 0c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9c-46.9-46.9-122.8-46.9-169.7 0s-46.9 122.8 0 169.7 122.8 46.9 169.7 0c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0c-28.1 28.1-73.7 28.1-101.8 0z"
+            />
+          </svg>
+          <strong>Adrian Marciniuk</strong>
+        </div>
+
+        <a
+          href="/pl/polityka-prywatności/"
+          class="flex flex-row justify-center items-center"
+          ><i class="fa-duotone fa-regular fa-user-secret"></i> Polityka
+          prywatności</a
+        >
+      </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <script src="/assets/js/main.js"></script>
+    <script>
+      function toggleAccordion(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector("svg");
+        const isOpen = content.classList.contains("open");
+        const isLargeScreen = window.matchMedia("(min-width: 1024px)").matches;
+
+        if (!isLargeScreen) {
+          document.querySelectorAll(".accordion-content.open").forEach((el) => {
+            if (el !== content) {
+              el.style.maxHeight = null;
+              el.classList.remove("open");
+              el.previousElementSibling
+                .querySelector("svg")
+                .classList.remove("rotate-180");
+            }
+          });
+        }
+
+        if (isOpen) {
+          content.style.maxHeight = null;
+          content.classList.remove("open");
+          icon.classList.remove("rotate-180");
+          return;
+        }
+
+        content.classList.add("open");
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.classList.add("rotate-180");
+      }
+
+      window.addEventListener("resize", () => {
+        document.querySelectorAll(".accordion-content.open").forEach((el) => {
+          el.style.maxHeight = el.scrollHeight + "px";
+        });
+      });
+    </script>
+  </body>
+</html>

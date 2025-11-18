@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pl" class="h-full max-w-full overflow-x-clip scroll-smooth">
+  <head>
+    <!-- Main -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Adrian Marcini.uk</title>
+    <!-- Opis dla SEO -->
+    <meta
+      name="description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta name="author" content="Adrian Marciniuk" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marcini.uk/" />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <!-- Linki do zasobów -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/fontawesome.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="/assets/css/fontawesome.css" />
+    </noscript>
+    <link rel="preload" href="/assets/css/fonts.css" as="style" />
+    <script>
+      function loadFontsCSS(href) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = href;
+        link.media = "print";
+        link.onload = () => (link.media = "all");
+        document.head.appendChild(link);
+      }
+      loadFontsCSS("/assets/css/fonts.css");
+    </script>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://marcini.uk/" />
+    <!-- Dane strukturalne JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrian Marciniuk",
+        "url": "https://marcini.uk",
+        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
+        "sameAs": ["https://github.com/marciniuk"],
+        "jobTitle": "Frontend Developer",
+        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
+      }
+    </script>
+    <!-- Fadein body -->
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => document.body.classList.add("page-ready"), 100);
+      });
+    </script>
+  </head>
+
+  <body class="bg-blue-900 min-h-full max-w-full overflow-x-clip">
+    <stars></stars>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
+    >
+      <div
+        class="h-20 w-full bg-gradient-to-b from-blue-900/100 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+      ></div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="main-header"
+      class="h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-[all] duration-500 ease-in-out"
+    >
+      <div class="flex justify-between w-full items-center z-30">
+        <!-- LOGO -->
+        <a
+          href="/pl/"
+          class="flex flex-row gap-2 text-3xl lg:text-4xl italic items-center"
+        >
+          <img src="/assets/img/logo3.svg" alt="logo" class="h-8 lg:h-10" />
+          Marcini.uk
+        </a>
+
+        <!-- HAMBURGER -->
+        <div
+          id="menu-toggle"
+          class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+        >
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+        </div>
+
+        <!-- WSPÓLNE MENU (desktop + mobile) -->
+        <nav
+          id="mobile-menu"
+          class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+          style="height: calc(var(--vh, 1vh) * 100 - 2.75rem)"
+        >
+          <a href="/pl/profile/" class="nav-link hover:text-rose-400"
+            ><i class="fa-duotone fa-solid fa-address-card"></i> Profile</a
+          >
+          <a href="/pl/projekty/" class="nav-link hover:text-emerald-400"
+            ><i class="fa-duotone fa-solid fa-diagram-project"></i> Projekty</a
+          >
+          <a href="/pl/setup/" class="nav-link hover:text-amber-400"
+            ><i class="fa-duotone fa-solid fa-display-code"></i> Setup</a
+          >
+          <a href="/pl/kontakt/" class="nav-link hover:text-sky-400"
+            ><i class="fa-duotone fa-solid fa-envelope-open-text"></i>
+            Kontakt</a
+          >
+          <a href="/pl/polecajki/" class="nav-link hover:text-fuchsia-400"
+            ><i class="fa-duotone fa-solid fa-heart"></i> Polecajki</a
+          >
+          <a href="/pl/ksiazki/" class="nav-link hover:text-indigo-400"
+            ><i class="fa-duotone fa-solid fa-books"></i> Książki</a
+          >
+        </nav>
+      </div>
+
+      <!-- VH FIX -->
+      <script>
+        (function () {
+          function setVh() {
+            document.documentElement.style.setProperty(
+              "--vh",
+              `${window.innerHeight * 0.01}px`
+            );
+          }
+          setVh();
+          window.addEventListener("resize", setVh);
+        })();
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main
+      class="z-10 p-8 flex place-items-center place-content-center w-full h-full"
+    >
+      <div
+        class="flex flex-col lg:flex-row top-0 w-full h-full gap-10 justify-center items-center lg:items-start"
+      >
+        <!-- LEWA / GÓRNA SEKCJA  -->
+        <aside
+          class="flex flex-col gap-4 w-full max-w-lg lg:max-w-xs lg:sticky lg:top-20"
+        >
+          <div class="mx-6 lg:mx-0">
+            <div
+              class="text-2xl md:text-3xl font-semibold flex flex-row items-center"
+            >
+              <div class="relative w-3 h-3 mr-3 -ml-6">
+                <span
+                  class="absolute inset-0 bg-green-500 rounded-full animate-pulse"
+                ></span>
+                <span
+                  class="absolute inset-0 bg-green-500 rounded-full blur-sm animate-ping"
+                ></span>
+              </div>
+              Skontaktuj się ze mną
+            </div>
+            <div class="text-base md:text-lg opacity-80 mb-4">
+              Odpowiadam zwykle w ciągu kilku godzin – w najgorszym wypadku
+              nigdy. Jeśli zależy Ci na czasie, skorzystaj z Telegrama.
+            </div>
+          </div>
+
+          <div
+            class="grid grid-cols-[repeat(auto-fit,minmax(211px,auto))] md:grid-cols-[repeat(auto-fit,minmax(233px,auto))] gap-4 lg:grid-cols-1 text-lg md:text-xl"
+          >
+            <!-- Email -->
+            <div
+              class="bg-blue-800/40 backdrop-blur-[2px] px-4 py-2 rounded-2xl border border-blue-700 hover:border-blue-500 transition-colors flex items-center"
+            >
+              <e-mail></e-mail>
+            </div>
+
+            <!-- Telegram -->
+            <a
+              href="https://t.me/AdrianMarciniuk"
+              target="_blank"
+              class="inline-flex flex-nowrap items-center gap-2 bg-blue-800/40 backdrop-blur-[2px] px-4 py-2 rounded-2xl border border-blue-700 hover:border-blue-500 transition-colors cursor-pointer h-12 w-full"
+            >
+              <i class="fa-brands fa-telegram text-sky-400"></i>
+              AdrianMarciniuk
+            </a>
+          </div>
+        </aside>
+
+        <!-- FORMULARZ -->
+        <section
+          class="w-full max-w-xl bg-blue-800/40 backdrop-blur-[2px] p-6 rounded-3xl border border-blue-700 shadow-xl"
+        >
+          <form id="contact-form" method="POST" class="flex flex-col gap-5">
+            <!-- Access Key -->
+            <input
+              type="hidden"
+              name="accessKey"
+              value="4d95f2e0-b0c2-46f5-b9b2-82ede7470ce1"
+            />
+
+            <!-- Honeypot -->
+            <input
+              type="text"
+              name="honeypot"
+              class="hidden"
+              tabindex="-1"
+              autocomplete="off"
+            />
+
+            <!-- Imię -->
+            <label class="flex flex-col gap-1">
+              <span class="text-lg md:text-xl">Imię i nazwisko</span>
+              <input
+                type="text"
+                name="name"
+                required
+                class="px-3 py-2 rounded-xl bg-blue-900/50 border border-blue-700 focus:border-blue-500 outline-none"
+              />
+            </label>
+
+            <!-- Email -->
+            <label class="flex flex-col gap-1">
+              <span class="text-lg md:text-xl">Email</span>
+              <input
+                type="email"
+                name="email"
+                required
+                class="px-3 py-2 rounded-xl bg-blue-900/50 border border-blue-700 focus:border-blue-500 outline-none"
+              />
+            </label>
+
+            <!-- Wiadomość -->
+            <label class="flex flex-col gap-1">
+              <span class="text-lg md:text-xl">Wiadomość</span>
+              <textarea
+                name="message"
+                required
+                rows="6"
+                class="px-3 py-2 rounded-xl bg-blue-900/50 border border-blue-700 focus:border-blue-500 outline-none resize-none scrollbar scrollbar-track-transparent scrollbar-thumb-blue-700"
+              ></textarea>
+            </label>
+
+            <!-- reCAPTCHA v3 -->
+            <input
+              type="hidden"
+              name="g-recaptcha-response"
+              id="recaptchaToken"
+            />
+
+            <button
+              id="send-btn"
+              type="submit"
+              class="px-4 py-2 text-base md:text-lg rounded-xl bg-emerald-600 hover:bg-emerald-500 transition-colors font-semibold"
+            >
+              Wyślij wiadomość
+            </button>
+          </form>
+        </section>
+
+        <!-- POPUP #1 -->
+        <div
+          id="popup-1"
+          class="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-50"
+        >
+          <div
+            class="bg-blue-800 p-6 m-4 rounded-3xl border border-blue-600 max-w-sm text-center"
+          >
+            <h3 class="text-2xl font-semibold">
+              Czy na pewno chcesz wysłać wiadomość?
+            </h3>
+            <p class="opacity-80 mb-5">Jeszcze możesz się wycofać 👀</p>
+
+            <div class="flex gap-3 justify-center">
+              <button
+                id="p1-yes"
+                class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-colors"
+              >
+                Tak
+              </button>
+
+              <button
+                id="p1-no"
+                class="px-4 py-2 bg-rose-600 hover:bg-rose-500 rounded-xl transition-colors"
+              >
+                Nie
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- POPUP #2 -->
+        <div
+          id="popup-2"
+          class="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-50"
+        >
+          <div
+            class="bg-blue-800 p-6 m-4 rounded-3xl border border-blue-600 max-w-sm text-center"
+          >
+            <h3 class="text-2xl font-semibold text-white">
+              Na 100%? To jest ten moment bez odwrotu!
+            </h3>
+            <p class="opacity-80 mb-5">Po kliknięciu wyśle się naprawdę ✉️</p>
+            <div class="flex gap-3 justify-center">
+              <button
+                id="p2-yes"
+                class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-colors"
+              >
+                Wyślij!
+              </button>
+
+              <button
+                id="p2-no"
+                class="px-4 py-2 bg-rose-600 hover:bg-rose-500 rounded-xl transition-colors"
+              >
+                Jednak nie
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- POPUP #3 (final) -->
+        <div
+          id="popup-final"
+          class="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-50"
+        >
+          <div
+            class="bg-blue-800 p-6 m-4 rounded-3xl border border-blue-600 max-w-sm text-center"
+          >
+            <h3 class="text-2xl font-semibold mb-2 text-emerald-400">
+              Dziękuję za wiadomość! 💙
+            </h3>
+            <p class="opacity-80 mb-4">
+              Odpowiem najszybciej jak to możliwe. Czasem zajmuje to kilka
+              godzin, innym razem całą wieczność.
+            </p>
+            <button
+              id="p3-close"
+              class="mt-3 px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-xl transition-colors"
+            >
+              Zamknij
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="z-50">
+      <div
+        id="footer"
+        class="h-16 xs:h-12 text-sm sm:text-base flex flex-col xs:flex-row bg-blue-700/60 backdrop-blur-[2px] md:my-4 md:mx-3 md:rounded-full p-2 justify-center xs:justify-evenly items-center gap-1 md:gap-0"
+      >
+        <div class="flex flex-row justify-center items-center">
+          2019-<full-year></full-year>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            class="w-5 h-5 mx-1 fill-white inline-block align-middle"
+          >
+            <path
+              d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM205.1 306.9c-28.1-28.1-28.1-73.7 0-101.8s73.7-28.1 101.8 0c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9c-46.9-46.9-122.8-46.9-169.7 0s-46.9 122.8 0 169.7 122.8 46.9 169.7 0c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0c-28.1 28.1-73.7 28.1-101.8 0z"
+            />
+          </svg>
+          <strong>Adrian Marciniuk</strong>
+        </div>
+
+        <a
+          href="/pl/polityka-prywatności/"
+          class="flex flex-row justify-center items-center"
+          ><i class="fa-duotone fa-regular fa-user-secret"></i> Polityka
+          prywatności</a
+        >
+      </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <script src="/assets/js/main.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcsyQ0sAAAAAFO7lQXpiSKoJuDYkrnDwFMADsCe"></script>
+    <script src="/assets/js/forms.js"></script>
+  </body>
+</html>

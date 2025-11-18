@@ -1,0 +1,252 @@
+/* ==========================================
+   TAILWIND & Developer Info
+   ========================================== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dev-name: "Adrian Marciniuk";
+  --dev-website: "https://marcini.uk";
+  --dev-mail: "adrian@marcini.uk";
+}
+
+/* ==========================================
+   PODSTAWOWE STYLE
+   ========================================== */
+
+/* ---     Body / Main     --- */
+html {
+  height: 100%;
+  width: 100%;
+  --scrollbar-track: #020b1b !important;
+  --scrollbar-thumb: #2d4e8d !important;
+  --scrollbar-thumb-hover: #4578d9 !important;
+  --scrollbar-width: 5px;
+  --scrollbar-thumb-radius: 8px;
+}
+
+@-moz-document url-prefix() {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  width: 100%;
+}
+
+main {
+  flex: 1;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.nav-link {
+  @apply transition-all duration-300 transform hover:scale-[1.15];
+}
+
+.nav-link:hover {
+  text-shadow: 0 0 2px currentColor;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+  outline: none !important;
+}
+*:focus-visible {
+  outline: none !important;
+}
+
+button,
+a,
+[role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  background-clip: padding-box !important;
+}
+
+/* ---     Tło z gwiazdami     --- */
+stars {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  pointer-events: none;
+  display: block;
+}
+
+/* ---  Polityka naleśników  --- */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 1s ease, opacity 0.9s ease;
+}
+
+.accordion-content.open {
+  opacity: 1;
+}
+
+/* header */
+@media (min-width: 1280px) {
+  #main-header {
+    top: 1.25rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 2rem;
+  }
+  #mobile-menu {
+    height: 50px !important;
+  }
+}
+
+@media (max-width: 1279px) {
+  #main-header {
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+    margin-left: 0.5rem;
+    top: 0.75rem;
+  }
+}
+
+/* === FADE-IN CAŁEJ STRONY === */
+body:not(.page-ready) header,
+body:not(.page-ready) main,
+body:not(.page-ready) footer {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease-in-out;
+}
+
+body.page-ready header,
+body.page-ready main,
+body.page-ready footer {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* biblioteczka */
+.lazy-fade {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.lazy-fade.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ==========================================
+   SCROLLBAR STYLING
+   ========================================== */
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+  border-radius: var(--scrollbar-track-radius);
+}
+::-webkit-scrollbar-track:hover {
+  background-color: var(--scrollbar-track-hover, var(--scrollbar-track));
+}
+::-webkit-scrollbar-track:active {
+  background-color: var(
+    --scrollbar-track-active,
+    var(--scrollbar-track-hover, var(--scrollbar-track))
+  );
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: var(--scrollbar-thumb-radius);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover, var(--scrollbar-thumb));
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: var(
+    --scrollbar-thumb-active,
+    var(--scrollbar-thumb-hover, var(--scrollbar-thumb))
+  );
+}
+::-webkit-scrollbar-corner {
+  background-color: var(--scrollbar-corner);
+  border-radius: var(--scrollbar-corner-radius);
+}
+::-webkit-scrollbar-corner:hover {
+  background-color: var(--scrollbar-corner-hover, var(--scrollbar-corner));
+}
+::-webkit-scrollbar-corner:active {
+  background-color: var(
+    --scrollbar-corner-active,
+    var(--scrollbar-corner-hover, var(--scrollbar-corner))
+  );
+}
+::-webkit-scrollbar {
+  display: block;
+  width: var(--scrollbar-width, 16px);
+  height: var(--scrollbar-height, 16px);
+}
+
+.isolate {
+  isolation: isolate;
+}
+
+/*setup*/
+.section-btn {
+  @apply ripple-btn btn-scale
+  aspect-square xl:aspect-[2/1] h-32 md:h-44
+   backdrop-blur-sm
+  text-white text-lg font-semibold
+  border-2  rounded-3xl
+  flex items-center justify-center
+  transition-all duration-200 cursor-pointer select-none;
+}
+@layer utilities {
+  .ripple-btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ripple-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    );
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+      opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .ripple-btn:hover::after {
+    transform: scale(2.5);
+    opacity: 1;
+  }
+
+  .btn-scale {
+    transition: transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .btn-scale:hover {
+    transform: scale(1.04);
+  }
+}

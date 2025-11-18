@@ -1,0 +1,2725 @@
+<!DOCTYPE html>
+<html lang="pl" class="h-full max-w-full overflow-x-clip scroll-smooth">
+  <head>
+    <!-- Main -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Adrian Marcini.uk</title>
+    <!-- Opis dla SEO -->
+    <meta
+      name="description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta name="author" content="Adrian Marciniuk" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marcini.uk/" />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <!-- Linki do zasobów -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/fontawesome.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="/assets/css/fontawesome.css" />
+    </noscript>
+    <link rel="preload" href="/assets/css/fonts.css" as="style" />
+    <script>
+      function loadFontsCSS(href) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = href;
+        link.media = "print";
+        link.onload = () => (link.media = "all");
+        document.head.appendChild(link);
+      }
+      loadFontsCSS("/assets/css/fonts.css");
+    </script>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://marcini.uk/" />
+    <!-- Dane strukturalne JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrian Marciniuk",
+        "url": "https://marcini.uk",
+        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
+        "sameAs": ["https://github.com/marciniuk"],
+        "jobTitle": "Frontend Developer",
+        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
+      }
+    </script>
+    <!-- Fadein body -->
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => document.body.classList.add("page-ready"), 100);
+      });
+    </script>
+  </head>
+
+  <body class="bg-blue-900 min-h-full max-w-full overflow-x-clip">
+    <stars></stars>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
+    >
+      <div
+        class="h-20 w-full bg-gradient-to-b from-blue-900/100 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+      ></div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="main-header"
+      class="h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-[all] duration-500 ease-in-out"
+    >
+      <div class="flex justify-between w-full items-center z-30">
+        <!-- LOGO -->
+        <a
+          href="/pl/"
+          class="flex flex-row gap-2 text-3xl lg:text-4xl italic items-center"
+        >
+          <img src="/assets/img/logo3.svg" alt="logo" class="h-8 lg:h-10" />
+          Marcini.uk
+        </a>
+
+        <!-- HAMBURGER -->
+        <div
+          id="menu-toggle"
+          class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+        >
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+        </div>
+
+        <!-- WSPÓLNE MENU (desktop + mobile) -->
+        <nav
+          id="mobile-menu"
+          class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+          style="height: calc(var(--vh, 1vh) * 100 - 2.75rem)"
+        >
+          <a href="/pl/profile/" class="nav-link hover:text-rose-400"
+            ><i class="fa-duotone fa-solid fa-address-card"></i> Profile</a
+          >
+          <a href="/pl/projekty/" class="nav-link hover:text-emerald-400"
+            ><i class="fa-duotone fa-solid fa-diagram-project"></i> Projekty</a
+          >
+          <a href="/pl/setup/" class="nav-link hover:text-amber-400"
+            ><i class="fa-duotone fa-solid fa-display-code"></i> Setup</a
+          >
+          <a href="/pl/kontakt/" class="nav-link hover:text-sky-400"
+            ><i class="fa-duotone fa-solid fa-envelope-open-text"></i>
+            Kontakt</a
+          >
+          <a href="/pl/polecajki/" class="nav-link hover:text-fuchsia-400"
+            ><i class="fa-duotone fa-solid fa-heart"></i> Polecajki</a
+          >
+          <a href="/pl/ksiazki/" class="nav-link hover:text-indigo-400"
+            ><i class="fa-duotone fa-solid fa-books"></i> Książki</a
+          >
+        </nav>
+      </div>
+
+      <!-- VH FIX -->
+      <script>
+        (function () {
+          function setVh() {
+            document.documentElement.style.setProperty(
+              "--vh",
+              `${window.innerHeight * 0.01}px`
+            );
+          }
+          setVh();
+          window.addEventListener("resize", setVh);
+        })();
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main
+      class="z-10 px-6 py-8 lg:pt-12 flex flex-col lg:flex-row items-center justify-center h-full w-full"
+    >
+      <!-- WZÓR
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/"
+                loading="lazy"
+                alt="Śmierć Dulgath"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 12.04.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#kolor]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> tytuł
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> autor
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> seria, tom
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              recka
+            </div>
+          </div>
+        </div>
+      -->
+
+      <div
+        id="Oceny"
+        class="grid sm:grid-cols-[repeat(auto-fit,minmax(30rem,1fr))] grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-6 place-items-center w-full"
+      >
+        <!--37-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row isolate"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/smiercdulgath.jpg"
+                loading="lazy"
+                alt="Śmierć Dulgath"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o8</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 12.04.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#75352b]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Śmierć
+                Dulgath
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Michael J.
+                Sullivan
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Kroniki Riyrii, 3
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Wydaje mi się, że tom trzeci jest słabszy od drugiego, lecz to
+              nadal bardzo wysoki poziom rozrywki. Czy jest to "coś więcej"?
+              raczej nie, nie licząc nowych ciekawostek światotwórczych i jednej
+              bomby. Czy polecam? Zdecydowanie, w szczególności że jest to tom
+              trzeci. Skoro masz za sobą dwa poprzednie (i ewentualnie "odkrycia
+              Riyrii"?) to po trzeci nie sięgniesz? ;P
+            </div>
+          </div>
+        </div>
+
+        <!--36-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/rozaiciern.jpg"
+                loading="lazy"
+                alt="Róża i Cierń"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o9</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 11.04.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#e89835]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Róża i
+                cierń
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Michael J.
+                Sullivan
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Kroniki Riyrii, 2
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Michael J. Sullivan pisze książki proste i jest to jeden z tych
+              momentów, gdy prostota oznacza coś dobrego. Zdecydowanie coś
+              dobrego.
+            </div>
+            <div class="indent-5 text-justify">
+              Róża i cierń jest znacznie lepsza od tomu pierwszego. Pokusiłbym
+              się o stwierdzenie, że prawdopodobnie będzie to najlepsza książka
+              przeczytana w tym miesiącu, ale przede mną jeszcze dwa tomy które,
+              o ile nic mnie nie potrąci na pasach, mam zamiar dokończyć w tym
+              miesiącu. Mają one potencjał na bycie jeszcze lepszymi. Ale wróćmy
+              do "Róży".
+            </div>
+            <div class="indent-5 text-justify">
+              Kontynuujemy tu historię naszych bohaterów, po małym skoku w
+              czasie. O rok, dokładniej mówiąc. Jednocześnie cofamy się,
+              poznając urywki informacji z przeszłości. Przyznam szczerze, że
+              nie zwróciłem na to uwagi wcześniej, ale jak teraz o tym myślę, to
+              chciałbym poznać ich historię zanim los ich połączył.
+            </div>
+            <div class="indent-5 text-justify">
+              O czym jest ten tom? Dalsze losy naszych Dam, a w szczególności
+              dwóch z nich. Dwory, spiski, arystokracja i stajenni. Sullivan
+              genialnie wręcz wchodzi w rolę tych ostatnich. Nowe gildie,
+              [spoiler, ale gdy przeczytanie dowiecie się o czym chciałem tu
+              napisać i uśmiech pojawi się na Waszych ustach], w gruncie rzeczy:
+              po prostu dużo się dzieje.
+            </div>
+            <div class="indent-5 text-justify">
+              Zdecydowanie polecam tą serie. Nie mogę się doczekać dalszych
+              losów. Także ja już nie udaje, że wiem co piszę, tylko lecę dalej
+              czytać. Mam nadzieję, że spotkamy się przy recenzji kolejnego tomu
+              ;P
+            </div>
+          </div>
+        </div>
+
+        <!--35-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/wiezakoronna.jpg"
+                loading="lazy"
+                alt="Wieża koronna"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o8</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 06.04.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#425772]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Wieża
+                koronna
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Michael J.
+                Sullivan
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Kroniki Riyrii, 1
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Dobra. Nawet bardzo dobra. Aczkolwiek mało odkrywcza, ze sporym
+              potencjałem na rozwój. Szybko się czyta (przeczytana w 1
+              dzień),ostatni rozdział powoduje mały uśmiech i lawinę spekulacji.
+              Polecam w szczególności dla tych, którzy potrzebują czegoś
+              lekkiego i szybkiego.
+            </div>
+          </div>
+        </div>
+
+        <!--34-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/niebianskarzeka.jpg"
+                loading="lazy"
+                alt="Niebiańska rzeka"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o7</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 24.03.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#32786e]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i>
+                Niebiańska rzeka
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Dennis E. Taylor
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Bobiverse, 4
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Nie wiem. Coś jest nie tak. Pytanie, ze mną czy z książką?
+            </div>
+            <div class="indent-5 text-justify">
+              Mam wrażenie, że autor zatracił lekko wątek albo wyczerpał
+              konwencję. To nadal kawał dobrego Sci-Fi, ale... no właśnie. Ale.
+              To nigdy nie oznacza nic dobrego. Co nie gra w "Rzece"? Otóż...
+              nic. W teorii wszystko jest ok. Zainteresowani? Zapraszam do
+              recenzji!
+            </div>
+            <div class="indent-5 text-justify">
+              Aby kontynuować tradycję, zacznijmy od tego, co zawsze. Wątki
+              "między wierszami". Co działo się w tym tomie? Naprawdę dużo.
+            </div>
+            <div class="indent-5 text-justify">
+              Poznajemy w tej części dalsze losy "efektu motyla", wyobrażenia
+              autora odnośnie ewolucji kultury ludzi i nie tylko, oraz drobne
+              wątki [transmisja przerwana, aby poznać szczegóły, przeczytaj
+              książkę].
+            </div>
+            <div class="indent-5 text-justify">
+              Brakuje mi rozwinięcia niektórych rzeczy. Tych "pod powierzchnią".
+              Ten tom jest bardziej bezpośredni w przekazywaniu tego, co chce
+              przekazać, a mi właśnie najbardziej podobała się ta tajemniczość i
+              możliwość analizy we własnym zakresie. Tutaj tego brakuje. Co przy
+              sporo większej objętości niż tomy poprzednie, jest nieco smutne.
+            </div>
+            <div class="indent-5 text-justify">
+              Bobowie dzielą się na frakcje. Poznajemy nowe gatunki. Nowych
+              "(nie)protagonistów", którzy prawdopodobnie rozwiną się w kolejnym
+              tomie (tomach?). Dzieje się dużo, ale człowiek ma wrażenie, że na
+              spokojnie można skrócić ją o te 10-20%.
+            </div>
+            <div class="indent-5 text-justify">
+              Jednym z powodów mojego lekkiego rozczarowania jest prawdopodobnie
+              mocno średni okres, w jakim czytałem, a w zasadzie słuchałem tę
+              książkę. Innym, zbyt wygórowane oczekiwania. Mimo to nie mogę
+              powiedzieć, że się zawiodłem. To nadal był bardzo fajnie spędzony
+              czas i jestem pewien, że po kontynuację sięgnę. Jedynie mam
+              nadzieję, że będzie ona bliżej "Nasze imię legion", aniżeli
+              "Rzeki".
+            </div>
+            <div class="indent-5 text-justify">
+              Czy polecam? Oczywiście. Czy możesz spodziewać się czegoś, co
+              dorówna tomowi pierwszemu? Raczej nie.
+            </div>
+          </div>
+        </div>
+
+        <!--33-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/wszystkieteswiaty.jpg"
+                loading="lazy"
+                alt="wszystkie te światy"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o8</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 15.03.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#e79e01]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Wszystkie
+                te światy
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Dennis E. Taylor
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Bobiverse, 3
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Kolejny raz główna fabuła odchodzi na dalszy plan, a to, co się
+              liczy dla mnie znacznie bardziej, są dylematy moralno-filozoficzne
+              (?).
+            </div>
+            <div class="indent-5 text-justify">
+              Tom trzeci tak jak i drugi nie dał rady dojść do pułapu
+              pierwszego, ale nadal jest to kawał dobrego sci-fi. Ale cały czas
+              mam wrażenie, że autor pisze fabułę, tylko po to, aby rozwiązywać
+              w ten sposób pytania, które sam sobie zadaje. I porusza ciekawe
+              aspekty, takie jak "życie wieczne" w ciele replikanta a śmierć
+              "tak jak bóg chciał".
+            </div>
+            <div class="indent-5 text-justify">
+              Mała zabawa. Zastanów się, jak to byłoby u Ciebie. Czy wizja
+              wiecznego życia byłaby wystarczająco kusząca?
+            </div>
+            <div class="indent-5 text-justify">
+              Jeśli na pytanie powyżej odpowiedź padła "tak", to chciałbym
+              zauważyć kilka rzeczy. Większość ludzi nie zechce stać się swoją
+              wirtualną kopią, zakładając, że Taylor się w tym aspekcie nie
+              myli. Czy to dobrze, czy to źle, nie mi oceniać. Ale to oznacza,
+              że wszyscy wokół, na których nam zależy, których kochamy, umrą na
+              naszych oczach. Nieograniczona fotograficzna pamięć nie będzie
+              pomagać z żałobą, smutkiem i tęsknotom. Czy nadal chcesz żyć
+              wiecznie?
+            </div>
+            <div class="indent-5 text-justify">
+              Ten tom porusza jeszcze jeden aspekt. Nie ważne, jak bardzo
+              będziemy w dupie. Nie ważne, ile stracimy. Nadal będziemy ludźmi.
+              A to oznacza, że wśród nas nadal będą paskudy, które ludźmi są
+              tylko z nazwy. Niby nic odkrywczego, ale gdy się nad tym tak
+              zastanowić, jest to stosunkowo przykry obraz naszego gatunku.
+            </div>
+            <div class="indent-5 text-justify">
+              Przechodząc szybko do fabuły. Dzieje się sporo. Jest naprawdę
+              ciekawie. Ale rozdziały i sposób narracji bardzo przypomina mi ten
+              z Hariego Pjotera. Rozdziały są bardzo krótkie, urywane nagle,
+              przeskoki między klonami boba nie pozwalają się z większością z
+              nich zżyć. Mimo to czyta się to bardzo dobrze. Polecam z całego
+              serca przede wszystkim początkującym fanom gatunku. Hyperion to
+              nie jest, ale na wielu płaszczyznach mu dorównuje.
+            </div>
+          </div>
+        </div>
+
+        <!--32-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/gdyzjestnaswielu.jpg"
+                loading="lazy"
+                alt="gdyż jest nas wielu"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o8</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 14.03.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#074c8b]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Gdyż jest
+                nas wielu
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Dennis E. Taylor
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Bobiverse, 2
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Kurde. Ta seria, to nie jest zwykłe Sci-Fi. W tomie pierwszym
+              między wierszami odkryć można "efekt motyla", mnożenie osobowości
+              z 1 osoby. W tomie drugim nacisk jest kładziony na uczucia. A
+              raczej, czy maszyna jest do nich zdolna?
+            </div>
+            <div class="indent-5 text-justify">
+              Tak, streszczenie fabuły odejdzie na dalszy plan. Zainteresowani
+              mogą przejść do przedostatniego akapitu.
+            </div>
+            <div class="indent-5 text-justify">
+              Wracając. Uczucia. Zacznijmy może od klasyfikacji Bobów. Są
+              maszynami. Ale to chyba zbyt ogólnikowe. Maszyny kojarzą się z
+              bezmyślnymi urządzeniami wypchanymi elektroniką, kablami oraz
+              takim czy innym źródłem zasilania. Czy to jest Bobi? Od strony
+              fizycznej po części na pewno. Ale czy jest "czymś więcej"?
+              Zdecydowanie.
+            </div>
+            <div class="indent-5 text-justify">
+              Jest on sztuczną inteligencją. Ale na ile sztuczną, skoro Bob nr1
+              był człowiekiem? Przecież jedynie jego świadomość, wspomnienia czy
+              inteligencja zmieniły nośnik zapisu. Więc, czy AI może odczuwać
+              emocje? Czy może się zakochać? Dennis E. Taylor uważa, że tak. A
+              ja chyba się z nim zgadzam.
+            </div>
+            <div class="indent-5 text-justify">
+              O czym zatem jest "Gdyż jest nas wielu", nie licząc dalszych losów
+              Bobich, małej rozprawki o uczuciach i kilku dylematów natury
+              moralnej? Jest kolejnym kawałkiem świetnej książki.
+            </div>
+            <div class="indent-5 text-justify">
+              Poznajemy tu dalsze losy naszej gromadki, ich projektów, ludzi...
+              oraz nowych przeciwników. Zdecydowanie widać, że ta książka nigdy
+              nie miała być, nawet w najśmielszych planach autora, ostatnim
+              tomem. Powiedzieć, że zakończenie jest otwarte jak galaktyka (albo
+              i dwie!) to jak nic nie powiedzieć. Czy to dobrze? Nie wiem.
+              Ciężko jest przez to dać większą ocenę niż 8, bo czuć, że to tylko
+              wstęp, że przed nami jeszcze długa droga. Jak się zakończy?
+              Przekonamy się w dalszych tomach. Czy polecam kontynuować? Jeśli
+              podobał Ci się tom pierwszy, to zdecydowanie TAK!
+            </div>
+          </div>
+        </div>
+
+        <!--31-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/mapawnetrza.jpg"
+                loading="lazy"
+                alt="mapa wnętrza"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o9</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 13.03.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#996848]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Mapa
+                wnętrza
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Stephen Graham
+                Jones
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Mieliście kiedyś tak, że po przeczytaniu jakiejś pozycji
+              gapiliście się w ostatnie słowa żałując, że to już koniec?
+              Jednocześnie wiedząc, że taka forma jest idealna? Nie? To
+              zapraszam do lektury "Mapy wnętrza".
+            </div>
+            <div class="indent-5 text-justify">
+              Chciałbym napisać, że "Mapa wnętrza" odkryje w nas to, co
+              najgorsze, że nakreśli mapę naszych lęków. Ale tak nie jest. To
+              nie jest horror. Nie w pełnym tego słowa znaczeniu. Groza? Być
+              może. Ale nie strach jest tu najważniejszy, ale przeżywanie
+              historii wraz z bohaterem.
+            </div>
+            <div class="indent-5 text-justify">
+              Krótkie streszczenie i przedstawienie fabuły którą można samemu
+              poznać w 100% raptem w nieco ponad godzinę? Moim zdaniem nie ma
+              sensu. Zainteresowanych odsyłam do opisu na okładce. Choć moim
+              zdaniem lepiej poznawać świat i postacie bez znajomości zarysu. Bo
+              i po co? To tylko 80 stron. Jak się nie spodoba wiele nie
+              stracicie, a jeśli się spodoba, to bez opisu wrażenie będzie
+              spotęgowane.
+            </div>
+            <div class="indent-5 text-justify">
+              Czy to była dobra książka? Jak najbardziej. Gdybym musiał się
+              przyczepić, to chciałbym wiedzieć, kim według autora są [będziecie
+              wiedzieć o co chodzi po przeczytaniu ;P], ale może to i dobrze?
+              Czasem lepiej niektórych rzeczy nie wiedzieć. Tak, Panie King, na
+              Pana patrzę.
+            </div>
+            <div class="indent-5 text-justify">
+              Pozwolę sobie wkleić akapit z recenzji mojego guru książkowego (to
+              dzięki niemu przeczytałem "mapę"... i nie tylko ją, moje serduszko
+              zabiło szybciej dzięki niemu też dla Abercrombiego),Tomka aka
+              KsiążkoweBajdurzenie:
+            </div>
+            <div class="m-2 p-2 rounded-lg bg-slate-800 italic text-justify">
+              "Czy będę o tej historii pamiętał za 5-10 lat? Raczej nie, ale na
+              dzień dzisiejszy ten tekst jest dla mnie podręcznikowym przykładem
+              tego, co opowiadanie może przekazać. Cudownie okropna rzecz."
+            </div>
+            <div class="indent-5 text-justify">
+              Sam lepiej bym tego nie ujął. W szczególności ostatniego zdania.
+            </div>
+          </div>
+        </div>
+
+        <!--30-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/naszeimielegion.jpg"
+                loading="lazy"
+                alt="nasze imie legion, nasze imie bob"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o9</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 10.03.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#d31119]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Nasze imię
+                Legion, nasze imię Bob
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Dennis E. Taylor
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Bobiverse, 1
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Kawał bardzo dobrego Sci-Fi. I choć bardzo nad tym ubolewam, bo
+              podobało mi się bardzo, to nie mogę dać więcej niż 8 gwiazdek.
+              Dlaczego? Zapraszam do recenzji!
+            </div>
+            <div class="indent-5 text-justify">
+              Tym razem zacznę trochę inaczej. Bo to nie jest w Bobiverse
+              najważniejsze (przynajmniej na razie),ale mnie bardzo intryguje.
+              Co więcej, autor sam poruszył ten wątek. Btw, będę mówił o
+              rzeczach, które są oczywiste i nie są dużym spoilerem, ale jeśli
+              nie chcesz sobie zdradzać nawet malutkiego wycinka fabuły, zakończ
+              czytanie mojej recenzji. Pewnie wiele nie stracisz ;P
+            </div>
+            <div class="indent-5 text-justify">
+              Już? Wszyscy uczuleni na spoilery sobie poszli? Ok. To lecimy.
+            </div>
+            <div class="indent-5 text-justify">
+              Osobowości Bobów. Teoretycznie, pierwszy Bob buduje swoje klony.
+              Ich "ja", to tak naprawdę backup Bobiego nr1. Ale czy to nie
+              oznacza, że każdy klon powinien być taki jak oryginał robiący za
+              wzór? W teorii? Jasne. W praktyce jednak dzieje się zupełnie
+              inaczej. Już pierwsza seria klonów jest inna. Każda kolejna różni
+              się coraz bardziej. Nasuwa się pytanie, dlaczego? Wbrew pozorom
+              odpowiedź jest bardzo prosta. Bo nie ma dwóch takich samych ludzi.
+              Oraz AI. Nawet mała zamiana w naszym życiu może spowodować
+              całkowitą zmianę naszej osobowości. Nasze przeżycia zmieniają nas
+              każdego dnia. Można tu się dopatrywać, choć z lekkim przymrużeniem
+              oka, efektu motyla. Mała rzecz, mała zmiana na którymś etapie
+              naszego życia, i to, kim jesteśmy teraz, ja piszący ten tekst i
+              Ty, któr_ go czytasz byśmy nie istnieli. Może dosłownie, może
+              tylko mentalnie, ale czasem mała rzecz, którą uznajemy za
+              potencjalnie nieistotną, mogłaby sprawić, że bylibyśmy kimś innym.
+              I ta książka pod warstwą dobrego Sci-Fi pokazuje to, jak jedna
+              osoba może być "legionem", w którym każdy byt jest osobną
+              jednostką, do którego wytworzenia wystarczył tylko jeden mały
+              szczegół.
+            </div>
+            <div class="indent-5 text-justify">
+              Ale dobra, kończąc filozofowanie, przejdźmy do książki. Poznajemy
+              Boba. Faceta, który jest 100% nerdem. Faceta, który sprzedając
+              swoją firmę, ustawił się do końca życia. Faceta, który podpisał
+              umowę na ucięcie i zamrożenie w kriogenicznym śnie głowę po
+              śmierci. Problem polega na tym, że nie przewidział, jak paskudnym
+              jesteśmy gatunkiem.
+            </div>
+            <div class="indent-5 text-justify">
+              W wyniku kilku mniejszych i większych wypadków (których Wam nie
+              zdradzę, mimo że dzieją się na samym początku, bo zwyczajnie
+              fajnie się je czyta i samemu odkrywa) jego głowę przejmuje korpo,
+              które to zostało przejęte przez państwo w wyniku... kilku
+              ciekawych zbiegów okoliczności. Co dalej? Albo będzie jeździć jako
+              sztuczna inteligencja śmieciarką, albo ku dobru partii będzie
+              ścigać się w podboju kosmosu z innymi państwami. Tak, ja też
+              żałuję, że ze śmieciarką nie wyszło, ale Bob trafia na statek. I
+              nie, nie prom czy jakąś łódkę. Statek kosmiczny, gdyby okładka
+              jeszcze tego nie zasugerowała ;P
+            </div>
+            <div class="indent-5 text-justify">
+              W gruncie rzeczy, to tyle, jeśli chodzi o zarys fabuły. Każda inna
+              informacja zepsuje poznawanie książki. Która zresztą jest dosyć
+              specyficzna. Mimo kilku scen akcji tom ten głównie skupia się na
+              rozwoju Bobów, eksploracji kosmosu, oraz [dowiecie się, czytając
+              książkę]. Fani mocnych wrażeń? Lepiej pograjcie w COD'a. Ale ci z
+              Was, którzy lubią wejść do głowy protagonisty (nawet jeśli jest
+              ona zbiorem kabli i elektroniki),będą zadowoleni. Historia też tej
+              bardzo fajna, choć momentami mało odkrywcza. Za to przepełniona
+              mrugnięciami oka do ludzi znających popkulturę. Tych, którzy nie
+              znają, uspokajam, nie stracicie jakieś bardzo dużo.
+            </div>
+            <div class="indent-5 text-justify">
+              Czemu zatem 8 a nie 9 czy 10 gwiazdek? Nie wiem. W sumie, dam 9.
+              Bo mimo, że fabuła nie jest jakaś mega, to naprawdę wciąga. A
+              rzeczy ukryte między wierszami robią robotę.
+            </div>
+            <div class="indent-5 text-justify">
+              Czy polecam? Oczywiście. Ale tylko tym, którzy lubią takie
+              klimaty. Nie psujcie jej ocen tylko dlatego, że chcielibyście
+              wybuchy, pierwszy kontakt co drugi rozdział, albo inne Star
+              Wars's. To naprawdę kawał zajebistej książki!
+            </div>
+          </div>
+        </div>
+
+        <!--29-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/rozjemca.jpg"
+                loading="lazy"
+                alt="rozjemca"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o6</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 07.03.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#771814]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Rozjemca
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Brandon Sanderson
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Siewca wojny, 1
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Rozpoczęta 27.02, skończona 07.03. Od zeszłego roku żadna książka
+              mnie tak nie wymęczyła jak ta. Doceniam wkład w Cosmere. Ale to
+              chyba największy z plusów tej pozycji.
+            </div>
+            <div class="indent-5 text-justify">
+              Pozostałe rzeczy? Nudy, nudy, nudy, Dar Pieśni, nudy, nudy, system
+              magiczny, nudy, Vasher i Krew nocy. Początek? Ciekawy. Ba,
+              pierwszy rozdział to arcydzieło. Nie będzie spoilerem jak powiem,
+              że występuje w nim Vasher. Żałuje, że ta książka nie jest o nim.
+              Jest najlepszą rzeczą w tej książce, zaraz po Krwi nocy
+              oczywiście. Dar Pieśni też jest genialny. Uwielbiam jego
+              rozdziały. Późniejsze poczynania Króla-boga z żonką też całkiem
+              ciekawe, w szczególności gdy pod koniec... eh, to byłby spoiler.
+            </div>
+            <div class="indent-5 text-justify">
+              Może jeszcze słów kilka o systemie magicznym, zanim przejdę do
+              lamentów i rwania włosów w akompaniamencie przekleństw. Dużo osób
+              uważa, że "Ostatnie imperium" ma najlepszy system, chyba trochę
+              mniej, że "ABŚ". Ale jak dla mnie, najlepszy jest właśnie tu, w
+              Rozjemcy. Chciałbym aby był mniej tajemniczy, bardziej rozwinięty,
+              ale nadal jest to coś... wspaniałego. Powodów jest kilka. Samo
+              bazowanie na kolorach jest ciekawe, a połączenie ich z "duszą"
+              daje zaiste boskie kombo. Powracający, przebudzenia, bogowie wśród
+              ludzi, mocniejsze i słabsze oddechy... szkoda, że w gruncie rzeczy
+              tak niewiele jest z tego pokazanych w tym tomie.
+            </div>
+            <div class="indent-5 text-justify">
+              Właśnie. Przejdźmy do tych mniej fajnych rzeczy. Zakończenie. I
+              nie, samo w sobie jest jedną z lepszych rzeczy w książce, ale
+              kończy się tak nagle, bez większych wyjaśnień, że aż chciałoby się
+              czegoś więcej. Kontynuowanie niektórych wątków w innych...
+              miejscach jest fajne, ale chciałbym wiedzieć jak ostatecznie stało
+              się to, że trafili gdzie trafili. Innymi słowy, chciałbym tom
+              drugi.
+            </div>
+            <div class="indent-5 text-justify">
+              W kwestii zakończenia... jest ono bardzo szybkie, do czego
+              przyzwyczaił nas Brandon. Jego znakiem rozpoznawczym jest, że 70%
+              książki się ciągnie aby potem przyspieszyć. Tylko te 70% musi
+              zaciekawić. A to zdecydowanie nie było "ABŚ" które wciąga od razu.
+              Gdyby nie to, że nie lubię DNFów (w całej swej czytelniczej
+              karierze mam 2!),oraz że kocham Sandersona i całe Cosmere, to
+              chyba bym nie dokończył tej książki.
+            </div>
+            <div class="indent-5 text-justify">
+              Prawdopodobnie zepsuł mnie Abercrombie, którego ostatnio czytam.
+              Jego światy nie są tak imponujące jak Sandersona, ale Lord
+              GrimDark potrafi w postacie, a to nimi żyje książka i to z nimi
+              utożsamia się czytelnik. A tu? Przez pół książki najjaśniejszej
+              gwiazdy nie ma po wybuchowym prologu i człowiek zwyczajnie czuje,
+              że to nie jest to, że dialogi są drętwe. Albo lektor był do dupy,
+              bo słuchałem w audiobooku.
+            </div>
+            <div class="indent-5 text-justify">
+              Albo po prostu czytałem w nieodpowiednim czasie, przez co całą
+              moją recenzję można o kant dupy rozbić. Kto to wie?
+            </div>
+          </div>
+        </div>
+
+        <!--28-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/ostatecznyargument.jpg"
+                loading="lazy"
+                alt="Ostateczny argument"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">oS</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 26.02.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#ff5506]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i>
+                Ostateczny argument
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Joe Abercrombie
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Pierwsze prawo, 3
+              </div>
+            </div>
+            <div class="mb-2 font-bold text-center text-rose-600">
+              <i class="fa-solid fa-heart"></i> ARCYDZIEŁO!
+            </div>
+
+            <div class="indent-5 text-justify">
+              Wiecie, co jest najgorsze w pisaniu recenzji? Świadomość, że
+              choćby się czasem wypruło żyły swojej kreatywności, to posoka nie
+              będzie w stanie zabarwić jej nawet w małym procencie tak, jak
+              barwna była książka.
+            </div>
+            <div class="indent-5 text-justify">
+              Panie i Panowie, przed Wami Joe Abercrombie. Facet, który napluje
+              Wam na twarz, potrąci kota, podpali dom, zgwałci poczucie własnej
+              wartości, a Wy i tak będziecie chcieli więcej. I dostaniecie
+              więcej. Bo to dopiero początek Uniwersum Pierwszego Prawa.
+            </div>
+            <div class="indent-5 text-justify">
+              Przechodząc bardziej bezpośrednio do książki. Czym jest
+              "Ostateczny argument"? Oprócz bycia trzecim tomem pierwszej
+              trylogii? Skyrimem. Skyrimem wśród książek. Dziwne porównanie,
+              wiem, ale ci, którzy mieli styczność z wielkimi światami fantasy w
+              grach wiedzą, o czym mówię. "Ostateczny..." nie jest książką
+              najpiękniejszą. Ba, jest książką paskudną. Krew, flaki,
+              rozczłonkowane dzieci, protagoniści z większą ilością zła w sobie
+              aniżeli większość "tych złych" z innych książek... razem
+              wziętych... a mimo to czyta się ją z zapartym tchem.
+            </div>
+            <div class="indent-5 text-justify">
+              Po przeczytaniu mam wrażenie, że świat jest tylko środkiem do
+              pokazania drogi, jaką przemierzają postacie. Bo tak jak w
+              Skyrimie, tak i tutaj, liczy się historia tych, których uwielbiamy
+              i nienawidzimy. Najlepsze w tym wszystkim jest to, że każdy z nas
+              ma inny zestaw ulubieńców.
+            </div>
+            <div class="indent-5 text-justify">
+              Ten tom to po trochu zakończenie, a po trochu nowy początek. Co to
+              znaczy? Zakończenie wątku pierwszego wśród magów jest bardzo
+              otwarte tak jak naszego "ulubieńca" z tomu pierwszego, Jezala.
+              West zostawia nam małe pole dla wyobraźni, co potrafi ukłuć w
+              serduszko, o ile się go nie pozbyliśmy po pierwszym tomie.
+              Glokta... daje nadzieje. Logen? Ciężko powiedzieć.
+            </div>
+            <div class="indent-5 text-justify">
+              Spora część wątków będzie rozwijana w dalszych tomiszczach tego
+              uniwersum. Czy to dobrze? Nie wiem. Jestem za to pewien, że
+              "Pierwsze prawo" to tylko wstęp do twórczości Abercrombiego. Nie
+              jest istotne kto i co napisze, jeśli dotrwał*ś do tego tomu, to
+              będziesz kontynuować przygodę z Lordem Grimdark.
+            </div>
+            <div class="indent-5 text-justify">
+              To, "czy?"... albo raczej, "jak bardzo?" pochłonie Cię ciemność,
+              zależy od siły woli. Lecz pamiętaj, że ci "dobrzy" kończą z reguły
+              najgorzej...
+            </div>
+          </div>
+        </div>
+
+        <!--27-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/demonimrocznaton.jpg"
+                loading="lazy"
+                alt="demon i mroczna toń"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">oS</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 18.02.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#056863]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Demon i
+                mroczna toń
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Stuart Turton
+              </div>
+            </div>
+            <div class="mb-2 font-bold text-center text-rose-600">
+              <i class="fa-solid fa-heart"></i> ARCYDZIEŁO!
+            </div>
+
+            <div class="indent-5 text-justify">
+              Nie wiem, od czego zacząć, więc może po prostu napiszę: nie
+              czytajcie recenzji poniżej 7 gwiazdek. Jasne, można przez to
+              stracić trochę konstruktywnej krytyki, ale większość tych recenzji
+              to płacz, że to nie to samo co "siedem śmierci Evelyn Hardcastle",
+              albo, że oczekiwali czegoś innego w ramach innego (innych?)
+              gatunków. I tak jak tych drugich można zrozumieć, choć sam autor
+              prosi, aby tego nie robić, to mimo to można "demonka" określić
+              mianem przygodowego kryminału z wątkiem fantasy, tak tych
+              pierwszych niech pochłonie mroczna toń. Bo po co chcieć tego
+              samego, co już było, skoro można dostać kawał dobrej książki?
+            </div>
+            <div class="indent-5 text-justify">
+              "Demon" jest wciągającą od pierwszych stron historią....
+              ulepszonej wersji Sherlocka Holmesa? I tak, wiem, po tym zdaniu
+              połowa osób, które dotrwały do tego momentu będzie mi życzyć
+              spotkania Starego Toma. Ale tym właśnie jest dla mnie ta książka.
+              Ulepszoną wersją Holmesa, z zabarwieniem ukochanego przeze mnie
+              fantasy.
+            </div>
+            <div class="indent-5 text-justify">
+              Ale ok, pora na bezpośrednią konfrontację z "Evelyn". Która
+              książka lepsza? Nie wiem. Warsztatowo czuć postęp w "Demonie",
+              "Evelyn" natomiast miała ciekawszą strukturę, tylko pytanie brzmi:
+              nie nie była ona nazbyt ciekawa? Nie zrozumcie mnie źle, "Evelyn"
+              dostało ode mnie 10 gwiazdek, ale miałem wrażenie ogromnego
+              zagubienia na początku. Końcówka była genialna, środek też, ale
+              ciężko było się wgryźć w fabułę, mimo że czytało się ją z zapartym
+              tchem. "Demon" jest pod tym względem prostszy i moim zdaniem
+              lepszy.
+            </div>
+            <div class="indent-5 text-justify">
+              Diabeł (;P) jednak tkwi w szczegółach. Bo mimo początkowego
+              wejścia oknem, bo nawet wyważenie drzwi z buta wydaje się zbyt
+              zwyczajne, jest lekka... nuda. Słowo to jest być może zbyt mocne,
+              ale po części tak właśnie jest. Jest zwyczajnie nudnawo. Historia
+              mogłaby się rozkręcać trochę szybciej, skrócenie jej o te 50 czy
+              100 stron na pewno by nie zaszkodziło. Ale w gruncie rzeczy ten
+              worldbuilding jest potrzebny, aby zrozumieć motywacje pod koniec.
+            </div>
+            <div class="indent-5 text-justify">
+              Właśnie, koniec. Jest on po prostu zajebisty. Może lekko
+              naciągany, może trochę zbyt szybko się wszystko dzieje, może te 50
+              stron z początku powinno zostać przeniesione na koniec. Ale samo
+              zakończenie, ten ostatni rozdział... coś wspaniałego.
+              Słodko-gorzkie zakończenie, które sprawia, że chce się więcej.
+              Chce się kolejnej historii Arenta i Samuela oraz... tych, o
+              których dowiecie się podczas lektury.
+            </div>
+            <div class="indent-5 text-justify">
+              Zdecydowanie polecam. Prawdopodobnie najlepsza książka lutego,
+              chyba że uda mi się dokończyć trzeci tom "Pierwszego prawa"
+              Abercrombiego ;P
+            </div>
+          </div>
+        </div>
+
+        <!--26-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/azyl.jpg"
+                loading="lazy"
+                alt="azyl"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o7</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 11.02.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#2f3545]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Azyl
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Jarosław
+                Grzędowicz
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Nie wiem kim jest nijaki Krzysztof Sokołowski, ale jego
+              pier****nie w posłowiu obniżyło ocenę o 1 "oczko". Tego się nie da
+              czytać.
+            </div>
+            <div class="indent-5 text-justify">
+              Natomiast w kwestii książki - jest to twór ciekawy. Wiadomo, są
+              opowiadania lepsze, są też gorsze, ale poziom jest stosunkowo
+              wysoki. Nie jest to popiół i kurz, ale 8/10 lekko można wystawić,
+              gdyby nie... a zresztą, na pewno już przeczytaliście pierwszy
+              akapit.
+            </div>
+            <div class="indent-5 text-justify">
+              Moje ulubione opowiadanie? Hmmm... muszę wybrać między drugą
+              "Ruletą", czwartą "Śmiercią szczurołapa" oraz piątym "Przespać
+              piekło". Ostatecznie chyba wygra śmierć szczurołapa. Najbardziej
+              utkwiło mi w pamięci.
+            </div>
+            <div class="indent-5 text-justify">
+              Zbiór pokazuje jaką drogę Grzędowicz musiał pokonać, aby dotrzeć
+              do miejsca w którym znajduje się obecnie. Bo obecnie jest to
+              ścisły top. Gorąco polecam. Tylko posłowie sobie darujcie....
+            </div>
+          </div>
+        </div>
+
+        <!--25-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/mrocznytalent.jpg"
+                loading="lazy"
+                alt="mroczny talent"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o10</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 08.02.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#49b7ae]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Mroczny
+                talent
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Brandon Sanderson
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Alcatraz kontra
+                Bibliotekarze, 5
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Ja... Ta książka... A walić to. Nic nie będzie w stanie oddać tego
+              zakończenia. 10/10
+            </div>
+          </div>
+        </div>
+
+        <!--24-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/zakonrozbitejsoczewki.jpg"
+                loading="lazy"
+                alt="zakon rozbitej soczewki"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o9</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 04.02.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#2d53a4]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Zakon
+                Rozbitej Soczewki
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Brandon Sanderson
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Alcatraz kontra
+                Bibliotekarze, 4
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Wyczerpany format, a mimo to historia wciągająca. To tak słowem
+              wstępu.
+            </div>
+            <div class="indent-5 text-justify">
+              Rozwinięcie? Proszę uprzejmie: początkowe 2 tomy były czymś...
+              bardzo nowym, bardzo świeżym. Osobiście nie spodziewałem się, że
+              książka dla młodszych czytelników może być aż tak dobra. Od tomu
+              trzeciego coś się zaczęło psuć. Historia cały czas tak samo dobra,
+              ale łamanie czwartej ściany i początkowe bardzo zabawne absurdy
+              różniące światy... stały się rutyną. Czy ten tom to zmienia? Nie.
+              Lecz daje on nam historię i zmiany oraz sojusze, które zapadną nam
+              w pamięci raczej na dłużej. Polecam!
+            </div>
+          </div>
+        </div>
+
+        <!--23-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/popiolikurz.jpg"
+                loading="lazy"
+                alt="Popiół i kurz"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o10</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 03.02.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold text-black bg-[#effafd]"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Popiół i
+                kurz
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Jarosław
+                Grzędowicz
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Lekko chaotyczna. Dobrze napisana. Nieziemsko wciągająca!
+            </div>
+            <div class="indent-5 text-justify">
+              To moje pierwsze spotkanie z Grzędowiczem, mimo że Pan Lodowego
+              Ogrodu jest na półce u mnie już... zdecydowanie zbyt długo. Często
+              mówi się, że pierwsze zdanie jest jedną z kluczowych cech. Jeszcze
+              częściej prolog jest dynamiczny, aby po kulminacyjnym momencie
+              dalsze pół książki się dłużyło. Jak jest Popiołem i kurzem?
+            </div>
+            <div class="indent-5 text-justify">
+              Jest dobrze. Jest naprawdę bardzo dobrze!
+            </div>
+            <div class="indent-5 text-justify">
+              Początek? Zajebisty. Po prostu. Wejście w historię oryginalne,
+              czyta się ze sporym bananem na ustach. Dalsza część? Heh. Jeszcze
+              lepsza. Akcja nie zwalnia, każdy kolejny rozdział czyta się coraz
+              lepiej, z coraz bardziej zapartym tchem. Zakończenie? Idealne.
+            </div>
+            <div class="indent-5 text-justify">Muszę mówić, że polecam?</div>
+          </div>
+        </div>
+
+        <!--22-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/wspomnieniash.jpg"
+                loading="lazy"
+                alt="Wspomnienia Sherlocka Holmesa"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o8</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 31.01.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#71b2b4]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i>
+                Wspomnienia Sherlocka Holmesa
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> A. C. Doyle
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Sherlock Holmes, 6
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Lepszy od tomu 5go. Czy trzeba coś więcej dodać? Chyba nie ;P
+            </div>
+          </div>
+        </div>
+
+        <!--21-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/rycerzekrystali.jpg"
+                loading="lazy"
+                alt="rycerze krystali"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o9</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 27.01.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#f3903b]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Rycerze
+                Krystali
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Brandon Sanderson
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Alcatraz kontra
+                Bibliotekarze, 3
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Format zaczyna się wyczerpywać, albo ja trafiłem na zły moment,
+              niestety tom 3 podobał mi się znacznie mniej niż pierwsze 2.
+              Dlaczego mimo to 9 gwiazdek? Sentyment i zakończenie!
+            </div>
+            <div class="indent-5 text-justify">
+              W dużym uproszczeniu: fabuła jest kontynuacją tomów 1-2, robi
+              dobrze to co robili poprzednicy... ale nic poza tym. Nie ma już
+              tego efektu "WOW". I nie zrozum mnie źle, to nadal kawał genialnej
+              książki. Ale łamanie czwartej ściany dla samego łamania nie ma
+              sensu. W pewnym momencie to powszednieje, a w gruncie rzeczy to
+              było największym atutem serii do tej pory.
+            </div>
+            <div class="indent-5 text-justify">
+              Za to zakończenie jest bardzo fajne, i niektóre wątki... no w
+              gruncie rzeczy urocze, a ich finał generuje banana na ustach. Czy
+              9/10 to dobra ocena? Pewnie nie. Raczej powinno lepiej pasować 8,
+              będąc mocno czepliwym 7. Ale obawiam się, że do 10tki już nie
+              wrócimy, a wykres ocen będzie spadać, więc tak trochę na zachętę,
+              trochę z sentymentu, wystawiam 9 ;3
+            </div>
+          </div>
+        </div>
+
+        <!--20-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/hyperion.jpg"
+                loading="lazy"
+                alt="Hyperion"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o10</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 25.01.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#0c091e]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Hyperion
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Dan Simmon
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Hyperion, 1
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Edit 7go marca 2023: Zmieniam ocenę z 9 na 10. Mimo zakończenia
+              urwanego w najciekawszym momencie, ta książka zasługuje na 10/10.
+              Mimo, że przeczytana ponad miesiąc temu, to cały czas siedzi mi w
+              głowie, a to naprawdę rzadko spotykane. Polecam
+            </div>
+            <div class="indent-5 text-justify">Eh, od czego zacząć...</div>
+            <div class="indent-5 text-justify">
+              W gruncie rzeczy, nie mam pojęcia jak opisać tą książkę. Opisy
+              fabuły nie mają sensu, bo wszyscy zainteresowani nią wiedzą, na
+              czym polega. Pielgrzymka, potwór, ksiądz, uczony, poeta, itd.
+            </div>
+            <div class="indent-5 text-justify">
+              Ciekawą rzeczą jest struktura. Podzielenie książki na opowiadania
+              uczestników jest ciekawym zabiegiem, tym bardziej, że są one
+              dostosowane do fabuły "pomiędzy". Ksiądz czytający swoją historię
+              z dziennika? Tak, zgadza się, jego opowiadanie wygląda jak kartki
+              z owego dziennika. Pod tym kątem Hyperion błyszczy.
+            </div>
+            <div class="indent-5 text-justify">
+              Ale nie tylko pod tym. Historie same w sobie są ciekawe.
+              Zróżnicowane. I to stosunkowo mocno. Simmons włada słowem
+              sprawnie, czyta się szybko, momentami łapałem się na tym, że
+              chciałbym kontynuować lekturę mimo, że na 6 trzeba wstać do
+              pracy.... i nie raz (tylko 2, ale patrząc że książkę czytałem 3
+              dni to i tak sporo ;P) wstałem po raptem 3h snu... Moją ulubioną
+              historią jest chyba ta, którą opowiada uczony. Drugą księdza.
+              Pozostałe są chyba razem na trzecim miejscu.
+            </div>
+            <div class="indent-5 text-justify">
+              Ale chwila. Skoro praktycznie daje same plusy, to czemu 9 a nie
+              10? Przez zakończenie. Z jednej strony, jest ono świetne. Zostawia
+              wielką niewiadomą, dużo niedopowiedzeń. Gdyby to był tylko i
+              wyłącznie 1 tom, to bym piał z zachwytu. Ale nie jest. Aby poznać
+              kontynuacje, trzeba sięgnąć po kolejne tomy. I w takim zestawieniu
+              to zakończenie jest zbyt nagłe, zbyt mało rozwiązuje. Praktycznie
+              jedyne czego się dowiadujemy, to kto jest szpiegiem o którym jest
+              mowa na pierwszych stronach. I to tyle. Brak punktu
+              kulminacyjnego, brak... "tego czegoś".
+            </div>
+            <div class="indent-5 text-justify">
+              Słyszałem dość dużo opinii, że tom drugi jest słabszy. I teraz nie
+              wiem, czy warto ryzykować potencjalnym zepsuciem tego wrażenia,
+              czy trwać w błogiej niewiedzy i snuć teorie co się stało. Pewnie i
+              tak sięgnę po kontynuację, ale ciekawym doświadczeniem jest
+              zastanawiać się, po raz pierwszy w życiu, czy chcę kontynuację
+              jednej z lepszych pozycji jaka wpadła w moje ręce.
+            </div>
+          </div>
+        </div>
+
+        <!--19-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/nimzawisna.jpg"
+                loading="lazy"
+                alt="nim zawisną"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">oS</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 22.01.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#1558a6]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Nim zawisną
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Joe Abercrombie
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Pierwsze prawo, 2
+              </div>
+            </div>
+            <div class="mb-2 font-bold text-center text-rose-600">
+              <i class="fa-solid fa-heart"></i> ARCYDZIEŁO!
+            </div>
+
+            <div class="indent-5 text-justify mb-2">
+              Abercrombie rozpierdala system.
+            </div>
+            <div class="indent-5 text-justify">
+              Mało subtelnie? Być może. Ale takie właśnie jest "Pierwsze prawo".
+            </div>
+            <div class="indent-5 text-justify">
+              Joe nie sili się na próby ugrzecznienia świata. Nie dąży do tego,
+              abyśmy polubili głównych bohaterów. Wręcz przeciwnie. Żadnego z
+              nich nie chcielibyście spotkać. Od wkurwionego maga który siłą
+              woli rozrywa na strzępy oponentów; poprzez barbarzyńcę który, choć
+              inteligentny, nie boi się rozlewu krwi... oraz resztek flaków na
+              butach; aż do kalekiego przedstawiciela inkwizycji, który swoim
+              ofiarom czyni to, co uczyniło go kalekim.
+            </div>
+            <div class="indent-5 text-justify">
+              Jest jeszcze głupiutki żołnierz ze zbyt wysokim mniemaniem o
+              sobie, który w tym tomie... zyskuje powoli sympatię. Bardzo
+              powoli, ale jednak. Jest "dzikuska", która jest postacią na swój
+              sposób wyjątkową - najbardziej ludzką? W szczególności pod koniec,
+              gdy jej relacja z... albo, lepiej jak się dowiecie sami ;P. Oraz
+              jest wiele postaci drugoplanowych, które są tak samo istotne jak
+              ci główni. Tu nie ma źle napisanych bohaterów.
+            </div>
+            <div class="indent-5 text-justify">
+              I choć nie da się ich lubić, to zrozumienie ich motywacji, to
+              dlaczego są jacy są - przychodzi bez najmniejszego problemu. I to
+              właśnie jest ten kunszt mistrza - stworzyć postacie żywe. Z
+              prawdziwymi problemami, brutalne, mściwe. Postacie, których losy
+              śledzimy z zapartym tchem.
+            </div>
+            <div class="indent-5 text-justify">
+              Ten tom skupia się na obronie miasta, polityce, wojnie... ale
+              przede wszystkim na rozwoju. Świat coraz bardziej się przed nami
+              otwiera, ukazuje mechaniki, mrugnięcia okiem które w późniejszych
+              tomach na 100% będą wracać niczym flashbacki typu "FSCK, przecież
+              można było się tego domyśleć, bo [...]".
+            </div>
+            <div class="indent-5 text-justify mb-2">
+              Syndrom drugiego tomu? Nie tym razem. Tom pierwszy, choć genialny,
+              był słabszy. Dostał 10/10. W tej skali "Nim zawisną" powinno
+              dostać przynajmniej 15!
+            </div>
+            <div class="indent-5 text-justify">
+              PS. West w tym tomie jest niesamowicie dobrze napisany. WIadomo,
+              nie jest to Glokta, ale coraz bardziej skrada moje serduszko ;P
+            </div>
+          </div>
+        </div>
+
+        <!--18-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/kosciskryby.jpg"
+                loading="lazy"
+                alt="kości skryby"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o10</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 18.01.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#389841]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Kości
+                Skryby
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Brandon Sanderson
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Alcatraz kontra
+                Bibliotekarze, 2
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Kolejny genialny Sanderson w bardziej humorystycznej i lekkiej
+              odsłonie.
+            </div>
+            <div class="indent-5 text-justify">
+              Genialne łamanie czwartej ściany? Jest. Świetni bohaterowie?
+              Obecni. Zabawna i ciekawa historia? Jeszcze jak!
+            </div>
+            <div class="indent-5 text-justify">
+              W przerwach od Lorda Grimdarka aka Joe Abercrombiego takie lekkie
+              i humorystyczne odświeżenie jest bardzo na plus. Bardzo, bardzo na
+              plus!
+            </div>
+          </div>
+        </div>
+
+        <!--17-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/piasekraszida.jpg"
+                loading="lazy"
+                alt="piasek raszida"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o10</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 12.01.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#ce8f3f]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Piasek
+                Raszida
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Brandon Sanderson
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Alcatraz kontra
+                Bibliotekarze, 1
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Książka zdecydowanie dla młodszego odbiorcy. Może nie dziecka, ale
+              raczej młodszego nastolatka. Mimo to, ja, dorosły facet,
+              słuchający audiobooka pracując na kasie marki z miłym płazem w
+              nazwie, bawiłem się wyśmienicie.
+            </div>
+            <div class="indent-5 text-justify">
+              Bardzo oryginalny pomysł na narracje, ciekawe i żywe postacie,
+              wciągająca fabuła... i genialne wstawki łamiące czwartą ścianę.
+              Czuć, że Brandon był w formie.
+            </div>
+            <div class="indent-5 text-justify">
+              Muszę jedynie dodać, aby być uczciwym, że moja opinia może być
+              nieobiektywna, ponieważ jestem psychofanem Sandersona. Do tego
+              stopnia, że gdy dojdzie do mnie informacja, że się rozwiódł z
+              żoną, rzucę wszystko i wyjadę do stanów. I nie ważne co powie na
+              to moja narzeczona!
+            </div>
+          </div>
+        </div>
+
+        <!--16-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/przygodysh.jpg"
+                loading="lazy"
+                alt="przygody sherlocka holmesa"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o7</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 11.01.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#e29427]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Przygody
+                Sherlocka Holmesa
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> A. C. Doyle
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Sherlock Holmes, 5
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">Eh.</div>
+            <div class="indent-5 text-justify">
+              To jeden z tych momentów, w których nie wiem co napisać.
+            </div>
+            <div class="indent-5 text-justify">
+              Jak do tej pory najsłabsza część (choć kilka wątków błyszczy),
+              ale... pytanie brzmi: Ta część jest słabsza, czy po prostu nie
+              przepadam za opowiadaniami?
+            </div>
+            <div class="indent-5 text-justify">
+              W gruncie rzeczy, to ostatnie jest pewne. Jedyną niewiadomą jest
+              wpływ tego faktu na ocenę.
+            </div>
+            <div class="indent-5 text-justify">
+              Co do języka oraz stylu - pod tym kątem jest super. Tylko znów
+              nasuwa się pytanie, czy naprawdę jest lepiej, czy ja się
+              przyzwyczaiłem? Bo w gruncie rzeczy w 11 dni przeczytałem 5 tomów
+              Holmesa... ;P
+            </div>
+          </div>
+        </div>
+
+        <!--15-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/dolinastrachu.jpg"
+                loading="lazy"
+                alt="dolina strachu"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o9</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 07.01.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#a72994]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Dolina
+                Strachu
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> A. C. Doyle
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Sherlock Holmes, 4
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Tom 4 przygód Sherlocka Holmesa jest, jak tom 3ci, dużo lepszy od
+              pierwszych dwóch. Coraz większą przyjemność czerpię z odsłuchu
+              audiobooków
+            </div>
+          </div>
+        </div>
+
+        <!--14-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/piesbaskervillow.jpg"
+                loading="lazy"
+                alt="pies baskervillów"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o9</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 07.01.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#90b83d]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Pies
+                Baskervillów
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> A. C. Doyle
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Sherlock Holmes, 3
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Książka sporo lepsza od poprzednich. Tłumaczenie bardziej mi
+              odpowiada, dialogi nie są aż tak sztuczne. Jak w każdym tomie -
+              postacie, świat, historia 11/10
+            </div>
+          </div>
+        </div>
+
+        <!--13-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/znakczterech.jpg"
+                loading="lazy"
+                alt="znakczterech"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o8</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 06.01.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#3d8cc7]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Znak
+                czterech
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> A. C. Doyle
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Sherlock Holmes, 2
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Powtórka z tomu 1. Super postacie, świetna historia, genialna
+              dedukcja Holmesa... ale te dialogi cały czas kuleją. Ale mimo to,
+              muszę przyznać że z przyjemnością będę kontynuował ;3
+            </div>
+          </div>
+        </div>
+
+        <!--12-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/studiumwszkarlacie.jpg"
+                loading="lazy"
+                alt="studium w szkarłacie"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o8</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 03.01.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#c0015e]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Studium w
+                szkarłacie
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> A. C. Doyle
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Sherlock Holmes, 1
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              9 gwiazdek za postacie, świat, fabułę. Za styl, albo tłumaczenie -
+              7. Średnia 8. Mimo to, mam mieszane uczucie.
+            </div>
+
+            <div class="indent-3 md:indent-5 text-justify">
+              Ciężko powiedzieć, że jest to książka źle napisana - bo to jednak
+              klasyk. Ale odbiega od jakości warsztatu obecnych autorów. Nie
+              mówię tu o moich ulubieńcach jak Sanderson czy Abercrombie, ale
+              wydaje mi się, że z zachowaniem świata i postaci, nie zmieniając
+              ich charakteru ani fabuły, nawet Remek Mróz dałby radę napisać
+              książkę przyjemniejszą w odbiorze.
+            </div>
+
+            <div class="indent-3 md:indent-5 text-justify">
+              Nie zrozumcie mnie źle, bo nadal jest to książka rewelacyjna.
+              Działanie dedukcji Sherlocka nadal powoduje opad szczęki. Na pewno
+              będę kontynuował przygodę naszym detektywem ;3
+            </div>
+          </div>
+        </div>
+
+        <!--11-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/ostrze.jpg"
+                loading="lazy"
+                alt="ostrze"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">oS</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 01.01.2023
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#da0100]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Ostrze
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Joe Abercrombie
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Pierwsze prawo, 1
+              </div>
+            </div>
+            <div class="mb-2 font-bold text-center text-rose-600">
+              <i class="fa-solid fa-heart"></i> ARCYDZIEŁO!
+            </div>
+
+            <div class="indent-5 text-justify">
+              Abercrombie wszedł do mojego panteonu ulubionych autorów, i
+              zasiada praktycznie z automatu na drugim miejscu podium. A to
+              tylko 1 z 13 jego książek.
+            </div>
+
+            <div class="indent-3 md:indent-5 text-justify">
+              Historia opowiada o postaciach żywych, jak żadne inne. O
+              postaciach, których choć nie można polubić (przynajmniej w pełni),
+              ale można zrozumieć. Genialny świat, genialna akcja, genialna
+              fabuła, postacie, po prostu genialna książka!
+            </div>
+
+            <div class="indent-3 md:indent-5 text-justify">
+              Do przeczytania zachęciła mnie recenzja (i nie tylko ona, bo mówi
+              o tej serii cały czas) niejakiego
+              <a
+                href="https://www.youtube.com/@ksiazkowebajdurzenie5272/"
+                class="linki"
+                ><i class="fa-solid fa-link"></i> Książkowe Bajdurzenie</a
+              >. Również polecam wpaść na kanał, robi świetną robotę ;3
+            </div>
+          </div>
+        </div>
+
+        <!--10-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/decimusfate2.jpg"
+                loading="lazy"
+                alt="decimus 2"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">oS</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 21.12.2022
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#2f9f91]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Decimus
+                Fate i Rzeźnik z Guile
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Peter A. Flannery
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Decimus Fate, 2
+              </div>
+            </div>
+            <div class="mb-2 font-bold text-center text-rose-600">
+              <i class="fa-solid fa-heart"></i> ARCYDZIEŁO!
+            </div>
+
+            <div class="indent-5 text-justify">
+              Ta seria to moje pierwsze zetknięcie z audiobookami. Wcześniej nie
+              potrafiłem się skupić na głosie lektora, usypiało mnie to, ogólnie
+              - audio nie było dla mnie
+            </div>
+            <div class="indent-5 text-justify">
+              Z racji na pracę, a raczej jej ilość, postanowiłem zmienić
+              przyzwyczajenia i sprawdzić Decimusa w tej oto formie. I ja nie
+              wiem, czy to zadziałał efekt który opisałem w recenzji pierwszego
+              tomu (wszystko co robimy w pracy a nie jest pracą daje podwójną
+              przyjemność), czy co tu się stało, ale "rzeźnik" rozwala system.
+              Mamy wszystko to, za co pokochaliśmy tom 1. Ale 3x więcej i 30x
+              lepiej. Serio, liczyłem.
+            </div>
+            <div class="indent-5 text-justify">
+              Historia jest mroczniejsza, bardziej brutalna, ale jednocześnie
+              dalej lekka w odbiorze i momentami naprawdę zabawna. I od
+              czwartego rozdziału naprawdę wciąga
+            </div>
+            <div class="indent-5 text-justify">
+              Dlaczego akurat czwartego? Nie wiem, tak o, strzeliłem. Chodzi
+              głównie o to, że na początku autor przypomina nam postacie i co
+              się działo w tomie pierwszym. Mnie to osobiście irytowało, ale
+              może dlatego, że 2 tomy pochłonąłem w 3 dni. No i ogólnie nie
+              lubię takich zabiegów. A raczej aż tak bezpośrednich.
+            </div>
+            <div class="indent-5 text-justify">
+              Akcja? Zaskakuje. Sporo wątków, dzieje się dużo.
+            </div>
+            <div class="indent-5 text-justify">
+              Nie mogę dać tej książce oceny innej niż 10/10. Czekam na kolejne
+              tomy. Bo widać, że autor ma na nie pomysły. Polecam każdemu!
+            </div>
+          </div>
+        </div>
+
+        <!--9-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/decimusfate1.jpg"
+                loading="lazy"
+                alt="Decimus 1"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">oS</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 19.12.2022
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#d73020]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Decimus
+                Fate i Talizman Marzeń
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Peter A. Flannery
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Decimus Fate, 1
+              </div>
+            </div>
+            <div class="mb-2 font-bold text-center text-rose-600">
+              <i class="fa-solid fa-heart"></i> ARCYDZIEŁO!
+            </div>
+
+            <div class="indent-5 text-justify">
+              Być może to dlatego, że audiobooka pochłaniałem w pracy, a jak
+              wiadomo, w pracy wszystko co pracą nie jest cieszy podwójnie, ale
+              jeżu. Jakie to było dobre
+            </div>
+          </div>
+        </div>
+
+        <!--8-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/basniowaopowiesc.jpg"
+                loading="lazy"
+                alt="baśniowa opowieść"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o8</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 12.2022
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#005789]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Baśniowa
+                opowieść
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Stephen King
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Ocena 8/10. Książki, którą przestałem czytać w połowie i będzie to
+              DNF. Zaciekawieni?
+            </div>
+            <div class="indent-5 text-justify">
+              To moje bodajże 6te spotkanie z Kingiem. Wcześniej był Outsider
+              który był najgorszą książką jaką przeczytałem w całości (bo nie
+              wiedzieć czemu nie chciałem jej odkładać jako DNF - z perspektywy
+              czasu powinienem). Jeszcze wcześniej komórka która mi się
+              podobała. Ogólnie - z Kingiem nigdy nie mieliśmy łatwej relacji.
+            </div>
+            <div class="indent-5 text-justify">
+              Ale (tak, wiem, nie zaczyna się zdania a już na pewno akapitu od
+              "ale"!) teraz to już naprawdę przesadził. Książka jest napisana
+              wybitnie. Styl jest boski, czyta się genialnie i bardzo szybko.
+              Tylko to nie jest książka dla mnie. Albo zacząłem ją w złym
+              momencie.
+            </div>
+            <div class="indent-5 text-justify">
+              Do momentu przejścia do innego świata podobała mi się bardzo, i
+              choć staram się ostatnimi czasu nie kupować papieru -
+              zastanawiałem się czy oprócz ebooka nie skoczyć do świataksiążki.
+              W gruncie rzeczy, zastanawiałem się czy nie dać jej 9/10.
+            </div>
+            <div class="indent-5 text-justify">
+              Dlaczego zatem jest to książka której nie planuje kończyć? Wizja
+              drugiego świata zaczęła być dla mnie... zbyt baśniowa. Czuje, że
+              klimat nie jest dla mnie, ale mimo tego nie potrafię dać oceny
+              słabszej niż owe 8/10, bo to kawał genialnie napisanej pierwszej
+              połowy. Co z drugą połową? To już musicie sprawdzić sami... ;P
+            </div>
+          </div>
+        </div>
+
+        <!--7-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/wampirzecesarstwo.jpg"
+                loading="lazy"
+                alt="wampirze cesarstwo"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">oS</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 11.2022
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#5b0103]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Wampirze
+                cesarstwo
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Jay Kristoff
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Wampirze cesarstwo,
+                1
+              </div>
+            </div>
+            <div class="mb-2 font-bold text-center text-rose-600">
+              <i class="fa-solid fa-heart"></i> ARCYDZIEŁO!
+            </div>
+
+            <div class="indent-5 text-justify">
+              Zdecydowanie najlepsza książka 2022r!
+            </div>
+            <div class="indent-5 text-justify">
+              Masa akcji. Potop krwi. Zatrzęsienie wampirów. I on. Protagonista.
+              Mistrzowsko napisany, najbardziej krwista jak i krwawa postać.
+              Jezu. Jak wytrzymać do kolejnej części?!
+            </div>
+          </div>
+        </div>
+
+        <!--6-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/duszacesarza.jpg"
+                loading="lazy"
+                alt="dusza cesarza"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o9</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 09.2019
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#457a9c]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Dusza
+                Cesarza
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Brandon Sanderson
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Elantris, 1.5
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Świetna historia, genialny system magiczny oraz świetnie
+              wykreowani bohaterowie w zaledwie 105str? Tak, to musiał być
+              Sanderson.
+            </div>
+            <div class="indent-5 text-justify">
+              Po lekturze "Idealny stan" zacząłem wierzyć że ten autor potrafi
+              pisać krótsze książki, a "Dusza cesarza" tylko mnie w tym
+              przekonaniu utrwala. Polecam każdemu!
+            </div>
+          </div>
+        </div>
+
+        <!--5-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/idealnystan.jpg"
+                loading="lazy"
+                alt="Idealany stan"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o9</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 07.2019
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#020a17]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Idealny
+                Stan
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Brandon Sanderson
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">
+              Książka na jeden wieczór a rozkręca tyle myśli o tym czym jest
+              nasza egzystencje, czym jest "prawdziwe życie", a to wszystko w
+              lekkiej z pozoru książce sci-fi/fantasy. Czyż Sanderson nie jest
+              najlepszym autorem na świecie?
+            </div>
+          </div>
+        </div>
+
+        <!--4-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/krolestwokanciarzy.jpg"
+                loading="lazy"
+                alt="królestwo kanciarzy"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">oS</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 18.09.2018
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#a69166]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Królestwo
+                kanciarzy
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Leigh Bardugo
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Szóstka wron, 2
+              </div>
+            </div>
+            <div class="mb-2 font-bold text-center text-rose-600">
+              <i class="fa-solid fa-heart"></i> ARCYDZIEŁO!
+            </div>
+            <div class="indent-5 text-justify">
+              SPOILERY NIŻEJ!<br /><br /><br /><br /><br /><br />
+            </div>
+            <div class="indent-5 text-justify">
+              Myślałem że nic mocniejszego nie może się wydarzyć po śmierci
+              jednego z ważniejszych bohaterów 40str przed końcem książki.
+              Gówno. Scena Kaza i Inej w porcie. No teraz to nie ma szans tego
+              przebić. Po czym kurwa Inej ląduje w sypialni Pekki i robi
+              pierwsze z cięć potrzebnych do wycięcia mu serca. I to uczucie
+              jakby ktoś ci w ryj strzelił po zamknięciu książki bo wiesz że to
+              już koniec. Jedyne co można zrobić to żyć z nadzieją że będzie
+              kiedyś kolejny tom...
+            </div>
+          </div>
+        </div>
+
+        <!--3-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/behawiorysta.jpg"
+                loading="lazy"
+                alt="behawiorysta"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">oS</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 02.07.2018
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold text-black bg-[#eaeceb]"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i>
+                Behawiorysta
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Remigiusz Mróz
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Gerard Edling, 1
+              </div>
+            </div>
+            <div class="mb-2 font-bold text-center text-rose-600">
+              <i class="fa-solid fa-heart"></i> ARCYDZIEŁO!
+            </div>
+
+            <div class="indent-5 text-justify">
+              Szok. To słowo dobrze obrazuje stan jaki się pojawia po
+              przeczytaniu tej jakże genialnej książki. Wciągająca fabuła to
+              jedynie szczyt góry lodowej. Najlepszy jest finał. (Spoiler czas
+              start) Po ponad 7 latach w więzieniu, Gerard został z niczym. Nie
+              ma żony, przyjaciółki (bo jakby nie patrzeć właśnie tym była
+              Beata), pracy, a jego przyszłość jest po wielkim znakiem
+              zapytania. Ale czy na pewno? Tak się przynajmniej wydaje do
+              przedostaniej strony tej historii. W finale nasz behawiorysta
+              traci przyszłości - jak sam mówi, spędzi resztę życia w więzieniu
+              po tym jak zabił kompozytora. Ale dzięki temu zyskał coś, być
+              może, ważniejszego od wolności. Na wolności nie miałby nic - jego
+              życie byłoby i tak skończone. A tak przynajmniej będzie żył ze
+              świadomością że sprawiedliwości stanie się zadość.
+            </div>
+          </div>
+        </div>
+
+        <!--2-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/szostkawron.jpg"
+                loading="lazy"
+                alt="szóstka wron"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">oS</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 06.2018
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#091523]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Szóstka
+                wron
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Leigh Bardugo
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-books"></i> Szóstka wron, 1
+              </div>
+            </div>
+            <div class="mb-2 font-bold text-center text-rose-600">
+              <i class="fa-solid fa-heart"></i> ARCYDZIEŁO!
+            </div>
+
+            <div class="indent-5 text-justify">
+              Jedna z najlepszych książek w mojej kolekcji!
+            </div>
+          </div>
+        </div>
+
+        <!--1-->
+        <div
+          class="bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row"
+        >
+          <div
+            class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center"
+          >
+            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+              <img
+                src="/assets/img/ksiazki/outsider.jpg"
+                loading="lazy"
+                alt="outsider"
+                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+              />
+            </div>
+            <div id="Oceny">o4</div>
+            <div class="font-bold text-base md:text-lg">
+              <i class="fa-duotone fa-solid fa-calendar-pen"></i> 06.2018
+            </div>
+          </div>
+
+          <div
+            class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75"
+          >
+            <div
+              class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold bg-[#000000]/75"
+            >
+              <div>
+                <i class="fa-duotone fa-solid fa-book-bookmark"></i> Outsider
+              </div>
+              <div>
+                <i class="fa-duotone fa-solid fa-feather"></i> Stephen King
+              </div>
+            </div>
+
+            <div class="indent-5 text-justify">Król powinien abdykować?</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="z-50">
+      <div
+        id="footer"
+        class="h-16 xs:h-12 text-sm sm:text-base flex flex-col xs:flex-row bg-blue-700/60 backdrop-blur-[2px] md:my-4 md:mx-3 md:rounded-full p-2 justify-center xs:justify-evenly items-center gap-1 md:gap-0"
+      >
+        <div class="flex flex-row justify-center items-center">
+          2019-<full-year></full-year>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            class="w-5 h-5 mx-1 fill-white inline-block align-middle"
+          >
+            <path
+              d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM205.1 306.9c-28.1-28.1-28.1-73.7 0-101.8s73.7-28.1 101.8 0c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9c-46.9-46.9-122.8-46.9-169.7 0s-46.9 122.8 0 169.7 122.8 46.9 169.7 0c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0c-28.1 28.1-73.7 28.1-101.8 0z"
+            />
+          </svg>
+          <strong>Adrian Marciniuk</strong>
+        </div>
+
+        <a
+          href="/pl/polityka-prywatności/"
+          class="flex flex-row justify-center items-center"
+          ><i class="fa-duotone fa-regular fa-user-secret"></i> Polityka
+          prywatności</a
+        >
+      </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/oceny.js" defer></script>
+  </body>
+</html>

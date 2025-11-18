@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marcini.uk/sitemap.xml
+Human: https://marcini.uk/humans.txt

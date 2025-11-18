@@ -1,0 +1,9 @@
+{
+  "author": "Adrian Marciniuk",
+  "website": "https://marcini.uk",
+  "email": "adrian@marcini.uk",
+  "project": "Personal WebPage v3.0",
+  "year": 2025,
+  "tech": ["HTML", "CSS", "JS", "Tailwind", "too much caffeine"],
+  "note": "Built by a human — verified by insomnia."
+}
