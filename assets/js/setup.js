@@ -59,7 +59,7 @@ document.querySelectorAll(".section-btn").forEach((btn) => {
     popupInner.innerHTML = html;
 
     // DODANIE NOWYCH
-    popupContent.classList.add(`border-${color}`, `bg-${color}/10`, `border-2`);
+    popupContent.classList.add(`border-${color}`, `bg-${color}/15`, `border-2`);
 
     // DODAWANIE KOLORÓW TEKSTU
     popupInner.querySelectorAll(".colorize").forEach((el) => {
