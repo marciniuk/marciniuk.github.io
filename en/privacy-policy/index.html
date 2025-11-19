@@ -201,7 +201,264 @@
     </header>
 
     <!-- MAIN -->
-    <main></main>
+    <main
+      class="z-10 p-6 flex flex-col gap-6 items-center justify-center h-full"
+    >
+      <section class="flex flex-col text-center items-center w-full my-2">
+        <h1 class="text-3xl text-sky-300">Privacy Policy</h1>
+        <h3 class="text-xl text-amber-200">and a pancake recipe.</h3>
+      </section>
+
+      <section
+        class="gap-6 flex flex-col lg:flex-row items-center justify-center w-full lg:w-5/6 xl:3/4"
+      >
+        <!-- PRIVACY POLICY -->
+        <div class="flex flex-col w-full lg:w-1/2">
+          <button
+            class="flex items-center justify-between gap-4 w-full p-4 rounded-full bg-sky-500/70 hover:bg-sky-600/75 transition-colors duration-300 ease-in-out"
+            onclick="toggleAccordion(this)"
+          >
+            <span class="text-lg font-semibold">Privacy Policy</span>
+            <svg
+              class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <!-- COLLAPSIBLE PANEL -->
+          <div
+            class="mx-1 accordion-content border-2 border-sky-400 text-white bg-sky-800/25 backdrop-blur-sm rounded-3xl mt-2 text-base lg:text-lg"
+          >
+            <div class="p-4 flex flex-col gap-3">
+              <p>
+                Hi there!
+                <i class="fa-duotone fa-solid fa-hand-wave text-amber-400"></i>
+                I don’t have the time or desire to track people around the
+                internet, so this site doesn’t use cookies, ads, or any magical
+                tracking spells.
+              </p>
+
+              <h2 class="-mb-2 text-lg lg:text-xl font-semibold text-sky-300">
+                <i class="fa-duotone fa-regular fa-globe-pointer"></i>
+                External Links
+              </h2>
+              <p>
+                If you click a link that leads outside this website (for
+                example, to GitHub), keep in mind that
+                <em><strong>their</strong></em> privacy rules apply. Click
+                wisely!
+              </p>
+
+              <h2 class="-mb-2 text-lg lg:text-xl font-semibold text-sky-300">
+                <i class="fa-duotone fa-solid fa-mailbox-open-letter"></i>
+                Contact Form
+              </h2>
+              <p>
+                If you message me through the contact form, the data you enter
+                (name, email and message) must be processed by
+                <a
+                  href="https://staticforms.xyz/privacy-policy"
+                  target="_blank"
+                  class="text-sky-400 hover:text-sky-300 transition-colors whitespace-nowrap"
+                  ><i class="fa-solid fa-link"></i> StaticForms</a
+                >, which simply emails the form contents to me. The only
+                “database” involved is my inbox. I don’t sell it, analyze it, or
+                use it for anything shady — I just reply. Or I don’t, because
+                emails sometimes vanish into the abyss of spam. Additionally:
+              </p>
+
+              <h2 class="-mb-2 text-lg lg:text-xl font-semibold text-sky-300">
+                <i class="fa-brands fa-google"></i> reCAPTCHA
+              </h2>
+              <p>
+                Since the internet is full of bots with far more free time than
+                you and me combined, the contact form is protected by
+                <strong>Google reCAPTCHA</strong>.
+              </p>
+
+              <h2 class="-mb-2 text-base lg:text-lg font-semibold text-sky-200">
+                <i class="fa-duotone fa-solid fa-question"></i>
+                What does that mean?
+              </h2>
+              <p>
+                Google checks whether you’re a human by looking at things like
+                how you move your mouse, your browser settings, and the IP
+                you're writing from — all to make sure some robot from
+                Uzbekistan doesn’t start sending me ViagraMax™ ads. Yes, those
+                have happened. No, I didn’t need them.
+              </p>
+
+              <p>
+                By using the form, you agree that Google may process this data
+                according to their policies:
+                <br />
+                <a
+                  href="https://policies.google.com/privacy"
+                  target="_blank"
+                  class="text-sky-400 hover:text-sky-300 transition-colors whitespace-nowrap"
+                  ><i class="fa-solid fa-link"></i> Google Privacy Policy</a
+                >
+                <br />
+                <a
+                  href="https://policies.google.com/terms"
+                  target="_blank"
+                  class="text-sky-400 hover:text-sky-300 transition-colors whitespace-nowrap"
+                  ><i class="fa-solid fa-link"></i> reCAPTCHA Terms</a
+                >
+              </p>
+
+              <h2 class="-mb-2 text-lg lg:text-xl font-semibold text-sky-300">
+                <i
+                  class="fa-duotone fa-solid fa-down-left-and-up-right-to-center"
+                ></i>
+                In short:
+              </h2>
+              <p>
+                I don’t track, I don’t profile, I don’t analyze. I only ensure
+                the site works and that you can contact me.
+              </p>
+
+              <div class="flex flex-col w-full items-end">
+                <div class="text-right">
+                  <span class="italic text-2xl lg:text-3xl"
+                    >Adrian Marciniuk</span
+                  >
+                  <div class="w-full flex justify-center">
+                    <div class="text-center text-inherit">
+                      Because
+                      <i class="fa-duotone fa-solid fa-cookie-bite"></i> are
+                      only for
+                      <i class="fa-duotone fa-solid fa-mug-hot"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANCAKES -->
+        <div class="flex flex-col w-full lg:w-1/2">
+          <button
+            class="flex items-center justify-between gap-4 w-full p-4 rounded-full bg-amber-500/70 hover:bg-amber-600/75 transition-colors duration-300 ease-in-out"
+            onclick="toggleAccordion(this)"
+          >
+            <span class="text-xl lg:text-2xl font-semibold"
+              >Pancake Recipe</span
+            >
+            <svg
+              class="w-6 h-6 flex-shrink-0 transition-transform duration-300"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <!-- COLLAPSIBLE PANEL -->
+          <div
+            class="mx-1 accordion-content border-2 border-amber-400 text-white bg-amber-800/25 backdrop-blur-sm rounded-3xl mt-2 text-base lg:text-lg xl:text-xl"
+          >
+            <div class="p-4 flex flex-col gap-3">
+              <p class="text-lg lg:text-xl text-amber-400">
+                <strong
+                  ><i class="fa-regular fa-pancakes"></i> Pancakes with
+                  Class™</strong
+                >
+              </p>
+
+              <p class="text-amber-200 -mt-3">
+                <em
+                  >Because who said a royal meal needs truffles and foie
+                  gras?</em
+                >
+              </p>
+
+              <p class="text-amber-400 text-lg -mb-3">
+                <strong
+                  ><i class="fa-duotone fa-solid fa-list-check"></i>
+                  Ingredients:</strong
+                >
+              </p>
+              <ul class="list-disc list-inside">
+                <li>
+                  1 cup all-purpose flour (any you find in the kitchen works)
+                </li>
+                <li>
+                  1 cup milk – 2%, 3.2%, or slightly expired (we don't judge)
+                </li>
+                <li>
+                  ½ cup sparkling water – for fluffiness and a touch of bubbly
+                  luxury
+                </li>
+                <li>
+                  2 eggs – free-range if you're fancy (or just from the fridge)
+                </li>
+                <li>
+                  A pinch of salt — ideally sprinkled with a dramatic Salt Bae
+                  gesture
+                </li>
+                <li>
+                  1 tablespoon sugar (unless you eat pancakes with pork chops)
+                </li>
+                <li>
+                  2 tablespoons oil or butter — fitness can wait, burnt pancakes
+                  cannot
+                </li>
+              </ul>
+
+              <p class="text-amber-400 text-lg -mb-3">
+                <strong
+                  ><i class="fa-duotone fa-solid fa-fire"></i>
+                  Preparation:</strong
+                >
+              </p>
+              <ol class="list-decimal list-inside">
+                <li>
+                  Mix the ingredients with the grace of an alchemist — aim for a
+                  potion of lightness, not a cauldron of despair. The whisk is
+                  your wand.
+                </li>
+                <li>
+                  Let the batter rest for 10 minutes. It deserves it. You do
+                  too.
+                </li>
+                <li>
+                  Heat the pan — but not to the point it glows like the Sun.
+                </li>
+                <li>
+                  Pour in the batter, spread it like Picasso, fry until golden.
+                </li>
+                <li>
+                  Flip with one bold, confident move — ideally in front of an
+                  audience to earn admiration.
+                </li>
+                <li>
+                  Serve with whatever you fancy: jam, Nutella, cheese, fruit, or
+                  — if you're starving — even a hot dog.
+                </li>
+              </ol>
+
+              <p class="text-amber-400 text-lg">
+                <em
+                  ><i class="fa-duotone fa-solid fa-lightbulb-on"></i> Pro
+                  tip:</em
+                >
+                if the first pancake turns out bad — that’s not a mistake,
+                that’s tradition.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="z-50 backdrop-blur-[2px] md:my-4 md:mx-3 md:rounded-full">
