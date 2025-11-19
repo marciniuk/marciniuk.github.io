@@ -69,7 +69,7 @@ function generateCanonical(filePath, lang) {
 function ensureBlankLineBetweenCloseAndComment(
   html,
   closeTagPattern,
-  commentLabel
+  commentLabel,
 ) {
   // closeTagPattern: string regex for closing tag, e.g. "<\\/footer>"
   // commentLabel: "SCRIPTS" (we'll match <!-- SCRIPTS --> in any spacing)
@@ -81,7 +81,7 @@ function ensureBlankLineBetweenCloseAndComment(
   const commentRegex = `<!--\\s*${commentLabel}\\s*-->`;
   const combined = new RegExp(
     `(${closeTagPattern})[\\t ]*(?:\\r?\\n|\\r){0,}[\\t ]*(?:\\r?\\n|\\r){0,}[\\t ]*(${commentRegex})`,
-    "gi"
+    "gi",
   );
 
   // Replace any occurrence where closeTag is followed (maybe immediately) by the comment,
@@ -108,7 +108,7 @@ function ensureSection(html, tag, htmlToInsert, label) {
   if (/<\/body>/i.test(html)) {
     return html.replace(
       /<\/body>/i,
-      `<!-- ${label} -->\n${htmlToInsert}\n\n</body>`
+      `<!-- ${label} -->\n${htmlToInsert}\n\n</body>`,
     );
   }
 
@@ -151,7 +151,7 @@ function ensureOverlay(html, overlayTpl) {
   if (/<stars/i.test(html)) {
     return html.replace(
       /<stars[^>]*>/i,
-      (m) => `${m}\n\n<!-- OVERLAY -->\n${overlayTpl}\n\n`
+      (m) => `${m}\n\n<!-- OVERLAY -->\n${overlayTpl}\n\n`,
     );
   }
 
@@ -176,7 +176,7 @@ function ensureScripts(html) {
       html = insertCommentAbove(
         html,
         new RegExp(SCRIPT_LINE.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
-        "SCRIPTS"
+        "SCRIPTS",
       );
     }
     return html;
@@ -185,7 +185,7 @@ function ensureScripts(html) {
   // brak skryptu → dodaj przed </body>
   return html.replace(
     /<\/body>/i,
-    `<!-- SCRIPTS -->\n${SCRIPT_LINE}\n\n</body>`
+    `<!-- SCRIPTS -->\n${SCRIPT_LINE}\n\n</body>`,
   );
 }
 
@@ -236,7 +236,7 @@ ${footerTpl}
 <!-- SCRIPTS -->
 ${SCRIPT_LINE}
 
-</body>`
+</body>`,
     );
 
     // normalizacja odstępów pomiędzy zamykającymi tagami i komentarzami
@@ -307,7 +307,7 @@ function normalizeCloseCommentGaps(html) {
   html = ensureBlankLineBetweenCloseAndComment(
     html,
     "<stars(?:\\s*\\/?>|>\\s*<\\/stars>)",
-    "OVERLAY"
+    "OVERLAY",
   );
 
   return html;
