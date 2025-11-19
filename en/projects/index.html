@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" class="h-full max-w-full overflow-x-clip scroll-smooth">
+  <head>
+    <!-- Main -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Adrian Marcini.uk</title>
+
+    <!-- SEO Description -->
+    <meta
+      name="description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta name="author" content="Adrian Marciniuk" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marcini.uk/" />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+
+    <!-- Assets -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/fontawesome.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="/assets/css/fontawesome.css" />
+    </noscript>
+
+    <link rel="preload" href="/assets/css/fonts.css" as="style" />
+
+    <script>
+      function loadFontsCSS(href) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = href;
+        link.media = "print";
+        link.onload = () => (link.media = "all");
+        document.head.appendChild(link);
+      }
+      loadFontsCSS("/assets/css/fonts.css");
+    </script>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://marcini.uk/en/projects/" />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrian Marciniuk",
+        "url": "https://marcini.uk/",
+        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
+        "sameAs": ["https://github.com/marciniuk"],
+        "jobTitle": "Frontend Developer",
+        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
+      }
+    </script>
+
+    <!-- Fade-in -->
+    <script>
+      window.addEventListener("load", () => {
+        setTimeout(() => document.body.classList.add("page-ready"), 100);
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- STARS -->
+    <stars></stars>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
+    >
+      <div
+        class="h-20 w-full bg-gradient-to-b from-blue-900/100 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+      ></div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="main-header"
+      class="h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-[all] duration-500 ease-in-out"
+    >
+      <div class="flex justify-between w-full items-center z-30">
+        <!-- LOGO -->
+        <a
+          href="/en/"
+          class="flex flex-row gap-2 text-3xl lg:text-4xl italic items-center"
+        >
+          <img src="/assets/img/logo3.svg" alt="logo" class="h-8 lg:h-10" />
+          Marcini.uk
+        </a>
+
+        <!-- HAMBURGER -->
+        <div
+          id="menu-toggle"
+          class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+        >
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+        </div>
+
+        <!-- WSPÓLNE MENU -->
+        <nav
+          id="mobile-menu"
+          class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+          style="height: calc(var(--vh, 1vh) * 100 - 2.75rem)"
+        >
+          <a href="/en/profile/" class="nav-link hover:text-rose-400"
+            ><i class="fa-duotone fa-solid fa-address-card"></i> Profiles</a
+          >
+          <a href="/en/projects/" class="nav-link hover:text-emerald-400"
+            ><i class="fa-duotone fa-solid fa-diagram-project"></i> Projects</a
+          >
+          <a href="/en/setup/" class="nav-link hover:text-amber-400"
+            ><i class="fa-duotone fa-solid fa-display-code"></i> Setup</a
+          >
+          <a href="/en/contact/" class="nav-link hover:text-sky-400"
+            ><i class="fa-duotone fa-solid fa-envelope-open-text"></i>
+            Contact</a
+          >
+        </nav>
+      </div>
+
+      <!-- VH FIX -->
+      <script>
+        (function () {
+          function setVh() {
+            document.documentElement.style.setProperty(
+              "--vh",
+              `${window.innerHeight * 0.01}px`,
+            );
+          }
+          setVh();
+          window.addEventListener("resize", setVh);
+        })();
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main></main>
+
+    <!-- FOOTER -->
+    <footer class="z-50 backdrop-blur-[2px] md:my-4 md:mx-3 md:rounded-full">
+      <div
+        id="footer"
+        class="h-16 xs:h-12 text-sm sm:text-base flex flex-col xs:flex-row bg-blue-700/60 md:rounded-full p-2 justify-center xs:justify-evenly items-center gap-1 md:gap-0"
+      >
+        <div class="flex flex-row justify-center items-center">
+          2019-<full-year></full-year>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            class="w-5 h-5 mx-1 fill-white inline-block align-middle"
+          >
+            <path
+              d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM205.1 306.9c-28.1-28.1-28.1-73.7 0-101.8s73.7-28.1 101.8 0c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9c-46.9-46.9-122.8-46.9-169.7 0s-46.9 122.8 0 169.7 122.8 46.9 169.7 0c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0c-28.1 28.1-73.7 28.1-101.8 0z"
+            />
+          </svg>
+          <strong>Adrian Marciniuk</strong>
+        </div>
+
+        <a
+          href="/en/privacy-policy/"
+          class="flex flex-row justify-center items-center"
+          ><i class="fa-duotone fa-regular fa-user-secret"></i> Privacy
+          Policy</a
+        >
+      </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="/assets/js/main.js"></script>
+  </body>
+</html>
