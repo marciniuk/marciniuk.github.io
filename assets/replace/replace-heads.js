@@ -5,6 +5,9 @@ import path from "path";
 const rootDir = process.cwd();
 const replaceDir = path.join(rootDir, "assets/replace");
 
+// === Domena ===
+const baseUrl = "https://marcini.uk";
+
 // 🎨 Kolory konsoli
 const colors = {
   reset: "\x1b[0m",
@@ -30,7 +33,7 @@ function loadHeadTemplates() {
     }
   } catch {
     console.error(
-      `${colors.magenta}❌ Nie znaleziono katalogu /assets/replace${colors.reset}`,
+      `${colors.magenta}❌ Nie znaleziono katalogu /assets/replace${colors.reset}`
     );
     process.exit(1);
   }
@@ -40,7 +43,7 @@ function loadHeadTemplates() {
 const templates = loadHeadTemplates();
 if (Object.keys(templates).length === 0) {
   console.error(
-    `${colors.magenta}❌ Brak plików head-xx.html w /assets/replace${colors.reset}`,
+    `${colors.magenta}❌ Brak plików head-xx.html w /assets/replace${colors.reset}`
   );
   process.exit(1);
 }
@@ -48,6 +51,22 @@ if (Object.keys(templates).length === 0) {
 // 🔹 Pomocnicze
 function relative(filePath) {
   return "/" + path.relative(rootDir, filePath).replace(/\\/g, "/");
+}
+
+// === NOWE: generowanie canonical ===
+function generateCanonical(filePath) {
+  // przykład wejścia: /home/.../pl/setup/index.html
+  let rel = path.relative(rootDir, filePath).replace(/\\/g, "/");
+
+  if (!rel.startsWith("/")) rel = "/" + rel;
+
+  // usuń index.html → zostaje folder
+  rel = rel.replace(/index\.html$/, "");
+
+  // jeśli plik nie jest indexem (np. /pl/faq.html) → dodaj trailing slash
+  if (!rel.endsWith("/")) rel += "/";
+
+  return baseUrl + rel;
 }
 
 // 🔹 Zastosowanie wcięcia do każdej linii
@@ -73,7 +92,12 @@ function processDirectory(dir, lang) {
 // 🔹 Główna logika
 function processFile(filePath, lang) {
   let content = fs.readFileSync(filePath, "utf8");
-  const newHead = templates[lang] || templates["pl"];
+  let newHead = templates[lang] || templates["pl"];
+
+  // === NOWE: wstrzyknięcie canonical ===
+  const canonical = generateCanonical(filePath);
+  newHead = newHead.replace("{{CANONICAL}}", canonical);
+
   const headRegex = /(\n?)([\t ]*)<head[\s\S]*?<\/head>(\n?)/i;
   const relPath = relative(filePath);
 
@@ -84,18 +108,18 @@ function processFile(filePath, lang) {
     content = content.replace(headRegex, formattedHead);
     fs.writeFileSync(filePath, content, "utf8");
     console.log(
-      `${colors.green}✔ [${lang}] Zaktualizowano head:${colors.reset} ${relPath}`,
+      `${colors.green}✔ [${lang}] Zaktualizowano head:${colors.reset} ${relPath}`
     );
   } else {
     console.log(
-      `${colors.magenta}❌ Brak sekcji <head> w:${colors.reset} ${relPath}`,
+      `${colors.magenta}❌ Brak sekcji <head> w:${colors.reset} ${relPath}`
     );
   }
 }
 
 // 🔹 Uruchomienie
 console.log(
-  `${colors.cyan}🔍 Skanowanie katalogów /en i /pl...${colors.reset}\n`,
+  `${colors.cyan}🔍 Skanowanie katalogów /en i /pl...${colors.reset}\n`
 );
 
 const enDir = path.join(rootDir, "en");
@@ -108,5 +132,5 @@ if (fs.existsSync(plDir)) processDirectory(plDir, "pl");
 else console.log(`${colors.yellow}⚠ Brak katalogu /pl${colors.reset}`);
 
 console.log(
-  `\n${colors.magenta}🎉 Gotowe! Heads zaktualizowane!${colors.reset}\n`,
+  `\n${colors.magenta}🎉 Gotowe! Heads zaktualizowane!${colors.reset}\n`
 );

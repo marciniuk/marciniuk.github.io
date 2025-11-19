@@ -36,6 +36,26 @@ function readReplace(file) {
     : "";
 }
 
+// ======================================
+// CANONICAL
+// ======================================
+function getCanonical(filePath, lang) {
+  const baseUrl = "https://marcini.uk";
+
+  let url = filePath.replace(/\\/g, "/");
+
+  // Usuwamy root katalog językowy
+  url = url.replace(`${rootDir.replace(/\\/g, "/")}/${lang}`, "");
+
+  // Usuwamy "index.html"
+  url = url.replace(/index\.html$/, "");
+
+  // Zapewniamy końcowy "/"
+  if (!url.endsWith("/")) url += "/";
+
+  return baseUrl + url;
+}
+
 // 🧠 Sprawdzenie stanu sekcji
 function sectionState(html, tag) {
   const regex = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, "i");
@@ -59,13 +79,22 @@ function processFile(filePath, lang) {
     changed = true;
   }
 
+  // CANONICAL — generujemy zawsze
+  const canonical = getCanonical(filePath, lang);
+
+  // Wczytujemy head template i podstawiamy canonical
+  let headTemplate = readReplace(`head-${lang}.html`);
+  headTemplate = headTemplate.replace("{{CANONICAL}}", canonical);
+
   // HEAD
   const headState = sectionState(html, "head");
   if (headState === "missing" || headState === "empty") {
-    const headReplace = readReplace(`head-${lang}.html`);
-    if (headState === "empty")
-      html = html.replace(/<head[^>]*>[\s\S]*?<\/head>/i, headReplace);
-    else html = html.replace(/<\/html>/i, `\n${headReplace}\n</html>`);
+    if (headState === "empty") {
+      html = html.replace(/<head[^>]*>[\s\S]*?<\/head>/i, headTemplate);
+    } else {
+      html = html.replace(/<\/html>/i, `\n${headTemplate}\n</html>`);
+    }
+
     changed = true;
     console.log(
       `🧠 ${
