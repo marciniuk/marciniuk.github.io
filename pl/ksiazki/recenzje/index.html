@@ -12,6 +12,7 @@
       content="black-translucent"
     />
     <title>Adrian Marcini.uk</title>
+
     <!-- Opis dla SEO -->
     <meta
       name="description"
@@ -19,36 +20,16 @@
     />
     <meta name="author" content="Adrian Marciniuk" />
     <meta name="robots" content="index, follow" />
-    <!-- Open Graph / Facebook / Discord -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://marcini.uk/" />
-    <meta property="og:title" content="Adrian Marcini.uk" />
-    <meta
-      property="og:description"
-      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
-    />
-    <meta
-      property="og:image"
-      content="https://marcini.uk/assets/og/og-image.jpg"
-    />
-    <meta property="og:site_name" content="Marcini.uk" />
-    <!-- Twitter / X Cards -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@adrianmarciniuk" />
-    <meta name="twitter:creator" content="@adrianmarciniuk" />
-    <meta name="twitter:title" content="Adrian Marcini.uk" />
-    <meta
-      name="twitter:description"
-      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
-    />
-    <meta
-      name="twitter:image"
-      content="https://marcini.uk/assets/og/og-image.jpg"
-    />
+
     <!-- Linki do zasobów -->
     <link rel="preload" href="/assets/css/main.css" as="style" />
     <link href="/assets/css/main.css" rel="stylesheet" />
-    <script src="/assets/js/stars.js" async></script>
+
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+
     <link
       rel="stylesheet"
       href="/assets/css/fontawesome.css"
@@ -58,6 +39,7 @@
     <noscript>
       <link rel="stylesheet" href="/assets/css/fontawesome.css" />
     </noscript>
+
     <link rel="preload" href="/assets/css/fonts.css" as="style" />
     <script>
       function loadFontsCSS(href) {
@@ -70,6 +52,7 @@
       }
       loadFontsCSS("/assets/css/fonts.css");
     </script>
+
     <!-- Favicon -->
     <link
       rel="icon"
@@ -86,8 +69,10 @@
     />
     <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
     <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
     <!-- Canonical link -->
     <link rel="canonical" href="https://marcini.uk/pl/ksiazki/recenzje/" />
+
     <!-- Dane strukturalne JSON-LD -->
     <script type="application/ld+json">
       {
@@ -101,12 +86,41 @@
         "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
       }
     </script>
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marcini.uk/" />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+
     <!-- Fadein body -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
           document.body.classList.add("page-ready");
-        }, 150); // 150ms limit
+        }, 150);
       });
     </script>
   </head>
