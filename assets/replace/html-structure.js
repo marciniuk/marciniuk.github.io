@@ -5,253 +5,342 @@ import { execSync } from "child_process";
 const rootDir = path.resolve("./");
 const langs = ["pl", "en"];
 const replaceDir = path.join(rootDir, "assets", "replace");
-const OVERLAY_DIV = `
-    <!-- OVERLAY -->
-    <div
-      id="overlay"
-      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
-    >
-      <div
-        class="h-20 w-full bg-gradient-to-b from-blue-900/100 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
-      ></div>
-    </div>`;
 
-// 📁 Rekurencyjne pobieranie .html
+const MAIN_CONTENT = "<main></main>";
+const SCRIPT_LINE = `<script src="/assets/js/main.js"></script>`;
+
+// -------------------------------------------------------
+// Helpery
+// -------------------------------------------------------
+
+function readReplace(name) {
+  const p = path.join(replaceDir, name);
+  return fs.existsSync(p) ? fs.readFileSync(p, "utf8") : "";
+}
+
 function getHtmlFiles(dir) {
-  let files = [];
-  for (const file of fs.readdirSync(dir)) {
-    const filePath = path.join(dir, file);
-    const stat = fs.statSync(filePath);
-    if (stat.isDirectory()) files = files.concat(getHtmlFiles(filePath));
-    else if (file.endsWith(".html")) files.push(filePath);
+  if (!fs.existsSync(dir)) return [];
+  const out = [];
+  for (const entry of fs.readdirSync(dir)) {
+    const full = path.join(dir, entry);
+    const stat = fs.statSync(full);
+    if (stat.isDirectory()) out.push(...getHtmlFiles(full));
+    else if (entry.endsWith(".html")) out.push(full);
   }
-  return files;
+  return out;
 }
 
-// 📄 Wczytywanie replacementu
-function readReplace(file) {
-  const filePath = path.join(replaceDir, file);
-  return fs.existsSync(filePath)
-    ? fs.readFileSync(filePath, "utf8").trim()
-    : "";
+function isEmptyHtml(s) {
+  return !s || s.trim().length === 0;
 }
 
-// ======================================
-// CANONICAL
-// ======================================
-function getCanonical(filePath, lang) {
-  const baseUrl = "https://marcini.uk";
-
-  // Normalizujemy ścieżkę
-  let url = filePath.replace(/\\/g, "/");
-
-  // Usuwamy absolutną ścieżkę root
-  url = url.replace(rootDir.replace(/\\/g, "/"), "");
-
-  // Usuwamy prefiks językowy na początku, np. "/pl" lub "/en"
-  url = url.replace(new RegExp(`^/${lang}`), "");
-
-  // Usuwamy "index.html"
-  url = url.replace(/index\.html$/, "");
-
-  // Usuwamy podwójne // na wypadek
-  url = url.replace(/\/+/g, "/");
-
-  // Końcowy slash
-  if (!url.endsWith("/")) url += "/";
-
-  // Język PL → brak prefixu
-  if (lang === "pl") {
-    return baseUrl + url;
-  }
-
-  // EN → dodaj /en na początku
-  return baseUrl + `/en${url}`;
+function existsComment(html, label) {
+  const re = new RegExp(`<!--\\s*${label}\\s*-->`, "i");
+  return re.test(html);
 }
 
-// 🧠 Sprawdzenie stanu sekcji
-function sectionState(html, tag) {
-  const regex = new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, "i");
-  const match = html.match(regex);
-  if (!match) return "missing";
-  const inner = match[1].trim();
-  return inner.length === 0 ? "empty" : "filled";
+function insertCommentAbove(html, tagRegex, commentLabel) {
+  const match = html.match(tagRegex);
+  if (!match) return html;
+
+  const idx = match.index;
+
+  // sprawdzamy, czy już jest komentarz tuż nad elementem
+  const before = html.slice(0, idx);
+  if (/<!--\s*[A-Z ]+\s*-->\s*$/i.test(before)) return html;
+
+  return html.slice(0, idx) + `<!-- ${commentLabel} -->\n` + html.slice(idx);
 }
 
-// ✏️ Główna funkcja przetwarzania
-function processFile(filePath, lang) {
-  const relPath = filePath.replace(rootDir, "").replace(/\\/g, "/");
-  let html = fs.readFileSync(filePath, "utf8");
-  const original = html;
-  let changed = false;
+function generateCanonical(filePath, lang) {
+  // pl/setup/index.html -> https://marcini.uk/pl/setup/
+  const rel = filePath.replace(rootDir, "").replace(/\\/g, "/");
+  const parts = rel.split("/").filter(Boolean); // ["pl", "setup", "index.html"]
+  parts.shift(); // remove lang
+  if (parts[parts.length - 1] === "index.html") parts.pop();
+  const langPrefix = `/${lang}`;
+  const pathPart = parts.length ? `/${parts.join("/")}/` : "/";
+  return `https://marcini.uk${langPrefix}${pathPart}`;
+}
 
-  if (html.trim().length === 0) {
-    html = `<!DOCTYPE html>
-<html lang="${lang}" class="h-full max-w-full overflow-x-clip scroll-smooth">
-</html>`;
-    changed = true;
-  }
+// -------------------------------------------------------
+// NEW: ensure blank line between closing tag and following comment
+// -------------------------------------------------------
+function ensureBlankLineBetweenCloseAndComment(
+  html,
+  closeTagPattern,
+  commentLabel
+) {
+  // closeTagPattern: string regex for closing tag, e.g. "<\\/footer>"
+  // commentLabel: "SCRIPTS" (we'll match <!-- SCRIPTS --> in any spacing)
+  // We want to normalize patterns like:
+  // </footer>\n<!-- SCRIPTS -->    -> to -> </footer>\n\n<!-- SCRIPTS -->
+  // </footer>\n   \n\n   <!-- SCRIPTS -->  -> to -> </footer>\n\n<!-- SCRIPTS -->
+  // also handle no newline: </footer><!-- SCRIPTS --> -> </footer>\n\n<!-- SCRIPTS -->
 
-  // CANONICAL — generujemy zawsze
-  const canonical = getCanonical(filePath, lang);
+  const commentRegex = `<!--\\s*${commentLabel}\\s*-->`;
+  const combined = new RegExp(
+    `(${closeTagPattern})[\\t ]*(?:\\r?\\n|\\r){0,}[\\t ]*(?:\\r?\\n|\\r){0,}[\\t ]*(${commentRegex})`,
+    "gi"
+  );
 
-  // Wczytujemy head template i podstawiamy canonical
-  let headTemplate = readReplace(`head-${lang}.html`);
-  headTemplate = headTemplate.replace("{{CANONICAL}}", canonical);
+  // Replace any occurrence where closeTag is followed (maybe immediately) by the comment,
+  // with exactly: closeTag + newline + newline + comment
+  return html.replace(combined, (m, g1, g2) => `${g1}\n\n${g2}`);
+}
 
-  // HEAD
-  const headState = sectionState(html, "head");
-  if (headState === "missing" || headState === "empty") {
-    if (headState === "empty") {
-      html = html.replace(/<head[^>]*>[\s\S]*?<\/head>/i, headTemplate);
-    } else {
-      html = html.replace(/<\/html>/i, `\n${headTemplate}\n</html>`);
+// -------------------------------------------------------
+// Sekcje
+// -------------------------------------------------------
+
+function ensureSection(html, tag, htmlToInsert, label) {
+  const tagRe = new RegExp(`<${tag}\\b[\\s\\S]*?<\\/${tag}>`, "i");
+
+  if (tagRe.test(html)) {
+    // istnieje → dodaj komentarz jeśli brak (nad otwarciem tagu)
+    if (!existsComment(html, label)) {
+      html = insertCommentAbove(html, tagRe, label);
     }
+    return html;
+  }
 
-    changed = true;
-    console.log(
-      `🧠 ${
-        headState === "missing" ? "Dodano" : "Zastąpiono"
-      } <head> w ${relPath}`,
+  // nie istnieje → trzeba wstawić przed </body>
+  if (/<\/body>/i.test(html)) {
+    return html.replace(
+      /<\/body>/i,
+      `<!-- ${label} -->\n${htmlToInsert}\n\n</body>`
     );
   }
 
-  // BODY
-  const bodyState = sectionState(html, "body");
-  if (bodyState === "missing" || bodyState === "empty") {
-    const bodySkeleton = `<body class="bg-blue-900 min-h-full max-w-full overflow-x-clip">
-  <stars></stars>
-  <header></header>
-  <main class="z-10 p-6 flex flex-col lg:flex-row gap-6 items-center justify-center h-full"></main>
-  <footer></footer>
-  <script src="/assets/js/main.js"></script>
-</body>`;
-    if (bodyState === "empty")
-      html = html.replace(/<body[^>]*>[\s\S]*?<\/body>/i, bodySkeleton);
-    else html = html.replace(/<\/html>/i, `\n${bodySkeleton}\n</html>`);
-    changed = true;
-    console.log(
-      `🧩 ${
-        bodyState === "missing" ? "Dodano" : "Zastąpiono"
-      } <body> w ${relPath}`,
+  return html + `\n<!-- ${label} -->\n${htmlToInsert}\n\n`;
+}
+
+function ensureStars(html) {
+  const exists = /<stars\s*\/?>/i.test(html);
+  if (exists) {
+    if (!existsComment(html, "STARS")) {
+      html = insertCommentAbove(html, /<stars/i, "STARS");
+    }
+    return html;
+  }
+
+  // wstaw po body
+  const bodyOpen = html.match(/<body[^>]*>/i);
+  if (!bodyOpen) return html;
+
+  const insertPos = bodyOpen.index + bodyOpen[0].length;
+  return (
+    html.slice(0, insertPos) +
+    `\n<!-- STARS -->\n<stars></stars>\n\n` +
+    html.slice(insertPos)
+  );
+}
+
+function ensureOverlay(html, overlayTpl) {
+  const exists =
+    /id=["']overlay["']/.test(html) || html.includes(overlayTpl.trim());
+
+  if (exists) {
+    if (!existsComment(html, "OVERLAY")) {
+      html = insertCommentAbove(html, /id=["']overlay["']/, "OVERLAY");
+    }
+    return html;
+  }
+
+  // wstaw po <stars>
+  if (/<stars/i.test(html)) {
+    return html.replace(
+      /<stars[^>]*>/i,
+      (m) => `${m}\n\n<!-- OVERLAY -->\n${overlayTpl}\n\n`
     );
   }
 
-  // HEADER
-  const headerState = sectionState(html, "header");
-  if (headerState === "missing" || headerState === "empty") {
-    const headerReplace = readReplace(`header-${lang}.html`);
-    if (headerState === "empty")
-      html = html.replace(/<header[^>]*>[\s\S]*?<\/header>/i, headerReplace);
-    else html = html.replace(/<body[^>]*>/i, `$&\n${headerReplace}`);
-    changed = true;
-    console.log(
-      `🔵 ${
-        headerState === "missing" ? "Dodano" : "Zastąpiono"
-      } <header> w ${relPath}`,
-    );
+  // wstaw po body
+  const bodyOpen = html.match(/<body[^>]*>/i);
+  if (!bodyOpen) return html;
+
+  const insertPos = bodyOpen.index + bodyOpen[0].length;
+  return (
+    html.slice(0, insertPos) +
+    `\n<!-- OVERLAY -->\n${overlayTpl}\n\n` +
+    html.slice(insertPos)
+  );
+}
+
+function ensureScripts(html) {
+  const exists = html.includes(SCRIPT_LINE);
+  const commentExists = existsComment(html, "SCRIPTS");
+
+  if (exists) {
+    if (!commentExists) {
+      html = insertCommentAbove(
+        html,
+        new RegExp(SCRIPT_LINE.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
+        "SCRIPTS"
+      );
+    }
+    return html;
   }
 
-  // FOOTER
-  const footerState = sectionState(html, "footer");
-  if (footerState === "missing" || footerState === "empty") {
-    const footerReplace = readReplace(`footer-${lang}.html`);
-    if (footerState === "empty")
-      html = html.replace(/<footer[^>]*>[\s\S]*?<\/footer>/i, footerReplace);
-    else html = html.replace(/<\/body>/i, `${footerReplace}\n</body>`);
-    changed = true;
-    console.log(
-      `🟣 ${
-        footerState === "missing" ? "Dodano" : "Zastąpiono"
-      } <footer> w ${relPath}`,
+  // brak skryptu → dodaj przed </body>
+  return html.replace(
+    /<\/body>/i,
+    `<!-- SCRIPTS -->\n${SCRIPT_LINE}\n\n</body>`
+  );
+}
+
+// -------------------------------------------------------
+// Główna logika
+// -------------------------------------------------------
+
+function processFile(filePath, lang) {
+  const structure = readReplace("structure.html");
+  const headTplRaw = readReplace(`head-${lang}.html`);
+  const headerTpl = readReplace(`header-${lang}.html`);
+  const footerTpl = readReplace(`footer-${lang}.html`);
+  const overlayTpl = readReplace("overlay.html");
+
+  let html = fs.readFileSync(filePath, "utf8");
+  const originalTrimmed = html.trim();
+
+  const hasHead = /<head\b[^>]*>/i.test(html);
+  const empty = isEmptyHtml(html);
+
+  // ------------------ PUSTY PLIK -----------------------
+  if (empty) {
+    const canonical = generateCanonical(filePath, lang);
+    const headTpl = headTplRaw.replace("{{CANONICAL}}", canonical);
+
+    html = structure.replace(/<html[^>]*lang="[^"]*"/i, `<html lang="${lang}"`);
+    // nie dodajemy komentarza nad head (zgodnie z wymaganiem)
+    html = html.replace("<head></head>", `${headTpl}\n`);
+
+    html = html.replace(
+      "<body></body>",
+      `<body>
+<!-- STARS -->
+<stars></stars>
+
+<!-- OVERLAY -->
+${overlayTpl}
+
+<!-- HEADER -->
+${headerTpl}
+
+<!-- MAIN -->
+${MAIN_CONTENT}
+
+<!-- FOOTER -->
+${footerTpl}
+
+<!-- SCRIPTS -->
+${SCRIPT_LINE}
+
+</body>`
     );
+
+    // normalizacja odstępów pomiędzy zamykającymi tagami i komentarzami
+    html = normalizeCloseCommentGaps(html);
+
+    fs.writeFileSync(filePath, html);
+    return true;
   }
+
+  // ------------------ ISTNIEJĄCY PLIK -----------------------
+
+  // HEAD istnieje → nic nie ruszamy w head (nie podmieniamy canonical)
+  if (!hasHead) {
+    // brak head → wstrzykujemy head z canonical
+    const canonical = generateCanonical(filePath, lang);
+    const headTpl = headTplRaw.replace("{{CANONICAL}}", canonical);
+
+    html = html.replace(/<html[^>]*>/i, (m) => `${m}\n${headTpl}\n`);
+  }
+
+  // STARS
+  html = ensureStars(html);
 
   // OVERLAY
-  if (!html.includes('id="overlay"')) {
-    html = html.replace(/<\/stars>/i, `</stars>\n\n${OVERLAY_DIV}\n`);
-    changed = true;
-  } else {
-    const overlayBlockRegex =
-      /<div[^>]*id=["']overlay["'][^>]*>[\s\S]*?<\/div>/i;
-    const hasOverlayComment =
-      /<!--\s*OVERLAY\s*-->\s*<div[^>]*id=["']overlay["'][^>]*>/i;
+  html = ensureOverlay(html, overlayTpl);
 
-    if (overlayBlockRegex.test(html) && !hasOverlayComment.test(html)) {
-      html = html.replace(
-        overlayBlockRegex,
-        (match) => `\n\n<!-- OVERLAY -->\n${match}`,
-      );
-      changed = true;
-    }
+  // HEADER / MAIN / FOOTER
+  html = ensureSection(html, "header", headerTpl, "HEADER");
+  html = ensureSection(html, "main", MAIN_CONTENT, "MAIN");
+  html = ensureSection(html, "footer", footerTpl, "FOOTER");
+
+  // SCRIPT
+  html = ensureScripts(html);
+
+  // -------------------------------------------------------
+  // NEW: normalizuj odstępy pomiędzy zamknięciami i komentarzami
+  // -------------------------------------------------------
+  html = normalizeCloseCommentGaps(html);
+
+  if (html !== originalTrimmed) {
+    fs.writeFileSync(filePath, html);
+    return true;
   }
 
-  // KOMENTARZE
-  html = ensureComment(html, "header", "HEADER");
-  html = ensureComment(html, "main", "MAIN");
-  html = ensureComment(html, "footer", "FOOTER");
-  html = ensureScriptComment(html);
-
-  if (html !== original) {
-    fs.writeFileSync(filePath, html, "utf8");
-    console.log(`✏️  Zmieniono: ${relPath}`);
-    changed = true;
-  } else {
-    console.log(`✅ Bez zmian: ${relPath}`);
-  }
-
-  return changed;
+  return false;
 }
 
-// 📜 Komentarze sekcji
-function ensureComment(html, tagName, comment) {
-  const regex = new RegExp(
-    `([\\r\\n\\s]*)(<!--\\s*${comment}\\s*-->)?([\\r\\n\\s]*)(<${tagName}[^>]*>)`,
-    "i",
+// -------------------------------------------------------
+// wrapper który aplikuje ensureBlankLineBetweenCloseAndComment
+// dla wszystkich par które chcesz sprawdzić.
+// -------------------------------------------------------
+function normalizeCloseCommentGaps(html) {
+  // </footer>  --> <!-- SCRIPTS -->
+  html = ensureBlankLineBetweenCloseAndComment(html, "<\\/footer>", "SCRIPTS");
+
+  // </main> --> <!-- FOOTER -->
+  html = ensureBlankLineBetweenCloseAndComment(html, "<\\/main>", "FOOTER");
+
+  // </header> --> <!-- MAIN -->
+  html = ensureBlankLineBetweenCloseAndComment(html, "<\\/header>", "MAIN");
+
+  // </div> --> <!-- HEADER -->
+  // (jeżeli masz specyficzny wrapper z divem dla headera — dopasuj pattern jeśli trzeba)
+  html = ensureBlankLineBetweenCloseAndComment(html, "<\\/div>", "HEADER");
+
+  // <stars></stars> --> <!-- OVERLAY -->
+  // handle both <stars></stars> and <stars />
+  html = ensureBlankLineBetweenCloseAndComment(
+    html,
+    "<stars(?:\\s*\\/?>|>\\s*<\\/stars>)",
+    "OVERLAY"
   );
-  return html.replace(regex, (match, before, existing, between, tag) => {
-    if (existing) return match;
-    return `\n\n<!-- ${comment} -->\n${tag}`;
-  });
+
+  return html;
 }
 
-function ensureScriptComment(html) {
-  const regex =
-    /<\/footer>([\r\n\s]*)(<!--\s*SCRIPTS\s*-->)?([\r\n\s]*)(<script\b[^>]*>)/i;
-  return html.replace(
-    regex,
-    (match, afterFooter, existing, between, script) => {
-      if (existing) return match;
-      return `</footer>\n\n<!-- SCRIPTS -->\n${script}`;
-    },
-  );
-}
+// -------------------------------------------------------
+// RUN
+// -------------------------------------------------------
 
-// 🚀 Start
-const changedFiles = [];
+const changed = [];
 
 for (const lang of langs) {
-  const folderPath = path.join(rootDir, lang);
-  if (!fs.existsSync(folderPath)) continue;
-
-  console.log(`\n📁 Przeszukiwanie folderu: ${folderPath}`);
-  const htmlFiles = getHtmlFiles(folderPath);
-
-  for (const filePath of htmlFiles) {
-    const changed = processFile(filePath, lang);
-    if (changed) changedFiles.push(filePath);
+  const dir = path.join(rootDir, lang);
+  const files = getHtmlFiles(dir);
+  for (const f of files) {
+    try {
+      const did = processFile(f, lang);
+      if (did) changed.push(f);
+    } catch (err) {
+      console.error("Błąd przetwarzania", f, err);
+    }
   }
 }
 
-// 🎨 Formatowanie Prettierem tylko zmienionych plików
-if (changedFiles.length > 0) {
-  console.log(`\n🎨 Formatowanie ${changedFiles.length} plików...`);
+if (changed.length) {
+  console.log("Formatowanie zmienionych plików...");
   try {
-    const quoted = changedFiles.map((f) => `"${f}"`).join(" ");
-    execSync(`npx prettier --write ${quoted}`, { stdio: "inherit" });
-  } catch (err) {
-    console.error("⚠️ Błąd przy uruchamianiu Prettiera:", err.message);
+    execSync(`npx prettier --write ${changed.map((s) => `"${s}"`).join(" ")}`, {
+      stdio: "inherit",
+    });
+  } catch (e) {
+    console.warn("Prettier zakończył się błędem:", e.message);
   }
 } else {
-  console.log("\n✨ Brak zmian — pomijam formatowanie.");
+  console.log("Brak zmian.");
 }
