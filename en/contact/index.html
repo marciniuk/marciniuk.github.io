@@ -191,7 +191,7 @@
           function setVh() {
             document.documentElement.style.setProperty(
               "--vh",
-              `${window.innerHeight * 0.01}px`
+              `${window.innerHeight * 0.01}px`,
             );
           }
           setVh();
@@ -273,6 +273,12 @@
               tabindex="-1"
               autocomplete="off"
             />
+
+            <!-- Lang (PL/EN) -->
+            <input type="hidden" name="lang" id="lang" />
+
+            <!-- Time spent -->
+            <input type="hidden" name="time_spent" id="time_spent" />
 
             <!-- Name -->
             <label class="flex flex-col gap-1">

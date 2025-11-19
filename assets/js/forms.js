@@ -18,7 +18,17 @@ function hide(el) {
   el.classList.add("opacity-0", "pointer-events-none");
 }
 
-//Przechwycenie wysyłki
+// --- TIME & LANG TRACKING ---
+let startTime = Date.now();
+
+// Ustalanie języka automatycznie
+document.getElementById("lang").value = window.location.pathname.startsWith(
+  "/pl/",
+)
+  ? "pl"
+  : "en";
+
+// Przechwycenie wysyłki
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   show(p1);
@@ -37,6 +47,10 @@ p2no.addEventListener("click", () => hide(p2));
 
 p2yes.addEventListener("click", () => {
   hide(p2);
+
+  // Zapisz czas spędzony na stronie
+  const seconds = Math.round((Date.now() - startTime) / 1000);
+  document.getElementById("time_spent").value = seconds + "s";
 
   // reCAPTCHA + wysyłka
   grecaptcha.ready(function () {
