@@ -5,7 +5,7 @@
       https://marcini.uk/
     </loc>
     <lastmod>
-      2025-11-19T02:28:05.806Z
+      2025-11-19T14:52:36.527Z
     </lastmod>
     <priority>
       1.0
@@ -16,7 +16,7 @@
       https://marcini.uk/en/
     </loc>
     <lastmod>
-      2025-11-19T02:28:05.760Z
+      2025-11-19T15:47:17.203Z
     </lastmod>
     <priority>
       0.8
@@ -27,7 +27,7 @@
       https://marcini.uk/pl/
     </loc>
     <lastmod>
-      2025-11-19T03:33:54.101Z
+      2025-11-19T15:14:04.915Z
     </lastmod>
     <priority>
       0.8
@@ -35,10 +35,65 @@
   </url>
   <url>
     <loc>
+      https://marcini.uk/en/contact/
+    </loc>
+    <lastmod>
+      2025-11-19T15:10:56.515Z
+    </lastmod>
+    <priority>
+      0.6
+    </priority>
+  </url>
+  <url>
+    <loc>
+      https://marcini.uk/en/privacy-policy/
+    </loc>
+    <lastmod>
+      2025-11-19T15:33:35.879Z
+    </lastmod>
+    <priority>
+      0.6
+    </priority>
+  </url>
+  <url>
+    <loc>
+      https://marcini.uk/en/profiles/
+    </loc>
+    <lastmod>
+      2025-11-19T14:46:23.387Z
+    </lastmod>
+    <priority>
+      0.6
+    </priority>
+  </url>
+  <url>
+    <loc>
+      https://marcini.uk/en/projects/
+    </loc>
+    <lastmod>
+      2025-11-19T15:58:39.611Z
+    </lastmod>
+    <priority>
+      0.6
+    </priority>
+  </url>
+  <url>
+    <loc>
+      https://marcini.uk/en/setup/
+    </loc>
+    <lastmod>
+      2025-11-19T16:13:27.235Z
+    </lastmod>
+    <priority>
+      0.6
+    </priority>
+  </url>
+  <url>
+    <loc>
       https://marcini.uk/pl/kontakt/
     </loc>
     <lastmod>
-      2025-11-19T02:28:05.968Z
+      2025-11-19T15:10:56.827Z
     </lastmod>
     <priority>
       0.6
@@ -49,7 +104,7 @@
       https://marcini.uk/pl/ksiazki/
     </loc>
     <lastmod>
-      2025-11-19T02:28:06.219Z
+      2025-11-19T15:11:28.077Z
     </lastmod>
     <priority>
       0.6
@@ -60,7 +115,7 @@
       https://marcini.uk/pl/polecajki/
     </loc>
     <lastmod>
-      2025-11-19T02:44:13.238Z
+      2025-11-19T14:53:13.293Z
     </lastmod>
     <priority>
       0.6
@@ -71,7 +126,7 @@
       https://marcini.uk/pl/polityka-prywatnosci/
     </loc>
     <lastmod>
-      2025-11-19T02:40:52.836Z
+      2025-11-19T15:33:36.398Z
     </lastmod>
     <priority>
       0.6
@@ -82,7 +137,7 @@
       https://marcini.uk/pl/profile/
     </loc>
     <lastmod>
-      2025-11-19T02:40:52.868Z
+      2025-11-19T14:53:13.335Z
     </lastmod>
     <priority>
       0.6
@@ -93,7 +148,7 @@
       https://marcini.uk/pl/projekty/
     </loc>
     <lastmod>
-      2025-11-19T02:40:52.912Z
+      2025-11-19T14:53:13.373Z
     </lastmod>
     <priority>
       0.6
@@ -104,7 +159,7 @@
       https://marcini.uk/pl/setup/
     </loc>
     <lastmod>
-      2025-11-19T02:40:52.934Z
+      2025-11-19T15:58:40.037Z
     </lastmod>
     <priority>
       0.6
@@ -115,7 +170,7 @@
       https://marcini.uk/pl/ksiazki/historia/
     </loc>
     <lastmod>
-      2025-11-19T02:28:06.180Z
+      2025-11-19T14:53:13.064Z
     </lastmod>
     <priority>
       0.5
@@ -126,7 +181,7 @@
       https://marcini.uk/pl/ksiazki/recenzje/
     </loc>
     <lastmod>
-      2025-11-19T02:28:06.371Z
+      2025-11-19T14:46:23.787Z
     </lastmod>
     <priority>
       0.5
@@ -137,7 +192,7 @@
       https://marcini.uk/404.html
     </loc>
     <lastmod>
-      2025-11-19T02:28:03.049Z
+      2025-11-19T14:53:11.208Z
     </lastmod>
     <priority>
       0.3
