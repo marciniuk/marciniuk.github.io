@@ -111,7 +111,7 @@
     </script>
   </head>
 
-  <body class="bg-blue-900 min-h-full max-w-full overflow-x-clip">
+  <body>
     <!-- STARS -->
     <stars></stars>
 
@@ -184,7 +184,7 @@
           function setVh() {
             document.documentElement.style.setProperty(
               "--vh",
-              `${window.innerHeight * 0.01}px`
+              `${window.innerHeight * 0.01}px`,
             );
           }
           setVh();
