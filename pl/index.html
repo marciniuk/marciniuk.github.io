@@ -360,12 +360,12 @@
     </footer>
     <!-- JS -->
     <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/xd.js" defer></script>
-    <script defer>
-      const css = document.createElement("link");
-      css.rel = "stylesheet";
-      css.href = "/assets/css/xd.css";
-      document.head.appendChild(css);
-    </script>
+    <link
+      rel="preload"
+      href="/assets/css/xd.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="/assets/css/xd.css" /></noscript>
   </body>
 </html>
