@@ -6,7 +6,7 @@
   "main": "index.html",
   "scripts": {
     "build": "tailwindcss -i ./input.css -o ./assets/css/main.css --watch",
-    "build:prod": "set NODE_ENV=production&& tailwindcss -i ./input.css -o ./assets/css/main.css --minify && echo. && node generate-sitemap.js && echo.",
+    "build:prod": "tailwindcss -i ./input.css -o ./assets/css/main.css --minify && echo. && node generate-sitemap.js && echo.",
     "head": "node assets/replace/replace-heads.js",
     "footer": "node assets/replace/replace-footers.js",
     "header": "node assets/replace/replace-headers.js",
