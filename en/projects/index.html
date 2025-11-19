@@ -169,6 +169,7 @@
           class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
           style="height: calc(var(--vh, 1vh) * 100 - 2.75rem)"
         >
+          <a href="/en/profiles/" class="nav-link hover:text-rose-400"
             ><i class="fa-duotone fa-solid fa-address-card"></i> Profiles</a
           >
           <a href="/en/projects/" class="nav-link hover:text-emerald-400"
@@ -200,7 +201,362 @@
     </header>
 
     <!-- MAIN -->
-    <main></main>
+    <main
+      class="z-10 p-6 pt-10 min-h-full grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(30rem,1fr))] gap-6 place-items-center w-full"
+    >
+      <!-- Website -->
+      <div
+        class="bg-cyan-700 rounded-lg max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2 transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)] hover:shadow-cyan-900/75"
+      >
+        <div class="flex flex-row w-full rounded-lg">
+          <div
+            class="w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%] shrink-0 p-2 -ml-1 flex flex-col h-full"
+          >
+            <div class="flex-1 flex items-center justify-center">
+              <img
+                src="/assets/img/projekty/logo.png"
+                class="w-full aspect-square object-contain"
+              />
+            </div>
+            <div class="flex flex-row justify-evenly w-full">
+              <a
+                class="text-2xl lg:text-3xl"
+                href="https://github.com/marciniuk/marciniuk.github.io"
+              >
+                <span
+                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
+                >
+                  <i
+                    class="fab fa-github hover:text-[120%] transition-all duration-300 ease-out text-cyan-500 hover:text-cyan-300"
+                  ></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col">
+            <div class="text-center mb-1">
+              <div
+                class="bg-cyan-700 text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 font-bold pb-1 pl-3 pr-2"
+              >
+                Website
+              </div>
+            </div>
+            <div
+              class="text-sm xs:text-base 2xl:text-lg p-2 pl-3 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-purple-700"
+            >
+              Files of the website you’re currently browsing. Everything is
+              under the
+              <a
+                href="https://choosealicense.com/licenses/isc/"
+                class="text-cyan-400 hover:text-cyan-600 whitespace-nowrap transition-all duration-300 ease-out"
+                ><i class="fas fa-link"></i> <b>ISC license</b></a
+              >. In short: copying is allowed as long as you credit me as the
+              original author ;D
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KROFFT -->
+      <div
+        class="bg-[#2c2e83] rounded-lg max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2 transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)] hover:shadow-[#2c2e83]/75"
+      >
+        <div class="flex flex-row w-full rounded-lg">
+          <div
+            class="w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%] shrink-0 p-2 -ml-1 flex flex-col h-full"
+          >
+            <div class="flex-1 flex items-center justify-center">
+              <img
+                src="/assets/img/projekty/krofft.png"
+                class="w-full aspect-square object-contain"
+              />
+            </div>
+            <div class="flex flex-row justify-evenly w-full">
+              <a
+                class="text-2xl lg:text-3xl"
+                href="https://github.com/marciniuk/krofft"
+              >
+                <span
+                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
+                >
+                  <i
+                    class="fab fa-github hover:text-[120%] transition-all duration-300 ease-out text-[#494bd8] hover:text-[#595cff]"
+                  ></i
+                ></span>
+              </a>
+              <a class="text-2xl lg:text-3xl" href="https://krofft.pl">
+                <span
+                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
+                >
+                  <i
+                    class="fas fa-link hover:text-[120%] transition-all duration-300 ease-out text-[#494bd8] hover:text-[#595cff]"
+                  ></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col">
+            <div class="text-center mb-1">
+              <div
+                class="bg-krofft-1 text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 font-bold pb-1 pl-3 pr-2"
+              >
+                KROFFT
+              </div>
+            </div>
+            <div
+              class="text-sm xs:text-base 2xl:text-lg p-2 pl-3 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-krofft-1"
+            >
+              The latest project — a website for a friendly company that makes
+              the best custom furniture in Poland! They definitely didn’t tell
+              me to write that. I'm not lying.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GZG -->
+      <div
+        class="bg-emerald-700 rounded-lg w-full max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2 transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)] hover:shadow-green-900/75"
+      >
+        <div class="flex flex-row w-full rounded-lg">
+          <div
+            class="w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%] shrink-0 p-2 -ml-1 flex flex-col h-full"
+          >
+            <div class="flex-1 flex items-center justify-center">
+              <img
+                src="/assets/img/projekty/gzg2.png"
+                class="w-full aspect-square object-contain"
+              />
+            </div>
+            <div class="flex flex-row justify-evenly w-full">
+              <a
+                class="text-2xl lg:text-3xl"
+                href="https://github.com/marciniuk/GrandZoneGaming"
+              >
+                <span
+                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
+                >
+                  <i
+                    class="fab fa-github hover:text-[120%] transition-all duration-300 ease-out text-emerald-500 hover:text-emerald-300"
+                  ></i
+                ></span>
+              </a>
+              <a class="text-2xl lg:text-3xl" href="https://gzg.netlify.app">
+                <span
+                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
+                >
+                  <i
+                    class="fas fa-link hover:text-[120%] transition-all duration-300 ease-out text-emerald-500 hover:text-emerald-300"
+                  ></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col">
+            <div class="text-center mb-1">
+              <div
+                class="bg-emerald-700 text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 font-bold pb-1 pl-3 pr-2"
+              >
+                GrandZoneGaming
+              </div>
+            </div>
+            <div
+              class="text-sm xs:text-base 2xl:text-lg p-2 pl-3 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-green-700"
+            >
+              My first larger commercial project. The code is crap, but the
+              experience gained during
+              <span class="whitespace-nowrap">10 months</span> of collaboration
+              proved useful in subsequent projects. In addition to the website,
+              I also made a chat for GZG (<a
+                href="https://github.com/marciniuk/gzgsend"
+                class="text-emerald-300 hover:text-emerald-600 whitespace-nowrap transition-all duration-300 ease-out"
+                ><i class="fas fa-link"></i> <b>GZGsend</b></a
+              >), with
+              <a
+                href="https://matrix.org/"
+                class="text-emerald-300 hover:text-emerald-600 whitespace-nowrap transition-all duration-300 ease-out"
+                ><i class="fas fa-link"></i> <b>Matrix</b></a
+              >
+              on the backend, and a modified
+              <a
+                href="https://fluffy.chat/"
+                class="text-emerald-300 hover:text-emerald-600 whitespace-nowrap transition-all duration-300 ease-out"
+                ><i class="fas fa-link"></i> <b>FluffyChat</b></a
+              >
+              on the frontend.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BlackArrow -->
+      <div
+        class="bg-blue-800 rounded-lg max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2 transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)] hover:shadow-blue-800/75"
+      >
+        <div class="flex flex-row w-full rounded-lg">
+          <div
+            class="w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%] shrink-0 p-2 -ml-1 flex flex-col h-full"
+          >
+            <div class="flex-1 flex items-center justify-center">
+              <img
+                src="/assets/img/projekty/ba.png"
+                class="w-full aspect-square object-contain"
+              />
+            </div>
+            <div class="flex flex-row justify-evenly w-full">
+              <a
+                class="text-2xl lg:text-3xl"
+                href="https://github.com/marciniuk/blackarrow"
+              >
+                <span
+                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
+                >
+                  <i
+                    class="fab fa-github hover:text-[120%] transition-all duration-300 ease-out text-[#2d4e8d] hover:text-[#3963b3]"
+                  ></i
+                ></span>
+              </a>
+            </div>
+          </div>
+
+          <div class="w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col">
+            <div class="text-center mb-1">
+              <div
+                class="bg-blue-800 text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 font-bold pb-1 pl-3 pr-2"
+              >
+                BlackArrow
+              </div>
+            </div>
+            <div
+              class="text-sm xs:text-base 2xl:text-lg p-2 pl-3 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-blue-800"
+            >
+              Repository with my Arch Linux config. Unfortunately, it hasn't
+              been updated in a while because I switched back to Windows. Yes, I
+              know, the contact form will start burning after this confession.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ScreenShots Script -->
+      <div
+        class="bg-amber-700 rounded-lg max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2 transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)] hover:shadow-yellow-900/75"
+      >
+        <div class="flex flex-row w-full rounded-lg">
+          <div
+            class="w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%] shrink-0 p-2 -ml-1 flex flex-col h-full"
+          >
+            <div class="flex-1 flex items-center justify-center">
+              <img
+                src="/assets/img/projekty/sss.png"
+                class="w-full aspect-square object-contain"
+              />
+            </div>
+            <div class="flex flex-row justify-evenly w-full">
+              <a
+                class="text-2xl lg:text-3xl"
+                href="https://github.com/marciniuk/ScreenShots-Scripts"
+              >
+                <span
+                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
+                >
+                  <i
+                    class="fab fa-github hover:text-[120%] transition-all duration-300 ease-out text-amber-500 hover:text-amber-300"
+                  ></i
+                ></span>
+              </a>
+            </div>
+          </div>
+
+          <div class="w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col">
+            <div class="text-center mb-1">
+              <div
+                class="bg-amber-700 text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 font-bold pb-1 pl-3 pr-2"
+              >
+                ScreenShots Script
+              </div>
+            </div>
+            <div
+              class="text-sm xs:text-base 2xl:text-lg p-2 pl-3 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-yellow-700"
+            >
+              The name itself indicates what it is, so I'll just add that it
+              needs
+              <a
+                href="https://github.com/marciniuk/dmenu"
+                class="text-amber-300 hover:text-amber-600 whitespace-nowrap transition-all duration-300 ease-out"
+                ><i class="fas fa-link"></i> <b>dmenu</b></a
+              >
+              and
+              <a
+                href="https://github.com/naelstrof/maim"
+                class="text-amber-300 hover:text-amber-600 whitespace-nowrap transition-all duration-300 ease-out"
+                ><i class="fas fa-link"></i> <b>maim</b></a
+              >
+              to work. Also, making it took me a veeeery long time. But the
+              result exceeded my expectations.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COVID-19 -->
+      <div
+        class="bg-rose-700 rounded-lg max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2 transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)] hover:shadow-red-900/75"
+      >
+        <div class="flex flex-row w-full rounded-lg">
+          <div
+            class="w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%] shrink-0 p-2 -ml-1 flex flex-col h-full"
+          >
+            <div class="flex-1 flex items-center justify-center">
+              <img
+                src="/assets/img/projekty/covid.png"
+                class="w-full aspect-square object-contain"
+              />
+            </div>
+            <div class="flex flex-row justify-evenly w-full">
+              <a
+                class="text-2xl lg:text-3xl"
+                href="https://github.com/marciniuk/covid-19-script"
+              >
+                <span
+                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
+                >
+                  <i
+                    class="fab fa-github hover:text-[120%] transition-all duration-300 ease-out text-rose-400 hover:text-rose-300"
+                  ></i
+                ></span>
+              </a>
+            </div>
+          </div>
+
+          <div class="w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col">
+            <div class="text-center mb-1">
+              <div
+                class="bg-rose-700 text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 font-bold pb-1 pl-3 pr-2"
+              >
+                COVID-19 Script
+              </div>
+            </div>
+            <div
+              class="text-sm xs:text-base 2xl:text-lg p-2 pl-3 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-red-800"
+            >
+              A simple script to place, for example, in
+              <a
+                href="https://github.com/polybar/polybar/"
+                class="text-rose-400 hover:text-rose-600 whitespace-nowrap transition-all duration-300 ease-out"
+                ><i class="fas fa-link"></i> <b>Polybar</b></a
+              >
+              providing data from selected countries. Quite a lot of
+              configuration. Created with the hope of hitting a "popular" topic
+              and gaining a few followers on GitHub. It didn't work out.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- FOOTER -->
     <footer class="z-50 backdrop-blur-[2px] md:my-4 md:mx-3 md:rounded-full">
