@@ -249,7 +249,9 @@ class WebDevTime extends HTMLElement {
 
 customElements.define("web-dev", WebDevTime);
 
-//mail
+/* ============================================================
+    📧 MAIL — KLIKNIJ, ABY SKOPIOWAĆ (MAX CLEAN)
+   ============================================================ */
 class CopyEmail extends HTMLElement {
   connectedCallback() {
     const parts = (
@@ -316,18 +318,27 @@ class CopyEmail extends HTMLElement {
       if (busy) return;
       busy = true;
 
+      // Pobierz język strony (np. "pl" lub "en")
+      const lang = document.documentElement.lang?.toLowerCase() || "en";
+
+      // Wiadomości zależne od języka
+      const msg = {
+        success: lang === "pl" ? "Skopiowano!" : "Copied!",
+        fail: lang === "pl" ? "Skopiuj ręcznie!" : "Copy manually!",
+      };
+
       try {
         await navigator.clipboard.writeText(full);
         await swap(
           "fa-solid fa-clipboard-check",
           "text-emerald-400",
-          "Skopiowano!",
+          msg.success,
         );
       } catch {
         await swap(
           "fa-solid fa-triangle-exclamation",
           "text-rose-400",
-          "Skopiuj ręcznie!",
+          msg.fail,
         );
       }
 
