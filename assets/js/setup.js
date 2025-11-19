@@ -1,15 +1,21 @@
 // ZAWARTOŚCI POPUPÓW
 const SECTION_FILES = {
-  telefony: "/assets/setup/telefony.html",
-  laptopy: "/assets/setup/laptopy.html",
-  handheldy: "/assets/setup/handheldy.html",
-  sluchawki: "/assets/setup/sluchawki.html",
-  myszki: "/assets/setup/myszki.html",
-  klawiatury: "/assets/setup/klawiatury.html",
-  gamepady: "/assets/setup/gamepady.html",
-  zegarki: "/assets/setup/zegarki.html",
-  dyski: "/assets/setup/dyski.html",
-  akcesoria: "/assets/setup/akcesoria.html",
+  telefony: "/assets/setup/pl/telefony.html",
+  laptopy: "/assets/setup/pl/laptopy.html",
+  handheldy: "/assets/setup/pl/handheldy.html",
+  sluchawki: "/assets/setup/pl/sluchawki.html",
+  myszki: "/assets/setup/pl/myszki.html",
+  klawiatury: "/assets/setup/pl/klawiatury.html",
+  gamepady: "/assets/setup/pl/gamepady.html",
+  zegarki: "/assets/setup/pl/zegarki.html",
+  smartphones: "/assets/setup/en/smartphones.html",
+  laptops: "/assets/setup/en/laptops.html",
+  handhelds: "/assets/setup/en/handhelds.html",
+  headphones: "/assets/setup/en/headphones.html",
+  mouses: "/assets/setup/en/mouses.html",
+  keyboards: "/assets/setup/en/keyboards.html",
+  gamepads: "/assets/setup/en/gamepads.html",
+  watches: "/assets/setup/en/watches.html",
 };
 
 const overlay = document.getElementById("popup-overlay");
