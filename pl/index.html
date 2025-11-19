@@ -346,7 +346,12 @@
     </footer>
     <!-- JS -->
     <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/xd.js"></script>
-    <link rel="stylesheet" href="/assets/css/xd.css" />
+    <script src="/assets/js/xd.js" defer></script>
+    <script defer>
+      const css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = "/assets/css/xd.css";
+      document.head.appendChild(css);
+    </script>
   </body>
 </html>
