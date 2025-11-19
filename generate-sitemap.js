@@ -3,6 +3,17 @@ import path from "path";
 import { fileURLToPath } from "url";
 import xmlFormat from "xml-formatter";
 
+// 🎨 Kolory ANSI
+const c = {
+  reset: "\x1b[0m",
+  bold: "\x1b[1m",
+  green: "\x1b[32m",
+  yellow: "\x1b[33m",
+  cyan: "\x1b[36m",
+  magenta: "\x1b[35m",
+  red: "\x1b[31m",
+};
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = __dirname;
@@ -15,7 +26,6 @@ function getPriority(filePath) {
   if (relPath === "/index.html") return 1.0;
   if (relPath.includes("/404")) return 0.3;
 
-  // głębokość ścieżki
   const depth = relPath.split("/").length - 2;
   if (depth === 1) return 0.8;
   if (depth === 2) return 0.6;
@@ -43,7 +53,8 @@ function getAllFiles(dir) {
 
 // 🧩 Generowanie sitemap
 function generateSitemap() {
-  console.log("🔍 Generowanie sitemap...");
+  console.log(`\n${c.cyan}${c.bold}🔍 Generowanie sitemap...${c.reset}\n`);
+
   const files = getAllFiles(rootDir).filter(
     (file) => !file.replace(/\\/g, "/").includes("/assets/"),
   );
@@ -62,10 +73,8 @@ function generateSitemap() {
     return { loc, lastmod, priority };
   });
 
-  // 🔢 sortowanie po priorytecie malejąco
   urls.sort((a, b) => b.priority - a.priority);
 
-  // 🧱 składanie XML
   const xmlItems = urls
     .map(
       (u) => `
@@ -85,7 +94,17 @@ ${xmlItems}
   const formatted = xmlFormat(xml, { indentation: "  " });
   fs.writeFileSync(path.join(rootDir, "sitemap.xml"), formatted);
 
-  console.log("✅ Sitemap wygenerowana pomyślnie!");
+  console.log(
+    `${c.green}${c.bold}✔ Sitemap wygenerowana pomyślnie!${c.reset}`,
+  );
+
+  console.log(
+    `${c.yellow}• Plik zapisany jako:${c.reset} ${c.magenta}sitemap.xml${c.reset}`,
+  );
+
+  console.log(
+    `${c.cyan}• Łącznie znaleziono:${c.reset} ${c.bold}${urls.length} URL${c.reset}\n`,
+  );
 }
 
 generateSitemap();
