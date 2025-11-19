@@ -12,26 +12,29 @@
       content="black-translucent"
     />
     <title>Adrian Marcini.uk</title>
-    <!-- Opis dla SEO -->
+
+    <!-- SEO Description -->
     <meta
       name="description"
-      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+      content="A website created under the influence of caffeine and far too much free time."
     />
     <meta name="author" content="Adrian Marciniuk" />
     <meta name="robots" content="index, follow" />
+
     <!-- Open Graph / Facebook / Discord -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://marcini.uk/" />
     <meta property="og:title" content="Adrian Marcini.uk" />
     <meta
       property="og:description"
-      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+      content="A website created under the influence of caffeine and far too much free time."
     />
     <meta
       property="og:image"
       content="https://marcini.uk/assets/og/og-image.jpg"
     />
     <meta property="og:site_name" content="Marcini.uk" />
+
     <!-- Twitter / X Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@adrianmarciniuk" />
@@ -39,18 +42,22 @@
     <meta name="twitter:title" content="Adrian Marcini.uk" />
     <meta
       name="twitter:description"
-      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+      content="A website created under the influence of caffeine and far too much free time."
     />
     <meta
       name="twitter:image"
       content="https://marcini.uk/assets/og/og-image.jpg"
     />
-    <!-- Linki do zasobów -->
+
+    <!-- Assets -->
     <link rel="preload" href="/assets/css/main.css" as="style" />
     <link href="/assets/css/main.css" rel="stylesheet" />
+
     <link rel="preload" href="/assets/js/stars.js" as="script" />
     <script src="/assets/js/stars.js" defer></script>
+
     <link rel="preload" href="/assets/js/main.js" as="script" />
+
     <link
       rel="stylesheet"
       href="/assets/css/fontawesome.css"
@@ -60,7 +67,9 @@
     <noscript>
       <link rel="stylesheet" href="/assets/css/fontawesome.css" />
     </noscript>
+
     <link rel="preload" href="/assets/css/fonts.css" as="style" />
+
     <script>
       function loadFontsCSS(href) {
         const link = document.createElement("link");
@@ -72,6 +81,7 @@
       }
       loadFontsCSS("/assets/css/fonts.css");
     </script>
+
     <!-- Favicon -->
     <link
       rel="icon"
@@ -88,22 +98,25 @@
     />
     <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
     <link rel="manifest" href="/assets/favicon/site.webmanifest" />
-    <!-- Canonical link -->
+
+    <!-- Canonical -->
     <link rel="canonical" href="https://marcini.uk/en/contact/" />
-    <!-- Dane strukturalne JSON-LD -->
+
+    <!-- Structured Data JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Adrian Marciniuk",
-        "url": "https://marcini.uk",
+        "url": "https://marcini.uk/",
         "image": "https://marcini.uk/assets/img/og/og-image.jpg",
         "sameAs": ["https://github.com/marciniuk"],
         "jobTitle": "Frontend Developer",
         "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
       }
     </script>
-    <!-- Fadein body -->
+
+    <!-- Fade-in -->
     <script>
       window.addEventListener("load", () => {
         setTimeout(() => document.body.classList.add("page-ready"), 100);
@@ -133,7 +146,7 @@
       <div class="flex justify-between w-full items-center z-30">
         <!-- LOGO -->
         <a
-          href="/pl/"
+          href="/en/"
           class="flex flex-row gap-2 text-3xl lg:text-4xl italic items-center"
         >
           <img src="/assets/img/logo3.svg" alt="logo" class="h-8 lg:h-10" />
@@ -150,30 +163,24 @@
           <span class="w-full h-1 bg-white rounded-full transition-all"></span>
         </div>
 
-        <!-- WSPÓLNE MENU (desktop + mobile) -->
+        <!-- WSPÓLNE MENU -->
         <nav
           id="mobile-menu"
           class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
           style="height: calc(var(--vh, 1vh) * 100 - 2.75rem)"
         >
-          <a href="/pl/profile/" class="nav-link hover:text-rose-400"
-            ><i class="fa-duotone fa-solid fa-address-card"></i> Profile</a
+          <a href="/en/profiles/" class="nav-link hover:text-rose-400"
+            ><i class="fa-duotone fa-solid fa-address-card"></i> Profiles</a
           >
-          <a href="/pl/projekty/" class="nav-link hover:text-emerald-400"
-            ><i class="fa-duotone fa-solid fa-diagram-project"></i> Projekty</a
+          <a href="/en/projects/" class="nav-link hover:text-emerald-400"
+            ><i class="fa-duotone fa-solid fa-diagram-project"></i> Projects</a
           >
-          <a href="/pl/setup/" class="nav-link hover:text-amber-400"
+          <a href="/en/setup/" class="nav-link hover:text-amber-400"
             ><i class="fa-duotone fa-solid fa-display-code"></i> Setup</a
           >
-          <a href="/pl/kontakt/" class="nav-link hover:text-sky-400"
+          <a href="/en/contact/" class="nav-link hover:text-sky-400"
             ><i class="fa-duotone fa-solid fa-envelope-open-text"></i>
-            Kontakt</a
-          >
-          <a href="/pl/polecajki/" class="nav-link hover:text-fuchsia-400"
-            ><i class="fa-duotone fa-solid fa-heart"></i> Polecajki</a
-          >
-          <a href="/pl/ksiazki/" class="nav-link hover:text-indigo-400"
-            ><i class="fa-duotone fa-solid fa-books"></i> Książki</a
+            Contact</a
           >
         </nav>
       </div>
@@ -184,7 +191,7 @@
           function setVh() {
             document.documentElement.style.setProperty(
               "--vh",
-              `${window.innerHeight * 0.01}px`,
+              `${window.innerHeight * 0.01}px`
             );
           }
           setVh();
@@ -194,7 +201,217 @@
     </header>
 
     <!-- MAIN -->
-    <main></main>
+    <main
+      class="z-10 p-8 flex place-items-center place-content-center w-full h-full"
+    >
+      <div
+        class="flex flex-col lg:flex-row top-0 w-full h-full gap-10 justify-center items-center lg:items-start"
+      >
+        <!-- LEWA / GÓRNA SEKCJA  -->
+        <aside
+          class="flex flex-col gap-4 w-full max-w-lg lg:max-w-xs lg:sticky lg:top-20"
+        >
+          <div class="mx-6 lg:mx-0">
+            <div
+              class="text-2xl md:text-3xl font-semibold flex flex-row items-center"
+            >
+              <div class="relative w-3 h-3 mr-3 -ml-6">
+                <span
+                  class="absolute inset-0 bg-green-500 rounded-full animate-pulse"
+                ></span>
+                <span
+                  class="absolute inset-0 bg-green-500 rounded-full blur-sm animate-ping"
+                ></span>
+              </div>
+              Contact me
+            </div>
+            <div class="text-base md:text-lg opacity-80 mb-4">
+              I usually reply within a few hours — worst case, never. If you're
+              in a hurry, use Telegram.
+            </div>
+          </div>
+
+          <div
+            class="grid grid-cols-[repeat(auto-fit,minmax(211px,auto))] md:grid-cols-[repeat(auto-fit,minmax(233px,auto))] gap-4 lg:grid-cols-1 text-lg md:text-xl"
+          >
+            <!-- Email -->
+            <div
+              class="bg-blue-800/40 backdrop-blur-[2px] px-4 py-2 rounded-2xl border border-blue-700 hover:border-blue-500 transition-colors flex items-center"
+            >
+              <e-mail></e-mail>
+            </div>
+
+            <!-- Telegram -->
+            <a
+              href="https://t.me/AdrianMarciniuk"
+              target="_blank"
+              class="inline-flex flex-nowrap items-center gap-2 bg-blue-800/40 backdrop-blur-[2px] px-4 py-2 rounded-2xl border border-blue-700 hover:border-blue-500 transition-colors cursor-pointer h-12 w-full"
+            >
+              <i class="fa-brands fa-telegram text-sky-400"></i>
+              AdrianMarciniuk
+            </a>
+          </div>
+        </aside>
+
+        <!-- FORMULARZ -->
+        <section
+          class="w-full max-w-xl bg-blue-800/40 backdrop-blur-[2px] p-6 rounded-3xl border border-blue-700 shadow-xl"
+        >
+          <form id="contact-form" method="POST" class="flex flex-col gap-5">
+            <!-- Access Key -->
+            <input
+              type="hidden"
+              name="accessKey"
+              value="4d95f2e0-b0c2-46f5-b9b2-82ede7470ce1"
+            />
+
+            <!-- Honeypot -->
+            <input
+              type="text"
+              name="honeypot"
+              class="hidden"
+              tabindex="-1"
+              autocomplete="off"
+            />
+
+            <!-- Name -->
+            <label class="flex flex-col gap-1">
+              <span class="text-lg md:text-xl">Name</span>
+              <input
+                type="text"
+                name="name"
+                required
+                class="px-3 py-2 rounded-xl bg-blue-900/50 border border-blue-700 focus:border-blue-500 outline-none"
+              />
+            </label>
+
+            <!-- Email -->
+            <label class="flex flex-col gap-1">
+              <span class="text-lg md:text-xl">Email</span>
+              <input
+                type="email"
+                name="email"
+                required
+                class="px-3 py-2 rounded-xl bg-blue-900/50 border border-blue-700 focus:border-blue-500 outline-none"
+              />
+            </label>
+
+            <!-- Message -->
+            <label class="flex flex-col gap-1">
+              <span class="text-lg md:text-xl">Message</span>
+              <textarea
+                name="message"
+                required
+                rows="6"
+                class="px-3 py-2 rounded-xl bg-blue-900/50 border border-blue-700 focus:border-blue-500 outline-none resize-none scrollbar scrollbar-track-transparent scrollbar-thumb-blue-700"
+              ></textarea>
+            </label>
+
+            <!-- reCAPTCHA v3 -->
+            <input
+              type="hidden"
+              name="g-recaptcha-response"
+              id="recaptchaToken"
+            />
+
+            <button
+              id="send-btn"
+              type="submit"
+              class="px-4 py-2 text-base md:text-lg rounded-xl bg-emerald-600 hover:bg-emerald-500 transition-colors font-semibold"
+            >
+              Send message
+            </button>
+          </form>
+        </section>
+
+        <!-- POPUP #1 -->
+        <div
+          id="popup-1"
+          class="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-50"
+        >
+          <div
+            class="bg-blue-800 p-6 m-4 rounded-3xl border border-blue-600 max-w-sm text-center"
+          >
+            <h3 class="text-2xl font-semibold">
+              Are you sure you want to send the message?
+            </h3>
+            <p class="opacity-80 mb-5">You can still back out 👀</p>
+
+            <div class="flex gap-3 justify-center">
+              <button
+                id="p1-yes"
+                class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-colors"
+              >
+                Yes
+              </button>
+
+              <button
+                id="p1-no"
+                class="px-4 py-2 bg-rose-600 hover:bg-rose-500 rounded-xl transition-colors"
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- POPUP #2 -->
+        <div
+          id="popup-2"
+          class="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-50"
+        >
+          <div
+            class="bg-blue-800 p-6 m-4 rounded-3xl border border-blue-600 max-w-sm text-center"
+          >
+            <h3 class="text-2xl font-semibold text-white">
+              Are you 100% sure? This is the point of no return!
+            </h3>
+            <p class="opacity-80 mb-5">
+              Once you click, it will really be sent ✉️
+            </p>
+            <div class="flex gap-3 justify-center">
+              <button
+                id="p2-yes"
+                class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-colors"
+              >
+                Send!
+              </button>
+
+              <button
+                id="p2-no"
+                class="px-4 py-2 bg-rose-600 hover:bg-rose-500 rounded-xl transition-colors"
+              >
+                Not now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- POPUP #3 (final) -->
+        <div
+          id="popup-final"
+          class="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 z-50"
+        >
+          <div
+            class="bg-blue-800 p-6 m-4 rounded-3xl border border-blue-600 max-w-sm text-center"
+          >
+            <h3 class="text-2xl font-semibold mb-2 text-emerald-400">
+              Thank you for your message! 💙
+            </h3>
+            <p class="opacity-80 mb-4">
+              I will respond as soon as possible. Sometimes it takes a few
+              hours, other times an entire eternity.
+            </p>
+            <button
+              id="p3-close"
+              class="mt-3 px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-xl transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- FOOTER -->
     <footer class="z-50 backdrop-blur-[2px] md:my-4 md:mx-3 md:rounded-full">
@@ -227,5 +444,7 @@
 
     <!-- SCRIPTS -->
     <script src="/assets/js/main.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcsyQ0sAAAAAFO7lQXpiSKoJuDYkrnDwFMADsCe"></script>
+    <script src="/assets/js/forms.js"></script>
   </body>
 </html>
