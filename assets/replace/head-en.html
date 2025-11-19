@@ -116,8 +116,10 @@
 
   <!-- Fade-in -->
   <script>
-    window.addEventListener("load", () => {
-      setTimeout(() => document.body.classList.add("page-ready"), 100);
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.body.classList.add("page-ready");
+      }, 150); // 150ms limit
     });
   </script>
 </head>

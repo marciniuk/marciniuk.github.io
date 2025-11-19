@@ -46,9 +46,7 @@
   <!-- Linki do zasobów -->
   <link rel="preload" href="/assets/css/main.css" as="style" />
   <link href="/assets/css/main.css" rel="stylesheet" />
-  <link rel="preload" href="/assets/js/stars.js" as="script" />
-  <script src="/assets/js/stars.js" defer></script>
-  <link rel="preload" href="/assets/js/main.js" as="script" />
+  <script src="/assets/js/stars.js" async></script>
   <link
     rel="stylesheet"
     href="/assets/css/fontawesome.css"
@@ -103,8 +101,10 @@
   </script>
   <!-- Fadein body -->
   <script>
-    window.addEventListener("load", () => {
-      setTimeout(() => document.body.classList.add("page-ready"), 100);
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.body.classList.add("page-ready");
+      }, 150); // 150ms limit
     });
   </script>
 </head>

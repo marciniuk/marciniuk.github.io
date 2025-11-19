@@ -117,8 +117,11 @@ stars {
     margin-right: 1rem;
     border-radius: 2rem;
   }
+}
+
+@media (max-width: 1279px) {
   #mobile-menu {
-    height: 50px !important;
+    height: calc(var(--vh, 1vh) * 100 - 2.75rem);
   }
 }
 
