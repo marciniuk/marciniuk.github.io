@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         popup.classList.remove(
           "opacity-0",
           "pointer-events-none",
-          "translate-y-2"
+          "translate-y-2",
         );
         popup.classList.add("opacity-100", "translate-y-0");
 
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
           popup.classList.add(
             "opacity-0",
             "pointer-events-none",
-            "translate-y-2"
+            "translate-y-2",
           );
           popup.classList.remove("opacity-100");
           clicks = 0;

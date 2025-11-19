@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.13",
+    "prettier": "^3.6.2",
     "tailwind-rounded-out": "^1.0.1"
   }
 }

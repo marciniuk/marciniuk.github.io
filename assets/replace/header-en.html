@@ -1,6 +1,6 @@
 <header
   id="main-header"
-  class="h-11 lg:h-14 p-2 mr-0 bg-blue-600/75 backdrop-blur-sm flex items-center sticky z-40 transition-[all] duration-500 ease-in-out"
+  class="h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-[all] duration-500 ease-in-out"
 >
   <div class="flex justify-between w-full items-center z-30">
     <!-- LOGO -->
@@ -25,26 +25,26 @@
     <!-- WSPÓLNE MENU (desktop + mobile) -->
     <nav
       id="mobile-menu"
-      class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-500 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+      class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
       style="height: calc(var(--vh, 1vh) * 100 - 2.75rem)"
     >
-      <a href="/en/profiles/" class="nav-link hover:text-rose-400"
-        ><i class="fa-duotone fa-solid fa-address-card"></i> Profiles</a
+      <a href="/pl/profile/" class="nav-link hover:text-rose-400"
+        ><i class="fa-duotone fa-solid fa-address-card"></i> Profile</a
       >
-      <a href="/en/projects/" class="nav-link hover:text-emerald-400"
-        ><i class="fa-duotone fa-solid fa-diagram-project"></i> Projects</a
+      <a href="/pl/projekty/" class="nav-link hover:text-emerald-400"
+        ><i class="fa-duotone fa-solid fa-diagram-project"></i> Projekty</a
       >
-      <a href="/en/setup/" class="nav-link hover:text-amber-400"
+      <a href="/pl/setup/" class="nav-link hover:text-amber-400"
         ><i class="fa-duotone fa-solid fa-display-code"></i> Setup</a
       >
-      <a href="/en/contact/" class="nav-link hover:text-sky-400"
-        ><i class="fa-duotone fa-solid fa-envelope-open-text"></i> Contact</a
+      <a href="/pl/kontakt/" class="nav-link hover:text-sky-400"
+        ><i class="fa-duotone fa-solid fa-envelope-open-text"></i> Kontakt</a
       >
-      <a href="/en/favourites/" class="nav-link hover:text-fuchsia-400"
-        ><i class="fa-duotone fa-solid fa-heart"></i> Favourites</a
+      <a href="/pl/polecajki/" class="nav-link hover:text-fuchsia-400"
+        ><i class="fa-duotone fa-solid fa-heart"></i> Polecajki</a
       >
-      <a href="/en/books/" class="nav-link hover:text-indigo-400"
-        ><i class="fa-duotone fa-solid fa-books"></i> Books</a
+      <a href="/pl/ksiazki/" class="nav-link hover:text-indigo-400"
+        ><i class="fa-duotone fa-solid fa-books"></i> Książki</a
       >
     </nav>
   </div>
@@ -55,7 +55,7 @@
       function setVh() {
         document.documentElement.style.setProperty(
           "--vh",
-          `${window.innerHeight * 0.01}px`
+          `${window.innerHeight * 0.01}px`,
         );
       }
       setVh();

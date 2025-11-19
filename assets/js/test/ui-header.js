@@ -120,7 +120,7 @@ export function setupHeader({
   overlay?.addEventListener("click", () => isOpen && closeMenu());
   document.addEventListener(
     "keydown",
-    (e) => e.key === "Escape" && isOpen && closeMenu()
+    (e) => e.key === "Escape" && isOpen && closeMenu(),
   );
   window.addEventListener("scroll", updateHeaderScrollStyle);
   window.addEventListener("resize", updateHeaderScrollStyle);

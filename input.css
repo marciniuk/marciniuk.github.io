@@ -96,7 +96,9 @@ stars {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 1s ease, opacity 0.9s ease;
+  transition:
+    max-height 1s ease,
+    opacity 0.9s ease;
 }
 
 .accordion-content.open {
@@ -145,7 +147,9 @@ body.page-ready footer {
 .lazy-fade {
   opacity: 0;
   transform: scale(0.98);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .lazy-fade.loaded {
@@ -232,7 +236,8 @@ body.page-ready footer {
     );
     transform: scale(0);
     opacity: 0;
-    transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transition:
+      transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
       opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
 

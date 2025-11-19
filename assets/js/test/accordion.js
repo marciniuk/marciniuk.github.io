@@ -39,6 +39,6 @@ window.addEventListener("resize", () => {
     "scroll",
     throttle(() => {
       window.dispatchEvent(new CustomEvent("scroll-updated"));
-    }, 100)
+    }, 100),
   );
 });

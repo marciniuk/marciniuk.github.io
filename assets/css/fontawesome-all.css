@@ -70,6 +70,67 @@
   width: var(--fa-width, 1.25em);
 }
 :is(
+  .fas,
+  .fass,
+  .far,
+  .fasr,
+  .fal,
+  .fasl,
+  .fat,
+  .fast,
+  .fad,
+  .fadr,
+  .fadl,
+  .fadt,
+  .fasds,
+  .fasdr,
+  .fasdl,
+  .fasdt,
+  .fab,
+  .faslr,
+  .faslpr,
+  .fawsb,
+  .fatl,
+  .fans,
+  .fands,
+  .faes,
+  .fajr,
+  .fajfr,
+  .fajdr,
+  .facr,
+  .fausb,
+  .faudsb,
+  .faufsb,
+  .fa-solid,
+  .fa-semibold,
+  .fa-regular,
+  .fa-light,
+  .fa-thin,
+  .fa-brands,
+  .fa-classic,
+  .fa-duotone,
+  .fa-sharp,
+  .fa-sharp-duotone,
+  .fa-chisel,
+  .fa-etch,
+  .fa-jelly,
+  .fa-jelly-duo,
+  .fa-jelly-fill,
+  .fa-notdog,
+  .fa-notdog-duo,
+  .fa-slab,
+  .fa-slab-press,
+  .fa-thumbprint,
+  .fa-utility,
+  .fa-utility-duo,
+  .fa-utility-fill,
+  .fa-whiteboard,
+  .fa
+):before {
+  content: var(--fa) / "";
+}
+@supports not (content: ""/"") {
+  :is(
     .fas,
     .fass,
     .far,
@@ -127,71 +188,34 @@
     .fa-whiteboard,
     .fa
   ):before {
-  content: var(--fa) / "";
-}
-@supports not (content: ""/"") {
-  :is(
-      .fas,
-      .fass,
-      .far,
-      .fasr,
-      .fal,
-      .fasl,
-      .fat,
-      .fast,
-      .fad,
-      .fadr,
-      .fadl,
-      .fadt,
-      .fasds,
-      .fasdr,
-      .fasdl,
-      .fasdt,
-      .fab,
-      .faslr,
-      .faslpr,
-      .fawsb,
-      .fatl,
-      .fans,
-      .fands,
-      .faes,
-      .fajr,
-      .fajfr,
-      .fajdr,
-      .facr,
-      .fausb,
-      .faudsb,
-      .faufsb,
-      .fa-solid,
-      .fa-semibold,
-      .fa-regular,
-      .fa-light,
-      .fa-thin,
-      .fa-brands,
-      .fa-classic,
-      .fa-duotone,
-      .fa-sharp,
-      .fa-sharp-duotone,
-      .fa-chisel,
-      .fa-etch,
-      .fa-jelly,
-      .fa-jelly-duo,
-      .fa-jelly-fill,
-      .fa-notdog,
-      .fa-notdog-duo,
-      .fa-slab,
-      .fa-slab-press,
-      .fa-thumbprint,
-      .fa-utility,
-      .fa-utility-duo,
-      .fa-utility-fill,
-      .fa-whiteboard,
-      .fa
-    ):before {
     content: var(--fa);
   }
 }
 :is(
+  .fad,
+  .fa-duotone,
+  .fadr,
+  .fadl,
+  .fadt,
+  .fasds,
+  .fa-sharp-duotone,
+  .fasdr,
+  .fasdl,
+  .fasdt,
+  .fatl,
+  .fa-thumbprint,
+  .fands,
+  .fa-notdog-duo,
+  .fajdr,
+  .fa-jelly-duo,
+  .faudsb,
+  .fa-utility-duo
+):after {
+  content: var(--fa);
+  font-feature-settings: "ss01";
+}
+@supports not (content: ""/"") {
+  :is(
     .fad,
     .fa-duotone,
     .fadr,
@@ -211,30 +235,6 @@
     .faudsb,
     .fa-utility-duo
   ):after {
-  content: var(--fa);
-  font-feature-settings: "ss01";
-}
-@supports not (content: ""/"") {
-  :is(
-      .fad,
-      .fa-duotone,
-      .fadr,
-      .fadl,
-      .fadt,
-      .fasds,
-      .fa-sharp-duotone,
-      .fasdr,
-      .fasdl,
-      .fasdt,
-      .fatl,
-      .fa-thumbprint,
-      .fands,
-      .fa-notdog-duo,
-      .fajdr,
-      .fa-jelly-duo,
-      .faudsb,
-      .fa-utility-duo
-    ):after {
     content: var(--fa);
   }
 }

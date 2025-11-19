@@ -45,7 +45,7 @@ function getAllFiles(dir) {
 function generateSitemap() {
   console.log("🔍 Generowanie sitemap...");
   const files = getAllFiles(rootDir).filter(
-    (file) => !file.replace(/\\/g, "/").includes("/assets/")
+    (file) => !file.replace(/\\/g, "/").includes("/assets/"),
   );
 
   const urls = files.map((file) => {
@@ -73,7 +73,7 @@ function generateSitemap() {
   <loc>${u.loc}</loc>
   <lastmod>${u.lastmod}</lastmod>
   <priority>${u.priority.toFixed(1)}</priority>
-</url>`
+</url>`,
     )
     .join("\n");
 

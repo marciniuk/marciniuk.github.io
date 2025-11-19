@@ -30,7 +30,7 @@ export function startWebdevTimer(el, lang) {
         now.getUTCDate(),
         now.getUTCHours(),
         now.getUTCMinutes(),
-        now.getUTCSeconds()
+        now.getUTCSeconds(),
       ) - Date.UTC(2019, 11, 17, 16, 36, 39);
 
     const diffDays = diff / (1000 * 60 * 60 * 24);

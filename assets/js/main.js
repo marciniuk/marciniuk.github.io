@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (header) {
     document.documentElement.style.setProperty(
       "--header-height",
-      `${header.offsetHeight}px`
+      `${header.offsetHeight}px`,
     );
   }
 
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
   overlay?.addEventListener("click", () => isOpen && closeMenu());
   document.addEventListener(
     "keydown",
-    (e) => e.key === "Escape" && isOpen && closeMenu()
+    (e) => e.key === "Escape" && isOpen && closeMenu(),
   );
 
   /* ============================================================
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
           el.className = "inline";
           el.textContent = p;
           return el;
-        })
+        }),
       );
 
       container.tabIndex = 0;
@@ -346,8 +346,8 @@ class CopyEmail extends HTMLElement {
     const renderEmail = () =>
       emailSpan.replaceChildren(
         ...parts.map((p) =>
-          Object.assign(document.createElement("span"), { textContent: p })
-        )
+          Object.assign(document.createElement("span"), { textContent: p }),
+        ),
       );
 
     renderEmail();
@@ -361,7 +361,7 @@ class CopyEmail extends HTMLElement {
           { opacity: o1, transform: `scale(${s1})` },
           { opacity: o2, transform: `scale(${s2})` },
         ],
-        { duration: d, easing: "cubic-bezier(.25,.1,.25,1)", fill: "forwards" }
+        { duration: d, easing: "cubic-bezier(.25,.1,.25,1)", fill: "forwards" },
       ).finished;
 
     const swap = async (icon, color, text) => {
@@ -397,13 +397,13 @@ class CopyEmail extends HTMLElement {
         await swap(
           "fa-solid fa-clipboard-check",
           "text-emerald-400",
-          "Skopiowano!"
+          "Skopiowano!",
         );
       } catch {
         await swap(
           "fa-solid fa-triangle-exclamation",
           "text-rose-400",
-          "Skopiuj ręcznie!"
+          "Skopiuj ręcznie!",
         );
       }
 
@@ -413,7 +413,7 @@ class CopyEmail extends HTMLElement {
     this.addEventListener("click", run);
     this.addEventListener(
       "keydown",
-      (e) => ["Enter", " ", "Spacebar"].includes(e.key) && run(e)
+      (e) => ["Enter", " ", "Spacebar"].includes(e.key) && run(e),
     );
   }
 }

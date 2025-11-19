@@ -50,8 +50,8 @@ document.querySelectorAll(".section-btn").forEach((btn) => {
     // USUWANIE STARYCH KOLORÓW
     popupContent.classList.remove(
       ...Array.from(popupContent.classList).filter(
-        (c) => c.startsWith("border-") || c.startsWith("bg-")
-      )
+        (c) => c.startsWith("border-") || c.startsWith("bg-"),
+      ),
     );
 
     // wczytywanie z pliku

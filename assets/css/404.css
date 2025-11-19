@@ -20,7 +20,8 @@
   position: relative;
   color: white;
   letter-spacing: 3px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.3),
     0 0 20px rgba(255, 255, 255, 0.2);
   animation: glitch-skew 1.5s infinite linear alternate-reverse;
 }

@@ -50,6 +50,8 @@
 
 /* Klasa z efektami */
 .popup-glitch {
-  animation: glitch-h 0.25s ease-in-out, shake 0.3s ease-in-out,
+  animation:
+    glitch-h 0.25s ease-in-out,
+    shake 0.3s ease-in-out,
     pulse-soft 2s ease-in-out infinite;
 }

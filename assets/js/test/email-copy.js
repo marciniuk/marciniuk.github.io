@@ -35,7 +35,7 @@
           (p, i) =>
             `<${i % 2 === 0 ? "span" : "p"} class="inline">${p}</${
               i % 2 === 0 ? "span" : "p"
-            }>`
+            }>`,
         )
         .join("");
 
@@ -78,11 +78,11 @@
         try {
           await navigator.clipboard.writeText(fullEmail);
           await animateSwap(
-            '<span class="bg-blue-900 px-2 rounded-full text-emerald-400 font-semibold"><i class="fa-solid fa-clipboard-check"></i> Skopiowano adres e-mail!</span>'
+            '<span class="bg-blue-900 px-2 rounded-full text-emerald-400 font-semibold"><i class="fa-solid fa-clipboard-check"></i> Skopiowano adres e-mail!</span>',
           );
         } catch {
           await animateSwap(
-            '<span class="bg-blue-900 px-2 rounded-full text-rose-400 font-semibold"><i class="fa-solid fa-triangle-exclamation"></i> Nie udało się skopiować!</span>'
+            '<span class="bg-blue-900 px-2 rounded-full text-rose-400 font-semibold"><i class="fa-solid fa-triangle-exclamation"></i> Nie udało się skopiować!</span>',
           );
         }
       };

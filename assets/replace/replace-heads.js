@@ -33,7 +33,7 @@ function loadHeadTemplates() {
     }
   } catch {
     console.error(
-      `${colors.magenta}❌ Nie znaleziono katalogu /assets/replace${colors.reset}`
+      `${colors.magenta}❌ Nie znaleziono katalogu /assets/replace${colors.reset}`,
     );
     process.exit(1);
   }
@@ -43,7 +43,7 @@ function loadHeadTemplates() {
 const templates = loadHeadTemplates();
 if (Object.keys(templates).length === 0) {
   console.error(
-    `${colors.magenta}❌ Brak plików head-xx.html w /assets/replace${colors.reset}`
+    `${colors.magenta}❌ Brak plików head-xx.html w /assets/replace${colors.reset}`,
   );
   process.exit(1);
 }
@@ -108,18 +108,18 @@ function processFile(filePath, lang) {
     content = content.replace(headRegex, formattedHead);
     fs.writeFileSync(filePath, content, "utf8");
     console.log(
-      `${colors.green}✔ [${lang}] Zaktualizowano head:${colors.reset} ${relPath}`
+      `${colors.green}✔ [${lang}] Zaktualizowano head:${colors.reset} ${relPath}`,
     );
   } else {
     console.log(
-      `${colors.magenta}❌ Brak sekcji <head> w:${colors.reset} ${relPath}`
+      `${colors.magenta}❌ Brak sekcji <head> w:${colors.reset} ${relPath}`,
     );
   }
 }
 
 // 🔹 Uruchomienie
 console.log(
-  `${colors.cyan}🔍 Skanowanie katalogów /en i /pl...${colors.reset}\n`
+  `${colors.cyan}🔍 Skanowanie katalogów /en i /pl...${colors.reset}\n`,
 );
 
 const enDir = path.join(rootDir, "en");
@@ -132,5 +132,5 @@ if (fs.existsSync(plDir)) processDirectory(plDir, "pl");
 else console.log(`${colors.yellow}⚠ Brak katalogu /pl${colors.reset}`);
 
 console.log(
-  `\n${colors.magenta}🎉 Gotowe! Heads zaktualizowane!${colors.reset}\n`
+  `\n${colors.magenta}🎉 Gotowe! Heads zaktualizowane!${colors.reset}\n`,
 );

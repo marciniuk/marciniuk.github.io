@@ -42,18 +42,31 @@ function readReplace(file) {
 function getCanonical(filePath, lang) {
   const baseUrl = "https://marcini.uk";
 
+  // Normalizujemy ścieżkę
   let url = filePath.replace(/\\/g, "/");
 
-  // Usuwamy root katalog językowy
-  url = url.replace(`${rootDir.replace(/\\/g, "/")}/${lang}`, "");
+  // Usuwamy absolutną ścieżkę root
+  url = url.replace(rootDir.replace(/\\/g, "/"), "");
+
+  // Usuwamy prefiks językowy na początku, np. "/pl" lub "/en"
+  url = url.replace(new RegExp(`^/${lang}`), "");
 
   // Usuwamy "index.html"
   url = url.replace(/index\.html$/, "");
 
-  // Zapewniamy końcowy "/"
+  // Usuwamy podwójne // na wypadek
+  url = url.replace(/\/+/g, "/");
+
+  // Końcowy slash
   if (!url.endsWith("/")) url += "/";
 
-  return baseUrl + url;
+  // Język PL → brak prefixu
+  if (lang === "pl") {
+    return baseUrl + url;
+  }
+
+  // EN → dodaj /en na początku
+  return baseUrl + `/en${url}`;
 }
 
 // 🧠 Sprawdzenie stanu sekcji
@@ -99,7 +112,7 @@ function processFile(filePath, lang) {
     console.log(
       `🧠 ${
         headState === "missing" ? "Dodano" : "Zastąpiono"
-      } <head> w ${relPath}`
+      } <head> w ${relPath}`,
     );
   }
 
@@ -120,7 +133,7 @@ function processFile(filePath, lang) {
     console.log(
       `🧩 ${
         bodyState === "missing" ? "Dodano" : "Zastąpiono"
-      } <body> w ${relPath}`
+      } <body> w ${relPath}`,
     );
   }
 
@@ -135,7 +148,7 @@ function processFile(filePath, lang) {
     console.log(
       `🔵 ${
         headerState === "missing" ? "Dodano" : "Zastąpiono"
-      } <header> w ${relPath}`
+      } <header> w ${relPath}`,
     );
   }
 
@@ -150,7 +163,7 @@ function processFile(filePath, lang) {
     console.log(
       `🟣 ${
         footerState === "missing" ? "Dodano" : "Zastąpiono"
-      } <footer> w ${relPath}`
+      } <footer> w ${relPath}`,
     );
   }
 
@@ -167,7 +180,7 @@ function processFile(filePath, lang) {
     if (overlayBlockRegex.test(html) && !hasOverlayComment.test(html)) {
       html = html.replace(
         overlayBlockRegex,
-        (match) => `\n\n<!-- OVERLAY -->\n${match}`
+        (match) => `\n\n<!-- OVERLAY -->\n${match}`,
       );
       changed = true;
     }
@@ -194,7 +207,7 @@ function processFile(filePath, lang) {
 function ensureComment(html, tagName, comment) {
   const regex = new RegExp(
     `([\\r\\n\\s]*)(<!--\\s*${comment}\\s*-->)?([\\r\\n\\s]*)(<${tagName}[^>]*>)`,
-    "i"
+    "i",
   );
   return html.replace(regex, (match, before, existing, between, tag) => {
     if (existing) return match;
@@ -210,7 +223,7 @@ function ensureScriptComment(html) {
     (match, afterFooter, existing, between, script) => {
       if (existing) return match;
       return `</footer>\n\n<!-- SCRIPTS -->\n${script}`;
-    }
+    },
   );
 }
 

@@ -16,14 +16,14 @@ while (document.querySelector(".ukryty")) {
   Ukryty.classList.remove("ukryty");
 }
 
-!(function (t, e) {
+(!(function (t, e) {
   "function" == typeof define && define.amd
     ? define("jquery-bridget/jquery-bridget", ["jquery"], function (i) {
         return e(t, i);
       })
     : "object" == typeof module && module.exports
-    ? (module.exports = e(t, require("jquery")))
-    : (t.jQueryBridget = e(t, t.jQuery));
+      ? (module.exports = e(t, require("jquery")))
+      : (t.jQueryBridget = e(t, t.jQuery));
 })(window, function (t, e) {
   "use strict";
   function i(i, o, a) {
@@ -46,7 +46,8 @@ while (document.querySelector(".ukryty")) {
                       var d = c.apply(h, n);
                       s = void 0 === s ? d : s;
                     } else r(o + " is not a valid method");
-                  } else r(i + " not initialized. Cannot call methods, i.e. " + o);
+                  } else
+                    r(i + " not initialized. Cannot call methods, i.e. " + o);
                 }),
                 void 0 !== s ? s : t
               );
@@ -74,14 +75,14 @@ while (document.querySelector(".ukryty")) {
         : function (t) {
             o.error(t);
           };
-  return n(e || t.jQuery), i;
+  return (n(e || t.jQuery), i);
 }),
   (function (t, e) {
     "function" == typeof define && define.amd
       ? define("ev-emitter/ev-emitter", e)
       : "object" == typeof module && module.exports
-      ? (module.exports = e())
-      : (t.EvEmitter = e());
+        ? (module.exports = e())
+        : (t.EvEmitter = e());
   })("undefined" != typeof window ? window : this, function () {
     function t() {}
     var e = t.prototype;
@@ -90,40 +91,40 @@ while (document.querySelector(".ukryty")) {
         if (t && e) {
           var i = (this._events = this._events || {}),
             n = (i[t] = i[t] || []);
-          return -1 == n.indexOf(e) && n.push(e), this;
+          return (-1 == n.indexOf(e) && n.push(e), this);
         }
       }),
       (e.once = function (t, e) {
         if (t && e) {
           this.on(t, e);
           var i = (this._onceEvents = this._onceEvents || {});
-          return ((i[t] = i[t] || {})[e] = !0), this;
+          return (((i[t] = i[t] || {})[e] = !0), this);
         }
       }),
       (e.off = function (t, e) {
         var i = this._events && this._events[t];
         if (i && i.length) {
           var n = i.indexOf(e);
-          return -1 != n && i.splice(n, 1), this;
+          return (-1 != n && i.splice(n, 1), this);
         }
       }),
       (e.emitEvent = function (t, e) {
         var i = this._events && this._events[t];
         if (i && i.length) {
-          (i = i.slice(0)), (e = e || []);
+          ((i = i.slice(0)), (e = e || []));
           for (
             var n = this._onceEvents && this._onceEvents[t], s = 0;
             s < i.length;
             s++
           ) {
             var o = i[s];
-            n && n[o] && (this.off(t, o), delete n[o]), o.apply(this, e);
+            (n && n[o] && (this.off(t, o), delete n[o]), o.apply(this, e));
           }
           return this;
         }
       }),
       (e.allOff = function () {
-        delete this._events, delete this._onceEvents;
+        (delete this._events, delete this._onceEvents);
       }),
       t
     );
@@ -132,8 +133,8 @@ while (document.querySelector(".ukryty")) {
     "function" == typeof define && define.amd
       ? define("get-size/get-size", e)
       : "object" == typeof module && module.exports
-      ? (module.exports = e())
-      : (t.getSize = e());
+        ? (module.exports = e())
+        : (t.getSize = e());
   })(window, function () {
     "use strict";
     function t(t) {
@@ -147,7 +148,7 @@ while (document.querySelector(".ukryty")) {
           s(
             "Style returned " +
               e +
-              ". Are you running this code in a hidden iframe on Firefox? See https://bit.ly/getsizebug1"
+              ". Are you running this code in a hidden iframe on Firefox? See https://bit.ly/getsizebug1",
           ),
         e
       );
@@ -158,17 +159,17 @@ while (document.querySelector(".ukryty")) {
           if (!a) {
             a = !0;
             var s = document.createElement("div");
-            (s.style.width = "200px"),
+            ((s.style.width = "200px"),
               (s.style.padding = "1px 2px 3px 4px"),
               (s.style.borderStyle = "solid"),
               (s.style.borderWidth = "1px 2px 3px 4px"),
-              (s.style.boxSizing = "border-box");
+              (s.style.boxSizing = "border-box"));
             var o = document.body || document.documentElement;
             o.appendChild(s);
             var r = e(s);
-            (n = 200 == Math.round(t(r.width))),
+            ((n = 200 == Math.round(t(r.width))),
               (i.isBoxSizeOuter = n),
-              o.removeChild(s);
+              o.removeChild(s));
           }
         })(),
         "string" == typeof s && (s = document.querySelector(s)),
@@ -194,7 +195,7 @@ while (document.querySelector(".ukryty")) {
             return t;
           })();
         var h = {};
-        (h.width = s.offsetWidth), (h.height = s.offsetHeight);
+        ((h.width = s.offsetWidth), (h.height = s.offsetHeight));
         for (
           var c = (h.isBorderBox = "border-box" == l.boxSizing), d = 0;
           d < r;
@@ -255,8 +256,8 @@ while (document.querySelector(".ukryty")) {
     "function" == typeof define && define.amd
       ? define("desandro-matches-selector/matches-selector", e)
       : "object" == typeof module && module.exports
-      ? (module.exports = e())
-      : (t.matchesSelector = e());
+        ? (module.exports = e())
+        : (t.matchesSelector = e());
   })(window, function () {
     "use strict";
     var t = (function () {
@@ -279,11 +280,11 @@ while (document.querySelector(".ukryty")) {
           ["desandro-matches-selector/matches-selector"],
           function (i) {
             return e(t, i);
-          }
+          },
         )
       : "object" == typeof module && module.exports
-      ? (module.exports = e(t, require("desandro-matches-selector")))
-      : (t.fizzyUIUtils = e(t, t.matchesSelector));
+        ? (module.exports = e(t, require("desandro-matches-selector")))
+        : (t.fizzyUIUtils = e(t, t.matchesSelector));
   })(window, function (t, e) {
     var i = {
         extend: function (t, e) {
@@ -295,14 +296,14 @@ while (document.querySelector(".ukryty")) {
         },
       },
       n = Array.prototype.slice;
-    (i.makeArray = function (t) {
+    ((i.makeArray = function (t) {
       return Array.isArray(t)
         ? t
         : null == t
-        ? []
-        : "object" == typeof t && "number" == typeof t.length
-        ? n.call(t)
-        : [t];
+          ? []
+          : "object" == typeof t && "number" == typeof t.length
+            ? n.call(t)
+            : [t];
     }),
       (i.removeFrom = function (t, e) {
         var i = t.indexOf(e);
@@ -344,7 +345,7 @@ while (document.querySelector(".ukryty")) {
           var e = arguments,
             o = this;
           this[s] = setTimeout(function () {
-            n.apply(o, e), delete o[s];
+            (n.apply(o, e), delete o[s]);
           }, i);
         };
       }),
@@ -360,7 +361,7 @@ while (document.querySelector(".ukryty")) {
             return e + "-" + i;
           })
           .toLowerCase();
-      });
+      }));
     var s = t.console;
     return (
       (i.htmlInit = function (e, n) {
@@ -397,22 +398,23 @@ while (document.querySelector(".ukryty")) {
           return e(t, i);
         })
       : "object" == typeof module && module.exports
-      ? (module.exports = e(t, require("get-size")))
-      : ((t.Flickity = t.Flickity || {}), (t.Flickity.Cell = e(t, t.getSize)));
+        ? (module.exports = e(t, require("get-size")))
+        : ((t.Flickity = t.Flickity || {}),
+          (t.Flickity.Cell = e(t, t.getSize)));
   })(window, function (t, e) {
     function i(t, e) {
-      (this.element = t), (this.parent = e), this.create();
+      ((this.element = t), (this.parent = e), this.create());
     }
     var n = i.prototype;
     return (
       (n.create = function () {
-        (this.element.style.position = "absolute"),
+        ((this.element.style.position = "absolute"),
           this.element.setAttribute("aria-hidden", "true"),
           (this.x = 0),
-          (this.shift = 0);
+          (this.shift = 0));
       }),
       (n.destroy = function () {
-        this.unselect(), (this.element.style.position = "");
+        (this.unselect(), (this.element.style.position = ""));
         var t = this.parent.originSide;
         this.element.style[t] = "";
       }),
@@ -420,7 +422,7 @@ while (document.querySelector(".ukryty")) {
         this.size = e(this.element);
       }),
       (n.setPosition = function (t) {
-        (this.x = t), this.updateTarget(), this.renderPosition(t);
+        ((this.x = t), this.updateTarget(), this.renderPosition(t));
       }),
       (n.updateTarget = n.setDefaultTarget =
         function () {
@@ -434,16 +436,16 @@ while (document.querySelector(".ukryty")) {
         this.element.style[e] = this.parent.getPositionValue(t);
       }),
       (n.select = function () {
-        this.element.classList.add("is-selected"),
-          this.element.removeAttribute("aria-hidden");
+        (this.element.classList.add("is-selected"),
+          this.element.removeAttribute("aria-hidden"));
       }),
       (n.unselect = function () {
-        this.element.classList.remove("is-selected"),
-          this.element.setAttribute("aria-hidden", "true");
+        (this.element.classList.remove("is-selected"),
+          this.element.setAttribute("aria-hidden", "true"));
       }),
       (n.wrapShift = function (t) {
-        (this.shift = t),
-          this.renderPosition(this.x + this.parent.slideableWidth * t);
+        ((this.shift = t),
+          this.renderPosition(this.x + this.parent.slideableWidth * t));
       }),
       (n.remove = function () {
         this.element.parentNode.removeChild(this.element);
@@ -455,16 +457,16 @@ while (document.querySelector(".ukryty")) {
     "function" == typeof define && define.amd
       ? define("flickity/js/slide", e)
       : "object" == typeof module && module.exports
-      ? (module.exports = e())
-      : ((t.Flickity = t.Flickity || {}), (t.Flickity.Slide = e()));
+        ? (module.exports = e())
+        : ((t.Flickity = t.Flickity || {}), (t.Flickity.Slide = e()));
   })(window, function () {
     "use strict";
     function t(t) {
-      (this.parent = t),
+      ((this.parent = t),
         (this.isOriginLeft = "left" == t.originSide),
         (this.cells = []),
         (this.outerWidth = 0),
-        (this.height = 0);
+        (this.height = 0));
     }
     var e = t.prototype;
     return (
@@ -514,9 +516,9 @@ while (document.querySelector(".ukryty")) {
           return e(t, i);
         })
       : "object" == typeof module && module.exports
-      ? (module.exports = e(t, require("fizzy-ui-utils")))
-      : ((t.Flickity = t.Flickity || {}),
-        (t.Flickity.animatePrototype = e(t, t.fizzyUIUtils)));
+        ? (module.exports = e(t, require("fizzy-ui-utils")))
+        : ((t.Flickity = t.Flickity || {}),
+          (t.Flickity.animatePrototype = e(t, t.fizzyUIUtils)));
   })(window, function (t, e) {
     var i = {
       startAnimation: function () {
@@ -524,7 +526,7 @@ while (document.querySelector(".ukryty")) {
           ((this.isAnimating = !0), (this.restingFrames = 0), this.animate());
       },
       animate: function () {
-        this.applyDragForce(), this.applySelectedAttraction();
+        (this.applyDragForce(), this.applySelectedAttraction());
         var t = this.x;
         if (
           (this.integratePhysics(),
@@ -540,16 +542,16 @@ while (document.querySelector(".ukryty")) {
       },
       positionSlider: function () {
         var t = this.x;
-        this.options.wrapAround &&
+        (this.options.wrapAround &&
           1 < this.cells.length &&
           ((t = e.modulo(t, this.slideableWidth)),
           (t -= this.slideableWidth),
           this.shiftWrapCells(t)),
           this.setTranslateX(t, this.isAnimating),
-          this.dispatchScrollEvent();
+          this.dispatchScrollEvent());
       },
       setTranslateX: function (t, e) {
-        (t += this.cursorPosition), (t = this.options.rightToLeft ? -t : t);
+        ((t += this.cursorPosition), (t = this.options.rightToLeft ? -t : t));
         var i = this.getPositionValue(t);
         this.slider.style.transform = e
           ? "translate3d(" + i + ",0,0)"
@@ -575,14 +577,14 @@ while (document.querySelector(".ukryty")) {
           : Math.round(t) + "px";
       },
       settle: function (t) {
-        this.isPointerDown ||
+        (this.isPointerDown ||
           Math.round(100 * this.x) != Math.round(100 * t) ||
           this.restingFrames++,
           2 < this.restingFrames &&
             ((this.isAnimating = !1),
             delete this.isFreeScrolling,
             this.positionSlider(),
-            this.dispatchEvent("settle", null, [this.selectedIndex]));
+            this.dispatchEvent("settle", null, [this.selectedIndex])));
       },
       shiftWrapCells: function (t) {
         var e = this.cursorPosition + t;
@@ -596,14 +598,15 @@ while (document.querySelector(".ukryty")) {
         for (var n = 0; n < t.length; n++) {
           var s = t[n],
             o = 0 < e ? i : 0;
-          s.wrapShift(o), (e -= s.size.outerWidth);
+          (s.wrapShift(o), (e -= s.size.outerWidth));
         }
       },
       _unshiftCells: function (t) {
         if (t && t.length) for (var e = 0; e < t.length; e++) t[e].wrapShift(0);
       },
       integratePhysics: function () {
-        (this.x += this.velocity), (this.velocity *= this.getFrictionFactor());
+        ((this.x += this.velocity),
+          (this.velocity *= this.getFrictionFactor()));
       },
       applyForce: function (t) {
         this.velocity += t;
@@ -658,7 +661,7 @@ while (document.querySelector(".ukryty")) {
         require("fizzy-ui-utils"),
         require("./cell"),
         require("./slide"),
-        require("./animate")
+        require("./animate"),
       );
     else {
       var i = t.Flickity;
@@ -669,7 +672,7 @@ while (document.querySelector(".ukryty")) {
         t.fizzyUIUtils,
         i.Cell,
         i.Slide,
-        i.animatePrototype
+        i.animatePrototype,
       );
     }
   })(window, function (t, e, i, n, s, o, r) {
@@ -681,12 +684,12 @@ while (document.querySelector(".ukryty")) {
       if (i) {
         if (((this.element = i), this.element.flickityGUID)) {
           var s = f[this.element.flickityGUID];
-          return s.option(e), s;
+          return (s.option(e), s);
         }
-        h && (this.$element = h(this.element)),
+        (h && (this.$element = h(this.element)),
           (this.options = n.extend({}, this.constructor.defaults)),
           this.option(e),
-          this._create();
+          this._create());
       } else d && d.error("Bad element for Flickity: " + (i || t));
     }
     var h = t.jQuery,
@@ -694,7 +697,7 @@ while (document.querySelector(".ukryty")) {
       d = t.console,
       u = 0,
       f = {};
-    (l.defaults = {
+    ((l.defaults = {
       accessibility: !0,
       cellAlign: "center",
       freeScrollFriction: 0.075,
@@ -705,9 +708,9 @@ while (document.querySelector(".ukryty")) {
       selectedAttraction: 0.025,
       setGallerySize: !0,
     }),
-      (l.createMethods = []);
+      (l.createMethods = []));
     var p = l.prototype;
-    n.extend(p, e.prototype),
+    (n.extend(p, e.prototype),
       (p._create = function () {
         var e = (this.guid = ++u);
         for (var i in ((this.element.flickityGUID = e),
@@ -725,10 +728,10 @@ while (document.querySelector(".ukryty")) {
           var n = this.options.on[i];
           this.on(i, n);
         }
-        l.createMethods.forEach(function (t) {
+        (l.createMethods.forEach(function (t) {
           this[t]();
         }, this),
-          this.options.watchCSS ? this.watchCSS() : this.activate();
+          this.options.watchCSS ? this.watchCSS() : this.activate());
       }),
       (p.option = function (t) {
         n.extend(this.options, t);
@@ -754,18 +757,18 @@ while (document.querySelector(".ukryty")) {
       }),
       (p._createSlider = function () {
         var t = document.createElement("div");
-        (t.className = "flickity-slider"),
+        ((t.className = "flickity-slider"),
           (t.style[this.originSide] = 0),
-          (this.slider = t);
+          (this.slider = t));
       }),
       (p._filterFindCellElements = function (t) {
         return n.filterFindElements(t, this.options.cellSelector);
       }),
       (p.reloadCells = function () {
-        (this.cells = this._makeCells(this.slider.children)),
+        ((this.cells = this._makeCells(this.slider.children)),
           this.positionCells(),
           this._getWrapShiftCells(),
-          this.setGallerySize();
+          this.setGallerySize());
       }),
       (p._makeCells = function (t) {
         return this._filterFindCellElements(t).map(function (t) {
@@ -779,10 +782,10 @@ while (document.querySelector(".ukryty")) {
         return this.slides[this.slides.length - 1];
       }),
       (p.positionCells = function () {
-        this._sizeCells(this.cells), this._positionCells(0);
+        (this._sizeCells(this.cells), this._positionCells(0));
       }),
       (p._positionCells = function (t) {
-        (t = t || 0), (this.maxCellHeight = (t && this.maxCellHeight) || 0);
+        ((t = t || 0), (this.maxCellHeight = (t && this.maxCellHeight) || 0));
         var e = 0;
         if (0 < t) {
           var i = this.cells[t - 1];
@@ -790,19 +793,19 @@ while (document.querySelector(".ukryty")) {
         }
         for (var n = this.cells.length, s = t; s < n; s++) {
           var o = this.cells[s];
-          o.setPosition(e),
+          (o.setPosition(e),
             (e += o.size.outerWidth),
             (this.maxCellHeight = Math.max(
               o.size.outerHeight,
-              this.maxCellHeight
-            ));
+              this.maxCellHeight,
+            )));
         }
-        (this.slideableWidth = e),
+        ((this.slideableWidth = e),
           this.updateSlides(),
           this._containSlides(),
           (this.slidesWidth = n
             ? this.getLastSlide().target - this.slides[0].target
-            : 0);
+            : 0));
       }),
       (p._sizeCells = function (t) {
         t.forEach(function (t) {
@@ -815,17 +818,17 @@ while (document.querySelector(".ukryty")) {
           this.slides.push(t);
           var e = "left" == this.originSide ? "marginRight" : "marginLeft",
             i = this._getCanCellFit();
-          this.cells.forEach(function (n, s) {
+          (this.cells.forEach(function (n, s) {
             if (t.cells.length) {
               var r =
                 t.outerWidth - t.firstMargin + (n.size.outerWidth - n.size[e]);
-              i.call(this, s, r) ||
+              (i.call(this, s, r) ||
                 (t.updateTarget(), (t = new o(this)), this.slides.push(t)),
-                t.addCell(n);
+                t.addCell(n));
             } else t.addCell(n);
           }, this),
             t.updateTarget(),
-            this.updateSelectedSlide();
+            this.updateSelectedSlide());
         }
       }),
       (p._getCanCellFit = function () {
@@ -848,13 +851,13 @@ while (document.querySelector(".ukryty")) {
       }),
       (p._init = p.reposition =
         function () {
-          this.positionCells(), this.positionSliderAtSelected();
+          (this.positionCells(), this.positionSliderAtSelected());
         }),
       (p.getSize = function () {
-        (this.size = i(this.element)),
+        ((this.size = i(this.element)),
           this.setCellAlign(),
-          (this.cursorPosition = this.size.innerWidth * this.cellAlign);
-      });
+          (this.cursorPosition = this.size.innerWidth * this.cellAlign));
+      }));
     var g = {
       center: { left: 0.5, right: 0.5 },
       left: { left: 0, right: 1 },
@@ -876,20 +879,20 @@ while (document.querySelector(".ukryty")) {
       }),
       (p._getWrapShiftCells = function () {
         if (this.options.wrapAround) {
-          this._unshiftCells(this.beforeShiftCells),
-            this._unshiftCells(this.afterShiftCells);
+          (this._unshiftCells(this.beforeShiftCells),
+            this._unshiftCells(this.afterShiftCells));
           var t = this.cursorPosition,
             e = this.cells.length - 1;
-          (this.beforeShiftCells = this._getGapCells(t, e, -1)),
+          ((this.beforeShiftCells = this._getGapCells(t, e, -1)),
             (t = this.size.innerWidth - this.cursorPosition),
-            (this.afterShiftCells = this._getGapCells(t, 0, 1));
+            (this.afterShiftCells = this._getGapCells(t, 0, 1)));
         }
       }),
       (p._getGapCells = function (t, e, i) {
         for (var n = []; 0 < t; ) {
           var s = this.cells[e];
           if (!s) break;
-          n.push(s), (e += i), (t -= s.size.outerWidth);
+          (n.push(s), (e += i), (t -= s.size.outerWidth));
         }
         return n;
       }),
@@ -920,7 +923,7 @@ while (document.querySelector(".ukryty")) {
           var s = (t += this.options.namespaceJQueryEvents ? ".flickity" : "");
           if (e) {
             var o = h.Event(e);
-            (o.type = t), (s = o);
+            ((o.type = t), (s = o));
           }
           this.$element.trigger(s, i);
         }
@@ -935,13 +938,13 @@ while (document.querySelector(".ukryty")) {
           this.slides[t])
         ) {
           var s = this.selectedIndex;
-          (this.selectedIndex = t),
+          ((this.selectedIndex = t),
             this.updateSelectedSlide(),
             i ? this.positionSliderAtSelected() : this.startAnimation(),
             this.options.adaptiveHeight && this.setGallerySize(),
             this.dispatchEvent("select", null, [t]),
             t != s && this.dispatchEvent("change", null, [t]),
-            this.dispatchEvent("cellSelect");
+            this.dispatchEvent("cellSelect"));
         }
       }),
       (p._wrapSelect = function (t) {
@@ -951,12 +954,12 @@ while (document.querySelector(".ukryty")) {
           s = Math.abs(i - this.selectedIndex),
           o = Math.abs(i + e - this.selectedIndex),
           r = Math.abs(i - e - this.selectedIndex);
-        !this.isDragSelect && o < s
+        (!this.isDragSelect && o < s
           ? (t += e)
           : !this.isDragSelect && r < s && (t -= e),
           t < 0
             ? (this.x -= this.slideableWidth)
-            : e <= t && (this.x += this.slideableWidth);
+            : e <= t && (this.x += this.slideableWidth));
       }),
       (p.previous = function (t, e) {
         this.select(this.selectedIndex - 1, t, e);
@@ -984,7 +987,7 @@ while (document.querySelector(".ukryty")) {
           if (t && "string" == typeof t && this.queryCell(t))
             return void this.selectCell(t, !1, !0);
           var e = 0;
-          t && this.slides[t] && (e = t), this.select(e, !1, !0);
+          (t && this.slides[t] && (e = t), this.select(e, !1, !0));
         }
       }),
       (p.selectCell = function (t, e, i) {
@@ -1050,21 +1053,21 @@ while (document.querySelector(".ukryty")) {
         this.emitEvent("uiChange");
       }),
       (p.childUIPointerDown = function (t) {
-        "touchstart" != t.type && t.preventDefault(), this.focus();
+        ("touchstart" != t.type && t.preventDefault(), this.focus());
       }),
       (p.onresize = function () {
-        this.watchCSS(), this.resize();
+        (this.watchCSS(), this.resize());
       }),
       n.debounceMethod(l, "onresize", 150),
       (p.resize = function () {
         if (this.isActive) {
-          this.getSize(),
+          (this.getSize(),
             this.options.wrapAround &&
               (this.x = n.modulo(this.x, this.slideableWidth)),
             this.positionCells(),
             this._getWrapShiftCells(),
             this.setGallerySize(),
-            this.emitEvent("resize");
+            this.emitEvent("resize"));
           var t = this.selectedElements && this.selectedElements[0];
           this.selectCell(t, !1, !0);
         }
@@ -1086,17 +1089,17 @@ while (document.querySelector(".ukryty")) {
       (l.keyboardHandlers = {
         37: function () {
           var t = this.options.rightToLeft ? "next" : "previous";
-          this.uiChange(), this[t]();
+          (this.uiChange(), this[t]());
         },
         39: function () {
           var t = this.options.rightToLeft ? "previous" : "next";
-          this.uiChange(), this[t]();
+          (this.uiChange(), this[t]());
         },
       }),
       (p.focus = function () {
         var e = t.pageYOffset;
-        this.element.focus({ preventScroll: !0 }),
-          t.pageYOffset != e && t.scrollTo(t.pageXOffset, e);
+        (this.element.focus({ preventScroll: !0 }),
+          t.pageYOffset != e && t.scrollTo(t.pageXOffset, e));
       }),
       (p.deactivate = function () {
         this.isActive &&
@@ -1115,13 +1118,13 @@ while (document.querySelector(".ukryty")) {
           this.emitEvent("deactivate"));
       }),
       (p.destroy = function () {
-        this.deactivate(),
+        (this.deactivate(),
           t.removeEventListener("resize", this),
           this.allOff(),
           this.emitEvent("destroy"),
           h && this.$element && h.removeData(this.element, "flickity"),
           delete this.element.flickityGUID,
-          delete f[this.guid];
+          delete f[this.guid]);
       }),
       n.extend(p, r),
       (l.data = function (t) {
@@ -1145,15 +1148,15 @@ while (document.querySelector(".ukryty")) {
           ["ev-emitter/ev-emitter"],
           function (i) {
             return e(t, i);
-          }
+          },
         )
       : "object" == typeof module && module.exports
-      ? (module.exports = e(t, require("ev-emitter")))
-      : (t.Unipointer = e(t, t.EvEmitter));
+        ? (module.exports = e(t, require("ev-emitter")))
+        : (t.Unipointer = e(t, t.EvEmitter));
   })(window, function (t, e) {
     function i() {}
     var n = (i.prototype = Object.create(e.prototype));
-    (n.bindStartEvent = function (t) {
+    ((n.bindStartEvent = function (t) {
       this._bindStartEvent(t, !0);
     }),
       (n.unbindStartEvent = function (t) {
@@ -1164,10 +1167,10 @@ while (document.querySelector(".ukryty")) {
             ? "addEventListener"
             : "removeEventListener",
           s = "mousedown";
-        t.PointerEvent
+        (t.PointerEvent
           ? (s = "pointerdown")
           : "ontouchstart" in t && (s = "touchstart"),
-          e[n](s, this);
+          e[n](s, this));
       }),
       (n.handleEvent = function (t) {
         var e = "on" + t.type;
@@ -1198,8 +1201,8 @@ while (document.querySelector(".ukryty")) {
           this.pointerDown(t, e));
       }),
       (n.pointerDown = function (t, e) {
-        this._bindPostStartEvents(t), this.emitEvent("pointerDown", [t, e]);
-      });
+        (this._bindPostStartEvents(t), this.emitEvent("pointerDown", [t, e]));
+      }));
     var s = {
       mousedown: ["mousemove", "mouseup"],
       touchstart: ["touchmove", "touchend", "touchcancel"],
@@ -1209,10 +1212,10 @@ while (document.querySelector(".ukryty")) {
       (n._bindPostStartEvents = function (e) {
         if (e) {
           var i = s[e.type];
-          i.forEach(function (e) {
+          (i.forEach(function (e) {
             t.addEventListener(e, this);
           }, this),
-            (this._boundPointerEvents = i);
+            (this._boundPointerEvents = i));
         }
       }),
       (n._unbindPostStartEvents = function () {
@@ -1249,16 +1252,18 @@ while (document.querySelector(".ukryty")) {
         e && this._pointerUp(t, e);
       }),
       (n._pointerUp = function (t, e) {
-        this._pointerDone(), this.pointerUp(t, e);
+        (this._pointerDone(), this.pointerUp(t, e));
       }),
       (n.pointerUp = function (t, e) {
         this.emitEvent("pointerUp", [t, e]);
       }),
       (n._pointerDone = function () {
-        this._pointerReset(), this._unbindPostStartEvents(), this.pointerDone();
+        (this._pointerReset(),
+          this._unbindPostStartEvents(),
+          this.pointerDone());
       }),
       (n._pointerReset = function () {
-        (this.isPointerDown = !1), delete this.pointerIdentifier;
+        ((this.isPointerDown = !1), delete this.pointerIdentifier);
       }),
       (n.pointerDone = function () {}),
       (n.onpointercancel = function (t) {
@@ -1269,7 +1274,7 @@ while (document.querySelector(".ukryty")) {
         e && this._pointerCancel(t, e);
       }),
       (n._pointerCancel = function (t, e) {
-        this._pointerDone(), this.pointerCancel(t, e);
+        (this._pointerDone(), this.pointerCancel(t, e));
       }),
       (n.pointerCancel = function (t, e) {
         this.emitEvent("pointerCancel", [t, e]);
@@ -1287,15 +1292,15 @@ while (document.querySelector(".ukryty")) {
           ["unipointer/unipointer"],
           function (i) {
             return e(t, i);
-          }
+          },
         )
       : "object" == typeof module && module.exports
-      ? (module.exports = e(t, require("unipointer")))
-      : (t.Unidragger = e(t, t.Unipointer));
+        ? (module.exports = e(t, require("unipointer")))
+        : (t.Unidragger = e(t, t.Unipointer));
   })(window, function (t, e) {
     function i() {}
     var n = (i.prototype = Object.create(e.prototype));
-    (n.bindHandles = function () {
+    ((n.bindHandles = function () {
       this._bindHandles(!0);
     }),
       (n.unbindHandles = function () {
@@ -1312,9 +1317,9 @@ while (document.querySelector(".ukryty")) {
           s++
         ) {
           var o = this.handles[s];
-          this._bindStartEvent(o, e),
+          (this._bindStartEvent(o, e),
             o[i]("click", this),
-            t.PointerEvent && (o.style.touchAction = n);
+            t.PointerEvent && (o.style.touchAction = n));
         }
       }),
       (n._touchActionValue = "none"),
@@ -1325,7 +1330,7 @@ while (document.querySelector(".ukryty")) {
           this.pointerDownBlur(),
           this._bindPostStartEvents(t),
           this.emitEvent("pointerDown", [t, e]));
-      });
+      }));
     var s = { TEXTAREA: !0, INPUT: !0, SELECT: !0, OPTION: !0 },
       o = {
         radio: !0,
@@ -1340,7 +1345,7 @@ while (document.querySelector(".ukryty")) {
         var e = s[t.target.nodeName],
           i = o[t.target.type],
           n = !e || i;
-        return n || this._pointerReset(), n;
+        return (n || this._pointerReset(), n);
       }),
       (n.pointerDownBlur = function () {
         var t = document.activeElement;
@@ -1348,7 +1353,7 @@ while (document.querySelector(".ukryty")) {
       }),
       (n.pointerMove = function (t, e) {
         var i = this._dragPointerMove(t, e);
-        this.emitEvent("pointerMove", [t, e, i]), this._dragMove(t, e, i);
+        (this.emitEvent("pointerMove", [t, e, i]), this._dragMove(t, e, i));
       }),
       (n._dragPointerMove = function (t, e) {
         var i = {
@@ -1356,22 +1361,23 @@ while (document.querySelector(".ukryty")) {
           y: e.pageY - this.pointerDownPointer.pageY,
         };
         return (
-          !this.isDragging && this.hasDragStarted(i) && this._dragStart(t, e), i
+          !this.isDragging && this.hasDragStarted(i) && this._dragStart(t, e),
+          i
         );
       }),
       (n.hasDragStarted = function (t) {
         return 3 < Math.abs(t.x) || 3 < Math.abs(t.y);
       }),
       (n.pointerUp = function (t, e) {
-        this.emitEvent("pointerUp", [t, e]), this._dragPointerUp(t, e);
+        (this.emitEvent("pointerUp", [t, e]), this._dragPointerUp(t, e));
       }),
       (n._dragPointerUp = function (t, e) {
         this.isDragging ? this._dragEnd(t, e) : this._staticClick(t, e);
       }),
       (n._dragStart = function (t, e) {
-        (this.isDragging = !0),
+        ((this.isDragging = !0),
           (this.isPreventingClicks = !0),
-          this.dragStart(t, e);
+          this.dragStart(t, e));
       }),
       (n.dragStart = function (t, e) {
         this.emitEvent("dragStart", [t, e]);
@@ -1380,16 +1386,16 @@ while (document.querySelector(".ukryty")) {
         this.isDragging && this.dragMove(t, e, i);
       }),
       (n.dragMove = function (t, e, i) {
-        t.preventDefault(), this.emitEvent("dragMove", [t, e, i]);
+        (t.preventDefault(), this.emitEvent("dragMove", [t, e, i]));
       }),
       (n._dragEnd = function (t, e) {
-        (this.isDragging = !1),
+        ((this.isDragging = !1),
           setTimeout(
             function () {
               delete this.isPreventingClicks;
-            }.bind(this)
+            }.bind(this),
           ),
-          this.dragEnd(t, e);
+          this.dragEnd(t, e));
       }),
       (n.dragEnd = function (t, e) {
         this.emitEvent("dragEnd", [t, e]);
@@ -1406,7 +1412,7 @@ while (document.querySelector(".ukryty")) {
               function () {
                 delete this.isIgnoringMouseUp;
               }.bind(this),
-              400
+              400,
             )));
       }),
       (n.staticClick = function (t, e) {
@@ -1423,54 +1429,54 @@ while (document.querySelector(".ukryty")) {
           ["./flickity", "unidragger/unidragger", "fizzy-ui-utils/utils"],
           function (i, n, s) {
             return e(t, i, n, s);
-          }
+          },
         )
       : "object" == typeof module && module.exports
-      ? (module.exports = e(
-          t,
-          require("./flickity"),
-          require("unidragger"),
-          require("fizzy-ui-utils")
-        ))
-      : (t.Flickity = e(t, t.Flickity, t.Unidragger, t.fizzyUIUtils));
+        ? (module.exports = e(
+            t,
+            require("./flickity"),
+            require("unidragger"),
+            require("fizzy-ui-utils"),
+          ))
+        : (t.Flickity = e(t, t.Flickity, t.Unidragger, t.fizzyUIUtils));
   })(window, function (t, e, i, n) {
     function s() {
       return { x: t.pageXOffset, y: t.pageYOffset };
     }
-    n.extend(e.defaults, { draggable: ">1", dragThreshold: 3 }),
-      e.createMethods.push("_createDrag");
+    (n.extend(e.defaults, { draggable: ">1", dragThreshold: 3 }),
+      e.createMethods.push("_createDrag"));
     var o = e.prototype;
-    n.extend(o, i.prototype), (o._touchActionValue = "pan-y");
+    (n.extend(o, i.prototype), (o._touchActionValue = "pan-y"));
     var r = "createTouch" in document,
       a = !1;
-    (o._createDrag = function () {
-      this.on("activate", this.onActivateDrag),
+    ((o._createDrag = function () {
+      (this.on("activate", this.onActivateDrag),
         this.on("uiChange", this._uiChangeDrag),
         this.on("deactivate", this.onDeactivateDrag),
         this.on("cellChange", this.updateDraggable),
-        r && !a && (t.addEventListener("touchmove", function () {}), (a = !0));
+        r && !a && (t.addEventListener("touchmove", function () {}), (a = !0)));
     }),
       (o.onActivateDrag = function () {
-        (this.handles = [this.viewport]),
+        ((this.handles = [this.viewport]),
           this.bindHandles(),
-          this.updateDraggable();
+          this.updateDraggable());
       }),
       (o.onDeactivateDrag = function () {
-        this.unbindHandles(), this.element.classList.remove("is-draggable");
+        (this.unbindHandles(), this.element.classList.remove("is-draggable"));
       }),
       (o.updateDraggable = function () {
-        ">1" == this.options.draggable
+        (">1" == this.options.draggable
           ? (this.isDraggable = 1 < this.slides.length)
           : (this.isDraggable = this.options.draggable),
           this.isDraggable
             ? this.element.classList.add("is-draggable")
-            : this.element.classList.remove("is-draggable");
+            : this.element.classList.remove("is-draggable"));
       }),
       (o.bindDrag = function () {
-        (this.options.draggable = !0), this.updateDraggable();
+        ((this.options.draggable = !0), this.updateDraggable());
       }),
       (o.unbindDrag = function () {
-        (this.options.draggable = !1), this.updateDraggable();
+        ((this.options.draggable = !1), this.updateDraggable());
       }),
       (o._uiChangeDrag = function () {
         delete this.isFreeScrolling;
@@ -1489,10 +1495,10 @@ while (document.querySelector(".ukryty")) {
           : this._pointerDownDefault(e, i);
       }),
       (o._pointerDownDefault = function (t, e) {
-        (this.pointerDownPointer = { pageX: e.pageX, pageY: e.pageY }),
+        ((this.pointerDownPointer = { pageX: e.pageX, pageY: e.pageY }),
           this._bindPostStartEvents(t),
-          this.dispatchEvent("pointerDown", t, [e]);
-      });
+          this.dispatchEvent("pointerDown", t, [e]));
+      }));
     var l = { INPUT: !0, TEXTAREA: !0, SELECT: !0 };
     return (
       (o.pointerDownFocus = function (t) {
@@ -1508,13 +1514,13 @@ while (document.querySelector(".ukryty")) {
         return Math.abs(t.x) > this.options.dragThreshold;
       }),
       (o.pointerUp = function (t, e) {
-        delete this.isTouchScrolling,
+        (delete this.isTouchScrolling,
           this.viewport.classList.remove("is-pointer-down"),
           this.dispatchEvent("pointerUp", t, [e]),
-          this._dragPointerUp(t, e);
+          this._dragPointerUp(t, e));
       }),
       (o.pointerDone = function () {
-        t.removeEventListener("scroll", this), delete this.pointerDownScroll;
+        (t.removeEventListener("scroll", this), delete this.pointerDownScroll);
       }),
       (o.dragStart = function (e, i) {
         this.isDraggable &&
@@ -1525,11 +1531,11 @@ while (document.querySelector(".ukryty")) {
       }),
       (o.pointerMove = function (t, e) {
         var i = this._dragPointerMove(t, e);
-        this.dispatchEvent("pointerMove", t, [e, i]), this._dragMove(t, e, i);
+        (this.dispatchEvent("pointerMove", t, [e, i]), this._dragMove(t, e, i));
       }),
       (o.dragMove = function (t, e, i) {
         if (this.isDraggable) {
-          t.preventDefault(), (this.previousDragX = this.dragX);
+          (t.preventDefault(), (this.previousDragX = this.dragX));
           var n = this.options.rightToLeft ? -1 : 1;
           this.options.wrapAround && (i.x = i.x % this.slideableWidth);
           var s = this.dragStartPosition + i.x * n;
@@ -1538,13 +1544,13 @@ while (document.querySelector(".ukryty")) {
             s = o < s ? 0.5 * (s + o) : s;
             var r = Math.min(
               -this.getLastSlide().target,
-              this.dragStartPosition
+              this.dragStartPosition,
             );
             s = s < r ? 0.5 * (s + r) : s;
           }
-          (this.dragX = s),
+          ((this.dragX = s),
             (this.dragMoveTime = new Date()),
-            this.dispatchEvent("dragMove", t, [e, i]);
+            this.dispatchEvent("dragMove", t, [e, i]));
         }
       }),
       (o.dragEnd = function (t, e) {
@@ -1559,11 +1565,11 @@ while (document.querySelector(".ukryty")) {
             this.options.freeScroll ||
               i != this.selectedIndex ||
               (i += this.dragEndBoostSelect());
-          delete this.previousDragX,
+          (delete this.previousDragX,
             (this.isDragSelect = this.options.wrapAround),
             this.select(i),
             delete this.isDragSelect,
-            this.dispatchEvent("dragEnd", t, [e]);
+            this.dispatchEvent("dragEnd", t, [e]));
         }
       }),
       (o.dragEndRestingSelect = function () {
@@ -1634,54 +1640,54 @@ while (document.querySelector(".ukryty")) {
           ["./flickity", "unipointer/unipointer", "fizzy-ui-utils/utils"],
           function (i, n, s) {
             return e(t, i, n, s);
-          }
+          },
         )
       : "object" == typeof module && module.exports
-      ? (module.exports = e(
-          t,
-          require("./flickity"),
-          require("unipointer"),
-          require("fizzy-ui-utils")
-        ))
-      : e(t, t.Flickity, t.Unipointer, t.fizzyUIUtils);
+        ? (module.exports = e(
+            t,
+            require("./flickity"),
+            require("unipointer"),
+            require("fizzy-ui-utils"),
+          ))
+        : e(t, t.Flickity, t.Unipointer, t.fizzyUIUtils);
   })(window, function (t, e, i, n) {
     "use strict";
     function s(t, e) {
-      (this.direction = t), (this.parent = e), this._create();
+      ((this.direction = t), (this.parent = e), this._create());
     }
     var o = "http://www.w3.org/2000/svg";
-    ((s.prototype = Object.create(i.prototype))._create = function () {
-      (this.isEnabled = !0), (this.isPrevious = -1 == this.direction);
+    (((s.prototype = Object.create(i.prototype))._create = function () {
+      ((this.isEnabled = !0), (this.isPrevious = -1 == this.direction));
       var t = this.parent.options.rightToLeft ? 1 : -1;
       this.isLeft = this.direction == t;
       var e = (this.element = document.createElement("button"));
-      (e.className = "flickity-button flickity-prev-next-button"),
+      ((e.className = "flickity-button flickity-prev-next-button"),
         (e.className += this.isPrevious ? " previous" : " next"),
         e.setAttribute("type", "button"),
         this.disable(),
-        e.setAttribute("aria-label", this.isPrevious ? "Previous" : "Next");
+        e.setAttribute("aria-label", this.isPrevious ? "Previous" : "Next"));
       var i = this.createSVG();
-      e.appendChild(i),
+      (e.appendChild(i),
         this.parent.on("select", this.update.bind(this)),
         this.on(
           "pointerDown",
-          this.parent.childUIPointerDown.bind(this.parent)
-        );
+          this.parent.childUIPointerDown.bind(this.parent),
+        ));
     }),
       (s.prototype.activate = function () {
-        this.bindStartEvent(this.element),
+        (this.bindStartEvent(this.element),
           this.element.addEventListener("click", this),
-          this.parent.element.appendChild(this.element);
+          this.parent.element.appendChild(this.element));
       }),
       (s.prototype.deactivate = function () {
-        this.parent.element.removeChild(this.element),
+        (this.parent.element.removeChild(this.element),
           this.unbindStartEvent(this.element),
-          this.element.removeEventListener("click", this);
+          this.element.removeEventListener("click", this));
       }),
       (s.prototype.createSVG = function () {
         var t = document.createElementNS(o, "svg");
-        t.setAttribute("class", "flickity-button-icon"),
-          t.setAttribute("viewBox", "0 0 100 100");
+        (t.setAttribute("class", "flickity-button-icon"),
+          t.setAttribute("viewBox", "0 0 100 100"));
         var e = document.createElementNS(o, "path"),
           i = (function (t) {
             return "string" != typeof t
@@ -1741,13 +1747,13 @@ while (document.querySelector(".ukryty")) {
         }
       }),
       (s.prototype.destroy = function () {
-        this.deactivate(), this.allOff();
+        (this.deactivate(), this.allOff());
       }),
       n.extend(e.defaults, {
         prevNextButtons: !0,
         arrowShape: { x0: 10, x1: 60, y1: 50, x2: 70, y2: 40, x3: 30 },
       }),
-      e.createMethods.push("_createPrevNextButtons");
+      e.createMethods.push("_createPrevNextButtons"));
     var r = e.prototype;
     return (
       (r._createPrevNextButtons = function () {
@@ -1757,14 +1763,14 @@ while (document.querySelector(".ukryty")) {
           this.on("activate", this.activatePrevNextButtons));
       }),
       (r.activatePrevNextButtons = function () {
-        this.prevButton.activate(),
+        (this.prevButton.activate(),
           this.nextButton.activate(),
-          this.on("deactivate", this.deactivatePrevNextButtons);
+          this.on("deactivate", this.deactivatePrevNextButtons));
       }),
       (r.deactivatePrevNextButtons = function () {
-        this.prevButton.deactivate(),
+        (this.prevButton.deactivate(),
           this.nextButton.deactivate(),
-          this.off("deactivate", this.deactivatePrevNextButtons);
+          this.off("deactivate", this.deactivatePrevNextButtons));
       }),
       (e.PrevNextButton = s),
       e
@@ -1777,40 +1783,40 @@ while (document.querySelector(".ukryty")) {
           ["./flickity", "unipointer/unipointer", "fizzy-ui-utils/utils"],
           function (i, n, s) {
             return e(t, i, n, s);
-          }
+          },
         )
       : "object" == typeof module && module.exports
-      ? (module.exports = e(
-          t,
-          require("./flickity"),
-          require("unipointer"),
-          require("fizzy-ui-utils")
-        ))
-      : e(t, t.Flickity, t.Unipointer, t.fizzyUIUtils);
+        ? (module.exports = e(
+            t,
+            require("./flickity"),
+            require("unipointer"),
+            require("fizzy-ui-utils"),
+          ))
+        : e(t, t.Flickity, t.Unipointer, t.fizzyUIUtils);
   })(window, function (t, e, i, n) {
     function s(t) {
-      (this.parent = t), this._create();
+      ((this.parent = t), this._create());
     }
-    ((s.prototype = Object.create(i.prototype))._create = function () {
-      (this.holder = document.createElement("ol")),
+    (((s.prototype = Object.create(i.prototype))._create = function () {
+      ((this.holder = document.createElement("ol")),
         (this.holder.className = "flickity-page-dots"),
         (this.dots = []),
         (this.handleClick = this.onClick.bind(this)),
         this.on(
           "pointerDown",
-          this.parent.childUIPointerDown.bind(this.parent)
-        );
+          this.parent.childUIPointerDown.bind(this.parent),
+        ));
     }),
       (s.prototype.activate = function () {
-        this.setDots(),
+        (this.setDots(),
           this.holder.addEventListener("click", this.handleClick),
           this.bindStartEvent(this.holder),
-          this.parent.element.appendChild(this.holder);
+          this.parent.element.appendChild(this.holder));
       }),
       (s.prototype.deactivate = function () {
-        this.holder.removeEventListener("click", this.handleClick),
+        (this.holder.removeEventListener("click", this.handleClick),
           this.unbindStartEvent(this.holder),
-          this.parent.element.removeChild(this.holder);
+          this.parent.element.removeChild(this.holder));
       }),
       (s.prototype.setDots = function () {
         var t = this.parent.slides.length - this.dots.length;
@@ -1827,12 +1833,12 @@ while (document.querySelector(".ukryty")) {
           o++
         ) {
           var r = document.createElement("li");
-          (r.className = "dot"),
+          ((r.className = "dot"),
             r.setAttribute("aria-label", "Page dot " + (o + 1)),
             e.appendChild(r),
-            i.push(r);
+            i.push(r));
         }
-        this.holder.appendChild(e), (this.dots = this.dots.concat(i));
+        (this.holder.appendChild(e), (this.dots = this.dots.concat(i)));
       }),
       (s.prototype.removeDots = function (t) {
         this.dots.splice(this.dots.length - t, t).forEach(function (t) {
@@ -1840,13 +1846,13 @@ while (document.querySelector(".ukryty")) {
         }, this);
       }),
       (s.prototype.updateSelected = function () {
-        this.selectedDot &&
+        (this.selectedDot &&
           ((this.selectedDot.className = "dot"),
           this.selectedDot.removeAttribute("aria-current")),
           this.dots.length &&
             ((this.selectedDot = this.dots[this.parent.selectedIndex]),
             (this.selectedDot.className = "dot is-selected"),
-            this.selectedDot.setAttribute("aria-current", "step"));
+            this.selectedDot.setAttribute("aria-current", "step")));
       }),
       (s.prototype.onTap = s.prototype.onClick =
         function (t) {
@@ -1858,11 +1864,11 @@ while (document.querySelector(".ukryty")) {
           }
         }),
       (s.prototype.destroy = function () {
-        this.deactivate(), this.allOff();
+        (this.deactivate(), this.allOff());
       }),
       (e.PageDots = s),
       n.extend(e.defaults, { pageDots: !0 }),
-      e.createMethods.push("_createPageDots");
+      e.createMethods.push("_createPageDots"));
     var o = e.prototype;
     return (
       (o._createPageDots = function () {
@@ -1897,30 +1903,30 @@ while (document.querySelector(".ukryty")) {
           ["ev-emitter/ev-emitter", "fizzy-ui-utils/utils", "./flickity"],
           function (t, i, n) {
             return e(t, i, n);
-          }
+          },
         )
       : "object" == typeof module && module.exports
-      ? (module.exports = e(
-          require("ev-emitter"),
-          require("fizzy-ui-utils"),
-          require("./flickity")
-        ))
-      : e(t.EvEmitter, t.fizzyUIUtils, t.Flickity);
+        ? (module.exports = e(
+            require("ev-emitter"),
+            require("fizzy-ui-utils"),
+            require("./flickity"),
+          ))
+        : e(t.EvEmitter, t.fizzyUIUtils, t.Flickity);
   })(window, function (t, e, i) {
     function n(t) {
-      (this.parent = t),
+      ((this.parent = t),
         (this.state = "stopped"),
         (this.onVisibilityChange = this.visibilityChange.bind(this)),
-        (this.onVisibilityPlay = this.visibilityPlay.bind(this));
+        (this.onVisibilityPlay = this.visibilityPlay.bind(this)));
     }
-    ((n.prototype = Object.create(t.prototype)).play = function () {
+    (((n.prototype = Object.create(t.prototype)).play = function () {
       "playing" != this.state &&
         (document.hidden
           ? document.addEventListener("visibilitychange", this.onVisibilityPlay)
           : ((this.state = "playing"),
             document.addEventListener(
               "visibilitychange",
-              this.onVisibilityChange
+              this.onVisibilityChange,
             ),
             this.tick()));
     }),
@@ -1929,19 +1935,19 @@ while (document.querySelector(".ukryty")) {
           var t = this.parent.options.autoPlay;
           t = "number" == typeof t ? t : 3e3;
           var e = this;
-          this.clear(),
+          (this.clear(),
             (this.timeout = setTimeout(function () {
-              e.parent.next(!0), e.tick();
-            }, t));
+              (e.parent.next(!0), e.tick());
+            }, t)));
         }
       }),
       (n.prototype.stop = function () {
-        (this.state = "stopped"),
+        ((this.state = "stopped"),
           this.clear(),
           document.removeEventListener(
             "visibilitychange",
-            this.onVisibilityChange
-          );
+            this.onVisibilityChange,
+          ));
       }),
       (n.prototype.clear = function () {
         clearTimeout(this.timeout);
@@ -1956,22 +1962,22 @@ while (document.querySelector(".ukryty")) {
         this[document.hidden ? "pause" : "unpause"]();
       }),
       (n.prototype.visibilityPlay = function () {
-        this.play(),
+        (this.play(),
           document.removeEventListener(
             "visibilitychange",
-            this.onVisibilityPlay
-          );
+            this.onVisibilityPlay,
+          ));
       }),
       e.extend(i.defaults, { pauseAutoPlayOnHover: !0 }),
-      i.createMethods.push("_createPlayer");
+      i.createMethods.push("_createPlayer"));
     var s = i.prototype;
     return (
       (s._createPlayer = function () {
-        (this.player = new n(this)),
+        ((this.player = new n(this)),
           this.on("activate", this.activatePlayer),
           this.on("uiChange", this.stopPlayer),
           this.on("pointerDown", this.stopPlayer),
-          this.on("deactivate", this.deactivatePlayer);
+          this.on("deactivate", this.deactivatePlayer));
       }),
       (s.activatePlayer = function () {
         this.options.autoPlay &&
@@ -1991,8 +1997,8 @@ while (document.querySelector(".ukryty")) {
         this.player.unpause();
       }),
       (s.deactivatePlayer = function () {
-        this.player.stop(),
-          this.element.removeEventListener("mouseenter", this);
+        (this.player.stop(),
+          this.element.removeEventListener("mouseenter", this));
       }),
       (s.onmouseenter = function () {
         this.options.pauseAutoPlayOnHover &&
@@ -2000,8 +2006,8 @@ while (document.querySelector(".ukryty")) {
           this.element.addEventListener("mouseleave", this));
       }),
       (s.onmouseleave = function () {
-        this.player.unpause(),
-          this.element.removeEventListener("mouseleave", this);
+        (this.player.unpause(),
+          this.element.removeEventListener("mouseleave", this));
       }),
       (i.Player = n),
       i
@@ -2014,15 +2020,15 @@ while (document.querySelector(".ukryty")) {
           ["./flickity", "fizzy-ui-utils/utils"],
           function (i, n) {
             return e(t, i, n);
-          }
+          },
         )
       : "object" == typeof module && module.exports
-      ? (module.exports = e(
-          t,
-          require("./flickity"),
-          require("fizzy-ui-utils")
-        ))
-      : e(t, t.Flickity, t.fizzyUIUtils);
+        ? (module.exports = e(
+            t,
+            require("./flickity"),
+            require("fizzy-ui-utils"),
+          ))
+        : e(t, t.Flickity, t.fizzyUIUtils);
   })(window, function (t, e, i) {
     var n = e.prototype;
     return (
@@ -2052,7 +2058,7 @@ while (document.querySelector(".ukryty")) {
             var a = this.cells.splice(e, n - e);
             this.cells = this.cells.concat(i).concat(a);
           }
-          this._sizeCells(i), this.cellChange(e, !0);
+          (this._sizeCells(i), this.cellChange(e, !0));
         }
       }),
       (n.append = function (t) {
@@ -2065,12 +2071,12 @@ while (document.querySelector(".ukryty")) {
         var e = this.getCells(t);
         if (e && e.length) {
           var n = this.cells.length - 1;
-          e.forEach(function (t) {
+          (e.forEach(function (t) {
             t.remove();
             var e = this.cells.indexOf(t);
-            (n = Math.min(e, n)), i.removeFrom(this.cells, t);
+            ((n = Math.min(e, n)), i.removeFrom(this.cells, t));
           }, this),
-            this.cellChange(n, !0);
+            this.cellChange(n, !0));
         }
       }),
       (n.cellSizeChange = function (t) {
@@ -2083,18 +2089,18 @@ while (document.querySelector(".ukryty")) {
       }),
       (n.cellChange = function (t, e) {
         var i = this.selectedElement;
-        this._positionCells(t),
+        (this._positionCells(t),
           this._getWrapShiftCells(),
-          this.setGallerySize();
+          this.setGallerySize());
         var n = this.getCell(i);
-        n && (this.selectedIndex = this.getCellSlideIndex(n)),
+        (n && (this.selectedIndex = this.getCellSlideIndex(n)),
           (this.selectedIndex = Math.min(
             this.slides.length - 1,
-            this.selectedIndex
+            this.selectedIndex,
           )),
           this.emitEvent("cellChange", [t]),
           this.select(this.selectedIndex),
-          e && this.positionSliderAtSelected();
+          e && this.positionSliderAtSelected());
       }),
       e
     );
@@ -2106,19 +2112,19 @@ while (document.querySelector(".ukryty")) {
           ["./flickity", "fizzy-ui-utils/utils"],
           function (i, n) {
             return e(t, i, n);
-          }
+          },
         )
       : "object" == typeof module && module.exports
-      ? (module.exports = e(
-          t,
-          require("./flickity"),
-          require("fizzy-ui-utils")
-        ))
-      : e(t, t.Flickity, t.fizzyUIUtils);
+        ? (module.exports = e(
+            t,
+            require("./flickity"),
+            require("fizzy-ui-utils"),
+          ))
+        : e(t, t.Flickity, t.fizzyUIUtils);
   })(window, function (t, e, i) {
     "use strict";
     function n(t, e) {
-      (this.img = t), (this.flickity = e), this.load();
+      ((this.img = t), (this.flickity = e), this.load());
     }
     e.createMethods.push("_createLazyload");
     var s = e.prototype;
@@ -2132,7 +2138,7 @@ while (document.querySelector(".ukryty")) {
           var e = "number" == typeof t ? t : 0,
             s = this.getAdjacentCellElements(e),
             o = [];
-          s.forEach(function (t) {
+          (s.forEach(function (t) {
             var e = (function (t) {
               if ("IMG" == t.nodeName) {
                 var e = t.getAttribute("data-flickity-lazyload"),
@@ -2141,7 +2147,7 @@ while (document.querySelector(".ukryty")) {
                 if (e || n || s) return [t];
               }
               var o = t.querySelectorAll(
-                "img[data-flickity-lazyload], img[data-flickity-lazyload-src], img[data-flickity-lazyload-srcset]"
+                "img[data-flickity-lazyload], img[data-flickity-lazyload-src], img[data-flickity-lazyload-srcset]",
               );
               return i.makeArray(o);
             })(t);
@@ -2149,22 +2155,22 @@ while (document.querySelector(".ukryty")) {
           }),
             o.forEach(function (t) {
               new n(t, this);
-            }, this);
+            }, this));
         }
       }),
       (n.prototype.handleEvent = i.handleEvent),
       (n.prototype.load = function () {
-        this.img.addEventListener("load", this),
-          this.img.addEventListener("error", this);
+        (this.img.addEventListener("load", this),
+          this.img.addEventListener("error", this));
         var t =
             this.img.getAttribute("data-flickity-lazyload") ||
             this.img.getAttribute("data-flickity-lazyload-src"),
           e = this.img.getAttribute("data-flickity-lazyload-srcset");
-        (this.img.src = t),
+        ((this.img.src = t),
           e && this.img.setAttribute("srcset", e),
           this.img.removeAttribute("data-flickity-lazyload"),
           this.img.removeAttribute("data-flickity-lazyload-src"),
-          this.img.removeAttribute("data-flickity-lazyload-srcset");
+          this.img.removeAttribute("data-flickity-lazyload-srcset"));
       }),
       (n.prototype.onload = function (t) {
         this.complete(t, "flickity-lazyloaded");
@@ -2173,13 +2179,13 @@ while (document.querySelector(".ukryty")) {
         this.complete(t, "flickity-lazyerror");
       }),
       (n.prototype.complete = function (t, e) {
-        this.img.removeEventListener("load", this),
-          this.img.removeEventListener("error", this);
+        (this.img.removeEventListener("load", this),
+          this.img.removeEventListener("error", this));
         var i = this.flickity.getParentCell(this.img),
           n = i && i.element;
-        this.flickity.cellSizeChange(n),
+        (this.flickity.cellSizeChange(n),
           this.img.classList.add(e),
-          this.flickity.dispatchEvent("lazyLoad", t, n);
+          this.flickity.dispatchEvent("lazyLoad", t, n));
       }),
       (e.LazyLoader = n),
       e
@@ -2198,7 +2204,7 @@ while (document.querySelector(".ukryty")) {
             "./add-remove-cell",
             "./lazyload",
           ],
-          e
+          e,
         )
       : "object" == typeof module &&
         module.exports &&
@@ -2209,7 +2215,7 @@ while (document.querySelector(".ukryty")) {
           require("./page-dots"),
           require("./player"),
           require("./add-remove-cell"),
-          require("./lazyload")
+          require("./lazyload"),
         ));
   })(window, function (t) {
     return t;
@@ -2219,19 +2225,19 @@ while (document.querySelector(".ukryty")) {
       ? define(
           "flickity-as-nav-for/as-nav-for",
           ["flickity/js/index", "fizzy-ui-utils/utils"],
-          e
+          e,
         )
       : "object" == typeof module && module.exports
-      ? (module.exports = e(require("flickity"), require("fizzy-ui-utils")))
-      : (t.Flickity = e(t.Flickity, t.fizzyUIUtils));
+        ? (module.exports = e(require("flickity"), require("fizzy-ui-utils")))
+        : (t.Flickity = e(t.Flickity, t.fizzyUIUtils));
   })(window, function (t, e) {
     t.createMethods.push("_createAsNavFor");
     var i = t.prototype;
     return (
       (i._createAsNavFor = function () {
-        this.on("activate", this.activateAsNavFor),
+        (this.on("activate", this.activateAsNavFor),
           this.on("deactivate", this.deactivateAsNavFor),
-          this.on("destroy", this.destroyAsNavFor);
+          this.on("destroy", this.destroyAsNavFor));
         var t = this.options.asNavFor;
         if (t) {
           var e = this;
@@ -2246,12 +2252,12 @@ while (document.querySelector(".ukryty")) {
         if (n && n != this) {
           this.navCompanion = n;
           var s = this;
-          (this.onNavCompanionSelect = function () {
+          ((this.onNavCompanionSelect = function () {
             s.navCompanionSelect();
           }),
             n.on("select", this.onNavCompanionSelect),
             this.on("staticClick", this.onNavStaticClick),
-            this.navCompanionSelect(!0);
+            this.navCompanionSelect(!0));
         }
       }),
       (i.navCompanionSelect = function (t) {
@@ -2263,7 +2269,7 @@ while (document.querySelector(".ukryty")) {
             o = Math.floor(
               (function (t, e, i) {
                 return (e - t) * i + t;
-              })(n, s, this.navCompanion.cellAlign)
+              })(n, s, this.navCompanion.cellAlign),
             );
           if (
             (this.selectCell(o, !1, t),
@@ -2271,10 +2277,10 @@ while (document.querySelector(".ukryty")) {
             !(o >= this.cells.length))
           ) {
             var r = this.cells.slice(n, 1 + s);
-            (this.navSelectedElements = r.map(function (t) {
+            ((this.navSelectedElements = r.map(function (t) {
               return t.element;
             })),
-              this.changeNavSelectedClass("add");
+              this.changeNavSelectedClass("add"));
           }
         }
       }),
@@ -2314,11 +2320,11 @@ while (document.querySelector(".ukryty")) {
           ["ev-emitter/ev-emitter"],
           function (i) {
             return e(t, i);
-          }
+          },
         )
       : "object" == typeof module && module.exports
-      ? (module.exports = e(t, require("ev-emitter")))
-      : (t.imagesLoaded = e(t, t.EvEmitter));
+        ? (module.exports = e(t, require("ev-emitter")))
+        : (t.imagesLoaded = e(t, t.EvEmitter));
   })("undefined" != typeof window ? window : this, function (t, e) {
     function i(t, e) {
       for (var i in e) t[i] = e[i];
@@ -2327,14 +2333,14 @@ while (document.querySelector(".ukryty")) {
     function n(t, e, s) {
       if (!(this instanceof n)) return new n(t, e, s);
       var o = t;
-      "string" == typeof t && (o = document.querySelectorAll(t)),
+      ("string" == typeof t && (o = document.querySelectorAll(t)),
         o
           ? ((this.elements = (function (t) {
               return Array.isArray(t)
                 ? t
                 : "object" == typeof t && "number" == typeof t.length
-                ? l.call(t)
-                : [t];
+                  ? l.call(t)
+                  : [t];
             })(o)),
             (this.options = i({}, this.options)),
             "function" == typeof e ? (s = e) : i(this.options, e),
@@ -2342,24 +2348,25 @@ while (document.querySelector(".ukryty")) {
             this.getImages(),
             r && (this.jqDeferred = new r.Deferred()),
             setTimeout(this.check.bind(this)))
-          : a.error("Bad element for imagesLoaded " + (o || t));
+          : a.error("Bad element for imagesLoaded " + (o || t)));
     }
     function s(t) {
       this.img = t;
     }
     function o(t, e) {
-      (this.url = t), (this.element = e), (this.img = new Image());
+      ((this.url = t), (this.element = e), (this.img = new Image()));
     }
     var r = t.jQuery,
       a = t.console,
       l = Array.prototype.slice;
-    ((n.prototype = Object.create(e.prototype)).options = {}),
+    (((n.prototype = Object.create(e.prototype)).options = {}),
       (n.prototype.getImages = function () {
-        (this.images = []), this.elements.forEach(this.addElementImages, this);
+        ((this.images = []),
+          this.elements.forEach(this.addElementImages, this));
       }),
       (n.prototype.addElementImages = function (t) {
-        "IMG" == t.nodeName && this.addImage(t),
-          !0 === this.options.background && this.addElementBackgroundImages(t);
+        ("IMG" == t.nodeName && this.addImage(t),
+          !0 === this.options.background && this.addElementBackgroundImages(t));
         var e = t.nodeType;
         if (e && h[e]) {
           for (var i = t.querySelectorAll("img"), n = 0; n < i.length; n++) {
@@ -2374,7 +2381,7 @@ while (document.querySelector(".ukryty")) {
             }
           }
         }
-      });
+      }));
     var h = { 1: !0, 9: !0, 11: !0 };
     return (
       (n.prototype.addElementBackgroundImages = function (t) {
@@ -2386,7 +2393,7 @@ while (document.querySelector(".ukryty")) {
 
           ) {
             var s = n && n[2];
-            s && this.addBackground(s, t), (n = i.exec(e.backgroundImage));
+            (s && this.addBackground(s, t), (n = i.exec(e.backgroundImage)));
           }
       }),
       (n.prototype.addImage = function (t) {
@@ -2404,23 +2411,23 @@ while (document.querySelector(".ukryty")) {
           });
         }
         var e = this;
-        (this.progressedCount = 0),
+        ((this.progressedCount = 0),
           (this.hasAnyBroken = !1),
           this.images.length
             ? this.images.forEach(function (e) {
-                e.once("progress", t), e.check();
+                (e.once("progress", t), e.check());
               })
-            : this.complete();
+            : this.complete());
       }),
       (n.prototype.progress = function (t, e, i) {
-        this.progressedCount++,
+        (this.progressedCount++,
           (this.hasAnyBroken = this.hasAnyBroken || !t.isLoaded),
           this.emitEvent("progress", [this, t, e]),
           this.jqDeferred &&
             this.jqDeferred.notify &&
             this.jqDeferred.notify(this, t),
           this.progressedCount == this.images.length && this.complete(),
-          this.options.debug && a && a.log("progress: " + i, t, e);
+          this.options.debug && a && a.log("progress: " + i, t, e));
       }),
       (n.prototype.complete = function () {
         var t = this.hasAnyBroken ? "fail" : "done";
@@ -2448,39 +2455,39 @@ while (document.querySelector(".ukryty")) {
         return this.img.complete && this.img.naturalWidth;
       }),
       (s.prototype.confirm = function (t, e) {
-        (this.isLoaded = t), this.emitEvent("progress", [this, this.img, e]);
+        ((this.isLoaded = t), this.emitEvent("progress", [this, this.img, e]));
       }),
       (s.prototype.handleEvent = function (t) {
         var e = "on" + t.type;
         this[e] && this[e](t);
       }),
       (s.prototype.onload = function () {
-        this.confirm(!0, "onload"), this.unbindEvents();
+        (this.confirm(!0, "onload"), this.unbindEvents());
       }),
       (s.prototype.onerror = function () {
-        this.confirm(!1, "onerror"), this.unbindEvents();
+        (this.confirm(!1, "onerror"), this.unbindEvents());
       }),
       (s.prototype.unbindEvents = function () {
-        this.proxyImage.removeEventListener("load", this),
+        (this.proxyImage.removeEventListener("load", this),
           this.proxyImage.removeEventListener("error", this),
           this.img.removeEventListener("load", this),
-          this.img.removeEventListener("error", this);
+          this.img.removeEventListener("error", this));
       }),
       ((o.prototype = Object.create(s.prototype)).check = function () {
-        this.img.addEventListener("load", this),
+        (this.img.addEventListener("load", this),
           this.img.addEventListener("error", this),
           (this.img.src = this.url),
           this.getIsImageComplete() &&
             (this.confirm(0 !== this.img.naturalWidth, "naturalWidth"),
-            this.unbindEvents());
+            this.unbindEvents()));
       }),
       (o.prototype.unbindEvents = function () {
-        this.img.removeEventListener("load", this),
-          this.img.removeEventListener("error", this);
+        (this.img.removeEventListener("load", this),
+          this.img.removeEventListener("error", this));
       }),
       (o.prototype.confirm = function (t, e) {
-        (this.isLoaded = t),
-          this.emitEvent("progress", [this, this.element, e]);
+        ((this.isLoaded = t),
+          this.emitEvent("progress", [this, this.element, e]));
       }),
       (n.makeJQueryPlugin = function (e) {
         (e = e || t.jQuery) &&
@@ -2498,11 +2505,11 @@ while (document.querySelector(".ukryty")) {
           ["flickity/js/index", "imagesloaded/imagesloaded"],
           function (i, n) {
             return e(t, i, n);
-          }
+          },
         )
       : "object" == typeof module && module.exports
-      ? (module.exports = e(t, require("flickity"), require("imagesloaded")))
-      : (t.Flickity = e(t, t.Flickity, t.imagesLoaded));
+        ? (module.exports = e(t, require("flickity"), require("imagesloaded")))
+        : (t.Flickity = e(t, t.Flickity, t.imagesLoaded));
   })(window, function (t, e, i) {
     "use strict";
     e.createMethods.push("_createImagesLoaded");
@@ -2516,11 +2523,11 @@ while (document.querySelector(".ukryty")) {
           var t = this;
           i(this.slider).on("progress", function (e, i) {
             var n = t.getParentCell(i.img);
-            t.cellSizeChange(n && n.element),
-              t.options.freeScroll || t.positionSliderAtSelected();
+            (t.cellSizeChange(n && n.element),
+              t.options.freeScroll || t.positionSliderAtSelected());
           });
         }
       }),
       e
     );
-  });
+  }));

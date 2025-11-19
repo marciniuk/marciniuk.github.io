@@ -32,7 +32,7 @@ function loadHeaderTemplates() {
     }
   } catch (err) {
     console.error(
-      `${colors.magenta}❌ Nie znaleziono katalogu /assets/replace${colors.reset}`
+      `${colors.magenta}❌ Nie znaleziono katalogu /assets/replace${colors.reset}`,
     );
     process.exit(1);
   }
@@ -42,7 +42,7 @@ function loadHeaderTemplates() {
 const templates = loadHeaderTemplates();
 if (Object.keys(templates).length === 0) {
   console.error(
-    `${colors.magenta}❌ Brak plików header-xx.html w /assets/replace${colors.reset}`
+    `${colors.magenta}❌ Brak plików header-xx.html w /assets/replace${colors.reset}`,
   );
   process.exit(1);
 }
@@ -101,7 +101,7 @@ function processFile(filePath, lang) {
     fs.writeFileSync(filePath, content, "utf8");
 
     console.log(
-      `${colors.green}✔ [${lang}] Zaktualizowano header:${colors.reset} ${relPath}`
+      `${colors.green}✔ [${lang}] Zaktualizowano header:${colors.reset} ${relPath}`,
     );
     return;
   }
@@ -117,7 +117,7 @@ function processFile(filePath, lang) {
     fs.writeFileSync(filePath, content, "utf8");
 
     console.log(
-      `${colors.yellow}⚠ [${lang}] Dodano brakujący header:${colors.reset} ${relPath}`
+      `${colors.yellow}⚠ [${lang}] Dodano brakujący header:${colors.reset} ${relPath}`,
     );
   } else {
     console.log(`${colors.magenta}❌ Brak <body> w:${colors.reset} ${relPath}`);
@@ -126,7 +126,7 @@ function processFile(filePath, lang) {
 
 // 🔹 Uruchomienie
 console.log(
-  `${colors.cyan}\n🔍 Skanowanie katalogów /en i /pl...${colors.reset}\n`
+  `${colors.cyan}\n🔍 Skanowanie katalogów /en i /pl...${colors.reset}\n`,
 );
 
 const enDir = path.join(rootDir, "en");
@@ -139,5 +139,5 @@ if (fs.existsSync(plDir)) processDirectory(plDir, "pl");
 else console.log(`${colors.yellow}⚠ Brak katalogu /pl${colors.reset}`);
 
 console.log(
-  `\n${colors.magenta}🎉 Gotowe! Headery zaktualizowane!${colors.reset}\n`
+  `\n${colors.magenta}🎉 Gotowe! Headery zaktualizowane!${colors.reset}\n`,
 );
