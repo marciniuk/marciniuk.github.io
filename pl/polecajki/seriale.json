@@ -1,0 +1,101 @@
+[
+  {
+    "img": "/assets/img/ulubiency/castlevania.jpg",
+    "nr": 1,
+    "tytul": "Castlevania",
+    "podtytul": "Castlevania",
+    "opis": "Łowca wampirów staje do walki, by ocalić miasto oblężone przez piekielną armię, którą dowodzi Drakula we własnej osobie.",
+    "link": "https://www.filmweb.pl/serial/Castlevania-2017-787428",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/rim.jpg",
+    "nr": 2,
+    "tytul": "Rick i Morty",
+    "podtytul": "Rick and Morty",
+    "opis": "Genialny, ale niebezpieczny naukowiec zabiera swojego wnuka w szalone międzywymiarowe przygody.",
+    "link": "https://www.filmweb.pl/serial/Rick+i+Morty-2013-643852",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/szakal.jpg",
+    "nr": 3,
+    "tytul": "Dzień Szakala",
+    "podtytul": "The Day of the Jackal",
+    "opis": "Nieuchwytny zabójca o pseudonimie Szakal prowadzi podwójne życie, śledzona przez zdeterminowanego agenta wywiadu.",
+    "link": "https://www.filmweb.pl/serial/Szakal-2024-1067423",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/cyberedge.jpg",
+    "nr": 4,
+    "tytul": "Cyberpunk: Edgerunners",
+    "podtytul": "Cyberpunk: Edgerunners",
+    "opis": "Uliczny dzieciak próbuje przetrwać w mieście przyszłości opanowanym przez technologię i modyfikacje ciała.",
+    "link": "https://www.filmweb.pl/serial/Cyberpunk%3A+Edgerunners-2022-890425",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/samuraj.jpg",
+    "nr": 5,
+    "tytul": "Niebieskooki samuraj",
+    "podtytul": "Blue Eye Samurai",
+    "opis": "W czasach Edo nieustraszona samurajka wyrusza w podróż pełną zemsty i walki.",
+    "link": "https://www.filmweb.pl/serial/Niebieskooki+samuraj-2023-1033622",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/arcane.jpg",
+    "nr": 6,
+    "tytul": "Arcane",
+    "podtytul": "Arcane",
+    "opis": "Dwie siostry walczą po przeciwnych stronach konfliktu między utopijnym Piltover a opresyjnym podziemnym Zaun.",
+    "link": "https://www.filmweb.pl/serial/Arcane-2021-864812",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/bojack.jpg",
+    "nr": 7,
+    "tytul": "BoJack Horseman",
+    "podtytul": "BoJack Horseman",
+    "opis": "Była gwiazda sitcomu próbuje odnaleźć sens życia i wrócić na szczyt w Hollywood.",
+    "link": "https://www.filmweb.pl/serial/BoJack+Horseman-2014-686243",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/dark.jpg",
+    "nr": 8,
+    "tytul": "Dark",
+    "podtytul": "Dark",
+    "opis": "Zniknięcie dziecka odsłania tajemnice i ukryte powiązania czterech rodzin w małym niemieckim miasteczku.",
+    "link": "https://www.filmweb.pl/serial/Dark-2017-774697",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/msr.jpg",
+    "nr": 9,
+    "tytul": "Miłość, śmierć i roboty",
+    "podtytul": "Love, Death & Robots",
+    "opis": "Antologia animowanych opowieści science fiction pełnych przemocy, czarnego humoru i seksu.",
+    "link": "https://www.filmweb.pl/serial/Mi%C5%82o%C5%9B%C4%87%2C+%C5%9Bmier%C4%87+i+roboty-2019-815607",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/family.jpg",
+    "nr": 10,
+    "tytul": "Nie ma jak w rodzinie",
+    "podtytul": "F is for family",
+    "opis": "Życiowe perypetie rodziny Murphych w latach 70., czyli w czasach, gdy dzieci były dziećmi, piwo lało się strumieniami, a facet mógł rozsiąść się po pracy przed telewizorem.",
+    "link": "https://www.filmweb.pl/serial/Nie+ma+jak+w+rodzinie-2015-760310",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/paradise.jpg",
+    "nr": 11,
+    "tytul": "Paradise P.D.",
+    "podtytul": "Paradise P.D.",
+    "opis": "Nieudolna policja małego miasteczka walczy z przestępczością w absurdalny sposób.",
+    "link": "https://www.filmweb.pl/serial/Paradise+P.D.-2018-808925",
+    "linkNazwa": "filmweb.pl"
+  }
+]

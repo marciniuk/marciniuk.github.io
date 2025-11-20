@@ -1,0 +1,101 @@
+[
+  {
+    "img": "/assets/img/ulubiency/abercrombie.jpg",
+    "nr": 1,
+    "tytul": "Joe Abercrombie",
+    "podtytul": "Cała twórczość",
+    "opis": "Mistrz mrocznej fantasy, znany z brutalnego realizmu i cynicznych bohaterów. Jego książki łączą epickie bitwy z głęboką charakterystyką postaci. I humorem. Dużo czarnego humoru.",
+    "link": "https://lubimyczytac.pl/autor/3367/joe-abercrombie",
+    "linkNazwa": "lubimyczytać.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/sanderson.jpg",
+    "nr": 2,
+    "tytul": "Brandon Sanderson",
+    "podtytul": "Cała twórczość",
+    "opis": "Autor znany z innowacyjnych systemów magii i rozbudowanych światów. Twórca Kosmere - uniwersum łączącego jego najważniejsze serie.",
+    "link": "https://lubimyczytac.pl/autor/30385/brandon-sanderson",
+    "linkNazwa": "lubimyczytać.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/szklany.jpg",
+    "nr": 3,
+    "tytul": "Seria \"Szklany Tron\"",
+    "podtytul": "Sarah J. Maas",
+    "opis": "Epicka saga o zabójczyni walczącej o wolność w świecie pełnym magii, spisków i niebezpiecznych tajemnic. Wciągająca mieszanka fantasy i romansu.",
+    "link": "https://lubimyczytac.pl/cykl/480/szklany-tron",
+    "linkNazwa": "lubimyczytać.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/wampirze.jpg",
+    "nr": 4,
+    "tytul": "Seria \"Wampirze Cesarstwo\"",
+    "podtytul": "Jay Kristoff",
+    "opis": "Mroczna opowieść o gladiatorce w świecie rządzonym przez wampiry. Pełna zwrotów akcji, brutalna i nieprzewidywalna saga.",
+    "link": "https://lubimyczytac.pl/cykl/33833/wampirze-cesarstwo",
+    "linkNazwa": "lubimyczytać.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/wrony.jpg",
+    "nr": 5,
+    "tytul": "Seria \"Szóstka Wron\"",
+    "podtytul": "Leigh Bardugo",
+    "opis": "Historia grupy wyrzutków planujących niemożliwy skok. Pełna humoru, akcji i nieoczekiwanych zwrotów - fantasy spotyka heist.",
+    "link": "https://lubimyczytac.pl/cykl/12138/szostka-wron",
+    "linkNazwa": "lubimyczytać.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/naszeimielegion.jpg",
+    "nr": 6,
+    "tytul": "Seria \"Bobiverse\"",
+    "podtytul": "Dennis E. Taylor",
+    "opis": "Humorystyczna science fiction o programiście, który staje się sztuczną inteligencją i kolonizuje wszechświat. Świetna mieszanka humoru i hard SF.",
+    "link": "https://lubimyczytac.pl/cykl/16142/bobiverse",
+    "linkNazwa": "lubimyczytać.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/decimus.jpg",
+    "nr": 7,
+    "tytul": "Seria \"Decimus Fate\"",
+    "podtytul": "Peter A. Flannery",
+    "opis": "Epicka trylogia fantasy o młodym wojowniku walczącym z demonami. Pełna akcji, magii i bohaterskich postaci w świecie zagrożonym przez ciemność.",
+    "link": "https://lubimyczytac.pl/cykl/35100/decimus-fate",
+    "linkNazwa": "lubimyczytać.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/siedem.png",
+    "nr": 8,
+    "tytul": "Siedem śmierci Evelyn Hardcastle",
+    "podtytul": "Stuart Turton",
+    "opis": "Genialny kryminał łączący elementy groundhog day z klasyczną zagadką detektywistyczną. Innowacyjna i nieprzewidywalna opowieść.",
+    "link": "https://lubimyczytac.pl/ksiazka/4979243/siedem-smierci-evelyn-hardcastle",
+    "linkNazwa": "lubimyczytać.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/wiezakoronna.jpg",
+    "nr": 9,
+    "tytul": "Seria \"Kroniki Riyrii\"",
+    "podtytul": "Michael J. Sullivan",
+    "opis": "Przygody dwóch złodziei-najemników w klimatycznym świecie fantasy. Doskonały humor, świetne dialogi i wciągająca fabuła.",
+    "link": "https://lubimyczytac.pl/cykl/16260/kroniki-riyrii",
+    "linkNazwa": "lubimyczytać.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/behawiorysta.jpg",
+    "nr": 10,
+    "tytul": "Seria \"Gerard Edling\"",
+    "podtytul": "Remigiusz Mróz",
+    "opis": "Seria polskich thrillerów psychologicznych o behawioryście pomagającym policji. Wciągające, pełne zwrotów akcji i doskonale napisane.",
+    "link": "https://lubimyczytac.pl/cykl/23858/gerard-edling",
+    "linkNazwa": "lubimyczytać.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/szamanka.jpg",
+    "nr": 11,
+    "tytul": "Seria \"Szamanka od umarlaków\"",
+    "podtytul": "Martna Raduchowska",
+    "opis": "Polska urban fantasy o szamance pracującej w zakładzie pogrzebowym. Pełna humoru, słowiańskiej magii i oryginalnych postaci.",
+    "link": "https://lubimyczytac.pl/cykl/6331/szamanka-od-umarlakow",
+    "linkNazwa": "lubimyczytać.pl"
+  }
+]

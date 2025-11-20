@@ -1,0 +1,173 @@
+[
+  {
+    "img": "/assets/img/ulubiency/skyrim.png",
+    "nr": 1,
+    "tytul": "The Elder Scrolls V: Skyrim",
+    "podtytul": "Bethesda Softworks",
+    "opis": "Epicki RPG w otwartym świecie pełnym smoków, magii i niezliczonych przygód.",
+    "link": "https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/bg3.png",
+    "nr": 2,
+    "tytul": "Baldur's Gate 3",
+    "podtytul": "Larian Studios",
+    "opis": "Trzecia część legendarnej serii RPG osadzonej w uniwersum Dungeons & Dragons.",
+    "link": "https://store.steampowered.com/app/1086940/Baldurs_Gate_3/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/hollowknight.png",
+    "nr": 3,
+    "tytul": "Hollow Knight",
+    "podtytul": "Team Cherry",
+    "opis": "Klimatyczny metroidvania z przepiękną oprawą graficzną i wymagającą rozgrywką.",
+    "link": "https://store.steampowered.com/app/367520/Hollow_Knight/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/balatro.png",
+    "nr": 4,
+    "tytul": "Balatro",
+    "podtytul": "LocalThunk",
+    "opis": "Innowacyjna gra karciana łącząca poker z mechanikami roguelike.",
+    "link": "https://store.steampowered.com/app/2379780/Balatro/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/forza5.png",
+    "nr": 5,
+    "tytul": "Forza Horizon 5",
+    "podtytul": "Playground Games",
+    "opis": "Wyścigi samochodowe w otwartym świecie meksykańskich krajobrazów.",
+    "link": "https://store.steampowered.com/app/1551360/Forza5/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/farcry3.png",
+    "nr": 6,
+    "tytul": "Far Cry 3",
+    "podtytul": "Ubisoft",
+    "opis": "Kultowy FPS z charyzmatycznym antagonistą i tropikalną wyspą do odkrycia.",
+    "link": "https://store.steampowered.com/app/220240/Far_Cry_3/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/wiedzmin.png",
+    "nr": 7,
+    "tytul": "Wiedźmin 3: Dziki Gon",
+    "podtytul": "CD Projekt Red",
+    "opis": "Polska perła RPG z Geraltem z Rivii w roli głównej.",
+    "link": "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/hitman.png",
+    "nr": 8,
+    "tytul": "Hitman: World of Assassination",
+    "podtytul": "IO Interactive",
+    "opis": "Trylogia zabójcy na zlecenie z nieograniczonymi możliwościami eliminacji celów.",
+    "link": "https://store.steampowered.com/app/1659040/HITMAN_World_of_Assassination/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/lastepoch.png",
+    "nr": 9,
+    "tytul": "Last Epoch",
+    "podtytul": "Eleventh Hour Games",
+    "opis": "Action RPG z podróżami w czasie i rozbudowanym systemem rozwoju postaci.",
+    "link": "https://store.steampowered.com/app/899770/Last_Epoch/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/deadcells.png",
+    "nr": 10,
+    "tytul": "Dead Cells",
+    "podtytul": "Motion Twin",
+    "opis": "Dynamiczny roguelike metroidvania z płynną walką i proceduralnie generowanymi poziomami.",
+    "link": "https://store.steampowered.com/app/588650/Dead_Cells/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/minecraft.png",
+    "nr": 11,
+    "tytul": "Minecraft",
+    "podtytul": "Mojang Studios",
+    "opis": "Kultowa sandbox gra oferująca nieograniczone możliwości budowania i eksploracji.",
+    "link": "hhttps://www.minecraft.net/pl-pl/about-minecraft",
+    "linkNazwa": "minecraft.net"
+  },
+  {
+    "img": "/assets/img/ulubiency/vrising.png",
+    "nr": 12,
+    "tytul": "V Rising",
+    "podtytul": "Stunlock Studios",
+    "opis": "Survival z elementami RPG, gdzie wcielasz się w wampira budującego swoje imperium.",
+    "link": "https://store.steampowered.com/app/1604030/V_Rising/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/valhalla.png",
+    "nr": 13,
+    "tytul": "Assassin's Creed Valhalla",
+    "podtytul": "Ubisoft",
+    "opis": "Przygody wikingów w Anglii z epicką opowieścią i rozbudowanym światem.",
+    "link": "https://store.steampowered.com/app/2208920/Assassins_Creed_Valhalla/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/watchdogs.png",
+    "nr": 14,
+    "tytul": "Watch Dogs",
+    "podtytul": "Ubisoft",
+    "opis": "Hacker w otwartym świecie Chicago z możliwością kontrolowania infrastruktury miasta.",
+    "link": "https://store.steampowered.com/app/243470/Watch_Dogs/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/dishonored.png",
+    "nr": 15,
+    "tytul": "Dishonored",
+    "podtytul": "Arkane Studios",
+    "opis": "Stealth z nadnaturalnymi mocami w steampunkowym świecie pełnym intryg.",
+    "link": "https://store.steampowered.com/app/205100/Dishonored/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/spiderman.png",
+    "nr": 16,
+    "tytul": "Marvel's Spider-Man Remastered",
+    "podtytul": "Insomniac Games",
+    "opis": "Wciągająca przygoda Człowieka-Pająka po dachach Nowego Jorku.",
+    "link": "https://store.steampowered.com/app/1817070/Marvels_SpiderMan_Remastered/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/thaumaturge.png",
+    "nr": 17,
+    "tytul": "The Thaumaturge",
+    "podtytul": "Fool's Theory",
+    "opis": "Mroczne RPG osadzone w 1905 roku w Warszawie z unikalnym systemem walki.",
+    "link": "https://store.steampowered.com/app/1671450/The_Thaumaturge/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/portal.jpg",
+    "nr": 18,
+    "tytul": "Portal",
+    "podtytul": "Valve",
+    "opis": "Kultowa łamigłówkowa gra pierwszoosobowa z portalową strzelnicą.",
+    "link": "https://store.steampowered.com/app/400/Portal/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/ulubiency/cuphead.png",
+    "nr": 19,
+    "tytul": "Cuphead",
+    "podtytul": "Studio MDHR",
+    "opis": "Wymagający run and gun w stylu animacji z lat 30. XX wieku.",
+    "link": "https://store.steampowered.com/app/268910/Cuphead/",
+    "linkNazwa": "steam"
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "img": "/assets/img/ulubiency/incepcja.jpg",
+    "nr": 1,
+    "tytul": "Incepcja",
+    "podtytul": "Inception (2010)",
+    "opis": "Czasy, gdy technologia pozwala na wchodzenie w świat snów. Złodziej Cobb ma za zadanie wszczepić myśl do śpiącego umysłu.",
+    "link": "https://www.filmweb.pl/film/Incepcja-2010-500891",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/wyspatajemnic.jpg",
+    "nr": 2,
+    "tytul": "Wyspa tajemnic",
+    "podtytul": "Shutter Island (2010)",
+    "opis": "Federalny marszałek Teddy Daniels bada zaginięcie pacjentki w szpitalu psychiatrycznym na odludnej wyspie.",
+    "link": "https://www.filmweb.pl/film/Wyspa+tajemnic-2010-345416",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/iluzja.jpg",
+    "nr": 3,
+    "tytul": "Iluzja",
+    "podtytul": "Now You See Me (2013)",
+    "opis": "Grupa magików dokonuje spektakularnych rabunków podczas swoich występów, a FBI próbuje ich powstrzymać.",
+    "link": "https://www.filmweb.pl/film/Iluzja-2013-627155",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/dzentelmeni.jpg",
+    "nr": 4,
+    "tytul": "Dżentelmeni",
+    "podtytul": "The Gentlemen (2019)",
+    "opis": "Amerykański ekspatriant próbuje sprzedać swoje lukratywne imperium marihuany w Londynie.",
+    "link": "https://www.filmweb.pl/film/D%C5%BCentelmeni-2019-816650",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/deadpool.jpg",
+    "nr": 5,
+    "tytul": "Deadpool",
+    "podtytul": "Deadpool (2016)",
+    "opis": "Wade Wilson, były żołnierz sił specjalnych, zostaje poddany eksperymentowi, który daje mu nadzwyczajne moce.",
+    "link": "https://www.filmweb.pl/film/Deadpool-2016-421584",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/wilk.jpg",
+    "nr": 6,
+    "tytul": "Wilk z Wall Street",
+    "podtytul": "The Wolf of Wall Street (2013)",
+    "opis": "Historia jordana Belforta, maklera giełdowego, który zbudował fortunę na oszustwach finansowych.",
+    "link": "https://www.filmweb.pl/film/Wilk+z+Wall+Street-2013-481777",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/nolana.jpg",
+    "nr": 7,
+    "tytul": "Mroczny Rycerz powstaje",
+    "podtytul": "The Dark Knight Rises (2012)",
+    "opis": "Osiem lat po śmierci Harveya Denta, Batman wraca do walki z nowym zagrożeniem - terrorystą Bane'em.",
+    "link": "https://www.filmweb.pl/film/Mroczny+Rycerz+powstaje-2012-375667",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/joker.jpg",
+    "nr": 8,
+    "tytul": "Joker",
+    "podtytul": "Joker (2019)",
+    "opis": "Historia Arthura Flecka, nieudanego komika, który powoli popada w szaleństwo i staje się Jokerem.",
+    "link": "https://www.filmweb.pl/film/Joker-2019-702410",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/tenet.jpg",
+    "nr": 9,
+    "tytul": "Tenet",
+    "podtytul": "Tenet (2020)",
+    "opis": "Agent CIA walczy z zagrożeniem dla całego świata, wykorzystując manipulację czasem.",
+    "link": "https://www.filmweb.pl/film/Tenet-2020-650807",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/kacvegas.jpg",
+    "nr": 10,
+    "tytul": "Kac Vegas",
+    "podtytul": "The Hangover (2009)",
+    "opis": "Po kawalerskim wieczorze w Las Vegas trzech przyjaciół budzi się bez pamięci i musi odnaleźć pana młodego.",
+    "link": "https://www.filmweb.pl/film/Kac+Vegas-2009-364801",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/oppenheimer.jpg",
+    "nr": 11,
+    "tytul": "Oppenheimer",
+    "podtytul": "Oppenheimer (2023)",
+    "opis": "Biografia J. Roberta Oppenheimera, fizyka teoretycznego odpowiedzialnego za projekt Manhattan i stworzenie bomby atomowej.",
+    "link": "https://www.filmweb.pl/film/Oppenheimer-2023-853787",
+    "linkNazwa": "filmweb.pl"
+  },
+  {
+    "img": "/assets/img/ulubiency/siodemka.jpg",
+    "nr": 12,
+    "tytul": "Proces Siódemki z Chicago",
+    "podtytul": "The Trial of the Chicago 7 (2020)",
+    "opis": "Siedmiu demonstrantów oskarżonych o podżeganie do zamieszek podczas Konwencji Demokratów w 1968 roku.",
+    "link": "https://www.filmweb.pl/film/Proces+Si%C3%B3demki+z+Chicago-2020-716866",
+    "linkNazwa": "filmweb.pl"
+  }
+]
