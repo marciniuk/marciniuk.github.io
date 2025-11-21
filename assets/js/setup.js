@@ -56,13 +56,16 @@ document.querySelectorAll(".section-btn").forEach((btn) => {
     // USUWANIE STARYCH KOLORÓW
     popupContent.classList.remove(
       ...Array.from(popupContent.classList).filter(
-        (c) => c.startsWith("border-") || c.startsWith("bg-"),
-      ),
+        (c) => c.startsWith("border-") || c.startsWith("bg-")
+      )
     );
 
     // wczytywanie z pliku
     const html = await fetch(file).then((res) => res.text());
     popupInner.innerHTML = html;
+
+    // RESET SCROLLA — NOWA LINIA
+    popupContent.scrollTop = 0;
 
     // DODANIE NOWYCH
     popupContent.classList.add(`border-${color}`, `bg-${color}/15`, `border-2`);
