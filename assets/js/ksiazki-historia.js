@@ -1,5 +1,5 @@
 /* ============================================================
-    ⭐ oceny
+    ⭐ MAPA OCEN (bez zmian)
    ============================================================ */
 
 const ocenyMap = {
@@ -17,43 +17,62 @@ const ocenyMap = {
   oS: '<div class="flex flex-row text-rose-600"><i class="fa-solid fa-heart p-1"></i><i class="fa-solid fa-heart p-1"></i><i class="fa-solid fa-heart p-1"></i><i class="fa-solid fa-heart p-1"></i><i class="fa-solid fa-heart p-1"></i></div>',
 };
 
-function zamienOceny() {
-  const container = document.getElementById("Oceny");
+/* ============================================================
+    📦 GENEROWANIE KART Z JSON
+   ============================================================ */
+
+function generujHistorie(dane) {
+  const container = document.getElementById("historia");
   if (!container) return;
 
-  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
+  dane.forEach((item) => {
+    const karta = document.createElement("div");
+    karta.className =
+      "bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit";
 
-  const toReplace = [];
+    karta.innerHTML = `
+      <div class="w-fit m-2 flex flex-col place-content-between">
+        <div class="max-h-[75%] h-full">
+          <img
+            src="${item.img}"
+            loading="lazy"
+            alt="${item.alt}"
+            class="rounded-xl h-full aspect-[2/3] lazy-fade"
+          />
+        </div>
 
-  while (walker.nextNode()) {
-    const node = walker.currentNode;
-    for (const key in ocenyMap) {
-      if (node.nodeValue.includes(key)) {
-        toReplace.push({ node, key });
-      }
-    }
-  }
+        <div class="flex flex-col place-content-center place-items-center h-full">
+          <div class="mt-2">
+            ${ocenyMap[item.ocena] ?? ""}
+          </div>
 
-  for (const { node, key } of toReplace) {
-    const wrapper = document.createElement("span");
-    wrapper.innerHTML = node.nodeValue.replaceAll(key, ocenyMap[key]);
-    node.replaceWith(...wrapper.childNodes);
-  }
+          <div class="bold text-sm sm:text-base lg:text-lg">
+            <i class="fa-duotone fa-solid fa-calendar-star"></i> ${item.data}
+          </div>
+        </div>
+      </div>
+    `;
+
+    container.appendChild(karta);
+  });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const oceny = document.getElementById("Oceny");
-  if (!oceny) return;
-  zamienOceny();
-});
-
 /* ============================================================
-    🖼️ obrazki
+    Generowanie
    ============================================================ */
-document.querySelectorAll("img[loading='lazy']").forEach((img) => {
-  if (img.complete) {
-    img.classList.add("loaded");
-    return;
-  }
-  img.addEventListener("load", () => img.classList.add("loaded"));
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/pl/ksiazki/historia/historia.json")
+    .then((res) => res.json())
+    .then((data) => {
+      generujHistorie(data);
+
+      document.querySelectorAll("img[loading='lazy']").forEach((img) => {
+        if (img.complete) {
+          img.classList.add("loaded");
+        } else {
+          img.addEventListener("load", () => img.classList.add("loaded"));
+        }
+      });
+    })
+    .catch((err) => console.error("Błąd wczytywania historii:", err));
 });
