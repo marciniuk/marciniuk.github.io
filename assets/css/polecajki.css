@@ -96,8 +96,10 @@
 
 .flickity-prev-next-button {
   top: 50%;
-  width: 44px;
-  height: 44px;
+  width: 7%;
+  min-width: 30px;
+  max-width: 45px;
+  aspect-ratio: 1/1;
   border-radius: 50%;
   /* vertically center */
   transform: translateY(-50%);
@@ -142,4 +144,28 @@
 .scroll-y-only {
   touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
+}
+
+.flickity-prev-next-button.next {
+  right: 0.15rem !important;
+}
+.previous {
+  left: 0.15rem !important;
+}
+
+.lewy-scroll {
+  scrollbar-width: 4px;
+  direction: rtl;
+  overflow-x: hidden;
+  overflow-y: auto;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lewy-scroll::-webkit-scrollbar {
+  margin-left: -10px;
+}
+
+.lewy-scroll > * {
+  direction: ltr; /* żeby nie odwrócić tekstu */
 }

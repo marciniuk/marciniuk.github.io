@@ -261,16 +261,3 @@ body.page-ready footer {
     transform: scale(1.04);
   }
 }
-
-.lewy-scroll {
-  scrollbar-width: 8px;
-  direction: rtl;
-}
-
-.lewy-scroll::-webkit-scrollbar {
-  margin-left: -10px;
-}
-
-.lewy-scroll > * {
-  direction: ltr; /* żeby nie odwrócić tekstu */
-}
