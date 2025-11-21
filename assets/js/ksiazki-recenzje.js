@@ -18,7 +18,7 @@ const ocenyMap = {
 };
 
 /* ============================================================
-    📦 GENEROWANIE KART RECENZJI
+    📦 GENEROWANIE KART RECENZJI (rozszerzone o <next>)
    ============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -29,6 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((res) => res.json())
     .then((dane) => {
       dane.forEach((item) => {
+        // 🔧 Zamiana <next> na poprawne otwarcie kolejnego akapitu
+        const trescHTML = item.tresc
+          .trim()
+          .replace(
+            /<next>/g,
+            '</p><div class="border-t border-indigo-900/50 w-1/4 mx-auto"></div><p>',
+          );
+
         const karta = document.createElement("div");
         karta.className =
           "bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row";
@@ -61,23 +69,24 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
 
-          <div class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-indigo-500/75">
-            <div class="m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold ${item.kolor}">
+          <div class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar-track-transparent ${item.scroll}">
+            <div class="text-base md:text-lg xl:text-xl m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold ${item.kolor}">
               <div><i class="fa-duotone fa-solid fa-book-bookmark"></i> ${item.tytul}</div>
               <div><i class="fa-duotone fa-solid fa-feather"></i> ${item.autor}</div>
               ${seriaHTML}
             </div>
 
             ${specjalneHTML}
-
-            <div class="indent-5 text-justify">${item.tresc}</div>
+            <div class=" md:text-justify text-sm md:text-base xl:text-lg space-y-2">
+              <p class="mt-4">${trescHTML}</p>
+            </div>
           </div>
         `;
 
         container.appendChild(karta);
       });
 
-      // Auto-dodanie klasy "loaded" do obrazków lazy
+      // Ładowanie obrazków
       container.querySelectorAll("img[loading='lazy']").forEach((img) => {
         if (img.complete) {
           img.classList.add("loaded");
