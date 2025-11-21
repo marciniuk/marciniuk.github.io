@@ -1,4 +1,7 @@
-// Mapowanie ocen na odpowiednią klasę HTML
+/* ============================================================
+    ⭐ oceny
+   ============================================================ */
+
 const ocenyMap = {
   o10: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i></div>',
   o9: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star-half p-1"></i></div>',
@@ -42,4 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const oceny = document.getElementById("Oceny");
   if (!oceny) return;
   zamienOceny();
+});
+
+/* ============================================================
+    🖼️ obrazki
+   ============================================================ */
+document.querySelectorAll("img[loading='lazy']").forEach((img) => {
+  if (img.complete) {
+    img.classList.add("loaded");
+    return;
+  }
+  img.addEventListener("load", () => img.classList.add("loaded"));
 });
