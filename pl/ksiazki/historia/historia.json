@@ -1,0 +1,646 @@
+[
+  {
+    "nr": 92,
+    "img": "/assets/img/ksiazki/deadpool10.webp",
+    "alt": "deadpool9",
+    "ocena": "o8",
+    "data": "15.02.2025"
+  },
+  {
+    "nr": 91,
+    "img": "/assets/img/ksiazki/smiercdulgath.webp",
+    "alt": "Śmierć Dulgath",
+    "ocena": "o8",
+    "data": "12.04.2023"
+  },
+  {
+    "nr": 90,
+    "img": "/assets/img/ksiazki/rozaiciern.webp",
+    "alt": "Róża i cierń",
+    "ocena": "o9",
+    "data": "11.04.2023"
+  },
+  {
+    "nr": 89,
+    "img": "/assets/img/ksiazki/wiezakoronna.webp",
+    "alt": "wieża koronna",
+    "ocena": "o8",
+    "data": "06.04.2023"
+  },
+  {
+    "nr": 88,
+    "img": "/assets/img/ksiazki/niebianskarzeka.webp",
+    "alt": "Niebiańska rzeka",
+    "ocena": "o7",
+    "data": "24.03.2023"
+  },
+  {
+    "nr": 87,
+    "img": "/assets/img/ksiazki/wszystkieteswiaty.webp",
+    "alt": "wszystkie te światy",
+    "ocena": "o8",
+    "data": "15.03.2023"
+  },
+  {
+    "nr": 86,
+    "img": "/assets/img/ksiazki/gdyzjestnaswielu.webp",
+    "alt": "gdyż jest nas wielu",
+    "ocena": "o8",
+    "data": "14.03.2023"
+  },
+  {
+    "nr": 85,
+    "img": "/assets/img/ksiazki/mapawnetrza.webp",
+    "alt": "mapa wnętrza",
+    "ocena": "o9",
+    "data": "13.03.2023"
+  },
+  {
+    "nr": 84,
+    "img": "/assets/img/ksiazki/naszeimielegion.webp",
+    "alt": "nasze imie legion, nasze imie bob",
+    "ocena": "o9",
+    "data": "10.03.2023"
+  },
+  {
+    "nr": 83,
+    "img": "/assets/img/ksiazki/rozjemca.webp",
+    "alt": "rozjemca",
+    "ocena": "o6",
+    "data": "07.03.2023"
+  },
+  {
+    "nr": 82,
+    "img": "/assets/img/ksiazki/ostatecznyargument.webp",
+    "alt": "ostateczny argument",
+    "ocena": "oS",
+    "data": "26.02.2023"
+  },
+  {
+    "nr": 81,
+    "img": "/assets/img/ksiazki/demonimrocznaton.webp",
+    "alt": "demon i mroczna toń",
+    "ocena": "oS",
+    "data": "18.02.2023"
+  },
+  {
+    "nr": 80,
+    "img": "/assets/img/ksiazki/azyl.webp",
+    "alt": "azyl",
+    "ocena": "o7",
+    "data": "11.02.2023"
+  },
+  {
+    "nr": 79,
+    "img": "/assets/img/ksiazki/mrocznytalent.webp",
+    "alt": "mroczny talent",
+    "ocena": "o10",
+    "data": "08.02.2023"
+  },
+  {
+    "nr": 78,
+    "img": "/assets/img/ksiazki/zakonrozbitejsoczewki.webp",
+    "alt": "zakon rozbitej soczewki",
+    "ocena": "o9",
+    "data": "04.02.2023"
+  },
+  {
+    "nr": 77,
+    "img": "/assets/img/ksiazki/popiolikurz.webp",
+    "alt": "popiół i kurz",
+    "ocena": "o10",
+    "data": "03.02.2023"
+  },
+  {
+    "nr": 76,
+    "img": "/assets/img/ksiazki/wspomnieniash.webp",
+    "alt": "wspomnienia sherlocka holmesa",
+    "ocena": "o8",
+    "data": "31.01.2023"
+  },
+  {
+    "nr": 75,
+    "img": "/assets/img/ksiazki/rycerzekrystali.webp",
+    "alt": "rycerze krystali",
+    "ocena": "o9",
+    "data": "27.01.2023"
+  },
+  {
+    "nr": 74,
+    "img": "/assets/img/ksiazki/hyperion.webp",
+    "alt": "hyperion",
+    "ocena": "o10",
+    "data": "25.01.2023"
+  },
+  {
+    "nr": 73,
+    "img": "/assets/img/ksiazki/nimzawisna.webp",
+    "alt": "nim zawisną",
+    "ocena": "oS",
+    "data": "22.01.2023"
+  },
+  {
+    "nr": 72,
+    "img": "/assets/img/ksiazki/kosciskryby.webp",
+    "alt": "kości skryby",
+    "ocena": "o10",
+    "data": "18.01.2023"
+  },
+  {
+    "nr": 71,
+    "img": "/assets/img/ksiazki/piasekraszida.webp",
+    "alt": "piasek raszida",
+    "ocena": "o10",
+    "data": "12.01.2023"
+  },
+  {
+    "nr": 70,
+    "img": "/assets/img/ksiazki/przygodysh.webp",
+    "alt": "przygody sherlocka holmesa",
+    "ocena": "o7",
+    "data": "11.01.2023"
+  },
+  {
+    "nr": 69,
+    "img": "/assets/img/ksiazki/dolinastrachu.webp",
+    "alt": "dolina strachu",
+    "ocena": "o9",
+    "data": "07.01.2023"
+  },
+  {
+    "nr": 68,
+    "img": "/assets/img/ksiazki/piesbaskervillow.webp",
+    "alt": "pies baskervillów",
+    "ocena": "o9",
+    "data": "07.01.2023"
+  },
+  {
+    "nr": 67,
+    "img": "/assets/img/ksiazki/znakczterech.webp",
+    "alt": "znak czterech",
+    "ocena": "o8",
+    "data": "06.01.2023"
+  },
+  {
+    "nr": 66,
+    "img": "/assets/img/ksiazki/studiumwszkarlacie.webp",
+    "alt": "studium w szkarłacie",
+    "ocena": "o8",
+    "data": "03.01.2023"
+  },
+  {
+    "nr": 65,
+    "img": "/assets/img/ksiazki/ostrze.webp",
+    "alt": "ostrze",
+    "ocena": "oS",
+    "data": "01.01.2023"
+  },
+  {
+    "nr": 64,
+    "img": "/assets/img/ksiazki/decimusfate2.webp",
+    "alt": "decimus fate 2",
+    "ocena": "oS",
+    "data": "21.12.2022"
+  },
+  {
+    "nr": 63,
+    "img": "/assets/img/ksiazki/decimusfate1.webp",
+    "alt": "decimus fate 1",
+    "ocena": "oS",
+    "data": "19.12.2022"
+  },
+  {
+    "nr": 62,
+    "img": "/assets/img/ksiazki/basniowaopowiesc.webp",
+    "alt": "baśniowa opowieść",
+    "ocena": "o8",
+    "data": "12.2022"
+  },
+  {
+    "nr": 61,
+    "img": "/assets/img/ksiazki/wampirzecesarstwo.webp",
+    "alt": "wampirze cesarstwo",
+    "ocena": "oS",
+    "data": "11.2022"
+  },
+  {
+    "nr": 60,
+    "img": "/assets/img/ksiazki/pacjent.webp",
+    "alt": "pacjent",
+    "ocena": "o10",
+    "data": "02.2022"
+  },
+  {
+    "nr": 59,
+    "img": "/assets/img/ksiazki/tedni.webp",
+    "alt": "te dni którcyh nie znamy",
+    "ocena": "oS",
+    "data": "02.2022"
+  },
+  {
+    "nr": 58,
+    "img": "/assets/img/ksiazki/psyradrobnych.webp",
+    "alt": "psy ras drobnych",
+    "ocena": "o9",
+    "data": "01.2022"
+  },
+  {
+    "nr": 57,
+    "img": "/assets/img/ksiazki/deadpool9.webp",
+    "alt": "deadpool9",
+    "ocena": "o9",
+    "data": "01.2022"
+  },
+  {
+    "nr": 56,
+    "img": "/assets/img/ksiazki/deadpool8.webp",
+    "alt": "deadpool8",
+    "ocena": "o9",
+    "data": "01.2022"
+  },
+  {
+    "nr": 55,
+    "img": "/assets/img/ksiazki/deadpool7.webp",
+    "alt": "deadpool7",
+    "ocena": "o9",
+    "data": "01.2022"
+  },
+  {
+    "nr": 54,
+    "img": "/assets/img/ksiazki/deadpool6.webp",
+    "alt": "deadpool6",
+    "ocena": "o9",
+    "data": "01.2022"
+  },
+  {
+    "nr": 53,
+    "img": "/assets/img/ksiazki/deadpool5.webp",
+    "alt": "deadpool5",
+    "ocena": "o9",
+    "data": "01.2022"
+  },
+  {
+    "nr": 52,
+    "img": "/assets/img/ksiazki/deadpool4.webp",
+    "alt": "deadpool4",
+    "ocena": "o9",
+    "data": "01.2022"
+  },
+  {
+    "nr": 51,
+    "img": "/assets/img/ksiazki/deadpool3.webp",
+    "alt": "deadpool3",
+    "ocena": "o9",
+    "data": "01.2022"
+  },
+  {
+    "nr": 50,
+    "img": "/assets/img/ksiazki/deadpool2.webp",
+    "alt": "deadpool2",
+    "ocena": "o9",
+    "data": "01.2022"
+  },
+  {
+    "nr": 49,
+    "img": "/assets/img/ksiazki/deadpool1.webp",
+    "alt": "deadpool1",
+    "ocena": "o9",
+    "data": "01.2022"
+  },
+  {
+    "nr": 48,
+    "img": "/assets/img/ksiazki/czarnamadonna.webp",
+    "alt": "czarna madonna",
+    "ocena": "o9",
+    "data": "17.05.2020"
+  },
+  {
+    "nr": 47,
+    "img": "/assets/img/ksiazki/jajko.webp",
+    "alt": "the egg",
+    "ocena": "o10",
+    "data": "08.01.2020"
+  },
+  {
+    "nr": 46,
+    "img": "/assets/img/ksiazki/iluzjonista.webp",
+    "alt": "iluzjonista",
+    "ocena": "o10",
+    "data": "02.12.2019"
+  },
+  {
+    "nr": 45,
+    "img": "/assets/img/ksiazki/hp1.webp",
+    "alt": "harry potter i kamień filozoficzny",
+    "ocena": "o8",
+    "data": "22.09.2019"
+  },
+  {
+    "nr": 44,
+    "img": "/assets/img/ksiazki/basniebardabeedlea.webp",
+    "alt": "baśnie barda beedlea",
+    "ocena": "o9",
+    "data": "12.09.2019"
+  },
+  {
+    "nr": 43,
+    "img": "/assets/img/ksiazki/duszacesarza.webp",
+    "alt": "dusza cesarza",
+    "ocena": "o9",
+    "data": "07.09.2019"
+  },
+  {
+    "nr": 42,
+    "img": "/assets/img/ksiazki/legion.webp",
+    "alt": "legion",
+    "ocena": "o8",
+    "data": "21.08.2019"
+  },
+  {
+    "nr": 41,
+    "img": "/assets/img/ksiazki/idealnystan.webp",
+    "alt": "idealny stan",
+    "ocena": "o9",
+    "data": "25.07.2019"
+  },
+  {
+    "nr": 40,
+    "img": "/assets/img/ksiazki/vicious.webp",
+    "alt": "vicious",
+    "ocena": "o10",
+    "data": "16.07.2019"
+  },
+  {
+    "nr": 39,
+    "img": "/assets/img/ksiazki/listyzzagrobu.webp",
+    "alt": "listy zza grobu",
+    "ocena": "o8",
+    "data": "29.06.2019"
+  },
+  {
+    "nr": 38,
+    "img": "/assets/img/ksiazki/siedemsmiercievelynhardcastle.webp",
+    "alt": "siedem śmierci evelyn hardcastle",
+    "ocena": "oS",
+    "data": "10.03.2019"
+  },
+  {
+    "nr": 37,
+    "img": "/assets/img/ksiazki/dyskretneszalenstwo.webp",
+    "alt": "dyskretne szalenstwo",
+    "ocena": "o6",
+    "data": "22.02.2019"
+  },
+  {
+    "nr": 36,
+    "img": "/assets/img/ksiazki/spetaniprzeznaczeniem.webp",
+    "alt": "spetani przeznaczeniem",
+    "ocena": "o6",
+    "data": "01.2019"
+  },
+  {
+    "nr": 35,
+    "img": "/assets/img/ksiazki/naznaczenismiercia.webp",
+    "alt": "naznaczeni śmiercią",
+    "ocena": "o6",
+    "data": "01.2019"
+  },
+  {
+    "nr": 34,
+    "img": "/assets/img/ksiazki/demonluster.webp",
+    "alt": "demon luster",
+    "ocena": "o9",
+    "data": "01.2019"
+  },
+  {
+    "nr": 33,
+    "img": "/assets/img/ksiazki/szamankaodumarlakow.webp",
+    "alt": "szamanka od umarlaków",
+    "ocena": "o8",
+    "data": "01.2019"
+  },
+  {
+    "nr": 32,
+    "img": "/assets/img/ksiazki/wiezaswitu.webp",
+    "alt": "wieża świtu",
+    "ocena": "o9",
+    "data": "2019"
+  },
+  {
+    "nr": 31,
+    "img": "/assets/img/ksiazki/imperiumburz.webp",
+    "alt": "imperium burz",
+    "ocena": "o10",
+    "data": "2019"
+  },
+  {
+    "nr": 30,
+    "img": "/assets/img/ksiazki/krolowacieni.webp",
+    "alt": "królowa cieni",
+    "ocena": "o10",
+    "data": "2019"
+  },
+  {
+    "nr": 29,
+    "img": "/assets/img/ksiazki/dziedzictwoognia.webp",
+    "alt": "dziedzictwo ognia",
+    "ocena": "o10",
+    "data": "2019"
+  },
+  {
+    "nr": 28,
+    "img": "/assets/img/ksiazki/koronawmroku.webp",
+    "alt": "korona w mroku",
+    "ocena": "o9",
+    "data": "2019"
+  },
+  {
+    "nr": 27,
+    "img": "/assets/img/ksiazki/szklanytron.webp",
+    "alt": "szklany tron",
+    "ocena": "oS",
+    "data": "2019"
+  },
+  {
+    "nr": 26,
+    "img": "/assets/img/ksiazki/zabojczyni.webp",
+    "alt": "zabójczyni",
+    "ocena": "o8",
+    "data": "2019"
+  },
+  {
+    "nr": 25,
+    "img": "/assets/img/ksiazki/krolestwokanciarzy.webp",
+    "alt": "krolestwo kanciarzy",
+    "ocena": "oS",
+    "data": "18.09.2018"
+  },
+  {
+    "nr": 24,
+    "img": "/assets/img/ksiazki/behawiorysta.webp",
+    "alt": "behawiorysta",
+    "ocena": "oS",
+    "data": "02.07.2018"
+  },
+  {
+    "nr": 23,
+    "img": "/assets/img/ksiazki/szostkawron.webp",
+    "alt": "szóstka wron",
+    "ocena": "oS",
+    "data": "06.2018"
+  },
+  {
+    "nr": 22,
+    "img": "/assets/img/ksiazki/outsider.webp",
+    "alt": "outsider",
+    "ocena": "o4",
+    "data": "06.2018"
+  },
+  {
+    "nr": 21,
+    "img": "/assets/img/ksiazki/nibynoc.webp",
+    "alt": "nibynoc",
+    "ocena": "oS",
+    "data": "2018"
+  },
+  {
+    "nr": 20,
+    "img": "/assets/img/ksiazki/lowcyglow.webp",
+    "alt": "łowcy głów",
+    "ocena": "o7",
+    "data": "2018"
+  },
+  {
+    "nr": 19,
+    "img": "/assets/img/ksiazki/koniecwarty.webp",
+    "alt": "koniec warty",
+    "ocena": "o10",
+    "data": "2016"
+  },
+  {
+    "nr": 18,
+    "img": "/assets/img/ksiazki/znalezioneniekradzione.webp",
+    "alt": "znalezione nie kradzione",
+    "ocena": "o9",
+    "data": "2016"
+  },
+  {
+    "nr": 17,
+    "img": "/assets/img/ksiazki/panmercedes.webp",
+    "alt": "pan mercedes",
+    "ocena": "o9",
+    "data": "2016"
+  },
+  {
+    "nr": 16,
+    "img": "/assets/img/ksiazki/calamity.webp",
+    "alt": "calamity",
+    "ocena": "o8",
+    "data": "2016"
+  },
+  {
+    "nr": 15,
+    "img": "/assets/img/ksiazki/pozar.webp",
+    "alt": "pożar",
+    "ocena": "o8",
+    "data": "2016"
+  },
+  {
+    "nr": 14,
+    "img": "/assets/img/ksiazki/staloweserce.webp",
+    "alt": "stalowe serce",
+    "ocena": "o8",
+    "data": "2016"
+  },
+  {
+    "nr": 13,
+    "img": "/assets/img/ksiazki/japotepiona.webp",
+    "alt": "ja potępiona",
+    "ocena": "o6",
+    "data": "2016"
+  },
+  {
+    "nr": 12,
+    "img": "/assets/img/ksiazki/jaanielica.webp",
+    "alt": "ja anielica",
+    "ocena": "o6",
+    "data": "2016"
+  },
+  {
+    "nr": 11,
+    "img": "/assets/img/ksiazki/jadiablica.webp",
+    "alt": "ja diablica",
+    "ocena": "o7",
+    "data": "2016"
+  },
+  {
+    "nr": 10,
+    "img": "/assets/img/ksiazki/cztery.webp",
+    "alt": "cztery",
+    "ocena": "o7",
+    "data": "2015"
+  },
+  {
+    "nr": 9,
+    "img": "/assets/img/ksiazki/wierna.webp",
+    "alt": "wierna",
+    "ocena": "o7",
+    "data": "2015"
+  },
+  {
+    "nr": 8,
+    "img": "/assets/img/ksiazki/zbuntowana.webp",
+    "alt": "zbuntowana",
+    "ocena": "o7",
+    "data": "2015"
+  },
+  {
+    "nr": 7,
+    "img": "/assets/img/ksiazki/niezgodna.webp",
+    "alt": "niezgodna",
+    "ocena": "o7",
+    "data": "2015"
+  },
+  {
+    "nr": 6,
+    "img": "/assets/img/ksiazki/boggraz10.webp",
+    "alt": "bóg gra z 10",
+    "ocena": "o6",
+    "data": "2015"
+  },
+  {
+    "nr": 5,
+    "img": "/assets/img/ksiazki/kosoglos.webp",
+    "alt": "kosogłos",
+    "ocena": "o7",
+    "data": "2015"
+  },
+  {
+    "nr": 4,
+    "img": "/assets/img/ksiazki/wpierscieniuognia.webp",
+    "alt": "w pierscieniu ognia",
+    "ocena": "o7",
+    "data": "2015"
+  },
+  {
+    "nr": 3,
+    "img": "/assets/img/ksiazki/igrzyskasmierci.webp",
+    "alt": "igrzyska śmierci",
+    "ocena": "o7",
+    "data": "2015"
+  },
+  {
+    "nr": 2,
+    "img": "/assets/img/ksiazki/slowaswiatlosci.webp",
+    "alt": "słowa światłości",
+    "ocena": "oS",
+    "data": "2015"
+  },
+  {
+    "nr": 1,
+    "img": "/assets/img/ksiazki/drogakrolow.webp",
+    "alt": "droga królów",
+    "ocena": "oS",
+    "data": "2015"
+  }
+]
