@@ -5,9 +5,12 @@ module.exports = {
   content: [
     "./pl/**/*.html",
     "./en/**/*.html",
+    "./pl/**/*.json",
+    "./en/**/*.json",
     "./index.html",
     "./assets/**/*.js",
     "./assets/**/*.html",
+    "./assets/**/*.json",
   ],
   theme: {
     extend: {
