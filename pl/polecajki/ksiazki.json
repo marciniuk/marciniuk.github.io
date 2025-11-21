@@ -1,6 +1,6 @@
 [
   {
-    "img": "/assets/img/ulubiency/abercrombie.jpg",
+    "img": "/assets/img/polecajki/abercrombie.webp",
     "nr": 1,
     "tytul": "Joe Abercrombie",
     "podtytul": "Cała twórczość",
@@ -9,7 +9,7 @@
     "linkNazwa": "lubimyczytać.pl"
   },
   {
-    "img": "/assets/img/ulubiency/sanderson.jpg",
+    "img": "/assets/img/polecajki/sanderson.webp",
     "nr": 2,
     "tytul": "Brandon Sanderson",
     "podtytul": "Cała twórczość",
@@ -18,7 +18,7 @@
     "linkNazwa": "lubimyczytać.pl"
   },
   {
-    "img": "/assets/img/ulubiency/szklany.jpg",
+    "img": "/assets/img/polecajki/szklany.webp",
     "nr": 3,
     "tytul": "Seria \"Szklany Tron\"",
     "podtytul": "Sarah J. Maas",
@@ -27,7 +27,7 @@
     "linkNazwa": "lubimyczytać.pl"
   },
   {
-    "img": "/assets/img/ulubiency/wampirze.jpg",
+    "img": "/assets/img/polecajki/wampirze.webp",
     "nr": 4,
     "tytul": "Seria \"Wampirze Cesarstwo\"",
     "podtytul": "Jay Kristoff",
@@ -36,7 +36,7 @@
     "linkNazwa": "lubimyczytać.pl"
   },
   {
-    "img": "/assets/img/ulubiency/wrony.jpg",
+    "img": "/assets/img/polecajki/wrony.webp",
     "nr": 5,
     "tytul": "Seria \"Szóstka Wron\"",
     "podtytul": "Leigh Bardugo",
@@ -45,7 +45,7 @@
     "linkNazwa": "lubimyczytać.pl"
   },
   {
-    "img": "/assets/img/ulubiency/naszeimielegion.jpg",
+    "img": "/assets/img/polecajki/naszeimielegion.webp",
     "nr": 6,
     "tytul": "Seria \"Bobiverse\"",
     "podtytul": "Dennis E. Taylor",
@@ -54,7 +54,7 @@
     "linkNazwa": "lubimyczytać.pl"
   },
   {
-    "img": "/assets/img/ulubiency/decimus.jpg",
+    "img": "/assets/img/polecajki/decimus.webp",
     "nr": 7,
     "tytul": "Seria \"Decimus Fate\"",
     "podtytul": "Peter A. Flannery",
@@ -63,7 +63,7 @@
     "linkNazwa": "lubimyczytać.pl"
   },
   {
-    "img": "/assets/img/ulubiency/siedem.png",
+    "img": "/assets/img/polecajki/siedem.webp",
     "nr": 8,
     "tytul": "Siedem śmierci Evelyn Hardcastle",
     "podtytul": "Stuart Turton",
@@ -72,7 +72,7 @@
     "linkNazwa": "lubimyczytać.pl"
   },
   {
-    "img": "/assets/img/ulubiency/wiezakoronna.jpg",
+    "img": "/assets/img/polecajki/wiezakoronna.webp",
     "nr": 9,
     "tytul": "Seria \"Kroniki Riyrii\"",
     "podtytul": "Michael J. Sullivan",
@@ -81,7 +81,7 @@
     "linkNazwa": "lubimyczytać.pl"
   },
   {
-    "img": "/assets/img/ulubiency/behawiorysta.jpg",
+    "img": "/assets/img/polecajki/behawiorysta.webp",
     "nr": 10,
     "tytul": "Seria \"Gerard Edling\"",
     "podtytul": "Remigiusz Mróz",
@@ -90,7 +90,7 @@
     "linkNazwa": "lubimyczytać.pl"
   },
   {
-    "img": "/assets/img/ulubiency/szamanka.jpg",
+    "img": "/assets/img/polecajki/szamanka.webp",
     "nr": 11,
     "tytul": "Seria \"Szamanka od umarlaków\"",
     "podtytul": "Martna Raduchowska",
