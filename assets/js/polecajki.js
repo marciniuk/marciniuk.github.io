@@ -64,7 +64,7 @@ function createCard(item, color) {
         ${item.nr}
       </div>
 
-      <div class="h-full overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-${color}-500/60">
+      <div class="lewy-scroll h-full overflow-y-auto scrollbar-track-transparent scrollbar-thumb-${color}-500/60">
         <div class="z-10 grid justify-center items-start">
           <div class="text-sm sm:text-base md:text-xl lg:text-3xl xl:text-4xl font-bold w-full text-${color}-400 text-center">
             ${item.tytul}
