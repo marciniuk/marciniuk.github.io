@@ -9,16 +9,7 @@
   --dev-name: "Adrian Marciniuk";
   --dev-website: "https://marcini.uk";
   --dev-mail: "adrian@marcini.uk";
-}
 
-/* ==========================================
-   PODSTAWOWE STYLE
-   ========================================== */
-
-/* ---     Body / Main     --- */
-html {
-  height: 100%;
-  width: 100%;
   --scrollbar-track: #020b1b !important;
   --scrollbar-thumb: #2d4e8d !important;
   --scrollbar-thumb-hover: #4578d9 !important;
@@ -26,22 +17,24 @@ html {
   --scrollbar-thumb-radius: 8px;
 }
 
-@-moz-document url-prefix() {
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
-  }
+/* ==========================================
+   PODSTAWOWE STYLE
+   ========================================== */
+
+/* --- HTML --- */
+html {
+  height: 100%;
+  width: 100%;
 }
 
+/* --- BODY --- */
 body {
   display: flex;
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   width: 100%;
-}
 
-body {
   @apply bg-blue-900 min-h-full max-w-full overflow-x-clip;
 }
 
@@ -53,6 +46,9 @@ main {
   font-style: italic;
 }
 
+/* ==========================================
+   LINKI / PRZYCISKI
+   ========================================== */
 .nav-link {
   @apply transition-all duration-300 transform hover:scale-[1.15];
 }
@@ -64,27 +60,27 @@ main {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
-}
-
-*:focus {
-  outline: none !important;
-}
-*:focus-visible {
-  outline: none !important;
+  background-clip: padding-box !important;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 button,
 a,
 [role="button"] {
-  -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  background-clip: padding-box !important;
 }
 
-/* ---     Tło z gwiazdami     --- */
+/* Focus reset */
+*:focus,
+*:focus-visible {
+  outline: none !important;
+}
+
+/* ==========================================
+   TŁO Z GWIAZDAMI
+   ========================================== */
 stars {
   position: fixed;
   inset: 0;
@@ -95,7 +91,9 @@ stars {
   display: block;
 }
 
-/* ---  Polityka naleśników  --- */
+/* ==========================================
+   AKORDEON (Polityka naleśników)
+   ========================================== */
 .accordion-content {
   max-height: 0;
   overflow: hidden;
@@ -109,7 +107,9 @@ stars {
   opacity: 1;
 }
 
-/* header */
+/* ==========================================
+   HEADER – RESPONSYWNOŚĆ
+   ========================================== */
 @media (min-width: 1280px) {
   #main-header {
     top: 1.25rem;
@@ -123,9 +123,7 @@ stars {
   #mobile-menu {
     height: calc(var(--vh, 1vh) * 100 - 2.75rem);
   }
-}
 
-@media (max-width: 1279px) {
   #main-header {
     border-top-left-radius: 9999px;
     border-bottom-left-radius: 9999px;
@@ -134,7 +132,9 @@ stars {
   }
 }
 
-/* === FADE-IN CAŁEJ STRONY === */
+/* ==========================================
+   FADE-IN CAŁEJ STRONY
+   ========================================== */
 body:not(.page-ready) header,
 body:not(.page-ready) main,
 body:not(.page-ready) footer {
@@ -150,7 +150,9 @@ body.page-ready footer {
   pointer-events: auto;
 }
 
-/* biblioteczka */
+/* ==========================================
+   LAZY FADE-IN (biblioteczka)
+   ========================================== */
 .lazy-fade {
   opacity: 0;
   transform: scale(0.98);
@@ -165,66 +167,67 @@ body.page-ready footer {
 }
 
 /* ==========================================
-   SCROLLBAR STYLING
+   SCROLLBAR
    ========================================== */
-::-webkit-scrollbar-track {
-  background-color: var(--scrollbar-track);
-  border-radius: var(--scrollbar-track-radius);
+
+@-moz-document url-prefix() {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
 }
-::-webkit-scrollbar-track:hover {
-  background-color: var(--scrollbar-track-hover, var(--scrollbar-track));
-}
-::-webkit-scrollbar-track:active {
-  background-color: var(
-    --scrollbar-track-active,
-    var(--scrollbar-track-hover, var(--scrollbar-track))
-  );
-}
-::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb);
-  border-radius: var(--scrollbar-thumb-radius);
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scrollbar-thumb-hover, var(--scrollbar-thumb));
-}
-::-webkit-scrollbar-thumb:active {
-  background-color: var(
-    --scrollbar-thumb-active,
-    var(--scrollbar-thumb-hover, var(--scrollbar-thumb))
-  );
-}
-::-webkit-scrollbar-corner {
-  background-color: var(--scrollbar-corner);
-  border-radius: var(--scrollbar-corner-radius);
-}
-::-webkit-scrollbar-corner:hover {
-  background-color: var(--scrollbar-corner-hover, var(--scrollbar-corner));
-}
-::-webkit-scrollbar-corner:active {
-  background-color: var(
-    --scrollbar-corner-active,
-    var(--scrollbar-corner-hover, var(--scrollbar-corner))
-  );
-}
+
 ::-webkit-scrollbar {
   display: block;
   width: var(--scrollbar-width, 16px);
   height: var(--scrollbar-height, 16px);
 }
 
-.isolate {
-  isolation: isolate;
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+  border-radius: var(--scrollbar-track-radius);
 }
 
-/*setup*/
-.section-btn {
-  @apply ripple-btn btn-scale
-  aspect-square xl:aspect-[2/1]
-  backdrop-blur-sm text-lg font-semibold
-  border-2 rounded-3xl
-  flex items-center justify-center
-  transition-all duration-200 cursor-pointer select-none;
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: var(--scrollbar-thumb-radius);
 }
+
+::-webkit-scrollbar-track:hover {
+  background-color: var(--scrollbar-track-hover, var(--scrollbar-track));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover, var(--scrollbar-thumb));
+}
+
+::-webkit-scrollbar-track:active,
+::-webkit-scrollbar-thumb:active {
+  background-color: var(
+    --scrollbar-thumb-active,
+    var(--scrollbar-thumb-hover, var(--scrollbar-thumb))
+  );
+}
+
+::-webkit-scrollbar-corner {
+  background-color: var(--scrollbar-corner);
+  border-radius: var(--scrollbar-corner-radius);
+}
+
+::-webkit-scrollbar-corner:hover {
+  background-color: var(--scrollbar-corner-hover, var(--scrollbar-corner));
+}
+
+::-webkit-scrollbar-corner:active {
+  background-color: var(
+    --scrollbar-corner-active,
+    var(--scrollbar-corner-hover, var(--scrollbar-corner))
+  );
+}
+
+/* ==========================================
+   BUTTONY / UTILITY EFFECTS
+   ========================================== */
 @layer utilities {
   .ripple-btn {
     position: relative;
@@ -262,7 +265,18 @@ body.page-ready footer {
   }
 }
 
-/* grid setup */
+.section-btn {
+  @apply ripple-btn btn-scale
+  aspect-square xl:aspect-[2/1]
+  backdrop-blur-sm text-lg font-semibold
+  border-2 rounded-3xl
+  flex items-center justify-center
+  transition-all duration-200 cursor-pointer select-none;
+}
+
+/* ==========================================
+   SETUP
+   ========================================== */
 .grid-setup {
   grid-template-columns: repeat(auto-fit, minmax(auto, 176px));
 }
@@ -273,15 +287,19 @@ body.page-ready footer {
   }
 }
 
-/* projkety */
+/* ==========================================
+   PROJEKTY
+   ========================================== */
 .grid-projekty {
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
+
 @media (min-width: 640px) {
   .grid-projekty {
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   }
 }
+
 .card-projekt {
   @apply rounded-lg max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2
          transition-all duration-300 ease-out hover:scale-[1.05]
@@ -292,29 +310,41 @@ body.page-ready footer {
   @apply text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 
          font-bold pb-1 pl-3 pr-2;
 }
+
 .opis-projekt {
   @apply w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col;
 }
+
 .left-projekt {
   @apply w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%];
 }
+
 .icon-projekt {
   @apply text-2xl lg:text-3xl w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center;
 }
 
-/* profile */
+/* ==========================================
+   PROFIL
+   ========================================== */
 .pastylka-profil {
   @apply flex flex-col items-center hover:scale-[1.04] transition-transform duration-500 max-w-[30rem] w-full;
 }
+
 .serwis-profil {
-  @apply w-3/4 self-start text-white font-bold text-2xl lg:text-3xl py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg bg-gradient-to-r
-         bg-[length:200%_200%] bg-right-bottom group-hover:bg-left-top transition-all duration-700 ease-out;
+  @apply w-3/4 self-start text-white font-bold text-2xl lg:text-3xl py-4 rounded-2xl flex items-center justify-center
+         gap-3 shadow-lg bg-gradient-to-r bg-[length:200%_200%] bg-right-bottom group-hover:bg-left-top transition-all
+         duration-700 ease-out;
 }
+
 .nick-profil {
   @apply bg-blue-900 text-white py-2 lg:py-3 rounded-2xl border-4
          text-xl lg:text-2xl text-center transition-all duration-500 ease-in-out;
 }
 
+/* ==========================================
+   FOOTER
+   ========================================== */
 #footer {
-  @apply h-16 xs:h-12 text-sm sm:text-base flex flex-col xs:flex-row backdrop-blur-[2px] p-2 justify-center xs:justify-evenly items-center gap-1 md:gap-0;
+  @apply h-16 xs:h-12 text-sm sm:text-base flex flex-col xs:flex-row backdrop-blur-[2px] p-2 justify-center
+         xs:justify-evenly items-center gap-1 md:gap-0;
 }
