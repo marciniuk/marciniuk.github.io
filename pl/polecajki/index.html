@@ -208,185 +208,178 @@
 
     <!-- MAIN -->
     <main
-      class="z-10 px-3 lg:px-6 pt-6 lg:pt-12 pb-3 items-center place-items-center place-content-center justify-center h-full"
+      class="z-10 px-3 lg:px-6 pt-6 lg:pt-12 pb-3 place-content-center w-full grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-6"
     >
+      <!-- KSIĄŻKI -->
       <div
-        class="w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-6"
+        class="bg-rose-800/75 backdrop-blur-sm p-1 rounded-lg w-full"
+        id="ksiazki"
       >
-        <!-- KSIĄŻKI -->
         <div
-          class="bg-rose-800/75 backdrop-blur-sm p-1 rounded-lg w-full"
-          id="ksiazki"
+          class="bg-blue-900/50 backdrop-brightness-50 p-1 md:p-2 rounded-lg"
         >
+          <!--LOADING-->
           <div
-            class="bg-blue-900/50 backdrop-brightness-50 p-1 md:p-2 rounded-lg"
+            class="flex w-full h-full text-base font-bold -mb-6 -mt-2 loading666"
           >
-            <!--LOADING-->
-            <div
-              class="flex w-full h-full text-base font-bold -mb-6 -mt-2 loading666"
-            >
-              <div class="m-auto bg-rose-800 rounded-b-lg p-1 px-2">
-                Wczytywanie...
-              </div>
-            </div>
-
-            <!--DATA-->
-            <div
-              class="gallery js-flickity h-40 md:h-52 lg:h-64 xl:h-80 rounded-lg"
-              data-flickity-options='{ "wrapAround": true, "pageDots": false }'
-            >
-              <!--TITLE-->
-              <div
-                class="gallery-cell h-40 md:h-52 lg:h-64 xl:h-80 hidden ukryty"
-              >
-                <div
-                  class="bg-rose-900/50 rounded-lg h-full flex items-center justify-center"
-                >
-                  <div
-                    class="lg:text-5xl md:text-4xl text-3xl text-rose-400 font-bold"
-                  >
-                    Książki
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="gallery-cell hidden ukryty"
-                id="ksiazki-data-title"
-              ></div>
+            <div class="m-auto bg-rose-800 rounded-b-lg p-1 px-2">
+              Wczytywanie...
             </div>
           </div>
-        </div>
 
-        <!-- GRY -->
-        <div
-          class="bg-amber-700/75 backdrop-blur-sm p-1 rounded-lg w-full"
-          id="gry"
-        >
+          <!--DATA-->
           <div
-            class="bg-blue-900/50 backdrop-brightness-50 p-1 md:p-2 rounded-lg"
+            class="gallery js-flickity h-40 md:h-52 lg:h-64 xl:h-80 rounded-lg"
+            data-flickity-options='{ "wrapAround": true, "pageDots": false }'
           >
-            <!--LOADING-->
+            <!--TITLE-->
             <div
-              class="flex w-full h-full text-base font-bold -mb-6 -mt-2 loading666"
+              class="gallery-cell h-40 md:h-52 lg:h-64 xl:h-80 hidden ukryty"
             >
-              <div class="m-auto bg-amber-700 rounded-b-lg p-1 px-4">
-                Wczytywanie...
-              </div>
-            </div>
-
-            <!--DATA-->
-            <div
-              class="gallery js-flickity h-40 md:h-52 lg:h-64 xl:h-80"
-              data-flickity-options='{ "wrapAround": true, "pageDots": false }'
-            >
-              <!--TITLE-->
               <div
-                class="gallery-cell h-40 md:h-52 lg:h-64 xl:h-80 hidden ukryty"
+                class="bg-rose-900/50 rounded-lg h-full flex items-center justify-center"
               >
                 <div
-                  class="bg-amber-900/50 rounded-lg h-full flex items-center justify-center"
+                  class="lg:text-5xl md:text-4xl text-3xl text-rose-400 font-bold"
                 >
-                  <div
-                    class="lg:text-5xl md:text-4xl text-3xl text-amber-400 font-bold"
-                  >
-                    Gry
-                  </div>
+                  Książki
                 </div>
               </div>
-
-              <div class="gallery-cell hidden ukryty" id="gry-data-title"></div>
             </div>
+
+            <div
+              class="gallery-cell hidden ukryty"
+              id="ksiazki-data-title"
+            ></div>
           </div>
         </div>
+      </div>
 
-        <!-- FILMY -->
+      <!-- GRY -->
+      <div
+        class="bg-amber-700/75 backdrop-blur-sm p-1 rounded-lg w-full"
+        id="gry"
+      >
         <div
-          class="bg-emerald-800/75 backdrop-blur-sm p-1 rounded-lg w-full"
-          id="filmy"
+          class="bg-blue-900/50 backdrop-brightness-50 p-1 md:p-2 rounded-lg"
         >
+          <!--LOADING-->
           <div
-            class="bg-blue-900/50 backdrop-brightness-50 p-1 md:p-2 rounded-lg"
+            class="flex w-full h-full text-base font-bold -mb-6 -mt-2 loading666"
           >
-            <!--LOADING-->
-            <div
-              class="flex w-full h-full text-base font-bold -mb-6 -mt-2 loading666"
-            >
-              <div class="m-auto bg-emerald-800 rounded-b-lg p-1 px-4">
-                Wczytywanie...
-              </div>
-            </div>
-
-            <!--DATA-->
-            <div
-              class="gallery js-flickity h-40 md:h-52 lg:h-64 xl:h-80"
-              data-flickity-options='{ "wrapAround": true, "pageDots": false }'
-            >
-              <!--TITLE-->
-              <div
-                class="gallery-cell h-40 md:h-52 lg:h-64 xl:h-80 hidden ukryty"
-              >
-                <div
-                  class="bg-emerald-900/50 rounded-lg h-full flex items-center justify-center"
-                >
-                  <div
-                    class="lg:text-5xl md:text-4xl text-3xl text-emerald-400 font-bold"
-                  >
-                    Filmy
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="gallery-cell hidden ukryty"
-                id="filmy-data-title"
-              ></div>
+            <div class="m-auto bg-amber-700 rounded-b-lg p-1 px-4">
+              Wczytywanie...
             </div>
           </div>
-        </div>
 
-        <!-- SERIALE -->
-        <div
-          class="bg-sky-700/75 backdrop-blur-sm p-1 rounded-lg w-full"
-          id="seriale"
-        >
+          <!--DATA-->
           <div
-            class="bg-blue-900/50 backdrop-brightness-50 p-1 md:p-2 rounded-lg"
+            class="gallery js-flickity h-40 md:h-52 lg:h-64 xl:h-80"
+            data-flickity-options='{ "wrapAround": true, "pageDots": false }'
           >
-            <!--LOADING-->
+            <!--TITLE-->
             <div
-              class="flex w-full h-full text-base font-bold -mb-6 -mt-2 loading666"
+              class="gallery-cell h-40 md:h-52 lg:h-64 xl:h-80 hidden ukryty"
             >
-              <div class="m-auto bg-blue-900 rounded-b-lg p-1 px-4">
-                Wczytywanie...
-              </div>
-            </div>
-
-            <!--DATA-->
-            <div
-              class="gallery js-flickity h-40 md:h-52 lg:h-64 xl:h-80"
-              data-flickity-options='{ "wrapAround": true, "pageDots": false }'
-            >
-              <!--TITLE-->
               <div
-                class="gallery-cell h-40 md:h-52 lg:h-64 xl:h-80 hidden ukryty"
+                class="bg-amber-900/50 rounded-lg h-full flex items-center justify-center"
               >
                 <div
-                  class="bg-sky-900/50 rounded-lg h-full flex items-center justify-center"
+                  class="lg:text-5xl md:text-4xl text-3xl text-amber-400 font-bold"
                 >
-                  <div
-                    class="lg:text-5xl md:text-4xl text-3xl text-sky-400 font-bold"
-                  >
-                    Seriale
-                  </div>
+                  Gry
                 </div>
               </div>
-
-              <div
-                class="gallery-cell hidden ukryty"
-                id="seriale-data-title"
-              ></div>
             </div>
+
+            <div class="gallery-cell hidden ukryty" id="gry-data-title"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FILMY -->
+      <div
+        class="bg-emerald-800/75 backdrop-blur-sm p-1 rounded-lg w-full"
+        id="filmy"
+      >
+        <div
+          class="bg-blue-900/50 backdrop-brightness-50 p-1 md:p-2 rounded-lg"
+        >
+          <!--LOADING-->
+          <div
+            class="flex w-full h-full text-base font-bold -mb-6 -mt-2 loading666"
+          >
+            <div class="m-auto bg-emerald-800 rounded-b-lg p-1 px-4">
+              Wczytywanie...
+            </div>
+          </div>
+
+          <!--DATA-->
+          <div
+            class="gallery js-flickity h-40 md:h-52 lg:h-64 xl:h-80"
+            data-flickity-options='{ "wrapAround": true, "pageDots": false }'
+          >
+            <!--TITLE-->
+            <div
+              class="gallery-cell h-40 md:h-52 lg:h-64 xl:h-80 hidden ukryty"
+            >
+              <div
+                class="bg-emerald-900/50 rounded-lg h-full flex items-center justify-center"
+              >
+                <div
+                  class="lg:text-5xl md:text-4xl text-3xl text-emerald-400 font-bold"
+                >
+                  Filmy
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-cell hidden ukryty" id="filmy-data-title"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERIALE -->
+      <div
+        class="bg-sky-700/75 backdrop-blur-sm p-1 rounded-lg w-full"
+        id="seriale"
+      >
+        <div
+          class="bg-blue-900/50 backdrop-brightness-50 p-1 md:p-2 rounded-lg"
+        >
+          <!--LOADING-->
+          <div
+            class="flex w-full h-full text-base font-bold -mb-6 -mt-2 loading666"
+          >
+            <div class="m-auto bg-blue-900 rounded-b-lg p-1 px-4">
+              Wczytywanie...
+            </div>
+          </div>
+
+          <!--DATA-->
+          <div
+            class="gallery js-flickity h-40 md:h-52 lg:h-64 xl:h-80"
+            data-flickity-options='{ "wrapAround": true, "pageDots": false }'
+          >
+            <!--TITLE-->
+            <div
+              class="gallery-cell h-40 md:h-52 lg:h-64 xl:h-80 hidden ukryty"
+            >
+              <div
+                class="bg-sky-900/50 rounded-lg h-full flex items-center justify-center"
+              >
+                <div
+                  class="lg:text-5xl md:text-4xl text-3xl text-sky-400 font-bold"
+                >
+                  Seriale
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="gallery-cell hidden ukryty"
+              id="seriale-data-title"
+            ></div>
           </div>
         </div>
       </div>
