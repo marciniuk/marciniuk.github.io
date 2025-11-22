@@ -261,3 +261,60 @@ body.page-ready footer {
     transform: scale(1.04);
   }
 }
+
+/* grid setup */
+.grid-setup {
+  grid-template-columns: repeat(auto-fit, minmax(auto, 176px));
+}
+
+@media (min-width: 1280px) {
+  .grid-setup {
+    grid-template-columns: repeat(auto-fit, minmax(auto, 352px));
+  }
+}
+
+/* projkety */
+.grid-projekty {
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+@media (min-width: 640px) {
+  .grid-projekty {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+}
+.card-projekt {
+  @apply rounded-lg max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2
+         transition-all duration-300 ease-out hover:scale-[1.05]
+         hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)];
+}
+
+.title-projekt {
+  @apply text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 
+         font-bold pb-1 pl-3 pr-2;
+}
+.opis-projekt {
+  @apply w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col;
+}
+.left-projekt {
+  @apply w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%];
+}
+.icon-projekt {
+  @apply text-2xl lg:text-3xl w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center;
+}
+
+/* profile */
+.pastylka-profil {
+  @apply flex flex-col items-center hover:scale-[1.04] transition-transform duration-500 max-w-[30rem] w-full;
+}
+.serwis-profil {
+  @apply w-3/4 self-start text-white font-bold text-2xl lg:text-3xl py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg bg-gradient-to-r
+         bg-[length:200%_200%] bg-right-bottom group-hover:bg-left-top transition-all duration-700 ease-out;
+}
+.nick-profil {
+  @apply bg-blue-900 text-white py-2 lg:py-3 rounded-2xl border-4
+         text-xl lg:text-2xl text-center transition-all duration-500 ease-in-out;
+}
+
+#footer {
+  @apply h-16 xs:h-12 text-sm sm:text-base flex flex-col xs:flex-row backdrop-blur-[2px] p-2 justify-center xs:justify-evenly items-center gap-1 md:gap-0;
+}
