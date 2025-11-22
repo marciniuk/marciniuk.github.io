@@ -148,7 +148,7 @@
         <!-- LOGO -->
         <a
           href="/pl/"
-          class="flex flex-row gap-2 text-3xl lg:text-4xl italic items-center"
+          class="flex gap-2 text-3xl lg:text-4xl italic items-center"
         >
           <img src="/assets/img/logo.svg" alt="logo" class="h-8 lg:h-10" />
           Marcini.uk
@@ -385,35 +385,6 @@
       </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="z-50">
-      <div
-        id="footer"
-        class="h-16 xs:h-12 text-sm sm:text-base flex flex-col xs:flex-row bg-blue-700/60 backdrop-blur-[2px] md:my-4 md:mx-3 md:rounded-full p-2 justify-center xs:justify-evenly items-center gap-1 md:gap-0"
-      >
-        <div class="flex flex-row justify-center items-center">
-          2019-<full-year></full-year>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="w-5 h-5 mx-1 fill-white inline-block align-middle"
-          >
-            <path
-              d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM205.1 306.9c-28.1-28.1-28.1-73.7 0-101.8s73.7-28.1 101.8 0c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9c-46.9-46.9-122.8-46.9-169.7 0s-46.9 122.8 0 169.7 122.8 46.9 169.7 0c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0c-28.1 28.1-73.7 28.1-101.8 0z"
-            />
-          </svg>
-          <strong>Adrian Marciniuk</strong>
-        </div>
-
-        <a
-          href="/pl/polityka-prywatnosci/"
-          class="flex flex-row justify-center items-center"
-          ><i class="fa-duotone fa-regular fa-user-secret"></i> Polityka
-          prywatności</a
-        >
-      </div>
-    </footer>
-
     <!-- POPUP -->
     <div
       id="ai-popup"
@@ -453,6 +424,31 @@
       </div>
     </div>
 
+    <!-- FOOTER -->
+    <footer class="z-50">
+      <div id="footer" class="bg-blue-700/60 md:my-4 md:mx-3 md:rounded-full">
+        <div class="flex justify-center items-center">
+          2019-<full-year></full-year>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            class="w-5 h-5 mx-1 fill-white inline-block align-middle"
+          >
+            <path
+              d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM205.1 306.9c-28.1-28.1-28.1-73.7 0-101.8s73.7-28.1 101.8 0c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9c-46.9-46.9-122.8-46.9-169.7 0s-46.9 122.8 0 169.7 122.8 46.9 169.7 0c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0c-28.1 28.1-73.7 28.1-101.8 0z"
+            />
+          </svg>
+          <strong>Adrian Marciniuk</strong>
+        </div>
+
+        <a
+          href="/pl/polityka-prywatnosci/"
+          class="flex justify-center items-center"
+          ><i class="fa-duotone fa-regular fa-user-secret"></i> Polityka
+          prywatności</a
+        >
+      </div>
+    </footer>
     <!-- SCRIPTS -->
     <link rel="stylesheet" href="/assets/css/polecajki.css" />
     <script src="/assets/js/polecajki.js"></script>

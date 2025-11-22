@@ -148,7 +148,7 @@
         <!-- LOGO -->
         <a
           href="/pl/"
-          class="flex flex-row gap-2 text-3xl lg:text-4xl italic items-center"
+          class="flex gap-2 text-3xl lg:text-4xl italic items-center"
         >
           <img src="/assets/img/logo.svg" alt="logo" class="h-8 lg:h-10" />
           Marcini.uk
@@ -208,125 +208,116 @@
 
     <!-- MAIN -->
     <main
-      class="z-10 p-6 md:pt-14 flex items-center justify-center h-full w-full"
+      id="sections-grid"
+      class="z-10 p-6 md:pt-14 w-full grid grid-setup place-content-center gap-5 max-w-6xl mx-auto"
     >
-      <div
-        id="sections-grid"
-        class="grid grid-cols-[repeat(auto-fit,minmax(auto,176px))] xl:grid-cols-[repeat(auto-fit,minmax(auto,352px))] items-center justify-center gap-5 w-full max-w-6xl"
+      <button
+        class="section-btn border-sky-400 bg-sky-400/15"
+        data-section="telefony"
+        data-color="sky-400"
       >
-        <button
-          class="section-btn border-sky-400 bg-sky-400/15"
-          data-section="telefony"
-          data-color="sky-400"
+        <div
+          class="text-sky-400 flex flex-col w-full h-full items-center justify-center"
         >
-          <div
-            class="text-sky-400 flex flex-col w-full h-full items-center justify-center"
-          >
-            <i class="fa-duotone fa-solid fa-mobile-notch text-7xl mb-3"></i>
-            Telefony
-          </div>
-        </button>
+          <i class="fa-duotone fa-solid fa-mobile-notch text-7xl mb-3"></i>
+          Telefony
+        </div>
+      </button>
 
-        <button
-          class="section-btn border-indigo-400 bg-indigo-400/15"
-          data-section="laptopy"
-          data-color="indigo-400"
+      <button
+        class="section-btn border-indigo-400 bg-indigo-400/15"
+        data-section="laptopy"
+        data-color="indigo-400"
+      >
+        <div
+          class="text-indigo-400 flex flex-col w-full h-full items-center justify-center"
         >
-          <div
-            class="text-indigo-400 flex flex-col w-full h-full items-center justify-center"
-          >
-            <i class="fa-duotone fa-solid fa-laptop text-7xl mb-3"></i>
-            Laptopy
-          </div>
-        </button>
+          <i class="fa-duotone fa-solid fa-laptop text-7xl mb-3"></i>
+          Laptopy
+        </div>
+      </button>
 
-        <button
-          class="section-btn border-violet-400 bg-violet-400/15"
-          data-section="handheldy"
-          data-color="violet-400"
+      <button
+        class="section-btn border-violet-400 bg-violet-400/15"
+        data-section="handheldy"
+        data-color="violet-400"
+      >
+        <div
+          class="text-violet-400 flex flex-col w-full h-full items-center justify-center"
         >
-          <div
-            class="text-violet-400 flex flex-col w-full h-full items-center justify-center"
-          >
-            <i
-              class="fa-duotone fa-solid fa-game-console-handheld text-7xl mb-3"
-            ></i>
-            Handheldy
-          </div>
-        </button>
+          <i
+            class="fa-duotone fa-solid fa-game-console-handheld text-7xl mb-3"
+          ></i>
+          Handheldy
+        </div>
+      </button>
 
-        <button
-          class="section-btn border-fuchsia-400 bg-fuchsia-400/15"
-          data-section="sluchawki"
-          data-color="fuchsia-400"
+      <button
+        class="section-btn border-fuchsia-400 bg-fuchsia-400/15"
+        data-section="sluchawki"
+        data-color="fuchsia-400"
+      >
+        <div
+          class="text-fuchsia-400 flex flex-col w-full h-full items-center justify-center"
         >
-          <div
-            class="text-fuchsia-400 flex flex-col w-full h-full items-center justify-center"
-          >
-            <i class="fa-duotone fa-solid fa-headphones text-7xl mb-3"></i>
-            Słuchawki
-          </div>
-        </button>
+          <i class="fa-duotone fa-solid fa-headphones text-7xl mb-3"></i>
+          Słuchawki
+        </div>
+      </button>
 
-        <button
-          class="section-btn border-rose-400 bg-rose-400/15"
-          data-section="myszki"
-          data-color="rose-400"
+      <button
+        class="section-btn border-rose-400 bg-rose-400/15"
+        data-section="myszki"
+        data-color="rose-400"
+      >
+        <div
+          class="text-rose-400 flex flex-col w-full h-full items-center justify-center"
         >
-          <div
-            class="text-rose-400 flex flex-col w-full h-full items-center justify-center"
-          >
-            <i
-              class="fa-duotone fa-solid fa-computer-mouse-scrollwheel text-7xl mb-3"
-            ></i>
-            Myszki
-          </div>
-        </button>
+          <i
+            class="fa-duotone fa-solid fa-computer-mouse-scrollwheel text-7xl mb-3"
+          ></i>
+          Myszki
+        </div>
+      </button>
 
-        <button
-          class="section-btn border-amber-400 bg-amber-400/15"
-          data-section="klawiatury"
-          data-color="amber-400"
+      <button
+        class="section-btn border-amber-400 bg-amber-400/15"
+        data-section="klawiatury"
+        data-color="amber-400"
+      >
+        <div
+          class="text-amber-400 flex flex-col w-full h-full items-center justify-center"
         >
-          <div
-            class="text-amber-400 flex flex-col w-full h-full items-center justify-center"
-          >
-            <i class="fa-duotone fa-solid fa-keyboard text-7xl mb-3"></i>
-            Klawiatury
-          </div>
-        </button>
+          <i class="fa-duotone fa-solid fa-keyboard text-7xl mb-3"></i>
+          Klawiatury
+        </div>
+      </button>
 
-        <button
-          class="section-btn border-emerald-400 bg-emerald-400/15"
-          data-section="gamepady"
-          data-color="emerald-400"
+      <button
+        class="section-btn border-emerald-400 bg-emerald-400/15"
+        data-section="gamepady"
+        data-color="emerald-400"
+      >
+        <div
+          class="text-emerald-400 flex flex-col w-full h-full items-center justify-center"
         >
-          <div
-            class="text-emerald-400 flex flex-col w-full h-full items-center justify-center"
-          >
-            <i class="fa-duotone fa-solid fa-gamepad-modern text-7xl mb-3"></i>
-            Gamepady
-          </div>
-        </button>
+          <i class="fa-duotone fa-solid fa-gamepad-modern text-7xl mb-3"></i>
+          Gamepady
+        </div>
+      </button>
 
-        <button
-          class="section-btn border-cyan-400 bg-cyan-400/15"
-          data-section="zegarki"
-          data-color="cyan-400"
+      <button
+        class="section-btn border-cyan-400 bg-cyan-400/15"
+        data-section="zegarki"
+        data-color="cyan-400"
+      >
+        <div
+          class="text-cyan-400 flex flex-col w-full h-full items-center justify-center"
         >
-          <div
-            class="text-cyan-400 flex flex-col w-full h-full items-center justify-center"
-          >
-            <i class="fa-duotone fa-solid fa-watch text-7xl mb-3"></i>
-            Zegarki
-          </div>
-        </button>
-
-        <!--
-        <button class="section-btn" data-section="dyski">Dyski</button>
-        <button class="section-btn" data-section="akcesoria">Akcesoria</button>
-        -->
-      </div>
+          <i class="fa-duotone fa-solid fa-watch text-7xl mb-3"></i>
+          Zegarki
+        </div>
+      </button>
     </main>
 
     <!-- OVERLAY + POPUP -->
@@ -354,11 +345,8 @@
 
     <!-- FOOTER -->
     <footer class="z-50">
-      <div
-        id="footer"
-        class="h-16 xs:h-12 text-sm sm:text-base flex flex-col xs:flex-row bg-blue-700/60 backdrop-blur-[2px] md:my-4 md:mx-3 md:rounded-full p-2 justify-center xs:justify-evenly items-center gap-1 md:gap-0"
-      >
-        <div class="flex flex-row justify-center items-center">
+      <div id="footer" class="bg-blue-700/60 md:my-4 md:mx-3 md:rounded-full">
+        <div class="flex justify-center items-center">
           2019-<full-year></full-year>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -374,13 +362,12 @@
 
         <a
           href="/pl/polityka-prywatnosci/"
-          class="flex flex-row justify-center items-center"
+          class="flex justify-center items-center"
           ><i class="fa-duotone fa-regular fa-user-secret"></i> Polityka
           prywatności</a
         >
       </div>
     </footer>
-
     <!-- SCRIPTS -->
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/setup.js"></script>

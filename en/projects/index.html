@@ -148,7 +148,7 @@
         <!-- LOGO -->
         <a
           href="/en/"
-          class="flex flex-row gap-2 text-3xl lg:text-4xl italic items-center"
+          class="flex gap-2 text-3xl lg:text-4xl italic items-center"
         >
           <img src="/assets/img/logo.svg" alt="logo" class="h-8 lg:h-10" />
           Marcini.uk
@@ -202,46 +202,38 @@
 
     <!-- MAIN -->
     <main
-      class="z-10 p-6 pt-10 min-h-full grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(30rem,1fr))] gap-6 place-items-center w-full"
+      class="z-10 p-6 pt-10 min-h-full grid grid-projekty gap-6 place-items-center w-full"
     >
       <!-- Website -->
-      <div
-        class="bg-cyan-700 rounded-lg max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2 transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)] hover:shadow-cyan-900/75"
-      >
+      <div class="card-projekt bg-cyan-700 hover:shadow-cyan-900/75">
         <div class="flex flex-row w-full rounded-lg">
-          <div
-            class="w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%] shrink-0 p-2 -ml-1 flex flex-col h-full"
-          >
+          <div class="left-projekt shrink-0 p-2 -ml-1 flex flex-col h-full">
             <div class="flex-1 flex items-center justify-center">
               <img
                 src="/assets/img/projekty/logo.png"
                 class="w-full aspect-square object-contain"
               />
             </div>
-            <div class="flex flex-row justify-evenly w-full">
+            <div
+              class="flex flex-row justify-evenly w-full text-cyan-500 hover:text-cyan-300"
+            >
               <a
-                class="text-2xl lg:text-3xl"
+                class="icon-projekt"
                 href="https://github.com/marciniuk/marciniuk.github.io"
               >
                 <span
                   class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
                 >
                   <i
-                    class="fab fa-github hover:text-[120%] transition-all duration-300 ease-out text-cyan-500 hover:text-cyan-300"
+                    class="fab fa-github transition-all duration-300 ease-out hover:text-[120%]"
                   ></i>
                 </span>
               </a>
             </div>
           </div>
 
-          <div class="w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col">
-            <div class="text-center mb-1">
-              <div
-                class="bg-cyan-700 text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 font-bold pb-1 pl-3 pr-2"
-              >
-                Website
-              </div>
-            </div>
+          <div class="opis-projekt">
+            <div class="bg-cyan-700 title-projekt">Website</div>
             <div
               class="text-sm xs:text-base 2xl:text-lg p-2 pl-3 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-purple-700"
             >
@@ -259,52 +251,36 @@
       </div>
 
       <!-- KROFFT -->
-      <div
-        class="bg-[#2c2e83] rounded-lg max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2 transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)] hover:shadow-[#2c2e83]/75"
-      >
+      <div class="bg-[#2c2e83] card-projekt hover:shadow-[#2c2e83]/75">
         <div class="flex flex-row w-full rounded-lg">
-          <div
-            class="w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%] shrink-0 p-2 -ml-1 flex flex-col h-full"
-          >
+          <div class="left-projekt shrink-0 p-2 -ml-1 flex flex-col h-full">
             <div class="flex-1 flex items-center justify-center">
               <img
                 src="/assets/img/projekty/krofft.png"
                 class="w-full aspect-square object-contain"
               />
             </div>
-            <div class="flex flex-row justify-evenly w-full">
+            <div
+              class="flex flex-row justify-evenly w-full text-[#494bd8] hover:text-[#595cff]"
+            >
               <a
-                class="text-2xl lg:text-3xl"
+                class="icon-projekt"
                 href="https://github.com/marciniuk/krofft"
               >
-                <span
-                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
-                >
-                  <i
-                    class="fab fa-github hover:text-[120%] transition-all duration-300 ease-out text-[#494bd8] hover:text-[#595cff]"
-                  ></i
-                ></span>
+                <i
+                  class="fab fa-github transition-all duration-300 ease-out hover:text-[120%]"
+                ></i>
               </a>
-              <a class="text-2xl lg:text-3xl" href="https://krofft.pl">
-                <span
-                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
-                >
-                  <i
-                    class="fas fa-link hover:text-[120%] transition-all duration-300 ease-out text-[#494bd8] hover:text-[#595cff]"
-                  ></i>
-                </span>
+              <a class="icon-projekt" href="https://krofft.pl">
+                <i
+                  class="fas fa-link transition-all duration-300 ease-out hover:text-[120%]"
+                ></i>
               </a>
             </div>
           </div>
 
-          <div class="w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col">
-            <div class="text-center mb-1">
-              <div
-                class="bg-krofft-1 text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 font-bold pb-1 pl-3 pr-2"
-              >
-                KROFFT
-              </div>
-            </div>
+          <div class="opis-projekt">
+            <div class="bg-krofft-1 title-projekt">KROFFT</div>
             <div
               class="text-sm xs:text-base 2xl:text-lg p-2 pl-3 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-krofft-1"
             >
@@ -317,60 +293,43 @@
       </div>
 
       <!-- GZG -->
-      <div
-        class="bg-emerald-700 rounded-lg w-full max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2 transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)] hover:shadow-green-900/75"
-      >
+      <div class="bg-emerald-700 card-projekt hover:shadow-green-900/75">
         <div class="flex flex-row w-full rounded-lg">
-          <div
-            class="w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%] shrink-0 p-2 -ml-1 flex flex-col h-full"
-          >
+          <div class="left-projekt shrink-0 p-2 -ml-1 flex flex-col h-full">
             <div class="flex-1 flex items-center justify-center">
               <img
                 src="/assets/img/projekty/gzg2.png"
                 class="w-full aspect-square object-contain"
               />
             </div>
-            <div class="flex flex-row justify-evenly w-full">
+            <div
+              class="flex flex-row justify-evenly w-full text-emerald-500 hover:text-emerald-300"
+            >
               <a
-                class="text-2xl lg:text-3xl"
+                class="icon-projekt"
                 href="https://github.com/marciniuk/GrandZoneGaming"
               >
-                <span
-                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
-                >
-                  <i
-                    class="fab fa-github hover:text-[120%] transition-all duration-300 ease-out text-emerald-500 hover:text-emerald-300"
-                  ></i
-                ></span>
+                <i
+                  class="fab fa-github transition-all duration-300 ease-out hover:text-[120%]"
+                ></i>
               </a>
-              <a class="text-2xl lg:text-3xl" href="https://gzg.netlify.app">
-                <span
-                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
-                >
-                  <i
-                    class="fas fa-link hover:text-[120%] transition-all duration-300 ease-out text-emerald-500 hover:text-emerald-300"
-                  ></i>
-                </span>
+              <a class="icon-projekt" href="https://gzg.netlify.app">
+                <i
+                  class="fas fa-link transition-all duration-300 ease-out hover:text-[120%]"
+                ></i>
               </a>
             </div>
           </div>
 
-          <div class="w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col">
-            <div class="text-center mb-1">
-              <div
-                class="bg-emerald-700 text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 font-bold pb-1 pl-3 pr-2"
-              >
-                GrandZoneGaming
-              </div>
-            </div>
+          <div class="opis-projekt">
+            <div class="bg-emerald-700 title-projekt">GrandZoneGaming</div>
             <div
               class="text-sm xs:text-base 2xl:text-lg p-2 pl-3 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-green-700"
             >
               My first larger commercial project. The code is crap, but the
-              experience gained during
-              <span class="whitespace-nowrap">10 months</span> of collaboration
-              proved useful in subsequent projects. In addition to the website,
-              I also made a chat for GZG (<a
+              experience gained during 10 months of collaboration proved useful
+              in subsequent projects. In addition to the website, I also made a
+              chat for GZG (<a
                 href="https://github.com/marciniuk/gzgsend"
                 class="text-emerald-300 hover:text-emerald-600 whitespace-nowrap transition-all duration-300 ease-out"
                 ><i class="fas fa-link"></i> <b>GZGsend</b></a
@@ -393,43 +352,31 @@
       </div>
 
       <!-- BlackArrow -->
-      <div
-        class="bg-blue-800 rounded-lg max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2 transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)] hover:shadow-blue-800/75"
-      >
+      <div class="bg-blue-800 card-projekt hover:shadow-blue-800/75">
         <div class="flex flex-row w-full rounded-lg">
-          <div
-            class="w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%] shrink-0 p-2 -ml-1 flex flex-col h-full"
-          >
+          <div class="left-projekt shrink-0 p-2 -ml-1 flex flex-col h-full">
             <div class="flex-1 flex items-center justify-center">
               <img
                 src="/assets/img/projekty/ba.png"
                 class="w-full aspect-square object-contain"
               />
             </div>
-            <div class="flex flex-row justify-evenly w-full">
+            <div
+              class="flex flex-row justify-evenly w-full text-[#2d4e8d] hover:text-[#3963b3]"
+            >
               <a
-                class="text-2xl lg:text-3xl"
+                class="icon-projekt"
                 href="https://github.com/marciniuk/blackarrow"
               >
-                <span
-                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
-                >
-                  <i
-                    class="fab fa-github hover:text-[120%] transition-all duration-300 ease-out text-[#2d4e8d] hover:text-[#3963b3]"
-                  ></i
-                ></span>
+                <i
+                  class="fab fa-github transition-all duration-300 ease-out hover:text-[120%]"
+                ></i>
               </a>
             </div>
           </div>
 
-          <div class="w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col">
-            <div class="text-center mb-1">
-              <div
-                class="bg-blue-800 text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 font-bold pb-1 pl-3 pr-2"
-              >
-                BlackArrow
-              </div>
-            </div>
+          <div class="opis-projekt">
+            <div class="bg-blue-800 title-projekt">BlackArrow</div>
             <div
               class="text-sm xs:text-base 2xl:text-lg p-2 pl-3 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-blue-800"
             >
@@ -442,43 +389,31 @@
       </div>
 
       <!-- ScreenShots Script -->
-      <div
-        class="bg-amber-700 rounded-lg max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2 transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)] hover:shadow-yellow-900/75"
-      >
+      <div class="bg-amber-700 card-projekt hover:shadow-yellow-900/75">
         <div class="flex flex-row w-full rounded-lg">
-          <div
-            class="w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%] shrink-0 p-2 -ml-1 flex flex-col h-full"
-          >
+          <div class="left-projekt shrink-0 p-2 -ml-1 flex flex-col h-full">
             <div class="flex-1 flex items-center justify-center">
               <img
                 src="/assets/img/projekty/sss.png"
                 class="w-full aspect-square object-contain"
               />
             </div>
-            <div class="flex flex-row justify-evenly w-full">
+            <div
+              class="flex flex-row justify-evenly w-full text-amber-500 hover:text-amber-300"
+            >
               <a
-                class="text-2xl lg:text-3xl"
+                class="icon-projekt"
                 href="https://github.com/marciniuk/ScreenShots-Scripts"
               >
-                <span
-                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
-                >
-                  <i
-                    class="fab fa-github hover:text-[120%] transition-all duration-300 ease-out text-amber-500 hover:text-amber-300"
-                  ></i
-                ></span>
+                <i
+                  class="fab fa-github transition-all duration-300 ease-out hover:text-[120%]"
+                ></i>
               </a>
             </div>
           </div>
 
-          <div class="w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col">
-            <div class="text-center mb-1">
-              <div
-                class="bg-amber-700 text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 font-bold pb-1 pl-3 pr-2"
-              >
-                ScreenShots Script
-              </div>
-            </div>
+          <div class="opis-projekt">
+            <div class="bg-amber-700 title-projekt">ScreenShots Script</div>
             <div
               class="text-sm xs:text-base 2xl:text-lg p-2 pl-3 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-yellow-700"
             >
@@ -494,8 +429,7 @@
                 href="https://github.com/naelstrof/maim"
                 class="text-amber-300 hover:text-amber-600 whitespace-nowrap transition-all duration-300 ease-out"
                 ><i class="fas fa-link"></i> <b>maim</b></a
-              >
-              to work. Also, making it took me a veeeery long time. But the
+              >to work. Also, making it took me a veeeery long time. But the
               result exceeded my expectations.
             </div>
           </div>
@@ -503,43 +437,31 @@
       </div>
 
       <!-- COVID-19 -->
-      <div
-        class="bg-rose-700 rounded-lg max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2 transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)] hover:shadow-red-900/75"
-      >
+      <div class="bg-rose-700 card-projekt hover:shadow-red-900/75">
         <div class="flex flex-row w-full rounded-lg">
-          <div
-            class="w-[32.5%] xs:w-[30%] sm:w-[27.5%] md:w-[30%] lg:w-[32.5%] 2xl:w-[35%] shrink-0 p-2 -ml-1 flex flex-col h-full"
-          >
+          <div class="left-projekt shrink-0 p-2 -ml-1 flex flex-col h-full">
             <div class="flex-1 flex items-center justify-center">
               <img
                 src="/assets/img/projekty/covid.png"
                 class="w-full aspect-square object-contain"
               />
             </div>
-            <div class="flex flex-row justify-evenly w-full">
+            <div
+              class="flex flex-row justify-evenly w-full text-rose-400 hover:text-rose-300"
+            >
               <a
-                class="text-2xl lg:text-3xl"
+                class="icon-projekt"
                 href="https://github.com/marciniuk/covid-19-script"
               >
-                <span
-                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
-                >
-                  <i
-                    class="fab fa-github hover:text-[120%] transition-all duration-300 ease-out text-rose-400 hover:text-rose-300"
-                  ></i
-                ></span>
+                <i
+                  class="fab fa-github transition-all duration-300 ease-out hover:text-[120%]"
+                ></i>
               </a>
             </div>
           </div>
 
-          <div class="w-full ml-1 bg-blue-900/90 rounded-lg flex flex-col">
-            <div class="text-center mb-1">
-              <div
-                class="bg-rose-700 text-lg lg:text-xl w-fit rounded-bl-lg ml-auto -mr-1 -mt-1 font-bold pb-1 pl-3 pr-2"
-              >
-                COVID-19 Script
-              </div>
-            </div>
+          <div class="opis-projekt">
+            <div class="bg-rose-700 title-projekt">COVID-19 Script</div>
             <div
               class="text-sm xs:text-base 2xl:text-lg p-2 pl-3 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-red-800"
             >
@@ -560,11 +482,8 @@
 
     <!-- FOOTER -->
     <footer class="z-50 backdrop-blur-[2px] md:my-4 md:mx-3 md:rounded-full">
-      <div
-        id="footer"
-        class="h-16 xs:h-12 text-sm sm:text-base flex flex-col xs:flex-row bg-blue-700/60 md:rounded-full p-2 justify-center xs:justify-evenly items-center gap-1 md:gap-0"
-      >
-        <div class="flex flex-row justify-center items-center">
+      <div id="footer" class="bg-blue-700/60 md:my-4 md:mx-3 md:rounded-full">
+        <div class="flex justify-center items-center">
           2019-<full-year></full-year>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -578,15 +497,12 @@
           <strong>Adrian Marciniuk</strong>
         </div>
 
-        <a
-          href="/en/privacy-policy/"
-          class="flex flex-row justify-center items-center"
+        <a href="/en/privacy-policy/" class="flex justify-center items-center"
           ><i class="fa-duotone fa-regular fa-user-secret"></i> Privacy
           Policy</a
         >
       </div>
     </footer>
-
     <!-- SCRIPTS -->
     <script src="/assets/js/main.js"></script>
   </body>
