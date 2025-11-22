@@ -1,8 +1,7 @@
-// ============================================================
-// 🌟 DYNAMICZNE WSTRZYKNIĘCIE CSS EASTER EGGA
-// ============================================================
+/* ================================================
+    🌟 DYNAMICZNE WSTRZYKNIĘCIE CSS EASTER EGGA
+   ================================================ */
 function injectEasterEggStyles() {
-  // unikamy dodawania stylu więcej niż raz
   if (document.getElementById("easteregg-css")) return;
 
   const style = document.createElement("style");
@@ -45,13 +44,12 @@ function injectEasterEggStyles() {
   document.head.appendChild(style);
 }
 
-// ============================================================
-// 🎉 EASTER EGG — KLIKANE OBRAZKI
-// ============================================================
+/* ================================================
+    🎉 EASTER EGG — KLIKANE OBRAZKI
+   ================================================ */
 document.addEventListener("DOMContentLoaded", () => {
   const popup = document.getElementById("spin-popup");
 
-  // 🔥 Teksty
   const messagesOriginal = [
     "🤢 Zaraz się porzygram!",
     "Serio nudzi ci się?",
@@ -62,14 +60,14 @@ document.addEventListener("DOMContentLoaded", () => {
     "🤨 Co ty odwalasz",
   ];
 
-  // 🔥 Shuffle bag — rotacja unikalnych komunikatów
+  /* rotacja unikalnych komunikatów */
   let bag = [];
 
   const getRandomMessage = () => {
     if (bag.length === 0) {
       bag = [...messagesOriginal];
 
-      // tasowanie Fisher-Yates
+      /* tasowanie */
       for (let i = bag.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [bag[i], bag[j]] = [bag[j], bag[i]];
@@ -79,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return bag.shift();
   };
 
-  // 🔥 Logika klikanego spinnera
+  /* Logika klikanego spinnera */
   document.querySelectorAll(".spinable").forEach((img) => {
     let rotation = 0;
     let clicks = 0;
@@ -92,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img.style.transform = `rotate(${rotation}deg)`;
 
       if (clicks === 10) {
-        // ⭐ dopiero przy pierwszym użyciu wstrzykujemy CSS
+        /* dopiero przy pierwszym użyciu wstrzykujemy CSS */
         injectEasterEggStyles();
 
         popup.textContent = getRandomMessage();

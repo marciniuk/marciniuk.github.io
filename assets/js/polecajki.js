@@ -1,3 +1,7 @@
+/* ===========================
+    📚 DYNAMICZNE POLECAJKI
+   =========================== */
+
 document.addEventListener("DOMContentLoaded", () => {
   loadSection("ksiazki", "ksiazki.json", "rose");
   loadSection("gry", "gry.json", "amber");
@@ -8,21 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
 function loadSection(sectionId, jsonFile, color) {
   const url = `/pl/polecajki/${jsonFile}`;
 
-  // galeria (Flickity)
+  /* galeria (Flickity) */
   const gallery = document.querySelector(`#${sectionId} .gallery`);
   if (!gallery) return;
 
-  // placeholder do usunięcia
+  /* placeholder do usunięcia */
   const placeholder = document.querySelector(`#${sectionId}-data-title`);
 
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      // ukryj loading
+      /* ukryj loading */
       const loading = document.querySelector(`#${sectionId} .loading666`);
       if (loading) loading.style.display = "none";
 
-      // usuń ukryte elementy startowe
+      /* usuń ukryte elementy startowe */
       gallery.querySelectorAll(".ukryty").forEach((el) => el.remove());
 
       let html = "";
@@ -31,13 +35,13 @@ function loadSection(sectionId, jsonFile, color) {
         html += createCard(item, color);
       });
 
-      // wstaw wszystkie karty
+      /* wstaw wszystkie karty */
       placeholder.insertAdjacentHTML("afterend", html);
 
-      // usuń placeholder
+      /* usuń placeholder */
       placeholder.remove();
 
-      // ponowne odpalenie Flickity po dodaniu elementów
+      /* ponowne odpalenie Flickity po dodaniu elementów */
       const flkty = Flickity.data(gallery);
       if (flkty) {
         flkty.reloadCells();

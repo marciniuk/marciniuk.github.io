@@ -1,7 +1,7 @@
+/* ============================================================
+    🌠 ANIMOWANE TŁO Z GWIAZDAMI
+   ============================================================ */
 window.addEventListener("load", () => {
-  /* ============================================================
-     🌠 ANIMOWANE TŁO Z GWIAZDAMI
-     ============================================================ */
   const canvas = document.createElement("canvas");
   document.querySelector("stars").appendChild(canvas);
   const ctx = canvas.getContext("2d");

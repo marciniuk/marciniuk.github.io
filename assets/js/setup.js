@@ -1,4 +1,8 @@
-// ZAWARTOŚCI POPUPÓW
+/* ==================================
+    📱 DYNAMICZNE POPUPY DO SETUPU
+   ================================== */
+
+/* ZAWARTOŚCI POPUPÓW */
 const SECTION_FILES = {
   telefony: "/assets/setup/pl/telefony.html",
   laptopy: "/assets/setup/pl/laptopy.html",
@@ -23,7 +27,7 @@ const popupContent = document.getElementById("popup-content");
 const popupInner = document.getElementById("popup-inner");
 const closeBtn = document.getElementById("popup-close");
 
-// --- ANIMACJE ---
+/* --- ANIMACJE --- */
 function openPopup() {
   overlay.classList.add("flex");
   overlay.classList.remove("opacity-0", "pointer-events-none");
@@ -46,31 +50,31 @@ function closePopup() {
   document.documentElement.classList.remove("overflow-hidden");
 }
 
-// --- OTWIERANIE SEKCJI ---
+/* --- OTWIERANIE SEKCJI --- */
 document.querySelectorAll(".section-btn").forEach((btn) => {
   btn.addEventListener("click", async () => {
     const key = btn.dataset.section;
     const file = SECTION_FILES[key];
-    const color = btn.dataset.color; // <- pobrany kolor
+    const color = btn.dataset.color;
 
-    // USUWANIE STARYCH KOLORÓW
+    /* USUWANIE STARYCH KOLORÓW */
     popupContent.classList.remove(
       ...Array.from(popupContent.classList).filter(
         (c) => c.startsWith("border-") || c.startsWith("bg-"),
       ),
     );
 
-    // wczytywanie z pliku
+    /* wczytywanie z pliku */
     const html = await fetch(file).then((res) => res.text());
     popupInner.innerHTML = html;
 
-    // RESET SCROLLA — NOWA LINIA
+    /* RESET SCROLLA — NOWA LINIA */
     popupContent.scrollTop = 0;
 
-    // DODANIE NOWYCH
+    /* DODANIE NOWYCH */
     popupContent.classList.add(`border-${color}`, `bg-${color}/15`, `border-2`);
 
-    // DODAWANIE KOLORÓW TEKSTU
+    /* DODAWANIE KOLORÓW TEKSTU */
     popupInner.querySelectorAll(".colorize").forEach((el) => {
       el.classList.add(`text-${color}`);
     });
@@ -79,10 +83,10 @@ document.querySelectorAll(".section-btn").forEach((btn) => {
   });
 });
 
-// --- ZAMYKANIE ---
+/* --- ZAMYKANIE --- */
 closeBtn.addEventListener("click", closePopup);
 
-// --- KLIK POZA POPUPEM ---
+/* --- KLIK POZA POPUPEM --- */
 overlay.addEventListener("click", (e) => {
   if (e.target === overlay) closePopup();
 });

@@ -1,3 +1,7 @@
+/* ===============================
+    AKORDEONY Polityka Naleśników
+   =============================== */
+
 function toggleAccordion(button) {
   const content = button.nextElementSibling;
   const icon = button.querySelector("svg");

@@ -1,4 +1,6 @@
-/* === GLOBALNE ELEMENTY I ZMIENNE === */
+/* ===============================================
+    🧭 NAWIGACJA — MENU, BLUR I ANIMACJE HEADERA
+   =============================================== */
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("main-header");
   const footer = document.getElementById("footer");
@@ -7,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
   const spans = toggle?.querySelectorAll("span");
-  const emailContainers = document.querySelectorAll(".email-container");
 
   let isOpen = false;
 
@@ -152,9 +153,9 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 });
 
-/* ============================================================
+/* ===============================================
     📅 STOPKA — AKTUALNY ROK
-   ============================================================ */
+   =============================================== */
 class YearElement extends HTMLElement {
   connectedCallback() {
     this.textContent = new Date().getFullYear();
