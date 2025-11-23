@@ -18,23 +18,23 @@ function hide(el) {
   el.classList.add("opacity-0", "pointer-events-none");
 }
 
-// --- TIME & LANG TRACKING ---
+/* --- TIME & LANG TRACKING --- */
 let startTime = Date.now();
 
-// Ustalanie języka automatycznie
+/* Ustalanie języka automatycznie */
 document.getElementById("lang").value = window.location.pathname.startsWith(
   "/pl/",
 )
   ? "pl"
   : "en";
 
-// Przechwycenie wysyłki
+/* Przechwycenie wysyłki */
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   show(p1);
 });
 
-// Popup 1
+/* Popup 1 */
 p1no.addEventListener("click", () => hide(p1));
 
 p1yes.addEventListener("click", () => {
@@ -42,17 +42,17 @@ p1yes.addEventListener("click", () => {
   setTimeout(() => show(p2), 250);
 });
 
-// Popup 2
+/* Popup 2 */
 p2no.addEventListener("click", () => hide(p2));
 
 p2yes.addEventListener("click", () => {
   hide(p2);
 
-  // Zapisz czas spędzony na stronie
+  /* Zapisz czas spędzony na stronie */
   const seconds = Math.round((Date.now() - startTime) / 1000);
   document.getElementById("time_spent").value = seconds + "s";
 
-  // reCAPTCHA + wysyłka
+  /* reCAPTCHA + wysyłka */
   grecaptcha.ready(function () {
     grecaptcha
       .execute("6LcsyQ0sAAAAAFO7lQXpiSKoJuDYkrnDwFMADsCe", {
@@ -75,5 +75,4 @@ p2yes.addEventListener("click", () => {
   });
 });
 
-// Final
 p3close.addEventListener("click", () => hide(p3));
