@@ -3,18 +3,18 @@
    ============================================================ */
 
 const ocenyMap = {
-  o10: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i></div>',
-  o9: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star-half p-1"></i></div>',
-  o8: '<div class="flex flex-row w-full text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o7: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star-half p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o6: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o5: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star-half p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o4: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o3: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star-half p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o2: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o1: '<div class="flex flex-row text-amber-500"><i class="fa-duotone fa-solid fa-star-half p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o0: '<div class="flex flex-row text-amber-500"><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  oS: '<div class="flex flex-row text-rose-600"><i class="fa-solid fa-heart p-1"></i><i class="fa-solid fa-heart p-1"></i><i class="fa-solid fa-heart p-1"></i><i class="fa-solid fa-heart p-1"></i><i class="fa-solid fa-heart p-1"></i></div>',
+  o10: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>',
+  o9: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fad fa-star-half"></i></div>',
+  o8: '<div class="flex flex-row w-full text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fad fa-star"></i></div>',
+  o7: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fad fa-star-half"></i><i class="fad fa-star"></i></div>',
+  o6: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  o5: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fad fa-star-half"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  o4: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  o3: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fad fa-star-half"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  o2: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  o1: '<div class="flex flex-row text-amber-500"><i class="fad fa-star-half"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  o0: '<div class="flex flex-row text-amber-500"><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  oS: '<div class="flex flex-row text-rose-600"><i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i></div>',
 };
 
 /* ============================================================
@@ -42,12 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
           "bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row";
 
         const seriaHTML = item.seria
-          ? `<div><i class="fa-duotone fa-solid fa-books"></i> ${item.seria}</div>`
+          ? `<div><i class="fad fa-books"></i> ${item.seria}</div>`
           : "";
 
         const specjalneHTML = item.specjalne
           ? `<div class="mb-2 font-bold text-center text-rose-600">
-               <i class="fa-solid fa-heart"></i> ${item.specjalne}
+               <i class="fas fa-heart"></i> ${item.specjalne}
              </div>`
           : "";
 
@@ -65,14 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
             <div id="Oceny">${ocenyMap[item.ocena] ?? ""}</div>
 
             <div class="font-bold text-base md:text-lg">
-              <i class="fa-duotone fa-solid fa-calendar-pen"></i> ${item.data}
+              <i class="fad fa-calendar-pen"></i> ${item.data}
             </div>
           </div>
 
           <div class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar-track-transparent ${item.scroll}">
             <div class="text-base md:text-lg xl:text-xl m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold ${item.kolor}">
-              <div><i class="fa-duotone fa-solid fa-book-bookmark"></i> ${item.tytul}</div>
-              <div><i class="fa-duotone fa-solid fa-feather"></i> ${item.autor}</div>
+              <div><i class="fad fa-book-bookmark"></i> ${item.tytul}</div>
+              <div><i class="fad fa-feather"></i> ${item.autor}</div>
               ${seriaHTML}
             </div>
 

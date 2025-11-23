@@ -3,18 +3,18 @@
    ============================================================ */
 
 const ocenyMap = {
-  o10: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i></div>',
-  o9: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star-half p-1"></i></div>',
-  o8: '<div class="flex flex-row w-full text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o7: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star-half p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o6: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o5: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star-half p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o4: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o3: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star-half p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o2: '<div class="flex flex-row text-amber-500"><i class="fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o1: '<div class="flex flex-row text-amber-500"><i class="fa-duotone fa-solid fa-star-half p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  o0: '<div class="flex flex-row text-amber-500"><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i><i class="fa-duotone fa-solid fa-star p-1"></i></div>',
-  oS: '<div class="flex flex-row text-rose-600"><i class="fa-solid fa-heart p-1"></i><i class="fa-solid fa-heart p-1"></i><i class="fa-solid fa-heart p-1"></i><i class="fa-solid fa-heart p-1"></i><i class="fa-solid fa-heart p-1"></i></div>',
+  o10: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>',
+  o9: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fad fa-star-half"></i></div>',
+  o8: '<div class="flex flex-row w-full text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fad fa-star"></i></div>',
+  o7: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fad fa-star-half"></i><i class="fad fa-star"></i></div>',
+  o6: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  o5: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fad fa-star-half"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  o4: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  o3: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fad fa-star-half"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  o2: '<div class="flex flex-row text-amber-500"><i class="fas fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  o1: '<div class="flex flex-row text-amber-500"><i class="fad fa-star-half"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  o0: '<div class="flex flex-row text-amber-500"><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i><i class="fad fa-star"></i></div>',
+  oS: '<div class="flex flex-row text-rose-600"><i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i></div>',
 };
 
 /* ============================================================
@@ -47,7 +47,7 @@ function generujHistorie(dane) {
           </div>
 
           <div class="bold text-sm sm:text-base lg:text-lg">
-            <i class="fa-duotone fa-solid fa-calendar-star"></i> ${item.data}
+            <i class="fad fa-calendar-star"></i> ${item.data}
           </div>
         </div>
       </div>
