@@ -121,6 +121,7 @@ stars {
 
 @media (max-width: 1279px) {
   #mobile-menu {
+    height: calc(100dvh - 2.75rem) !important;
     height: calc(var(--vh, 1vh) * 100 - 2.75rem);
   }
 
