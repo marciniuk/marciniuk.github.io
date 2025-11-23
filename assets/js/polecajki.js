@@ -73,12 +73,12 @@ function createCard(item, color) {
 
     <img class="h-full aspect-[2/3] shrink-0 rounded-l-lg" src="${item.img}" />
 
-    <div class="p-2 flex flex-col w-full -ml-3 rounded-l-2xl rounded-br-2xl rounded-tr-lg bg-blue-900 h-full">
-      <div class="z-20 flex -m-2 -mb-6 w-8 justify-center bg-${color}-500/60 ml-auto rounded-bl-lg font-extrabold p-1 text-blue-900 text-base lg:text-lg rounded-tr-lg">
+    <div class="py-2 flex flex-col w-full -ml-3 rounded-l-2xl rounded-br-2xl rounded-tr-lg bg-blue-900 h-full">
+      <div class="z-20 flex -m-2 mr-0 -mb-6 w-8 justify-center bg-${color}-500/60 ml-auto rounded-bl-lg font-extrabold p-1 text-blue-900 text-base lg:text-lg rounded-tr-lg">
         ${item.nr}
       </div>
 
-      <div class="lewy-scroll h-full scrollbar-track-transparent scrollbar-thumb-${color}-500/60">
+      <div class="mx-1 px-2 lewy-scroll h-full scrollbar-track-transparent scrollbar-thumb-${color}-500/60">
         <div class="grid justify-center items-start">
           <div class="text-sm sm:text-base md:text-xl lg:text-3xl xl:text-4xl font-bold w-full text-${color}-400 text-center">
             ${item.tytul}
