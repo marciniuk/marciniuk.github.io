@@ -32,26 +32,17 @@
 
     <link
       rel="stylesheet"
+      href="/assets/css/fonts.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <link
+      rel="stylesheet"
       href="/assets/css/fontawesome.css"
       media="print"
       onload="this.media='all'"
     />
-    <noscript>
-      <link rel="stylesheet" href="/assets/css/fontawesome.css" />
-    </noscript>
-
-    <link rel="preload" href="/assets/css/fonts.css" as="style" />
-    <script>
-      function loadFontsCSS(href) {
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = href;
-        link.media = "print";
-        link.onload = () => (link.media = "all");
-        document.head.appendChild(link);
-      }
-      loadFontsCSS("/assets/css/fonts.css");
-    </script>
 
     <!-- Favicon -->
     <link
