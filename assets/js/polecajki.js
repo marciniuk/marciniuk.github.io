@@ -1,7 +1,6 @@
 /* ===========================
     📚 DYNAMICZNE POLECAJKI
    =========================== */
-
 document.addEventListener("DOMContentLoaded", () => {
   loadSection("ksiazki", "ksiazki.json", "rose");
   loadSection("gry", "gry.json", "amber");
@@ -12,48 +11,59 @@ document.addEventListener("DOMContentLoaded", () => {
 function loadSection(sectionId, jsonFile, color) {
   const url = `/pl/polecajki/${jsonFile}`;
 
-  /* galeria (Flickity) */
   const gallery = document.querySelector(`#${sectionId} .gallery`);
-  if (!gallery) return;
-
-  /* placeholder do usunięcia */
   const placeholder = document.querySelector(`#${sectionId}-data-title`);
+  const loading = document.querySelector(`#${sectionId} .loading666`);
+
+  if (!gallery || !placeholder) return;
 
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      /* ukryj loading */
-      const loading = document.querySelector(`#${sectionId} .loading666`);
-      if (loading) loading.style.display = "none";
-
-      /* usuń ukryte elementy startowe */
-      gallery.querySelectorAll(".ukryty").forEach((el) => el.remove());
-
       let html = "";
+      data.forEach((item) => (html += createCard(item, color)));
 
-      data.forEach((item) => {
-        html += createCard(item, color);
-      });
-
-      /* wstaw wszystkie karty */
       placeholder.insertAdjacentHTML("afterend", html);
-
-      /* usuń placeholder */
       placeholder.remove();
 
-      /* ponowne odpalenie Flickity po dodaniu elementów */
-      const flkty = Flickity.data(gallery);
-      if (flkty) {
-        flkty.reloadCells();
-        flkty.resize();
-      } else {
-        new Flickity(gallery, {
-          wrapAround: true,
-          pageDots: false,
-        });
-      }
+      waitForImagesSafe(gallery).then(() => {
+        if (loading) loading.style.display = "none";
+
+        gallery.classList.remove("opacity-0", "pointer-events-none");
+
+        const flkty = Flickity.data(gallery);
+        if (flkty) {
+          flkty.reloadCells();
+          flkty.resize();
+        } else {
+          new Flickity(gallery, {
+            wrapAround: true,
+            pageDots: false,
+          });
+        }
+      });
     })
     .catch((err) => console.error(`Błąd ładowania ${jsonFile}`, err));
+}
+
+/* czeka na obrazki max 10 sekund */
+function waitForImagesSafe(container) {
+  const imgs = Array.from(container.querySelectorAll("img"));
+  if (imgs.length === 0) return Promise.resolve();
+
+  const imgPromises = imgs.map(
+    (img) =>
+      new Promise((resolve) => {
+        if (img.complete) return resolve();
+        img.addEventListener("load", resolve);
+        img.addEventListener("error", resolve);
+      }),
+  );
+
+  /* timeout antyzawieszeniowy */
+  const timeout = new Promise((resolve) => setTimeout(resolve, 10000));
+
+  return Promise.race([Promise.all(imgPromises), timeout]);
 }
 
 function createCard(item, color) {
