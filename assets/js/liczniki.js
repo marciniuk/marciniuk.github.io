@@ -4,7 +4,7 @@
 
 (function () {
   const BIRTH_YEAR = 2001;
-  const BIRTH_MONTH = 7; // sierpień (0-index)
+  const BIRTH_MONTH = 7; /* sierpień (0-index) */
   const BIRTH_DAY = 4;
 
   class XWiek extends HTMLElement {
@@ -95,10 +95,10 @@ class WebDevTime extends HTMLElement {
   update() {
     const now = new Date();
 
-    // różnica w milisekundach (UTC → UTC)
+    /* różnica w milisekundach (UTC → UTC) */
     const diff = Date.now() - Date.UTC(2019, 11, 17, 16, 36, 39);
 
-    const diffDays = diff / 86400000; // 1000 * 60 * 60 * 24
+    const diffDays = diff / 86400000; /* 1000 * 60 * 60 * 24 */
     const weeks = Math.floor(diffDays / 7);
     const days = (diffDays % 7).toFixed(1);
 

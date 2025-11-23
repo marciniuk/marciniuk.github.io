@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((res) => res.json())
     .then((dane) => {
       dane.forEach((item) => {
-        // 🔧 Zamiana <next> na poprawne otwarcie kolejnego akapitu
+        /* Zamiana <next> na poprawne otwarcie kolejnego akapitu */
         const trescHTML = item.tresc
           .trim()
           .replace(
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         container.appendChild(karta);
       });
 
-      // Ładowanie obrazków
+      /* Ładowanie obrazków */
       container.querySelectorAll("img[loading='lazy']").forEach((img) => {
         if (img.complete) {
           img.classList.add("loaded");

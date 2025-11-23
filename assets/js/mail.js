@@ -67,10 +67,10 @@ class CopyEmail extends HTMLElement {
       if (busy) return;
       busy = true;
 
-      // Pobierz język strony (np. "pl" lub "en")
+      /* Pobierz język strony (np. "pl" lub "en") */
       const lang = document.documentElement.lang?.toLowerCase() || "en";
 
-      // Wiadomości zależne od języka
+      /* Wiadomości zależne od języka */
       const msg = {
         success: lang === "pl" ? "Skopiowano!" : "Copied!",
         fail: lang === "pl" ? "Skopiuj ręcznie!" : "Copy manually!",
