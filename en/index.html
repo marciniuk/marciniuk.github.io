@@ -188,14 +188,14 @@
 
     <!-- MAIN -->
     <main
-      class="z-10 p-6 flex flex-col lg:flex-row gap-6 items-center justify-center h-full"
+      class="z-10 p-6 flex flex-col lg:flex-row gap-6 items-center justify-evenly lg:justify-center h-full"
     >
       <!-- AVATAR / LOGO -->
       <section class="flex flex-col items-center w-full lg:w-fit mt-6 lg:mt-0">
         <div
-          class="flex flex-row lg:flex-col items-center justify-center w-full lg:rounded-2xl lg:bg-[url('/assets/img/bg.webp')] lg:opacity-75 lg:w-fit lg:aspect-auto lg:m-2 lg:ml-0 lg:mt-0 lg:p-6"
+          class="relative flex flex-row lg:flex-col items-center justify-center w-full lg:rounded-2xl lg:w-fit lg:aspect-auto lg:m-2 lg:ml-0 lg:mt-0 lg:p-6 before:hidden lg:before:block before:content-[''] before:absolute before:inset-0 before:bg-[url('/assets/img/bg.webp')] before:bg-cover before:bg-center before:opacity-75 before:rounded-2xl before:z-0"
         >
-          <!-- LOGO + BG -->
+          <!-- LOGO + TŁO -->
           <div
             class="opacity-100 border border-blue-700 border-l-0 lg:border-0 -ml-6 lg:ml-0 z-20 shrink-0 w-40 xs:w-44 lg:w-64 aspect-square bg-[url('/assets/img/bg-m.webp')] lg:bg-none bg-cover bg-center bg-no-repeat p-4 rounded-r-full overflow-hidden flex items-center justify-center"
           >
@@ -219,7 +219,7 @@
 
           <!-- DANE -->
           <div
-            class="-mr-6 flex flex-col items-center justify-center text-center w-full py-4 bg-transparent lg:-mr-0"
+            class="-mr-6 flex flex-col items-center justify-center text-center w-full py-4 bg-transparent lg:-mr-0 relative z-20"
           >
             <div
               class="text-3xl sm:text-4xl lg:text-4xl font-semibold lg:font-bold"
@@ -231,7 +231,7 @@
               <e-mail></e-mail>
 
               <noscript>
-                <span class="text-red-400 ml-1">(Enable JS!)</span>
+                <span class="text-red-400 ml-1">(Włącz JS!)</span>
               </noscript>
             </div>
 
