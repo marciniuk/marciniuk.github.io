@@ -32,9 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "filter 0.25s ease-in-out, opacity 0.25s ease-in-out";
   if (overlay) overlay.style.transition = "opacity 0.25s ease-in-out";
 
-  /* ============================================================
-     🧭 NAWIGACJA — MENU, BLUR I ANIMACJE HEADERA
-     ============================================================ */
+  /* === FUNKCJE OTWIERANIA I ZAMYKANIA MENU === */
   function openMenu() {
     isOpen = true;
 
