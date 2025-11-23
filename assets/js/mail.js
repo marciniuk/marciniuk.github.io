@@ -10,7 +10,7 @@ class CopyEmail extends HTMLElement {
 
     this.innerHTML = `
       <span class="copy-email-inner inline-flex items-center gap-2 cursor-pointer select-none">
-        <i class="fa-solid fa-envelope"></i>
+        <i class="fas fa-envelope"></i>
         <span class="email"></span>
       </span>
     `;
@@ -78,17 +78,9 @@ class CopyEmail extends HTMLElement {
 
       try {
         await navigator.clipboard.writeText(full);
-        await swap(
-          "fa-solid fa-clipboard-check",
-          "text-emerald-400",
-          msg.success,
-        );
+        await swap("fas fa-clipboard-check", "text-emerald-400", msg.success);
       } catch {
-        await swap(
-          "fa-solid fa-triangle-exclamation",
-          "text-rose-400",
-          msg.fail,
-        );
+        await swap("fas fa-triangle-exclamation", "text-rose-400", msg.fail);
       }
 
       busy = false;

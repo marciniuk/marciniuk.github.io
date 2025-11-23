@@ -96,7 +96,7 @@ function createCard(item, color) {
 
       <div class="z-10 text-${color}-500 hover:text-${color}-700 flex justify-center mt-2">
         <a href="${item.link}" class="text-sm md:text-base xl:text-lg font-bold">
-          <i class="fas fa-link"></i> ${item.linkNazwa}
+          <i class="fad fa-link"></i> ${item.linkNazwa}
         </a>
       </div>
     </div>
