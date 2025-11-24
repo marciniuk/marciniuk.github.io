@@ -217,11 +217,6 @@
               alt="Adrian Marciniuk"
               class="hidden lg:block rounded-full mx-auto w-56 p-2 spinable z-[3]"
             />
-
-            <div
-              id="spin-popup"
-              class="backdrop-blur-sm fixed bg-blue-900/90 text-white px-4 py-2 rounded-xl border border-blue-700 shadow-xl opacity-0 pointer-events-none transition-all duration-300 translate-y-2 flex items-center gap-2 popup-glitch"
-            ></div>
           </div>
 
           <!-- DANE -->
@@ -264,8 +259,15 @@
         </div>
       </section>
 
+      <!-- SPIN POPUP -->
+      <div
+        id="spin-popup"
+        class="z-20 fixed backdrop-blur-sm bg-blue-900/90 text-white px-4 py-2 rounded-xl border border-blue-700 shadow-xl opacity-0 pointer-events-none transition-all duration-500 whitespace-nowrap"
+      ></div>
+
       <!-- SEKCJA "O MNIE" -->
       <section
+        class="z-10 relative mt-4 lg:mt-0 p-4 rounded-3xl bg-blue-800/25 border border-blue-800 backdrop-blur-sm text-base lg:text-lg max-w-full lg:max-w-[40rem]"
       >
         <div
           class="rounded-full bg-blue-800 border border-blue-800 w-fit py-0.5 px-1.5 text-sm font-semibold mb-2 -ml-2 -mt-2 text-blue-100 h-fit"

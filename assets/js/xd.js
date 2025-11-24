@@ -1,5 +1,5 @@
 /* ================================================
-    🌟 DYNAMICZNE WSTRZYKNIĘCIE CSS EASTER EGGA
+   🌟 DYNAMICZNE WSTRZYKNIĘCIE CSS EASTER EGGA
    ================================================ */
 function injectEasterEggStyles() {
   if (document.getElementById("easteregg-css")) return;
@@ -8,38 +8,34 @@ function injectEasterEggStyles() {
   style.id = "easteregg-css";
 
   style.textContent = `
-    /* ✨ mini glitch poziomy */
-    @keyframes glitch-h {
-      0% { transform: translateX(0); }
-      20% { transform: translateX(-1px); }
-      40% { transform: translateX(1px); }
-      60% { transform: translateX(-1px); }
-      80% { transform: translateX(1px); }
-      100% { transform: translateX(0); }
+  @keyframes shake {
+    0%, 100% { 
+      transform: translate(0, 0) rotate(0deg); 
     }
+    25% { 
+      transform: translate(2px, -1px) rotate(0.6deg); 
+    }
+    50% { 
+      transform: translate(-2px, 1px) rotate(-0.6deg); 
+    }
+    75% { 
+      transform: translate(1px, 2px) rotate(0.4deg); 
+    }
+  }
 
-    /* ✨ lekkie telepnięcie */
-    @keyframes shake {
-      0%, 100% { transform: translate(0, 0); }
-      25% { transform: translate(2px, -1px); }
-      50% { transform: translate(-2px, 1px); }
-      75% { transform: translate(1px, 2px); }
-    }
+  @keyframes pulse-soft {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
 
-    /* ✨ minimalne pulsowanie */
-    @keyframes pulse-soft {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.03); }
-    }
+  .popup-shake {
+    animation: shake 0.4s infinite;
+  }
 
-    /* Klasa z efektami */
-    .popup-glitch {
-      animation:
-        glitch-h 0.25s ease-in-out,
-        shake 0.3s ease-in-out,
-        pulse-soft 2s ease-in-out infinite;
-    }
-  `;
+  .popup-pulse {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+`;
 
   document.head.appendChild(style);
 }
@@ -60,14 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
     "🤨 Co ty odwalasz",
   ];
 
-  /* rotacja unikalnych komunikatów */
   let bag = [];
 
   const getRandomMessage = () => {
     if (bag.length === 0) {
       bag = [...messagesOriginal];
 
-      /* tasowanie */
       for (let i = bag.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [bag[i], bag[j]] = [bag[j], bag[i]];
@@ -77,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return bag.shift();
   };
 
-  /* Logika klikanego spinnera */
   document.querySelectorAll(".spinable").forEach((img) => {
     let rotation = 0;
     let clicks = 0;
@@ -90,30 +83,35 @@ document.addEventListener("DOMContentLoaded", () => {
       img.style.transform = `rotate(${rotation}deg)`;
 
       if (clicks === 10) {
-        /* dopiero przy pierwszym użyciu wstrzykujemy CSS */
         injectEasterEggStyles();
-
         popup.textContent = getRandomMessage();
 
-        const x = ev.clientX + 12;
-        const y = ev.clientY + 12;
-        popup.style.left = x + "px";
-        popup.style.top = y + "px";
+        // 🔥 pozycjonowanie dokładnie w miejscu kliknięcia
+        popup.style.left = ev.clientX + 12 + "px";
+        popup.style.top = ev.clientY + 12 + "px";
 
-        popup.classList.remove(
-          "opacity-0",
-          "pointer-events-none",
-          "translate-y-2",
-        );
-        popup.classList.add("opacity-100", "translate-y-0", "popup-glitch");
+        // 🔥 pokaż popup
+        popup.classList.replace("opacity-0", "opacity-100");
 
+        /* losowa animacja */
+        const animations = ["popup-shake", "popup-pulse"];
+        const randomAnim =
+          animations[Math.floor(Math.random() * animations.length)];
+
+        /* usuń poprzednie animacje */
+        popup.classList.remove("popup-shake", "popup-pulse");
+
+        /* dodaj losową */
+        popup.classList.add(randomAnim);
+
+        // 🔥 ukryj po 5 sekundach
         setTimeout(() => {
-          popup.classList.add(
-            "opacity-0",
-            "pointer-events-none",
-            "translate-y-2",
+          popup.classList.replace("opacity-100", "opacity-0");
+          popup.classList.remove(
+            "popup-glitch-h",
+            "popup-shake",
+            "popup-pulse",
           );
-          popup.classList.remove("opacity-100", "popup-glitch");
           clicks = 0;
         }, 5000);
       }
