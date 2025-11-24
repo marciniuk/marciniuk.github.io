@@ -11,6 +11,7 @@ module.exports = {
     "./assets/**/*.js",
     "./assets/**/*.html",
     "./assets/**/*.json",
+    "./404.html",
   ],
   theme: {
     extend: {
