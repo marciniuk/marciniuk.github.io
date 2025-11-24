@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.5; /* <--- możesz zmniejszyć lub zwiększyć */
+  opacity: 0.5;
 }
 
 /*404 Glitch Effect*/
@@ -147,4 +147,91 @@
   color: #aaa;
   font-size: 1.2rem;
   letter-spacing: 2px;
+}
+
+.fade-item {
+  opacity: 0;
+  transform: translateY(-12px);
+  filter: blur(2px);
+}
+
+body.page-ready .fade-item {
+  animation: glitchLong 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes glitchLong {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+    filter: blur(3px) hue-rotate(20deg);
+  }
+
+  /* ▒▒ RGB split + małe trzaski ▒▒ */
+  10% {
+    opacity: 0.2;
+    transform: translateY(-10px) translateX(-3px);
+    filter: blur(2px) contrast(120%) drop-shadow(2px 0 red);
+    clip-path: inset(0 0 65% 0);
+  }
+
+  18% {
+    transform: translateY(-12px) translateX(3px);
+    clip-path: inset(30% 0 25% 0);
+    filter: blur(1px) drop-shadow(-2px 0 cyan);
+  }
+
+  /* ▒▒ Zacięcia sygnału ▒▒ */
+  28% {
+    opacity: 0.35;
+    transform: translateY(-6px) translateX(-1px);
+    clip-path: inset(10% 0 50% 0);
+  }
+
+  38% {
+    transform: translateY(-8px) translateX(2px);
+    clip-path: inset(0 0 30% 0);
+  }
+
+  48% {
+    opacity: 0.45;
+    clip-path: inset(40% 0 0 0);
+    filter: hue-rotate(-20deg);
+  }
+
+  /* ▒▒ Szybkie mikro-teleporty ▒▒ */
+  58% {
+    opacity: 0.55;
+    transform: translateY(-4px) translateX(-4px);
+    filter: blur(1px);
+    clip-path: none;
+  }
+
+  62% {
+    transform: translateY(-2px) translateX(3px);
+  }
+
+  66% {
+    transform: translateY(-3px) translateX(-2px);
+  }
+
+  /* ▒▒ Wejście w fokus ▒▒ */
+  76% {
+    opacity: 0.8;
+    transform: translateY(-1px);
+    filter: blur(0.5px);
+  }
+
+  /* ▒▒ Finalny smooth fade-in ▒▒ */
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: none;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: none;
+    clip-path: none;
+  }
 }

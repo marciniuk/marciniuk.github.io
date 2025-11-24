@@ -11,24 +11,12 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-    <title>Adrian Marcini.uk</title>
-
-    <!-- SEO Description -->
-    <meta
-      name="description"
-      content="A website created under the influence of caffeine and far too much free time."
-    />
-    <meta name="author" content="Adrian Marciniuk" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>404 – Page Not Found</title>
 
     <!-- Assets -->
     <link rel="preload" href="/assets/css/main.css" as="style" />
     <link href="/assets/css/main.css" rel="stylesheet" />
-
-    <link rel="preload" href="/assets/js/stars.js" as="script" />
-    <script src="/assets/js/stars.js" defer></script>
-
-    <link rel="preload" href="/assets/js/main.js" as="script" />
 
     <link
       rel="stylesheet"
@@ -56,63 +44,18 @@
     />
     <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
     <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+  </head>
 
-    <!-- Canonical -->
-    <link rel="canonical" href="{{CANONICAL}}" />
-
-    <!-- Structured Data JSON-LD -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Adrian Marciniuk",
-        "url": "https://marcini.uk/",
-        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
-        "sameAs": ["https://github.com/marciniuk"],
-        "jobTitle": "Frontend Developer",
-        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
-      }
-    </script>
-
-    <!-- Open Graph / Facebook / Discord -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://marcini.uk/" />
-    <meta property="og:title" content="Adrian Marcini.uk" />
-    <meta
-      property="og:description"
-      content="A website created under the influence of caffeine and far too much free time."
-    />
-    <meta
-      property="og:image"
-      content="https://marcini.uk/assets/og/og-image.jpg"
-    />
-    <meta property="og:site_name" content="Marcini.uk" />
-
-    <!-- Twitter / X Cards -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@adrianmarciniuk" />
-    <meta name="twitter:creator" content="@adrianmarciniuk" />
-    <meta name="twitter:title" content="Adrian Marcini.uk" />
-    <meta
-      name="twitter:description"
-      content="A website created under the influence of caffeine and far too much free time."
-    />
-    <meta
-      name="twitter:image"
-      content="https://marcini.uk/assets/og/og-image.jpg"
-    />
-
+  <body class="select-none">
     <!-- Fade-in -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
           document.body.classList.add("page-ready");
-        }, 150);
+        }, 1500);
       });
     </script>
-  </head>
 
-  <body class="select-none">
     <link rel="stylesheet" href="/assets/css/404.css" />
     <canvas id="matrix"></canvas>
 
@@ -124,36 +67,37 @@
       <div
         class="h-20 w-full bg-gradient-to-b from-blue-900/100 to-blue-900/0 absolute top-0 z-20"
       ></div>
-
-      <div
-        class="flex place-items-center absolute top-0 left-0 z-30 mt-10 ml-10 bg-blue-700/40 pr-5 p-2 rounded-full backdrop-blur-[2px] transition-colors duration-300"
-      >
-        <a
-          href="/"
-          class="flex place-content-center place-items-center justify-center items-center"
-        >
-          <img
-            src="/assets/img/logo.svg"
-            alt="logo"
-            class="h-9 lg:h-10 aspect-square pointer-events-none"
-          />
-          <span class="italic text-3xl lg:text-4xl ml-2">Marciniuk</span></a
-        >
-      </div>
     </div>
+
+    <!-- LOGO BUTTON -->
+    <button
+      class="fade-item flex place-items-center absolute top-0 left-0 z-30 mt-10 ml-10 bg-blue-700/40 pr-5 p-2 rounded-full backdrop-blur-[2px]"
+    >
+      <a
+        href="/"
+        class="flex place-content-center place-items-center justify-center items-center"
+      >
+        <img
+          src="/assets/img/logo.svg"
+          alt="logo"
+          class="h-9 lg:h-10 aspect-square"
+        />
+        <span class="italic text-3xl lg:text-4xl ml-2">Marciniuk</span>
+      </a>
+    </button>
 
     <!-- MAIN -->
     <main
       class="z-10 p-6 flex flex-col lg:flex-row gap-6 items-center justify-center h-full noise-bg"
     >
-      <div class="glitch-wrapper">
+      <div class="glitch-wrapper fade-item">
         <div class="glitch" data-text="404">404</div>
         <p class="glitch-sub">Page Not Found</p>
       </div>
     </main>
 
     <!-- FOOTER -->
-    <footer class="w-full flex justify-center items-center z-10">
+    <footer class="fade-item w-full flex justify-center items-center z-10">
       <div
         class="flex justify-center items-center bg-blue-700/40 backdrop-blur-[2px] h-fit my-7 px-3 py-2 rounded-full w-fit"
       >

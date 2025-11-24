@@ -24,7 +24,7 @@ function getPriority(filePath) {
   const relPath = filePath.replace(rootDir, "").replace(/\\/g, "/");
 
   if (relPath === "/index.html") return 1.0;
-  if (relPath.includes("/404")) return 0.3;
+  if (relPath.includes("/404")) return 0.1;
 
   const depth = relPath.split("/").length - 2;
   if (depth === 1) return 0.8;
