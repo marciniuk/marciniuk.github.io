@@ -12,6 +12,7 @@ module.exports = {
     "./assets/**/*.html",
     "./assets/**/*.json",
     "./404.html",
+    "./index.html",
   ],
   theme: {
     extend: {
