@@ -57,30 +57,12 @@
     <!-- Linki do zasobów -->
     <link rel="preload" href="/assets/css/main.css" as="style" />
     <link href="/assets/css/main.css" rel="stylesheet" />
-    <link rel="preload" href="/assets/js/stars.js" as="script" />
-    <script src="/assets/js/stars.js" defer></script>
-    <link rel="preload" href="/assets/js/main.js" as="script" />
     <link
       rel="stylesheet"
-      href="/assets/css/fontawesome.css"
+      href="/assets/css/fonts.css"
       media="print"
       onload="this.media='all'"
     />
-    <noscript>
-      <link rel="stylesheet" href="/assets/css/fontawesome.css" />
-    </noscript>
-    <link rel="preload" href="/assets/css/fonts.css" as="style" />
-    <script>
-      function loadFontsCSS(href) {
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = href;
-        link.media = "print";
-        link.onload = () => (link.media = "all");
-        document.head.appendChild(link);
-      }
-      loadFontsCSS("/assets/css/fonts.css");
-    </script>
     <!-- Favicon -->
     <link
       rel="icon"
