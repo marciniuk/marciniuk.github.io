@@ -115,12 +115,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const progress = scroll / 30;
 
       const top = 0.75 - 0.75 * progress;
+      const bottom = 0.75 - 0.75 * progress;
       const marginLeft = 0.5 - 0.5 * progress;
       const radius = 2 - 2 * progress;
 
       Object.assign(header.style, {
         top: `${top}rem`,
-        marginBottom: `${top}rem`,
+        marginBottom: `0.75rem`,
         marginLeft: `${marginLeft}rem`,
         marginRight: "0rem",
         borderTopLeftRadius: `${radius}rem`,
