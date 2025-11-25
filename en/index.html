@@ -122,14 +122,14 @@
       class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
     >
       <div
-        class="h-20 w-full bg-gradient-to-b from-blue-900/100 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+        class="h-20 w-full bg-linear-to-b from-blue-900 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
       ></div>
     </div>
 
     <!-- HEADER -->
     <header
       id="main-header"
-      class="xl:mb-4 h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-[all] duration-500 ease-in-out"
+      class="xl:mb-4 h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-all duration-500 ease-in-out"
     >
       <div class="flex justify-between w-full items-center z-30">
         <!-- LOGO -->
@@ -198,24 +198,24 @@
           class="relative flex flex-row lg:flex-col items-center justify-center w-full lg:rounded-2xl lg:w-fit lg:aspect-auto lg:m-2 lg:ml-0 lg:mt-0 lg:p-6 before:hidden lg:before:block before:content-[''] before:absolute before:inset-0 before:bg-[url('/assets/img/bg.webp')] before:bg-cover before:bg-center before:opacity-75 before:rounded-2xl before:z-0"
         >
           <div
-            class="relative border border-blue-700 border-l-0 lg:border-0 -ml-6 lg:ml-0 z-10 shrink-0 w-40 xs:w-44 lg:w-64 aspect-square overflow-hidden rounded-r-full flex items-center justify-center before:absolute before:inset-0 lg:before:hidden before:bg-[url('/assets/img/bg-m.webp')] before:bg-cover before:bg-center before:opacity-75 before:rounded-r-full before:z-[1]"
+            class="relative border border-blue-700 border-l-0 lg:border-0 -ml-6 lg:ml-0 z-10 shrink-0 w-40 xs:w-44 lg:w-64 aspect-square overflow-hidden rounded-r-full flex items-center justify-center before:absolute before:inset-0 lg:before:hidden before:bg-[url('/assets/img/bg-m.webp')] before:bg-cover before:bg-center before:opacity-75 before:rounded-r-full before:z-1"
           >
             <img
               src="/assets/img/logo.svg"
               alt="logo"
-              class="rounded-full h-32 xs:h-36 aspect-square object-cover lg:hidden spinable z-[3]"
+              class="rounded-full h-32 xs:h-36 aspect-square object-cover lg:hidden spinable z-3"
             />
 
             <img
               src="/assets/img/logo.webp"
               alt="Adrian Marciniuk"
-              class="hidden lg:block rounded-full mx-auto w-56 p-2 spinable z-[3]"
+              class="hidden lg:block rounded-full mx-auto w-56 p-2 spinable z-3"
             />
           </div>
 
           <!-- DANE -->
           <div
-            class="-mr-6 flex flex-col items-center justify-center text-center w-full py-4 bg-transparent lg:-mr-0 relative z-20"
+            class="-mr-6 flex flex-col items-center justify-center text-center w-full py-4 bg-transparent lg:mr-0 relative z-20"
           >
             <div
               class="text-3xl sm:text-4xl lg:text-4xl font-semibold lg:font-bold"
@@ -255,7 +255,7 @@
 
       <!-- "ABOUT ME" SECTION -->
       <section
-        class="relative mt-4 lg:mt-0 p-4 rounded-3xl bg-blue-800/25 border border-blue-800 backdrop-blur-sm text-base lg:text-lg max-w-full lg:max-w-[40rem]"
+        class="relative mt-4 lg:mt-0 p-4 rounded-3xl bg-blue-800/25 border border-blue-800 backdrop-blur-sm text-base lg:text-lg max-w-full lg:max-w-160"
       >
         <div
           class="rounded-full bg-blue-800 border border-blue-800 w-fit py-0.5 px-1.5 text-sm font-semibold mb-2 -ml-2 -mt-2 text-blue-100 h-fit"

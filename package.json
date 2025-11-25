@@ -1,12 +1,12 @@
 {
   "name": "marcini.uk",
   "type": "module",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu.",
   "main": "index.html",
   "scripts": {
-    "build": "tailwindcss -i ./input.css -o ./assets/css/main.css --watch",
-    "build:prod": "tailwindcss -i ./input.css -o ./assets/css/main.css --minify && node prettier-summary.js && node generate-sitemap.js",
+    "build": "npx @tailwindcss/cli -i ./input.css -o ./assets/css/main.css --watch",
+    "build:prod": "npx @tailwindcss/cli -i ./input.css -o ./assets/css/main.css --minify && node prettier-summary.js && node generate-sitemap.js",
     "head": "node assets/replace/replace-heads.js",
     "footer": "node assets/replace/replace-footers.js",
     "header": "node assets/replace/replace-headers.js",
@@ -22,19 +22,13 @@
   "license": "ISC",
   "homepage": "https://marcini.uk",
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "cssnano": "^7.1.1",
-    "postcss": "^8.5.6",
-    "postcss-cli": "^11.0.1",
-    "purgecss": "^7.0.2",
     "sitemap": "^9.0.0",
-    "tailwind-scrollbar": "^3.1.0",
-    "tailwindcss": ">=3.0.0 <4.0.0",
+    "tailwind-rounded-out": "^2.0.0",
+    "tailwind-scrollbar": "^4.0.0",
+    "tailwindcss": ">=4.0.0",
     "xml-formatter": "^3.6.7"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.1.13",
-    "prettier": "^3.6.2",
-    "tailwind-rounded-out": "^1.0.1"
+    "prettier": "^3.6.2"
   }
 }

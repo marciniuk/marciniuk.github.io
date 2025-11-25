@@ -1,17 +1,80 @@
 /* ==========================================
    TAILWIND & Developer Info
    ========================================== */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin 'tailwind-scrollbar';
+@import "tailwind-rounded-out";
+
+@layer theme {
+  /* Custom screens */
+  @theme {
+    --breakpoint-xxs: 360px;
+    --breakpoint-xs: 480px;
+
+    /* Font size */
+    --font-size-xxs: 0.625rem;
+
+    /* Colors */
+    --color-blue-100: #97bbff;
+    --color-blue-200: #729bff;
+    --color-blue-300: #5181ff;
+    --color-blue-400: #4578d9;
+    --color-blue-500: #3963b3;
+    --color-blue-600: #2d4e8d;
+    --color-blue-700: #213967;
+    --color-blue-800: #152441;
+    --color-blue-900: #020b1b;
+
+    --color-krofft-1: #2c2e83;
+  }
+}
+
+@layer utilities {
+  [class*="tb-"] {
+    --tb-color: var(--color-neutral-500);
+  }
+
+  /* Automatyczna generacja zostaje zastąpiona ręcznym mapowaniem */
+  .tb-blue-100 {
+    --tb-color: var(--color-blue-100);
+  }
+  .tb-blue-200 {
+    --tb-color: var(--color-blue-200);
+  }
+  .tb-blue-300 {
+    --tb-color: var(--color-blue-300);
+  }
+  .tb-blue-400 {
+    --tb-color: var(--color-blue-400);
+  }
+  .tb-blue-500 {
+    --tb-color: var(--color-blue-500);
+  }
+  .tb-blue-600 {
+    --tb-color: var(--color-blue-600);
+  }
+  .tb-blue-700 {
+    --tb-color: var(--color-blue-700);
+  }
+  .tb-blue-800 {
+    --tb-color: var(--color-blue-800);
+  }
+  .tb-blue-900 {
+    --tb-color: var(--color-blue-900);
+  }
+
+  .tb-krofft-1 {
+    --tb-color: var(--color-krofft-1);
+  }
+}
 
 :root {
   --dev-name: "Adrian Marciniuk";
   --dev-website: "https://marcini.uk";
   --dev-mail: "adrian@marcini.uk";
 
-  --scrollbar-track: #000c22 !important;
-  --scrollbar-thumb: #2559b9 !important;
+  --scrollbar-track: #000c22;
+  --scrollbar-thumb: #2559b9;
   --scrollbar-width: 5px;
   --scrollbar-thumb-radius: 8px;
 }
@@ -232,49 +295,55 @@ body.page-ready footer {
   );
 }
 
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 /* ==========================================
    BUTTONY / UTILITY EFFECTS
    ========================================== */
-@layer utilities {
-  .ripple-btn {
-    position: relative;
-    overflow: hidden;
-  }
+.section-btn {
+  position: relative;
+  overflow: hidden;
+}
 
-  .ripple-btn::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.1) 0%,
-      transparent 50%
-    );
-    transform: scale(0);
-    opacity: 0;
-    transition:
-      transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
-      opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
-  }
+.section-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  transform: scale(0);
+  opacity: 0;
+  transition:
+    transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
 
-  .ripple-btn:hover::after {
-    transform: scale(2.5);
-    opacity: 1;
-  }
-
-  .btn-scale {
-    transition: transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
-  }
-
-  .btn-scale:hover {
-    transform: scale(1.04);
-  }
+.section-btn:hover::after {
+  transform: scale(2.5);
+  opacity: 1;
 }
 
 .section-btn {
-  @apply ripple-btn btn-scale
-  aspect-square xl:aspect-[2/1]
+  transition: transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.section-btn:hover {
+  transform: scale(1.04);
+}
+
+.section-btn {
+  @apply aspect-square xl:aspect-2/1
   backdrop-blur-sm text-lg font-semibold
   border-2 rounded-3xl
   flex items-center justify-center
@@ -308,7 +377,7 @@ body.page-ready footer {
 }
 
 .card-projekt {
-  @apply rounded-lg max-w-[35rem] h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2
+  @apply rounded-lg max-w-140 h-52 md:h-56 lg:h-60 2xl:h-72 flex p-2
          transition-all duration-300 ease-out hover:scale-[1.05]
          hover:shadow-[0_0_20px_6px_var(--tw-shadow-color)];
 }
@@ -334,12 +403,12 @@ body.page-ready footer {
    PROFIL
    ========================================== */
 .pastylka-profil {
-  @apply flex flex-col items-center hover:scale-[1.04] transition-transform duration-500 max-w-[30rem] w-full;
+  @apply flex flex-col items-center hover:scale-[1.04] transition-transform duration-500 max-w-120 w-full;
 }
 
 .serwis-profil {
   @apply w-3/4 self-start text-white font-bold text-2xl lg:text-3xl py-4 rounded-2xl flex items-center justify-center
-         gap-3 shadow-lg bg-gradient-to-r bg-[length:200%_200%] bg-right-bottom group-hover:bg-left-top transition-all
+         gap-3 shadow-lg bg-linear-to-r bg-size-[200%_200%] bg-bottom-right group-hover:bg-top-left transition-all
          duration-700 ease-out;
 }
 

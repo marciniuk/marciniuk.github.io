@@ -36,7 +36,7 @@ function openPopup() {
     popupContent.classList.remove("opacity-0", "scale-95");
   });
 
-  document.documentElement.classList.add("overflow-hidden");
+  popupContent.classList.add("no-scrollbar");
 }
 
 function closePopup() {
