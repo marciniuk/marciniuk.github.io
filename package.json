@@ -1,7 +1,7 @@
 {
   "name": "marcini.uk",
   "type": "module",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu.",
   "main": "index.html",
   "scripts": {
