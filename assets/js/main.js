@@ -38,7 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     header?.classList.replace("bg-blue-700/60", "bg-blue-600");
     footer?.classList.replace("bg-blue-700/60", "bg-blue-600");
-    footer?.classList.remove("md:my-4", "md:mx-3", "md:rounded-full");
+    footer?.classList.remove("md:mx-3", "md:rounded-full");
+    footer?.classList.replace("md:mb-4", "md:mt-4");
 
     Object.assign(header.style, {
       top: "0rem",
@@ -73,7 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       header?.classList.replace("bg-blue-600", "bg-blue-700/60");
       footer?.classList.replace("bg-blue-600", "bg-blue-700/60");
-      footer?.classList.add("md:my-4", "md:mx-3", "md:rounded-full");
+      footer?.classList.add("md:mx-3", "md:rounded-full");
+      footer?.classList.replace("md:mt-4", "md:mb-4");
 
       updateHeaderScrollStyle();
 
@@ -118,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       Object.assign(header.style, {
         top: `${top}rem`,
+        marginBottom: `${top}rem`,
         marginLeft: `${marginLeft}rem`,
         marginRight: "0rem",
         borderTopLeftRadius: `${radius}rem`,
