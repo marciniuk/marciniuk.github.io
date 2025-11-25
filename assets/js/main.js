@@ -165,3 +165,7 @@ class YearElement extends HTMLElement {
 }
 
 customElements.define("full-year", YearElement);
+
+const script = document.createElement("script");
+script.setAttribute("src", "https://scripts.simpleanalyticscdn.com/latest.js");
+document.head.appendChild(script);
