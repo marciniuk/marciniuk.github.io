@@ -10,9 +10,8 @@
   --dev-website: "https://marcini.uk";
   --dev-mail: "adrian@marcini.uk";
 
-  --scrollbar-track: #020b1b !important;
-  --scrollbar-thumb: #2d4e8d !important;
-  --scrollbar-thumb-hover: #4578d9 !important;
+  --scrollbar-track: #000c22 !important;
+  --scrollbar-thumb: #2559b9 !important;
   --scrollbar-width: 5px;
   --scrollbar-thumb-radius: 8px;
 }
@@ -180,11 +179,9 @@ body.page-ready footer {
    SCROLLBAR
    ========================================== */
 
-@-moz-document url-prefix() {
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
-  }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar {
