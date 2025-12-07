@@ -381,7 +381,7 @@ function generateQR() {
   if (qrMergeMode === "full") {
     // full blob mode: detect groups and draw greedy rects
     const visited = Array.from({ length: count }, () =>
-      Array(count).fill(false)
+      Array(count).fill(false),
     );
     for (let r = 0; r < count; r++) {
       for (let c = 0; c < count; c++) {
@@ -495,7 +495,7 @@ function generateQR() {
     moduleSize,
     fgColor,
     bgColor,
-    finderStyle
+    finderStyle,
   );
   drawFinderCanvas(
     ctx,
@@ -504,7 +504,7 @@ function generateQR() {
     moduleSize,
     fgColor,
     bgColor,
-    finderStyle
+    finderStyle,
   );
 }
 
@@ -541,7 +541,7 @@ function exportSVG() {
 
   const svg = [];
   svg.push(
-    `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">`
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">`,
   );
   if (bgColor !== "transparent")
     svg.push(`<rect width="100%" height="100%" fill="${bgColor}" />`);
@@ -568,7 +568,7 @@ function exportSVG() {
       const rr = Math.max(0, Math.min(realR, s * roundness));
 
       svg.push(
-        `<path d="${pathRoundedRect(sx, sy, s, s, rr)}" fill="${fgColor}" />`
+        `<path d="${pathRoundedRect(sx, sy, s, s, rr)}" fill="${fgColor}" />`,
       );
     }
   }
@@ -588,23 +588,23 @@ function exportSVG() {
       const cx = x + outer / 2;
       const cy = y + outer / 2;
       svg.push(
-        `<circle cx="${cx}" cy="${cy}" r="${outer / 2}" fill="${fgColor}" />`
+        `<circle cx="${cx}" cy="${cy}" r="${outer / 2}" fill="${fgColor}" />`,
       );
       svg.push(
-        `<circle cx="${cx}" cy="${cy}" r="${middle / 2}" fill="${bgColor === "transparent" ? "none" : bgColor}" />`
+        `<circle cx="${cx}" cy="${cy}" r="${middle / 2}" fill="${bgColor === "transparent" ? "none" : bgColor}" />`,
       );
       svg.push(
-        `<circle cx="${cx}" cy="${cy}" r="${inner / 2}" fill="${fgColor}" />`
+        `<circle cx="${cx}" cy="${cy}" r="${inner / 2}" fill="${fgColor}" />`,
       );
     } else {
       svg.push(
-        `<path d="${pathRoundedRect(x, y, outer, outer, rOuter)}" fill="${fgColor}" />`
+        `<path d="${pathRoundedRect(x, y, outer, outer, rOuter)}" fill="${fgColor}" />`,
       );
       svg.push(
-        `<path d="${pathRoundedRect(x + m1, y + m1, middle, middle, rMiddle)}" fill="${bgColor === "transparent" ? "none" : bgColor}" />`
+        `<path d="${pathRoundedRect(x + m1, y + m1, middle, middle, rMiddle)}" fill="${bgColor === "transparent" ? "none" : bgColor}" />`,
       );
       svg.push(
-        `<path d="${pathRoundedRect(x + m1 + m2, y + m1 + m2, inner, inner, rInner)}" fill="${fgColor}" />`
+        `<path d="${pathRoundedRect(x + m1 + m2, y + m1 + m2, inner, inner, rInner)}" fill="${fgColor}" />`,
       );
     }
   }
