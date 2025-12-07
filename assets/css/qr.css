@@ -1,0 +1,29 @@
+input[type="color"] {
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border-radius: 12px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 12px;
+}
+
+.finder-btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: #1e2a4a;
+  color: white;
+  border: 2px solid #334b7a;
+  cursor: pointer;
+}
+
+.finder-btn.active-finder-btn {
+  background: #0dd67620;
+  border-color: #0dd676;
+}
