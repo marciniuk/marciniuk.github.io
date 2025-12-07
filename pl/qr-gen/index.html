@@ -193,28 +193,28 @@
     </header>
 
     <!-- MAIN -->
-    <main class="w-full h-full my-4 flex place-content-center items-center">
+    <main class="w-full h-full flex place-content-center items-center">
       <section
-        class="bg-blue-700/40 backdrop-blur-sm border border-blue-600 rounded-2xl p-6 flex flex-col md:flex-row gap-4 w-auto h-full"
+        class="bg-blue-700/40 m-4 backdrop-blur-sm border border-blue-600 rounded-2xl p-6 flex flex-col md:flex-row gap-4 w-auto h-full"
       >
         <!-- CONTROLS -->
         <div
           class="w-full h-auto flex flex-col justify-evenly gap-4 md:min-w-88"
         >
           <!-- INPUT -->
-          <h1 class="text-3xl font-bold">Generator QR</h1>
+          <h1 class="text-3xl font-bold text-white">Generator QR</h1>
           <input
             id="qr-text"
-            class="px-4 py-2 rounded-xl bg-blue-900/50 border border-blue-600 w-full -mt-2"
+            class="px-4 py-2 rounded-xl bg-blue-900/50 border border-blue-600 text-sky-200 w-full -mt-2"
             placeholder="https://marcini.uk"
             value="https://marcini.uk"
           />
 
           <!-- KOLORY -->
           <div class="flex flex-col w-full">
-            <label class="text-xl font-bold">Kolory</label>
+            <label class="text-xl font-bold text-white">Kolory</label>
 
-            <div class="flex gap-3 w-full">
+            <div class="flex gap-3 w-full text-sky-200">
               <!-- FG -->
               <div class="flex flex-col gap-1 w-1/2">
                 <span class="font-semibold">Kolor modułów (FG)</span>
@@ -256,9 +256,11 @@
 
           <!-- ZAOKRĄGLENIE ZAWARTOŚCI -->
           <div class="flex flex-col gap-2">
-            <label class="text-xl font-bold">Zaokrąglenie modułów</label>
+            <label class="text-xl font-bold text-white"
+              >Zaokrąglenie modułów</label
+            >
 
-            <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center justify-between gap-4 text-sky-200">
               <button
                 class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-xl"
                 onclick="changeRadius(-10)"
@@ -287,25 +289,67 @@
 
           <!-- PADDING MIĘDZY KROPKAMI -->
           <div class="flex flex-col gap-2 mt-2">
-            <label class="text-xl font-bold">Odstęp między modułami</label>
+            <label class="text-xl font-bold text-white">
+              Odstęp między modułami
+            </label>
 
-            <div class="flex gap-4">
-              <label class="flex items-center gap-2">
-                <span>Łączenie modułów</span>
-                <select
-                  id="qr-merge"
-                  onchange="setMergeMode(this.value)"
-                  class="border border-blue-600 rounded-xl bg-blue-900/50 px-2 py-1"
+            <div
+              class="w-full relative mb-1 text-sky-200"
+              data-dropdown="merge"
+            >
+              <!-- GŁÓWNY PRZYCISK -->
+              <button
+                class="dropdown-btn backdrop-blur-md w-full flex items-center justify-between bg-blue-900/40 border border-blue-500/40 rounded-2xl px-3 py-2 shadow-sm transition duration-200 hover:bg-blue-800/40 hover:border-blue-400/60"
+              >
+                <span class="dropdown-label">Brak łączenia</span>
+
+                <svg
+                  class="dropdown-icon w-5 h-5 text-blue-100 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
                 >
-                  <option value="none">Brak łączenia</option>
-                  <option value="horizontal">Łączenie poziome</option>
-                  <option value="vertical">Łączenie pionowe</option>
-                  <option value="full">Łączenie pełne</option>
-                </select>
-              </label>
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+
+              <!-- LISTA OPCJI -->
+              <ul
+                class="dropdown-list absolute z-50 mt-1 w-full bg-[#0e1e39] border border-blue-500/40 rounded-2xl shadow-lg overflow-hidden opacity-0 pointer-events-none transition duration-150"
+              >
+                <li
+                  class="dropdown-item px-4 py-2 cursor-pointer text-blue-100 hover:bg-blue-700/40"
+                  data-value="none"
+                >
+                  Brak łączenia
+                </li>
+                <li
+                  class="dropdown-item px-4 py-2 cursor-pointer text-blue-100 hover:bg-blue-700/40"
+                  data-value="horizontal"
+                >
+                  Łączenie poziome
+                </li>
+                <li
+                  class="dropdown-item px-4 py-2 cursor-pointer text-blue-100 hover:bg-blue-700/40"
+                  data-value="vertical"
+                >
+                  Łączenie pionowe
+                </li>
+                <li
+                  class="dropdown-item px-4 py-2 cursor-pointer text-blue-100 hover:bg-blue-700/40"
+                  data-value="full"
+                >
+                  Łączenie pełne
+                </li>
+              </ul>
             </div>
 
-            <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center justify-between gap-4 text-sky-200">
               <button
                 class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-xl"
                 onclick="changePadding(-1)"
@@ -334,7 +378,9 @@
 
           <!-- STYL OCZEK -->
           <div class="flex flex-col gap-2">
-            <label class="text-xl font-bold">Styl kwadratów w rogach</label>
+            <label class="text-xl font-bold text-white"
+              >Styl znaczników pozycjonujących</label
+            >
 
             <div id="finder-buttons" class="flex gap-3">
               <!-- KWADRAT -->
@@ -342,7 +388,7 @@
                 data-style="square"
                 class="finder-btn p-3 rounded-xl bg-blue-900/50 border border-blue-600 flex items-center justify-center"
               >
-                <div class="w-6 h-6 bg-white"></div>
+                <div class="w-6 h-6 bg-sky-200"></div>
               </button>
 
               <!-- ZAOKRĄGLONY -->
@@ -350,7 +396,7 @@
                 data-style="rounded"
                 class="finder-btn p-3 rounded-xl bg-blue-900/50 border border-blue-600 flex items-center justify-center"
               >
-                <div class="w-6 h-6 bg-white rounded-lg"></div>
+                <div class="w-6 h-6 bg-sky-200 rounded-lg"></div>
               </button>
 
               <!-- KOŁO -->
@@ -358,7 +404,7 @@
                 data-style="circle"
                 class="finder-btn p-3 rounded-xl bg-blue-900/50 border border-blue-600 flex items-center justify-center"
               >
-                <div class="w-6 h-6 bg-white rounded-full"></div>
+                <div class="w-6 h-6 bg-sky-200 rounded-full"></div>
               </button>
             </div>
           </div>
@@ -382,7 +428,7 @@
               id="qrCanvas"
               width="400"
               height="400"
-              class="max-w-88"
+              class="max-w-88 min-w-64 w-full"
             ></canvas>
           </div>
 

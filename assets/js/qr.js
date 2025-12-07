@@ -1,3 +1,60 @@
+document.querySelectorAll('[data-dropdown="merge"]').forEach((drop) => {
+  const btn = drop.querySelector(".dropdown-btn");
+  const list = drop.querySelector(".dropdown-list");
+  const label = drop.querySelector(".dropdown-label");
+  const icon = drop.querySelector(".dropdown-icon");
+
+  // Toggle list
+  btn.addEventListener("click", () => {
+    const open = list.classList.contains("open");
+
+    // Zamknij wszystkie inne dropdowny
+    document.querySelectorAll(".dropdown-list.open").forEach((l) => {
+      l.classList.remove("open");
+      l.style.opacity = "0";
+      l.style.pointerEvents = "none";
+      const otherIcon = l.parentElement.querySelector(".dropdown-icon");
+      if (otherIcon) otherIcon.classList.remove("rotate-180");
+    });
+
+    if (!open) {
+      list.classList.add("open");
+      list.style.opacity = "1";
+      list.style.pointerEvents = "auto";
+      icon.classList.add("rotate-180"); // <-- OBRÓĆ
+    } else {
+      list.classList.remove("open");
+      list.style.opacity = "0";
+      list.style.pointerEvents = "none";
+      icon.classList.remove("rotate-180"); // <-- COFNIJ
+    }
+  });
+
+  // Click item
+  list.querySelectorAll(".dropdown-item").forEach((item) => {
+    item.addEventListener("click", () => {
+      const value = item.dataset.value;
+      const text = item.textContent;
+
+      label.textContent = text;
+      setMergeMode(value);
+
+      list.classList.remove("open");
+      list.style.opacity = "0";
+      list.style.pointerEvents = "none";
+    });
+  });
+
+  // Close on outside click
+  document.addEventListener("click", (e) => {
+    if (!drop.contains(e.target)) {
+      list.classList.remove("open");
+      list.style.opacity = "0";
+      list.style.pointerEvents = "none";
+    }
+  });
+});
+
 /* ===================
     QR CODE GENERATOR
    =================== */
