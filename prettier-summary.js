@@ -89,9 +89,7 @@ function parsePrettierOutput(text) {
         COLORS.reset,
     );
 
-    console.log(
-      COLORS.green + `✔ Zmieniono: ${changed} plików` + COLORS.reset,
-    );
+    console.log(COLORS.green + `✔ Zmieniono: ${changed} plików` + COLORS.reset);
 
     console.log(
       COLORS.yellow + `• Przetworzono łącznie: ${total} plików` + COLORS.reset,
