@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en" class="overflow-x-clip scroll-smooth">
+  <head>
+    <!-- Main -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Adrian Marcini.uk</title>
+
+    <!-- SEO Description -->
+    <meta
+      name="description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta name="author" content="Adrian Marciniuk" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Assets -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/fonts.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
+    <script async src="/assets/fajs/fontawesome.js"></script>
+    <script async src="/assets/fajs/fa-cut.js"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://marcini.uk/en/qr-gen/" />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrian Marciniuk",
+        "url": "https://marcini.uk/",
+        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
+        "sameAs": ["https://github.com/marciniuk"],
+        "jobTitle": "Frontend Developer",
+        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
+      }
+    </script>
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marcini.uk/" />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+
+    <!-- Fade-in -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          document.body.classList.add("page-ready");
+        }, 150);
+      });
+    </script>
+  </head>
+
+  <body class="bg-blue-900 min-h-full max-w-full overflow-x-clip">
+    <!-- STARS -->
+    <stars></stars>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
+    >
+      <div
+        class="h-20 w-full bg-linear-to-b from-blue-900 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+      ></div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="main-header"
+      class="xl:mb-4 h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-all duration-500 ease-in-out"
+    >
+      <div class="flex justify-between w-full items-center z-30">
+        <!-- LOGO -->
+        <a
+          href="/en/"
+          class="flex gap-2 text-3xl lg:text-4xl italic items-center"
+        >
+          <img src="/assets/img/logo.svg" alt="logo" class="h-8 lg:h-10" />
+          Marcini.uk
+        </a>
+
+        <!-- HAMBURGER -->
+        <div
+          id="menu-toggle"
+          class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+        >
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+        </div>
+
+        <!-- WSPÓLNE MENU -->
+        <nav
+          id="mobile-menu"
+          class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+        >
+          <a href="/en/profiles/" class="nav-link hover:text-rose-400"
+            ><i class="fad fa-address-card"></i> Profiles</a
+          >
+          <a href="/en/projects/" class="nav-link hover:text-emerald-400"
+            ><i class="fad fa-diagram-project"></i> Projects</a
+          >
+          <a href="/en/setup/" class="nav-link hover:text-amber-400"
+            ><i class="fad fa-display-code"></i> Setup</a
+          >
+          <a href="/en/contact/" class="nav-link hover:text-sky-400"
+            ><i class="fad fa-envelope-open-text"></i> Contact</a
+          >
+        </nav>
+      </div>
+
+      <!-- VH FIX -->
+      <script>
+        (function () {
+          function setVh() {
+            document.documentElement.style.setProperty(
+              "--vh",
+              `${window.innerHeight * 0.01}px`,
+            );
+          }
+          setVh();
+          window.addEventListener("resize", setVh);
+        })();
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main class="w-full h-full flex place-content-center items-center">
+      <section
+        class="bg-blue-700/40 m-4 backdrop-blur-sm border border-blue-600 rounded-2xl p-6 flex flex-col md:flex-row gap-4 w-auto h-full"
+      >
+        <!-- CONTROLS -->
+        <div
+          class="w-full h-auto flex flex-col justify-evenly gap-4 md:min-w-88"
+        >
+          <!-- INPUT -->
+          <h1 class="text-3xl font-bold text-white">QR Generator</h1>
+          <input
+            id="qr-text"
+            class="px-4 py-2 rounded-xl bg-blue-900/50 border border-blue-600 text-sky-200 w-full -mt-2"
+            placeholder="https://marcini.uk"
+            value="https://marcini.uk"
+          />
+
+          <!-- COLORS -->
+          <div class="flex flex-col w-full">
+            <label class="text-xl font-bold text-white">Colors</label>
+
+            <div class="flex gap-3 w-full text-sky-200">
+              <!-- FG -->
+              <div class="flex flex-col gap-1 w-1/2">
+                <span class="font-semibold">Module color (FG)</span>
+
+                <input
+                  id="fgPicker"
+                  type="color"
+                  class="w-full h-10 rounded-xl bg-blue-900/50 border border-blue-600"
+                  onchange="setFG(this.value)"
+                />
+              </div>
+
+              <!-- BG -->
+              <div class="flex flex-col gap-1 w-1/2">
+                <span class="font-semibold">Background color (BG)</span>
+
+                <div class="flex gap-2 w-full">
+                  <button
+                    class="px-3 py-1 bg-transparent border border-blue-600 rounded-xl w-1/2"
+                    onclick="setBG('transparent')"
+                  >
+                    None
+                  </button>
+
+                  <input
+                    id="bgPicker"
+                    type="color"
+                    class="w-1/2 h-10 rounded-xl bg-blue-900/50 border border-blue-600"
+                    onchange="setBG(this.value)"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- hidden -->
+            <input id="qr-fg" type="hidden" value="#ffffff" />
+            <input id="qr-bg" type="hidden" value="transparent" />
+          </div>
+
+          <!-- MODULE ROUNDING -->
+          <div class="flex flex-col gap-2">
+            <label class="text-xl font-bold text-white">
+              Module rounding
+            </label>
+
+            <div class="flex items-center justify-between gap-4 text-sky-200">
+              <button
+                class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-xl"
+                onclick="changeRadius(-10)"
+              >
+                -10%
+              </button>
+
+              <div
+                id="roundnessDisplay"
+                class="text-2xl font-bold min-w-20 text-center"
+              >
+                100%
+              </div>
+
+              <button
+                class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-xl"
+                onclick="changeRadius(10)"
+              >
+                +10%
+              </button>
+            </div>
+
+            <!-- hidden % -->
+            <input id="qr-roundness" type="hidden" value="100" />
+          </div>
+
+          <!-- MODULE SPACING -->
+          <div class="flex flex-col gap-2 mt-2">
+            <label class="text-xl font-bold text-white">
+              Spacing between modules
+            </label>
+
+            <div
+              class="w-full relative mb-1 text-sky-200"
+              data-dropdown="merge"
+            >
+              <!-- MAIN BUTTON -->
+              <button
+                class="dropdown-btn backdrop-blur-md w-full flex items-center justify-between bg-blue-900/40 border border-blue-500/40 rounded-2xl px-3 py-2 shadow-sm transition duration-200 hover:bg-blue-800/40 hover:border-blue-400/60"
+              >
+                <span class="dropdown-label">No merging</span>
+
+                <svg
+                  class="dropdown-icon w-5 h-5 text-blue-100 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+
+              <!-- OPTIONS -->
+              <ul
+                class="dropdown-list absolute z-50 mt-1 w-full bg-[#0e1e39] border border-blue-500/40 rounded-2xl shadow-lg overflow-hidden opacity-0 pointer-events-none transition duration-150"
+              >
+                <li
+                  class="dropdown-item px-4 py-2 cursor-pointer text-blue-100 hover:bg-blue-700/40"
+                  data-value="none"
+                >
+                  No merging
+                </li>
+                <li
+                  class="dropdown-item px-4 py-2 cursor-pointer text-blue-100 hover:bg-blue-700/40"
+                  data-value="horizontal"
+                >
+                  Horizontal merging
+                </li>
+                <li
+                  class="dropdown-item px-4 py-2 cursor-pointer text-blue-100 hover:bg-blue-700/40"
+                  data-value="vertical"
+                >
+                  Vertical merging
+                </li>
+                <li
+                  class="dropdown-item px-4 py-2 cursor-pointer text-blue-100 hover:bg-blue-700/40"
+                  data-value="full"
+                >
+                  Full merging
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex items-center justify-between gap-4 text-sky-200">
+              <button
+                class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-xl"
+                onclick="changePadding(-1)"
+              >
+                -1
+              </button>
+
+              <div
+                id="paddingDisplay"
+                class="text-2xl font-bold min-w-20 text-center"
+              >
+                1
+              </div>
+
+              <button
+                class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-xl"
+                onclick="changePadding(1)"
+              >
+                +1
+              </button>
+            </div>
+
+            <!-- hidden px -->
+            <input id="qr-padding" type="hidden" value="1" />
+          </div>
+
+          <!-- FINDER STYLE -->
+          <div class="flex flex-col gap-2">
+            <label class="text-xl font-bold text-white">
+              Finder pattern style
+            </label>
+
+            <div id="finder-buttons" class="flex gap-3">
+              <!-- SQUARE -->
+              <button
+                data-style="square"
+                class="finder-btn p-3 rounded-xl bg-blue-900/50 border border-blue-600 flex items-center justify-center"
+              >
+                <div class="w-6 h-6 bg-sky-200"></div>
+              </button>
+
+              <!-- ROUNDED -->
+              <button
+                data-style="rounded"
+                class="finder-btn p-3 rounded-xl bg-blue-900/50 border border-blue-600 flex items-center justify-center"
+              >
+                <div class="w-6 h-6 bg-sky-200 rounded-lg"></div>
+              </button>
+
+              <!-- CIRCLE -->
+              <button
+                data-style="circle"
+                class="finder-btn p-3 rounded-xl bg-blue-900/50 border border-blue-600 flex items-center justify-center"
+              >
+                <div class="w-6 h-6 bg-sky-200 rounded-full"></div>
+              </button>
+            </div>
+          </div>
+
+          <!-- GENERATE -->
+          <button
+            class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 rounded-xl w-full mt-4"
+            onclick="generateQR()"
+          >
+            Generate
+          </button>
+        </div>
+
+        <!-- QR CODE DISPLAY -->
+        <div
+          class="w-full h-auto flex flex-col p-4 border border-blue-600 rounded-xl bg-blue-900/40"
+        >
+          <!-- QR CANVAS -->
+          <div id="qrWrapper" class="flex justify-center my-auto">
+            <canvas
+              id="qrCanvas"
+              width="400"
+              height="400"
+              class="max-w-88 min-w-64 w-full"
+            ></canvas>
+          </div>
+
+          <!-- EXPORT BUTTONS -->
+          <div class="mt-5 flex gap-4 justify-center bottom-0">
+            <button
+              class="px-4 py-2 bg-sky-600 hover:bg-sky-700 rounded-xl"
+              onclick="exportPNG(2048)"
+            >
+              Export PNG
+            </button>
+
+            <button
+              class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 rounded-xl"
+              onclick="exportSVG()"
+            >
+              Export SVG
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="/assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+    <script src="/assets/js/qr.js"></script>
+    <link rel="stylesheet" href="/assets/css/qr.css" />
+
+    <!-- FOOTER -->
+    <footer class="z-50">
+      <div id="footer" class="bg-blue-700/60 md:mb-4 md:mx-3 md:rounded-full">
+        <div class="flex justify-center items-center">
+          2019-<full-year></full-year>
+          <i class="fad fa-copyright w-5 h-4"></i>
+          <strong>Adrian Marciniuk</strong>
+        </div>
+
+        <a href="/en/privacy-policy/" class="flex justify-center items-center"
+          ><i class="fad fa-user-secret w-5 h-4"></i> Privacy Policy</a
+        >
+      </div>
+      <!-- 100% privacy-first analytics -->
+      <script
+        data-collect-dnt="true"
+        async
+        src="https://scripts.simpleanalyticscdn.com/latest.js"
+      ></script>
+      <noscript
+        ><img
+          src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+          alt=""
+          referrerpolicy="no-referrer-when-downgrade"
+      /></noscript>
+    </footer>
+  </body>
+</html>
