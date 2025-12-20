@@ -18,8 +18,17 @@
     "linkNazwa": "steam"
   },
   {
-    "img": "/assets/img/polecajki/hollowknight.webp",
+    "img": "/assets/img/polecajki/cyberpunk.webp",
     "nr": 3,
+    "tytul": "Cyberpunk 2077",
+    "podtytul": "CD Projekt Red",
+    "opis": "Cyberpunk 2077 to pełna akcji gra role-playing, której akcja toczy się w Night City, megalopolis rządzonym przez obsesyjną pogoń za władzą, sławą i przerabianiem własnego ciała.",
+    "link": "https://store.steampowered.com/app/1091500/Cyberpunk_2077/",
+    "linkNazwa": "steam"
+  },
+  {
+    "img": "/assets/img/polecajki/hollowknight.webp",
+    "nr": 4,
     "tytul": "Hollow Knight",
     "podtytul": "Team Cherry",
     "opis": "Klimatyczny metroidvania osadzony w podziemnym królestwie owadów. Eksploruj labirynty połączonych ze sobą lokacji, walcz z wymagającymi bossami i odkrywaj tajemnice zaginionej cywilizacji. Przepiękna ręcznie rysowana grafika, melancholijna muzyka i precyzyjny gameplay tworzą niezapomniane doświadczenie.",
@@ -28,7 +37,7 @@
   },
   {
     "img": "/assets/img/polecajki/balatro.webp",
-    "nr": 4,
+    "nr": 5,
     "tytul": "Balatro",
     "podtytul": "LocalThunk",
     "opis": "Innowacyjna gra karciana łącząca poker z mechanikami roguelike. Buduj talie, modyfikuj karty, odkrywaj synergię między układami i osiągaj niemożliwe wyniki punktowe. Uzależniająca rozgrywka oparta na strategii, szczęściu i kreatywnym podejściu do tradycyjnych zasad pokera.",
@@ -37,7 +46,7 @@
   },
   {
     "img": "/assets/img/polecajki/forza5.webp",
-    "nr": 5,
+    "nr": 6,
     "tytul": "Forza Horizon 5",
     "podtytul": "Playground Games",
     "opis": "Wyścigi samochodowe w oszałamiającym otwartym świecie Meksyku. Setki licencjonowanych pojazdów, dynamiczna pogoda i pory roku, różnorodne tereny od pustyń po dżungle. Tryb kariery, eventy społecznościowe i nieograniczone możliwości tuningu sprawiają, że to raj dla każdego fana motoryzacji.",
@@ -46,7 +55,7 @@
   },
   {
     "img": "/assets/img/polecajki/farcry3.webp",
-    "nr": 6,
+    "nr": 7,
     "tytul": "Far Cry 3",
     "podtytul": "Ubisoft",
     "opis": "Kultowy FPS osadzony na tropikalnej wyspie Rook Islands. Wciel się w Jasona Brody'ego, który musi uratować przyjaciół z rąk psychopatycznego Vaasa. Eksploruj dżunglę, poluj na dzikie zwierzęta, zdobywaj bazy wrogów i rozwijaj umiejętności. Niezapomniana historia i charyzmatyczni przeciwnicy to znak rozpoznawczy tej części serii.",
@@ -55,7 +64,7 @@
   },
   {
     "img": "/assets/img/polecajki/wiedzmin.webp",
-    "nr": 7,
+    "nr": 8,
     "tytul": "Wiedźmin 3: Dziki Gon",
     "podtytul": "CD Projekt Red",
     "opis": "Polska perła RPG, w której wcielasz się w Geralta z Rivii - wiedźmina poszukującego swojej przybranej córki. Ogromny otwarty świat, setki questów pobocznych o kinowej jakości, trudne wybory moralne i epicka opowieść. Dodatki 'Serca z Kamienia' i 'Krew i Wino' to pełnoprawne rozszerzenia wartościowe dziesiątki godzin rozgrywki.",
@@ -64,7 +73,7 @@
   },
   {
     "img": "/assets/img/polecajki/hitman.webp",
-    "nr": 8,
+    "nr": 9,
     "tytul": "Hitman: World of Assassination",
     "podtytul": "IO Interactive",
     "opis": "Trylogia gier o Agencie 47 - profesjonalnym zabójcy na zlecenie. Każda misja to piaskownica pełna możliwości - od wypadków pozorowanych przez 'nieszczęśliwe' zdarzenia po spektakularne eliminacje. Nieograniczona replayability, różnorodne lokacje na całym świecie i kreatywne podejście do każdego zadania.",
@@ -73,7 +82,7 @@
   },
   {
     "img": "/assets/img/polecajki/lastepoch.webp",
-    "nr": 9,
+    "nr": 10,
     "tytul": "Last Epoch",
     "podtytul": "Eleventh Hour Games",
     "opis": "Action RPG z unikalnym systemem podróży w czasie, gdzie Twoje decyzje wpływają na przyszłość świata. Ponad 15 klas mistrzowskich, głęboki system craftingu, proceduralne dungeons i satysfakcjonująca walka. Świetna alternatywa dla fanów Diablo i Path of Exile, oferująca świeże podejście do gatunku.",
@@ -82,7 +91,7 @@
   },
   {
     "img": "/assets/img/polecajki/deadcells.webp",
-    "nr": 10,
+    "nr": 11,
     "tytul": "Dead Cells",
     "podtytul": "Motion Twin",
     "opis": "Dynamiczny roguelike metroidvania łączący eksplorację z szybką, skill-based walką. Każda śmierć to lekcja - odblokowuj nowe bronie, umiejętności i ścieżki. Proceduralne generowanie poziomów, piksalowa grafika i płynna animacja sprawiają, że każde podejście jest świeże i satysfakcjonujące.",
@@ -91,7 +100,7 @@
   },
   {
     "img": "/assets/img/polecajki/minecraft.webp",
-    "nr": 11,
+    "nr": 12,
     "tytul": "Minecraft",
     "podtytul": "Mojang Studios",
     "opis": "Kultowa sandbox gra, która zdefiniowała gatunek. Buduj, eksploruj, przetrwaj w proceduralnie generowanym świecie z klocków. Tryb kreatywny pozwala na realizację najśmielszych projektów budowlanych, podczas gdy survival oferuje wyzwanie w postaci walki z potworami i zarządzania zasobami. Nieograniczone możliwości i społeczność modderów.",
@@ -100,7 +109,7 @@
   },
   {
     "img": "/assets/img/polecajki/vrising.webp",
-    "nr": 12,
+    "nr": 13,
     "tytul": "V Rising",
     "podtytul": "Stunlock Studios",
     "opis": "Survival z elementami RPG, gdzie wcielasz się w przebudzonego wampira budującego swoje imperium. Poluj na ludzi dla krwi, rozbudowuj gotycki zamek, walcz z bossami i innymi graczami. System rzemiosła, progresja postaci i możliwość gry solo lub PvP tworzą wciągające doświadczenie w klimatach dark fantasy.",
@@ -109,7 +118,7 @@
   },
   {
     "img": "/assets/img/polecajki/valhalla.webp",
-    "nr": 13,
+    "nr": 14,
     "tytul": "Assassin's Creed Valhalla",
     "podtytul": "Ubisoft",
     "opis": "Wciel się w Eivora - wojownika wikingów prowadzącego swój klan do Anglii IX wieku. Buduj osadę, nawiązuj sojusze z angielskimi królami, prowadź łupy i odkrywaj tajemnice starożytnej cywilizacji. Rozbudowany system walki, epicki świat otwarty i głęboka narracja łącząca mitologię nordycką z historią Assassynów.",
@@ -118,7 +127,7 @@
   },
   {
     "img": "/assets/img/polecajki/watchdogs.webp",
-    "nr": 14,
+    "nr": 15,
     "tytul": "Watch Dogs",
     "podtytul": "Ubisoft",
     "opis": "Hacker Aiden Pearce wykorzystuje system ctOS do kontrolowania infrastruktury Chicago w misji zemsty. Włamuj się do kamer, zmieniaj sygnalizację świetlną, kraść dane - miasto jest Twoją bronią. Połączenie stealth, akcji i elementów open-world w cyberpunkowym klimacie nowoczesnej Ameryki.",
@@ -127,7 +136,7 @@
   },
   {
     "img": "/assets/img/polecajki/dishonored.webp",
-    "nr": 15,
+    "nr": 16,
     "tytul": "Dishonored",
     "podtytul": "Arkane Studios",
     "opis": "Immersive sim w steampunkowym świecie Dunwall, gdzie wcielasz się w Corvo Attano - ochroniarza oskarżonego o morderstwo cesarzowej. Wykorzystuj nadnaturalne moce, kombinuj podejście stealth z brutalną walką, a Twoje wybory wpłyną na zakończenie gry. Wyjątkowa atmosfera, kreatywny level design i nielinearna rozgrywka.",
@@ -136,7 +145,7 @@
   },
   {
     "img": "/assets/img/polecajki/spiderman.webp",
-    "nr": 16,
+    "nr": 17,
     "tytul": "Marvel's Spider-Man Remastered",
     "podtytul": "Insomniac Games",
     "opis": "Najbardziej autentyczne wcielenie Człowieka-Pająka w grach wideo. Huśtaj się po Nowym Jorku z niesamowitym poczuciem prędkości, walcz z kultowymi przeciwnikami i odkryj oryginalną historię Petera Parkera. Płynny system walki, spektakularne boss fighty i rozbudowana kampania plus dodatek z Miles Moralesem.",
@@ -145,7 +154,7 @@
   },
   {
     "img": "/assets/img/polecajki/thaumaturge.webp",
-    "nr": 17,
+    "nr": 18,
     "tytul": "The Thaumaturge",
     "podtytul": "Fool's Theory",
     "opis": "Mroczne RPG osadzone w 1905 roku w Warszawie pod zaborem rosyjskim. Wciel się w taumaturga - osobę zdolną widzieć i kontrolować duchy zwane Salutor. Unikalny turowy system walki oparty na psychologii, moralne dylematy i autentyczna rekonstrukcja historycznej Warszawy. Polski akcent w światowym RPG.",
@@ -154,7 +163,7 @@
   },
   {
     "img": "/assets/img/polecajki/portal.webp",
-    "nr": 18,
+    "nr": 19,
     "tytul": "Portal",
     "podtytul": "Valve",
     "opis": "Rewolucyjna gra logiczna pierwszoosobowa, gdzie jedyną bronią jest Portal Gun - urządzenie tworzące portale. Rozwiązuj coraz trudniejsze łamigłówki w laboratoriach Aperture Science, uciekając przed sztuczną inteligencją GLaDOS. Genialny design poziomów, czarny humor i niezapomniane momenty w jednej z najlepszych gier logicznych ever.",
@@ -163,7 +172,7 @@
   },
   {
     "img": "/assets/img/polecajki/cuphead.webp",
-    "nr": 19,
+    "nr": 20,
     "tytul": "Cuphead",
     "podtytul": "Studio MDHR",
     "opis": "Wymagający run and gun wykonany w stylu ręcznie animowanych kreskówek z lat 30. XX wieku. Cuphead i Mugman muszą walczyć z bossami, by spłacić dług diabłu. Każdy boss to unikalne wyzwanie wymagające refleksu i zapamiętania wzorców. Jazz soundtrack, watercolor tła i niezwykła oprawa artystyczna.",
