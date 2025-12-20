@@ -1575,7 +1575,6 @@
                   };
           o(e, s) &&
           ((n += i), (s = e), null !== (e = this.getSlideDistance(-t, n)));
-
         )
           e = Math.abs(e);
         return { distance: s, index: n - i };
@@ -2372,7 +2371,6 @@
           for (
             var i = /url\((['"])?(.*?)\1\)/gi, n = i.exec(e.backgroundImage);
             null !== n;
-
           ) {
             var s = n && n[2];
             (s && this.addBackground(s, t), (n = i.exec(e.backgroundImage)));
