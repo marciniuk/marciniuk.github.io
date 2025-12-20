@@ -94,9 +94,7 @@ ${xmlItems}
   const formatted = xmlFormat(xml, { indentation: "  " });
   fs.writeFileSync(path.join(rootDir, "sitemap.xml"), formatted);
 
-  console.log(
-    `${c.green}${c.bold}✔ Sitemap wygenerowana pomyślnie!${c.reset}`,
-  );
+  console.log(`${c.green}${c.bold}✔ Sitemap wygenerowana pomyślnie!${c.reset}`);
 
   console.log(
     `${c.yellow}• Plik zapisany jako:${c.reset} ${c.magenta}sitemap.xml${c.reset}`,
