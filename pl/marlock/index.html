@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="pl" class="overflow-x-clip scroll-smooth">
+  <head>
+    <!-- Main -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Adrian Marcini.uk</title>
+
+    <!-- Opis dla SEO -->
+    <meta
+      name="description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta name="author" content="Adrian Marciniuk" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Linki do zasobów -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/fonts.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
+    <script async src="/assets/fajs/fontawesome.js"></script>
+    <script async src="/assets/fajs/fa-cut.js"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://marcini.uk/pl/szyfrator5000/" />
+
+    <!-- Dane strukturalne JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrian Marciniuk",
+        "url": "https://marcini.uk",
+        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
+        "sameAs": ["https://github.com/marciniuk"],
+        "jobTitle": "Frontend Developer",
+        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
+      }
+    </script>
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marcini.uk/" />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/og/og-image.jpg"
+    />
+
+    <!-- Fadein body -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          document.body.classList.add("page-ready");
+        }, 150);
+      });
+    </script>
+  </head>
+
+  <body>
+    <link rel="stylesheet" href="/assets/css/matrix.css" />
+    <canvas id="matrix"></canvas>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
+    >
+      <div
+        class="h-20 w-full bg-linear-to-b from-blue-900 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+      ></div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="main-header"
+      class="xl:mb-4 h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-all duration-500 ease-in-out"
+    >
+      <div class="flex justify-between w-full items-center z-30">
+        <!-- LOGO -->
+        <a
+          href="/pl/"
+          class="flex gap-2 text-3xl lg:text-4xl italic items-center"
+        >
+          <img src="/assets/img/logo.svg" alt="logo" class="h-8 lg:h-10" />
+          Marcini.uk
+        </a>
+
+        <!-- HAMBURGER -->
+        <div
+          id="menu-toggle"
+          class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+        >
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+        </div>
+
+        <!-- WSPÓLNE MENU (desktop + mobile) -->
+        <nav
+          id="mobile-menu"
+          class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+        >
+          <a href="/pl/profile/" class="nav-link hover:text-rose-400"
+            ><i class="fad fa-address-card"></i> Profile</a
+          >
+          <a href="/pl/projekty/" class="nav-link hover:text-emerald-400"
+            ><i class="fad fa-diagram-project"></i> Projekty</a
+          >
+          <a href="/pl/setup/" class="nav-link hover:text-amber-400"
+            ><i class="fad fa-display-code"></i> Setup</a
+          >
+          <a href="/pl/kontakt/" class="nav-link hover:text-sky-400"
+            ><i class="fad fa-envelope-open-text"></i> Kontakt</a
+          >
+          <a href="/pl/polecajki/" class="nav-link hover:text-fuchsia-400"
+            ><i class="fad fa-heart"></i> Polecajki</a
+          >
+          <a href="/pl/ksiazki/" class="nav-link hover:text-indigo-400"
+            ><i class="fad fa-books"></i> Książki</a
+          >
+        </nav>
+      </div>
+
+      <!-- VH FIX -->
+      <script>
+        (function () {
+          function setVh() {
+            document.documentElement.style.setProperty(
+              "--vh",
+              `${window.innerHeight * 0.01}px`,
+            );
+          }
+          setVh();
+          window.addEventListener("resize", setVh);
+        })();
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main class="max-w-5xl mx-auto px-4 py-10 flex place-items-center w-auto">
+      <section
+        class="relative bg-blue-700/20 border border-blue-600/50 rounded-2xl backdrop-blur-md shadow-xl p-3 md:p-5 lg:p-7 grid w-full min-w-70 md:min-w-96 lg:min-w-120"
+      >
+        <!-- RESET MODE -->
+        <button
+          id="modeResetBtn"
+          onclick="resetMode()"
+          class="absolute top-2 right-2 hidden text-sm text-amber-200 hover:underline"
+        >
+          <i class="fad fa-arrows-rotate"></i>
+        </button>
+
+        <!-- HEADER -->
+        <header class="space-y-1">
+          <h2 class="text-2xl md:text-3xl xl:text-4xl font-semibold">
+            <i class="fad fa-binary-lock text-amber-200"></i> MarLOCK
+          </h2>
+          <p class="text-blue-200/80">Lokalne szyfrowanie AES-GCM</p>
+        </header>
+
+        <!-- MODE SELECT -->
+        <div
+          id="modeSelect"
+          class="anim anim-show flex flex-col xs:flex-row gap-4 justify-center w-full"
+        >
+          <button
+            onclick="setMode('text')"
+            class="mode-btn bg-blue-600/40 hover:bg-blue-500/50 w-full"
+          >
+            <i class="fad fa-file-lines text-amber-200"></i> Tekst
+          </button>
+
+          <button
+            onclick="setMode('file')"
+            class="mode-btn bg-blue-600/40 hover:bg-blue-500/50 w-full"
+          >
+            <i class="fad fa-folder text-amber-200"></i> Plik
+          </button>
+        </div>
+
+        <!-- 🔒 CONTENT WRAPPER (ANIMOWANY JAKO CAŁOŚĆ) -->
+        <div id="contentWrapper" class="anim anim-hidden grid gap-5">
+          <!-- TEXT MODE -->
+          <div id="textMode" class="space-y-4 hidden">
+            <textarea
+              id="text"
+              rows="6"
+              placeholder="Treść"
+              class="input-box"
+            ></textarea>
+          </div>
+
+          <!-- FILE MODE -->
+          <div id="fileMode" class="space-y-4 hidden">
+            <div class="space-y-2">
+              <label class="text-sm md:text-base xl:text-lg text-blue-200">
+                Plik
+              </label>
+
+              <div
+                class="flex flex-col-reverse md:flex-row items-center gap-3 w-full"
+              >
+                <label
+                  for="fileInput"
+                  class="cursor-pointer px-4 py-2 rounded-xl bg-blue-600/50 hover:bg-blue-500/60 text-sm md:text-base xl:text-lg font-medium transition w-full md:w-fit text-center"
+                >
+                  <i class="fad fa-folder text-amber-200"></i> Wybierz plik
+                </label>
+
+                <span
+                  id="fileName"
+                  class="text-sm md:text-base xl:text-lg text-blue-200/70 truncate max-w-48 w-full text-center md:text-left"
+                >
+                  Nie wybrano pliku
+                </span>
+              </div>
+
+              <input
+                type="file"
+                id="fileInput"
+                class="hidden"
+                onchange="updateFileName(this)"
+              />
+            </div>
+          </div>
+
+          <!-- ACTIONS -->
+          <div id="actionSection" class="grid gap-4">
+            <!-- PASSWORD -->
+            <div class="space-y-1">
+              <label class="text-sm md:text-base xl:text-lg text-blue-200">
+                Hasło
+              </label>
+              <input
+                id="password"
+                type="password"
+                placeholder="Hasło"
+                class="input-box h-10"
+              />
+            </div>
+
+            <!-- BUTTONS -->
+            <div
+              class="flex flex-col xs:flex-row flex-wrap justify-evenly gap-3 text-base md:text-lg xl:text-xl"
+            >
+              <button
+                onclick="handleEncrypt()"
+                class="action-btn bg-emerald-600/80"
+              >
+                <i class="fad fa-lock text-amber-200"></i> Zaszyfruj
+              </button>
+              <button
+                onclick="handleDecrypt()"
+                class="action-btn bg-sky-600/80"
+              >
+                <i class="fad fa-lock-open text-amber-200"></i> Odszyfruj
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- MESSAGE -->
+        <div id="msg" class="hidden rounded-xl px-4 py-3 text-sm"></div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="z-50">
+      <div id="footer" class="bg-blue-700/60 md:mb-4 md:mx-3 md:rounded-full">
+        <div class="flex justify-center items-center">
+          2019-<full-year></full-year>
+          <i class="fad fa-copyright w-5 h-4"></i>
+          <strong>Adrian Marciniuk</strong>
+        </div>
+
+        <a
+          href="/pl/polityka-prywatnosci/"
+          class="flex justify-center items-center"
+          ><i class="fad fa-user-secret w-5 h-4"></i> Polityka prywatności</a
+        >
+      </div>
+      <!-- 100% privacy-first analytics -->
+      <script
+        data-collect-dnt="true"
+        async
+        src="https://scripts.simpleanalyticscdn.com/latest.js"
+      ></script>
+      <noscript
+        ><img
+          src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+          alt=""
+          referrerpolicy="no-referrer-when-downgrade"
+      /></noscript>
+    </footer>
+
+    <!-- STYLES -->
+    <style>
+      .mode-btn {
+        padding: 10px 15px;
+        border-radius: 12px;
+      }
+
+      .input-box {
+        width: 100%;
+        border-radius: 12px;
+        background: rgba(2, 6, 23, 0.6);
+        border: 1px solid rgba(37, 99, 235, 0.4);
+        padding: 12px;
+      }
+
+      .action-btn {
+        padding: 10px 15px;
+        border-radius: 12px;
+      }
+
+      .anim {
+        overflow: hidden;
+        transition:
+          max-height 500ms cubic-bezier(0.4, 0, 0.2, 1),
+          opacity 500ms ease;
+      }
+
+      .anim-hidden {
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .anim-show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    </style>
+
+    <!-- SCRIPTS -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/marlock.js"></script>
+    <script src="/assets/js/matrix.js"></script>
+  </body>
+</html>
