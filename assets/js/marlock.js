@@ -85,31 +85,57 @@ function resetMode() {
   setTimeout(() => {
     wrapper.classList.add("hidden");
     show(modeSelect);
-  }, 320);
+  }, 200);
 
   toggleModeReset(false);
 }
 
 /* ===== UI MESSAGE ===== */
 const msgBox = document.getElementById("msg");
+const psswd = document.getElementById("psswd");
 
 function showMsg(text, type = "info") {
   const classes = {
-    info: "bg-blue-600/30 text-blue-200 border border-blue-500/40",
-    success: "bg-emerald-600/30 text-emerald-200 border border-emerald-500/40",
-    error: "bg-rose-600/30 text-rose-200 border border-rose-500/40",
+    info: "bg-blue-600/30 text-blue-200 border border-blue-500/40 h-12",
+    success:
+      "bg-emerald-600/30 text-emerald-200 border border-emerald-500/40 h-12",
+    error: "bg-rose-600/30 text-rose-200 border border-rose-500/40 h-12",
   };
 
-  msgBox.className =
-    "rounded-xl px-4 py-3 text-sm font-medium " + classes[type];
-
   msgBox.textContent = text;
-  msgBox.classList.remove("hidden");
+
+  // reset klas kolorów
+  msgBox.classList.remove(
+    ...Object.values(classes).flatMap((c) => c.split(" ")),
+  );
+  msgBox.classList.add(...classes[type].split(" "));
+
+  // SHOW MSG
+  msgBox.hidden = false;
+  requestAnimationFrame(() => {
+    msgBox.classList.remove("opacity-0", "pointer-events-none");
+    msgBox.classList.add("opacity-100");
+
+    psswd.classList.remove("opacity-100");
+    psswd.classList.add("opacity-0");
+  });
 
   clearTimeout(msgBox._t);
-  msgBox._t = setTimeout(() => {
-    msgBox.classList.add("hidden");
-  }, 4000);
+  msgBox._t = setTimeout(hideMsg, 3000);
+}
+
+function hideMsg() {
+  // FADE OUT
+  msgBox.classList.remove("opacity-100");
+  msgBox.classList.add("opacity-0", "pointer-events-none");
+
+  psswd.classList.remove("opacity-0");
+  psswd.classList.add("opacity-100");
+
+  // po animacji → hidden
+  setTimeout(() => {
+    msgBox.hidden = true;
+  }, 300);
 }
 
 /* ===== TEXT ENCODERS ===== */

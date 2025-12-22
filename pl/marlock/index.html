@@ -113,6 +113,9 @@
   </head>
 
   <body>
+    <!-- STARS -->
+    <stars></stars>
+
     <link rel="stylesheet" href="/assets/css/matrix.css" />
     <canvas id="matrix"></canvas>
 
@@ -195,7 +198,7 @@
     <!-- MAIN -->
     <main class="max-w-5xl mx-auto px-4 py-10 flex place-items-center w-auto">
       <section
-        class="relative bg-blue-700/20 border border-blue-600/50 rounded-2xl backdrop-blur-md shadow-xl p-3 md:p-5 lg:p-7 grid w-full min-w-70 md:min-w-96 lg:min-w-120"
+        class="relative bg-blue-700/20 border border-blue-600/50 rounded-2xl backdrop-blur-md shadow-xl p-3 md:p-5 lg:p-7 grid w-full min-w-70 xs:min-w-86 md:min-w-96 lg:min-w-120"
       >
         <!-- RESET MODE -->
         <button
@@ -207,7 +210,7 @@
         </button>
 
         <!-- HEADER -->
-        <header class="space-y-1">
+        <header class="space-y-1 mb-4">
           <h2 class="text-2xl md:text-3xl xl:text-4xl font-semibold">
             <i class="fad fa-binary-lock text-amber-200"></i> MarLOCK
           </h2>
@@ -235,13 +238,16 @@
         </div>
 
         <!-- 🔒 CONTENT WRAPPER (ANIMOWANY JAKO CAŁOŚĆ) -->
-        <div id="contentWrapper" class="anim anim-hidden grid gap-5">
+        <div id="contentWrapper" class="anim anim-hidden">
           <!-- TEXT MODE -->
           <div id="textMode" class="space-y-4 hidden">
+            <label class="text-sm md:text-base xl:text-lg text-blue-200">
+              Treść
+            </label>
             <textarea
               id="text"
               rows="6"
-              placeholder="Treść"
+              placeholder="Zapamiętaj hasło, bez niego nie odzyskasz danych!"
               class="input-box"
             ></textarea>
           </div>
@@ -258,14 +264,14 @@
               >
                 <label
                   for="fileInput"
-                  class="cursor-pointer px-4 py-2 rounded-xl bg-blue-600/50 hover:bg-blue-500/60 text-sm md:text-base xl:text-lg font-medium transition w-full md:w-fit text-center"
+                  class="flex shrink-0 place-items-center justify-center cursor-pointer px-4 py-2 rounded-xl bg-blue-600/50 hover:bg-blue-500/60 text-sm md:text-base xl:text-lg font-medium transition w-full md:w-fit text-center"
                 >
-                  <i class="fad fa-folder text-amber-200"></i> Wybierz plik
+                  <i class="fad fa-folder text-amber-200 pr-1"></i> Wybierz plik
                 </label>
 
                 <span
                   id="fileName"
-                  class="text-sm md:text-base xl:text-lg text-blue-200/70 truncate max-w-48 w-full text-center md:text-left"
+                  class="text-sm md:text-base xl:text-lg text-blue-200/70 truncate max-w-62.5 w-full text-center md:text-left"
                 >
                   Nie wybrano pliku
                 </span>
@@ -282,17 +288,28 @@
 
           <!-- ACTIONS -->
           <div id="actionSection" class="grid gap-4">
-            <!-- PASSWORD -->
-            <div class="space-y-1">
-              <label class="text-sm md:text-base xl:text-lg text-blue-200">
-                Hasło
-              </label>
-              <input
-                id="password"
-                type="password"
-                placeholder="Hasło"
-                class="input-box h-10"
-              />
+            <div class="relative h-18 grid place-items-center">
+              <!-- MESSAGE -->
+              <div
+                id="msg"
+                class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-300 rounded-xl px-4 py-3 text-sm font-medium my-auto text-center"
+              ></div>
+
+              <!-- PASSWORD -->
+              <div
+                id="psswd"
+                class="absolute inset-0 transition-opacity duration-300"
+              >
+                <label class="text-sm md:text-base xl:text-lg text-blue-200">
+                  Hasło
+                </label>
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="dupa1234?"
+                  class="input-box h-10"
+                />
+              </div>
             </div>
 
             <!-- BUTTONS -->
@@ -314,9 +331,6 @@
             </div>
           </div>
         </div>
-
-        <!-- MESSAGE -->
-        <div id="msg" class="hidden rounded-xl px-4 py-3 text-sm"></div>
       </section>
     </main>
 
@@ -348,45 +362,6 @@
           referrerpolicy="no-referrer-when-downgrade"
       /></noscript>
     </footer>
-
-    <!-- STYLES -->
-    <style>
-      .mode-btn {
-        padding: 10px 15px;
-        border-radius: 12px;
-      }
-
-      .input-box {
-        width: 100%;
-        border-radius: 12px;
-        background: rgba(2, 6, 23, 0.6);
-        border: 1px solid rgba(37, 99, 235, 0.4);
-        padding: 12px;
-      }
-
-      .action-btn {
-        padding: 10px 15px;
-        border-radius: 12px;
-      }
-
-      .anim {
-        overflow: hidden;
-        transition:
-          max-height 500ms cubic-bezier(0.4, 0, 0.2, 1),
-          opacity 500ms ease;
-      }
-
-      .anim-hidden {
-        max-height: 0;
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      .anim-show {
-        opacity: 1;
-        pointer-events: auto;
-      }
-    </style>
 
     <!-- SCRIPTS -->
     <script src="/assets/js/main.js"></script>
