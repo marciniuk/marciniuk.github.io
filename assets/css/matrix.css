@@ -235,3 +235,40 @@ body.page-ready .fade-item {
     clip-path: none;
   }
 }
+
+/* marlock */
+.mode-btn {
+  padding: 10px 15px;
+  border-radius: 12px;
+}
+
+.input-box {
+  width: 100%;
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.6);
+  border: 1px solid rgba(37, 99, 235, 0.4);
+  padding: 12px;
+}
+
+.action-btn {
+  padding: 10px 15px;
+  border-radius: 12px;
+}
+
+.anim {
+  overflow: hidden;
+  transition:
+    max-height 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 500ms ease;
+}
+
+.anim-hidden {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.anim-show {
+  opacity: 1;
+  pointer-events: auto;
+}
