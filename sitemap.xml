@@ -16,7 +16,7 @@
       https://marcini.uk/en/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.433Z
+      2026-01-11T17:08:27.924Z
     </lastmod>
     <priority>
       0.8
@@ -27,7 +27,7 @@
       https://marcini.uk/pl/
     </loc>
     <lastmod>
-      2025-12-22T21:02:22.238Z
+      2026-01-29T10:53:48.840Z
     </lastmod>
     <priority>
       0.8
@@ -38,7 +38,7 @@
       https://marcini.uk/en/contact/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.420Z
+      2026-01-11T17:08:27.911Z
     </lastmod>
     <priority>
       0.6
@@ -49,7 +49,7 @@
       https://marcini.uk/en/privacy-policy/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.453Z
+      2026-01-11T17:08:27.945Z
     </lastmod>
     <priority>
       0.6
@@ -60,7 +60,7 @@
       https://marcini.uk/en/profiles/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.467Z
+      2026-01-11T17:08:27.960Z
     </lastmod>
     <priority>
       0.6
@@ -71,7 +71,7 @@
       https://marcini.uk/en/projects/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.483Z
+      2026-01-11T17:08:27.975Z
     </lastmod>
     <priority>
       0.6
@@ -82,7 +82,7 @@
       https://marcini.uk/en/qr-gen/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.504Z
+      2026-01-11T17:08:27.995Z
     </lastmod>
     <priority>
       0.6
@@ -93,7 +93,7 @@
       https://marcini.uk/en/setup/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.520Z
+      2026-01-11T17:08:28.010Z
     </lastmod>
     <priority>
       0.6
@@ -104,7 +104,7 @@
       https://marcini.uk/pl/kontakt/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.166Z
+      2026-01-11T17:08:27.664Z
     </lastmod>
     <priority>
       0.6
@@ -115,7 +115,7 @@
       https://marcini.uk/pl/ksiazki/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.221Z
+      2026-01-11T17:08:27.701Z
     </lastmod>
     <priority>
       0.6
@@ -123,10 +123,10 @@
   </url>
   <url>
     <loc>
-      https://marcini.uk/pl/marlock/
+      https://marcini.uk/pl/narzedzia/
     </loc>
     <lastmod>
-      2025-12-22T21:04:05.701Z
+      2026-01-29T11:19:49.070Z
     </lastmod>
     <priority>
       0.6
@@ -137,7 +137,7 @@
       https://marcini.uk/pl/polecajki/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.281Z
+      2026-01-11T17:08:27.790Z
     </lastmod>
     <priority>
       0.6
@@ -148,7 +148,7 @@
       https://marcini.uk/pl/polityka-prywatnosci/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.302Z
+      2026-01-11T17:08:27.812Z
     </lastmod>
     <priority>
       0.6
@@ -159,7 +159,7 @@
       https://marcini.uk/pl/profile/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.336Z
+      2026-01-11T17:08:27.849Z
     </lastmod>
     <priority>
       0.6
@@ -170,18 +170,7 @@
       https://marcini.uk/pl/projekty/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.363Z
-    </lastmod>
-    <priority>
-      0.6
-    </priority>
-  </url>
-  <url>
-    <loc>
-      https://marcini.uk/pl/qr-gen/
-    </loc>
-    <lastmod>
-      2025-12-22T21:00:14.388Z
+      2026-01-11T17:08:27.877Z
     </lastmod>
     <priority>
       0.6
@@ -192,7 +181,7 @@
       https://marcini.uk/pl/setup/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.400Z
+      2026-01-11T17:08:27.893Z
     </lastmod>
     <priority>
       0.6
@@ -203,7 +192,7 @@
       https://marcini.uk/pl/ksiazki/historia/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.200Z
+      2026-01-11T17:08:27.686Z
     </lastmod>
     <priority>
       0.5
@@ -214,7 +203,29 @@
       https://marcini.uk/pl/ksiazki/recenzje/
     </loc>
     <lastmod>
-      2025-12-22T21:00:14.238Z
+      2026-01-11T17:08:27.714Z
+    </lastmod>
+    <priority>
+      0.5
+    </priority>
+  </url>
+  <url>
+    <loc>
+      https://marcini.uk/pl/narzedzia/marlock/
+    </loc>
+    <lastmod>
+      2026-01-11T17:08:27.750Z
+    </lastmod>
+    <priority>
+      0.5
+    </priority>
+  </url>
+  <url>
+    <loc>
+      https://marcini.uk/pl/narzedzia/qr-gen/
+    </loc>
+    <lastmod>
+      2026-01-11T17:08:27.772Z
     </lastmod>
     <priority>
       0.5
