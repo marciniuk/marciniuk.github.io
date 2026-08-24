@@ -597,6 +597,7 @@ function exportSVG() {
   const realR = moduleSize * roundness;
 
   const svg = [];
+  const defs = [];
   svg.push(
     `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">`,
   );
@@ -630,7 +631,16 @@ function exportSVG() {
     }
   }
 
-  // svg finder
+  // SVG finder: with a transparent background, use a mask to cut out the
+  // middle ring just as canvas uses `destination-out` in drawFinderCanvas().
+  function finderShape(x, y, side, radius, fill, extra = "") {
+    if (finderStyle === "circle") {
+      return `<circle cx="${x + side / 2}" cy="${y + side / 2}" r="${side / 2}" fill="${fill}" ${extra}/>`;
+    }
+
+    return `<path d="${pathRoundedRect(x, y, side, side, radius)}" fill="${fill}" ${extra}/>`;
+  }
+
   function svgFinder(x, y) {
     const outer = moduleSize * 7;
     const middle = moduleSize * 5;
@@ -641,34 +651,32 @@ function exportSVG() {
     const rMiddle = finderStyle === "rounded" ? middle * 0.23 : 0;
     const rInner = finderStyle === "rounded" ? inner * 0.23 : 0;
 
-    if (finderStyle === "circle") {
-      const cx = x + outer / 2;
-      const cy = y + outer / 2;
-      svg.push(
-        `<circle cx="${cx}" cy="${cy}" r="${outer / 2}" fill="${fgColor}" />`,
+    const middleX = x + m1;
+    const middleY = y + m1;
+    const innerX = middleX + m2;
+    const innerY = middleY + m2;
+
+    if (bgColor === "transparent") {
+      const maskId = `finder-cutout-${x}-${y}`;
+      defs.push(
+        `<mask id="${maskId}" maskUnits="userSpaceOnUse" x="${x}" y="${y}" width="${outer}" height="${outer}"><rect x="${x}" y="${y}" width="${outer}" height="${outer}" fill="white" />${finderShape(middleX, middleY, middle, rMiddle, "black")}</mask>`,
       );
       svg.push(
-        `<circle cx="${cx}" cy="${cy}" r="${middle / 2}" fill="${bgColor === "transparent" ? "none" : bgColor}" />`,
-      );
-      svg.push(
-        `<circle cx="${cx}" cy="${cy}" r="${inner / 2}" fill="${fgColor}" />`,
+        finderShape(x, y, outer, rOuter, fgColor, `mask="url(#${maskId})"`),
       );
     } else {
-      svg.push(
-        `<path d="${pathRoundedRect(x, y, outer, outer, rOuter)}" fill="${fgColor}" />`,
-      );
-      svg.push(
-        `<path d="${pathRoundedRect(x + m1, y + m1, middle, middle, rMiddle)}" fill="${bgColor === "transparent" ? "none" : bgColor}" />`,
-      );
-      svg.push(
-        `<path d="${pathRoundedRect(x + m1 + m2, y + m1 + m2, inner, inner, rInner)}" fill="${fgColor}" />`,
-      );
+      svg.push(finderShape(x, y, outer, rOuter, fgColor));
+      svg.push(finderShape(middleX, middleY, middle, rMiddle, bgColor));
     }
+
+    svg.push(finderShape(innerX, innerY, inner, rInner, fgColor));
   }
 
   svgFinder(0, 0);
   svgFinder(size - moduleSize * 7, 0);
   svgFinder(0, size - moduleSize * 7);
+
+  if (defs.length) svg.splice(1, 0, `<defs>${defs.join("")}</defs>`);
 
   svg.push("</svg>");
 
