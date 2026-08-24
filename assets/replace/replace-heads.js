@@ -96,7 +96,7 @@ function processFile(filePath, lang) {
 
   // === NOWE: wstrzyknięcie canonical ===
   const canonical = generateCanonical(filePath);
-  newHead = newHead.replace("{{CANONICAL}}", canonical);
+  newHead = newHead.replaceAll("{{CANONICAL}}", canonical);
 
   const headRegex = /(\n?)([\t ]*)<head[\s\S]*?<\/head>(\n?)/i;
   const relPath = relative(filePath);

@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* === FUNKCJE OTWIERANIA I ZAMYKANIA MENU === */
   function openMenu() {
     isOpen = true;
+    toggle?.setAttribute("aria-expanded", "true");
 
     header?.classList.replace("bg-blue-700/60", "bg-blue-600");
     footer?.classList.replace("bg-blue-700/60", "bg-blue-600");
@@ -63,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function closeMenu() {
     isOpen = false;
+    toggle?.setAttribute("aria-expanded", "false");
     mobileMenu.classList.replace("translate-x-0", "translate-x-full");
 
     setTimeout(() => {
@@ -115,7 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const progress = scroll / 30;
 
       const top = 0.75 - 0.75 * progress;
-      const bottom = 0.75 - 0.75 * progress;
       const marginLeft = 0.5 - 0.5 * progress;
       const radius = 2 - 2 * progress;
 
@@ -165,7 +166,3 @@ class YearElement extends HTMLElement {
 }
 
 customElements.define("full-year", YearElement);
-
-const script = document.createElement("script");
-script.setAttribute("src", "https://scripts.simpleanalyticscdn.com/latest.js");
-document.head.appendChild(script);

@@ -24,8 +24,6 @@ function getPriority(filePath) {
   const relPath = filePath.replace(rootDir, "").replace(/\\/g, "/");
 
   if (relPath === "/index.html") return 1.0;
-  if (relPath.includes("/404")) return 0.1;
-
   const depth = relPath.split("/").length - 2;
   if (depth === 1) return 0.8;
   if (depth === 2) return 0.6;
@@ -55,9 +53,13 @@ function getAllFiles(dir) {
 function generateSitemap() {
   console.log(`\n${c.cyan}${c.bold}🔍 Generowanie sitemap...${c.reset}\n`);
 
-  const files = getAllFiles(rootDir).filter(
-    (file) => !file.replace(/\\/g, "/").includes("/assets/"),
-  );
+  const files = getAllFiles(rootDir).filter((file) => {
+    const normalizedPath = file.replace(/\\/g, "/");
+    return (
+      !normalizedPath.includes("/assets/") &&
+      !normalizedPath.endsWith("/404.html")
+    );
+  });
 
   const urls = files.map((file) => {
     const relPath = file

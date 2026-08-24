@@ -58,7 +58,7 @@
     <link rel="manifest" href="/assets/favicon/site.webmanifest" />
 
     <!-- Canonical link -->
-    <link rel="canonical" href="https://marcini.uk/pl/szyfrator5000/" />
+    <link rel="canonical" href="https://marcini.uk/pl/narzedzia/marlock/" />
 
     <!-- Dane strukturalne JSON-LD -->
     <script type="application/ld+json">
@@ -76,7 +76,10 @@
 
     <!-- Open Graph / Facebook / Discord -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://marcini.uk/" />
+    <meta
+      property="og:url"
+      content="https://marcini.uk/pl/narzedzia/marlock/"
+    />
     <meta property="og:title" content="Adrian Marcini.uk" />
     <meta
       property="og:description"
@@ -84,7 +87,7 @@
     />
     <meta
       property="og:image"
-      content="https://marcini.uk/assets/og/og-image.jpg"
+      content="https://marcini.uk/assets/img/og/og-image.jpg"
     />
     <meta property="og:site_name" content="Marcini.uk" />
 
@@ -99,7 +102,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://marcini.uk/assets/og/og-image.jpg"
+      content="https://marcini.uk/assets/img/og/og-image.jpg"
     />
 
     <!-- Fadein body -->
@@ -145,14 +148,18 @@
         </a>
 
         <!-- HAMBURGER -->
-        <div
+        <button
+          type="button"
           id="menu-toggle"
           class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+          aria-label="Otwórz menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
         >
           <span class="w-full h-1 bg-white rounded-full transition-all"></span>
           <span class="w-full h-1 bg-white rounded-full transition-all"></span>
           <span class="w-full h-1 bg-white rounded-full transition-all"></span>
-        </div>
+        </button>
 
         <!-- WSPÓLNE MENU (desktop + mobile) -->
         <nav
