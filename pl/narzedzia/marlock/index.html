@@ -211,7 +211,8 @@
         <button
           id="modeResetBtn"
           onclick="resetMode()"
-          class="absolute top-2 right-2 hidden text-sm text-amber-200 hover:underline"
+          class="absolute top-2 right-2 hidden p-2 text-sm text-amber-200/70 hover:text-amber-200 transition-all duration-300 hover:rotate-180 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-200/50 rounded-lg"
+          aria-label="Zmień tryb"
         >
           <i class="fad fa-arrows-rotate"></i>
         </button>
@@ -221,36 +222,76 @@
           <h2 class="text-2xl md:text-3xl xl:text-4xl font-semibold">
             <i class="fad fa-binary-lock text-amber-200"></i> MarLOCK
           </h2>
+
           <p class="text-blue-200/80">Lokalne szyfrowanie AES-GCM</p>
         </header>
 
         <!-- MODE SELECT -->
         <div
           id="modeSelect"
-          class="anim anim-show flex flex-col xs:flex-row gap-4 justify-center w-full"
+          class="anim anim-show flex flex-col xs:flex-row gap-4 justify-center w-full pt-2"
         >
+          <!-- TEXT MODE -->
           <button
             onclick="setMode('text')"
-            class="mode-btn bg-blue-600/40 hover:bg-blue-500/50 w-full"
+            class="group relative isolate flex items-center justify-center gap-2 w-full min-h-13 px-5 py-3 rounded-xl border border-blue-400/30 bg-blue-500/10 backdrop-blur-sm text-blue-100 font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-blue-300/70 hover:bg-blue-500/20 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           >
-            <i class="fad fa-file-lines text-amber-200"></i> Tekst
+            <!-- SHINE -->
+            <span
+              class="absolute inset-0 -z-10 overflow-hidden rounded-xl pointer-events-none"
+            >
+              <span
+                class="absolute top-0 -left-full h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-500 group-hover:left-[120%]"
+              ></span>
+            </span>
+
+            <!-- INNER GLOW -->
+            <span
+              class="absolute inset-0 -z-20 rounded-xl bg-blue-400/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+
+            <i
+              class="fad fa-file-lines text-amber-200 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 group-active:scale-95"
+            ></i>
+
+            <span>Tekst</span>
           </button>
 
+          <!-- FILE MODE -->
           <button
             onclick="setMode('file')"
-            class="mode-btn bg-blue-600/40 hover:bg-blue-500/50 w-full"
+            class="group relative isolate flex items-center justify-center gap-2 w-full min-h-13 px-5 py-3 rounded-xl border border-blue-400/30 bg-blue-500/10 backdrop-blur-sm text-blue-100 font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-blue-300/70 hover:bg-blue-500/20 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           >
-            <i class="fad fa-folder text-amber-200"></i> Plik
+            <!-- SHINE -->
+            <span
+              class="absolute inset-0 -z-10 overflow-hidden rounded-xl pointer-events-none"
+            >
+              <span
+                class="absolute top-0 -left-full h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-500 group-hover:left-[120%]"
+              ></span>
+            </span>
+
+            <!-- INNER GLOW -->
+            <span
+              class="absolute inset-0 -z-20 rounded-xl bg-blue-400/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+
+            <i
+              class="fad fa-folder text-amber-200 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 group-active:scale-95"
+            ></i>
+
+            <span>Plik</span>
           </button>
         </div>
 
-        <!-- 🔒 CONTENT WRAPPER (ANIMOWANY JAKO CAŁOŚĆ) -->
+        <!-- CONTENT WRAPPER -->
         <div id="contentWrapper" class="anim anim-hidden">
           <!-- TEXT MODE -->
           <div id="textMode" class="space-y-4 hidden">
             <label class="text-sm md:text-base xl:text-lg text-blue-200">
               Treść
             </label>
+
             <textarea
               id="text"
               rows="6"
@@ -269,11 +310,25 @@
               <div
                 class="flex flex-col-reverse md:flex-row items-center gap-3 w-full"
               >
+                <!-- FILE BUTTON -->
                 <label
                   for="fileInput"
-                  class="flex shrink-0 place-items-center justify-center cursor-pointer px-4 py-2 rounded-xl bg-blue-600/50 hover:bg-blue-500/60 text-sm md:text-base xl:text-lg font-medium transition w-full md:w-fit text-center"
+                  class="group relative isolate flex shrink-0 items-center justify-center cursor-pointer min-h-12 px-5 py-2 rounded-xl border border-blue-400/30 bg-blue-500/10 backdrop-blur-sm text-blue-100 text-sm md:text-base xl:text-lg font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-300/70 hover:bg-blue-500/20 active:translate-y-0 active:scale-[0.98] focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-300/60 w-full md:w-fit text-center"
                 >
-                  <i class="fad fa-folder text-amber-200 pr-1"></i> Wybierz plik
+                  <!-- SHINE -->
+                  <span
+                    class="absolute inset-0 -z-10 overflow-hidden rounded-xl pointer-events-none"
+                  >
+                    <span
+                      class="absolute top-0 -left-full h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-500 group-hover:left-[120%]"
+                    ></span>
+                  </span>
+
+                  <i
+                    class="fad fa-folder text-amber-200 pr-1 transition-transform duration-300 group-hover:scale-110"
+                  ></i>
+
+                  Wybierz plik
                 </label>
 
                 <span
@@ -295,6 +350,7 @@
 
           <!-- ACTIONS -->
           <div id="actionSection" class="grid gap-4">
+            <!-- PASSWORD / MESSAGE -->
             <div class="relative h-18 grid place-items-center">
               <!-- MESSAGE -->
               <div
@@ -310,6 +366,7 @@
                 <label class="text-sm md:text-base xl:text-lg text-blue-200">
                   Hasło
                 </label>
+
                 <input
                   id="password"
                   type="password"
@@ -319,21 +376,60 @@
               </div>
             </div>
 
-            <!-- BUTTONS -->
+            <!-- ACTION BUTTONS -->
             <div
               class="flex flex-col xs:flex-row flex-wrap justify-evenly gap-3 text-base md:text-lg xl:text-xl"
             >
+              <!-- ENCRYPT -->
               <button
                 onclick="handleEncrypt()"
-                class="action-btn bg-emerald-600/80"
+                class="group relative isolate flex items-center justify-center gap-2 flex-1 min-w-0 min-h-13 px-6 py-3 rounded-xl border border-emerald-400/40 bg-emerald-500/10 backdrop-blur-sm text-emerald-100 font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-300/80 hover:bg-emerald-500/20 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
               >
-                <i class="fad fa-lock text-amber-200"></i> Zaszyfruj
+                <!-- SHINE -->
+                <span
+                  class="absolute inset-0 -z-10 overflow-hidden rounded-xl pointer-events-none"
+                >
+                  <span
+                    class="absolute top-0 -left-full h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-500 group-hover:left-[120%]"
+                  ></span>
+                </span>
+
+                <!-- INNER GLOW -->
+                <span
+                  class="absolute inset-0 -z-20 rounded-xl bg-emerald-400/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                ></span>
+
+                <i
+                  class="fad fa-lock text-amber-200 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6 group-active:scale-95"
+                ></i>
+
+                <span>Zaszyfruj</span>
               </button>
+
+              <!-- DECRYPT -->
               <button
                 onclick="handleDecrypt()"
-                class="action-btn bg-sky-600/80"
+                class="group relative isolate flex items-center justify-center gap-2 flex-1 min-w-0 min-h-13 px-6 py-3 rounded-xl border border-sky-400/40 bg-sky-500/10 backdrop-blur-sm text-sky-100 font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-sky-300/80 hover:bg-sky-500/20 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
               >
-                <i class="fad fa-lock-open text-amber-200"></i> Odszyfruj
+                <!-- SHINE -->
+                <span
+                  class="absolute inset-0 -z-10 overflow-hidden rounded-xl pointer-events-none"
+                >
+                  <span
+                    class="absolute top-0 -left-full h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-all duration-500 group-hover:left-[120%]"
+                  ></span>
+                </span>
+
+                <!-- INNER GLOW -->
+                <span
+                  class="absolute inset-0 -z-20 rounded-xl bg-sky-400/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                ></span>
+
+                <i
+                  class="fad fa-lock-open text-amber-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-active:scale-95"
+                ></i>
+
+                <span>Odszyfruj</span>
               </button>
             </div>
           </div>
