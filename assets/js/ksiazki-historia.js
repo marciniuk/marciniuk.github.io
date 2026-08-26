@@ -28,16 +28,24 @@ function generujHistorie(dane) {
   dane.forEach((item) => {
     const karta = document.createElement("div");
     karta.className =
-      "bg-indigo-600/25 backdrop-blur-sm rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit";
+      "group relative overflow-hidden bg-indigo-950/25 backdrop-blur-xl border-2 border-indigo-900/90 rounded-2xl h-[13.5rem] xs:h-64 md:h-72 lg:h-80 flex flex-row w-fit shadow-lg shadow-indigo-950/30 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-800/70 hover:bg-indigo-900/30 hover:shadow-xl hover:shadow-indigo-950/40";
 
     karta.innerHTML = `
-      <div class="w-fit m-2 flex flex-col place-content-between">
+      <div
+        class="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-indigo-300/20 to-transparent"
+      ></div>
+
+      <div
+        class="pointer-events-none absolute inset-0 bg-linear-to-b from-white/4 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+      ></div>
+
+      <div class="relative w-fit m-2 flex flex-col place-content-between">
         <div class="max-h-[75%] h-full">
           <img
             src="${item.img}"
             loading="lazy"
             alt="${item.alt}"
-            class="rounded-xl h-full aspect-[2/3] lazy-fade"
+            class="rounded-xl h-full aspect-2/3 lazy-fade"
           />
         </div>
 

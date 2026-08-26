@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const karta = document.createElement("div");
         karta.className =
-          "bg-indigo-600/25 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row";
+          "border-2 border-indigo-900 bg-indigo-900/50 backdrop-blur-sm rounded-2xl w-full max-w-[40rem] h-64 md:h-72 lg:h-80 flex flex-row";
 
         const seriaHTML = item.seria
           ? `<div><i class="fad fa-books"></i> ${item.seria}</div>`
@@ -52,13 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
           : "";
 
         karta.innerHTML = `
-          <div class="w-min flex-shrink-0 m-3 flex flex-col place-content-center items-center place-items-center">
-            <div class="max-h-[75%] h-full mb-2 aspect-[2/3]">
+          <div class="w-min shrink-0 m-3 flex flex-col place-content-center items-center place-items-center">
+            <div class="max-h-[75%] h-full mb-2 aspect-2/3">
               <img
                 src="${item.img}"
                 loading="lazy"
                 alt="${item.alt}"
-                class="rounded-xl h-full aspect-[2/3] lazy-fade"
+                class="rounded-xl h-full aspect-2/3 lazy-fade"
               />
             </div>
 
@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
 
-          <div class="w-full m-2 ml-0 p-2 bg-blue-900 rounded-xl overflow-y-auto scrollbar-track-transparent ${item.scroll}">
-            <div class="text-base md:text-lg xl:text-xl m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold ${item.kolor}">
+          <div class="w-full m-2 ml-0 p-2 bg-blue-900/90 rounded-xl overflow-y-auto scrollbar-track-transparent ${item.scroll}">
+            <div class="text-base md:text-lg xl:text-xl m-1 mb-2 p-2 rounded-xl flex flex-col text-center font-bold border-2 ${item.kolor}">
               <div><i class="fad fa-book-bookmark"></i> ${item.tytul}</div>
               <div><i class="fad fa-feather"></i> ${item.autor}</div>
               ${seriaHTML}
