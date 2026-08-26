@@ -85,6 +85,14 @@
    PODSTAWOWE STYLE
    ========================================== */
 
+/* --- FOCUS --- */
+@layer base {
+  *:focus,
+  *:focus-visible {
+    outline: none !important;
+  }
+}
+
 /* --- HTML --- */
 html {
   height: 100%;
