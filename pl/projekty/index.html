@@ -198,335 +198,711 @@
 
     <!-- MAIN -->
     <main
-      class="z-10 p-6 min-h-full grid grid-projekty gap-6 place-items-center w-full"
+      class="z-10 mx-auto w-full max-w-400 px-4 py-6 sm:px-6 lg:px-8 mt-1.5"
     >
-      <!-- Website -->
-      <div class="card-projekt bg-cyan-700 hover:shadow-cyan-900/75">
-        <div class="flex flex-row w-full rounded-lg">
-          <div class="left-projekt shrink-0 p-2 -ml-1 flex flex-col h-full">
-            <div class="flex-1 flex items-center justify-center">
-              <img
-                src="/assets/img/projekty/logo.png"
-                class="w-full aspect-square object-contain"
-                alt="Website"
-              />
-            </div>
+      <section
+        class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:gap-4 xl:grid-cols-3"
+        aria-label="Projekty"
+      >
+        <!-- Website -->
+        <article
+          class="group relative flex min-h-82.5 flex-col overflow-hidden rounded-xl border border-cyan-300/12 bg-white/[0.018] shadow-[0_8px_32px_oklch(0 0 0 / 0.18)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/2.5 hover:shadow-[0_16px_45px_oklch(0.78 0.16 195 / 0.08)]"
+        >
+          <div
+            class="pointer-events-none absolute -inset-16 overflow-visible blur-3xl"
+          >
             <div
-              class="flex flex-row justify-evenly w-full text-cyan-500 hover:text-cyan-300"
-            >
-              <a
-                class="icon-projekt"
-                href="https://github.com/marciniuk/marciniuk.github.io"
-                aria-label="Repozytorium Website"
+              class="absolute -left-20 top-8 h-88 w-88 rounded-full bg-radial-[at_50%_50%] from-cyan-400/16 from-0% via-cyan-400/12 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute -right-16 top-0 h-72 w-72 rounded-full bg-radial-[at_50%_50%] from-sky-400/12 from-0% via-sky-400/9 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute left-1/4 -bottom-20 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-cyan-300/10 from-0% via-cyan-300/7 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute right-1/3 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-radial-[at_50%_50%] from-sky-300/7 from-0% via-sky-300/5 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- under the logo -->
+            <div
+              class="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-radial-[at_50%_50%] from-cyan-400/13 from-0% via-sky-400/10 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- bottom right -->
+            <div
+              class="absolute -right-10 -bottom-16 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-sky-400/12 from-0% via-teal-400/9 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- left side -->
+            <div
+              class="absolute -left-16 top-[38%] h-64 w-64 rounded-full bg-radial-[at_50%_50%] from-teal-400/10 from-0% via-cyan-400/7 via-68% to-transparent to-100%"
+            ></div>
+          </div>
+
+          <div class="relative z-10 flex flex-1 flex-col p-4 pb-2">
+            <div class="-mt-1">
+              <span
+                class="rounded border border-cyan-300/20 bg-cyan-300/[0.07] px-2 py-0.5 text-[11px] font-medium text-cyan-200"
               >
-                <span
-                  class="w-9 lg:w-10 h-9 lg:h-10 flex items-center justify-center"
+                2019-<full-year></full-year>
+              </span>
+            </div>
+
+            <div class="flex flex-1 flex-col -mt-6">
+              <div class="relative flex h-32 items-center justify-center py-3">
+                <div
+                  class="pointer-events-none absolute h-28 w-28 rounded-full bg-cyan-400/25 blur-2xl transition-all duration-500 group-hover:bg-cyan-400/35 group-hover:blur-3xl"
+                ></div>
+
+                <img
+                  src="/assets/img/projekty/logo.png"
+                  class="relative z-10 h-full w-auto max-w-37.5 object-contain transition-transform duration-500 group-hover:scale-105"
+                  alt="Website"
+                />
+              </div>
+
+              <h2
+                class="mt-1 text-xl font-semibold tracking-tight text-slate-100"
+              >
+                Marcini.uk
+              </h2>
+
+              <p class="mt-1 text-sm leading-[1.45] text-slate-400">
+                Pliki strony, na której właśnie się znajdujesz. Wszystko pod
+                <a
+                  href="https://choosealicense.com/licenses/isc/"
+                  class="text-cyan-300 transition-colors hover:text-cyan-200"
                 >
-                  <i
-                    class="fas fa-github transition-all duration-300 ease-out hover:text-[120%]"
-                  ></i>
+                  <i class="fad fa-link"></i> licencją ISC </a
+                >. W skrócie: kopiowanie dozwolone, o ile zostanę oznaczony jako
+                autor oryginału ;D
+              </p>
+
+              <div class="mt-2 flex flex-wrap gap-1">
+                <span
+                  class="rounded bg-cyan-400/10 px-2 py-0.5 text-[11px] font-medium text-cyan-300"
+                >
+                  Tailwind CSS
                 </span>
-              </a>
+                <span
+                  class="rounded bg-cyan-400/10 px-2 py-0.5 text-[11px] font-medium text-cyan-300"
+                >
+                  JavaScript
+                </span>
+                <span
+                  class="rounded bg-cyan-400/10 px-2 py-0.5 text-[11px] font-medium text-cyan-300"
+                >
+                  PWA
+                </span>
+              </div>
             </div>
           </div>
 
-          <div class="opis-projekt">
-            <div class="absolute pl-2 italic text-lg lg:text-xl text-cyan-100">
-              2019-<full-year></full-year>
-            </div>
-            <div class="bg-cyan-700 title-projekt">
-              <div class="-mt-1.5">Website</div>
-            </div>
-            <div
-              class="text-sm xs:text-base 2xl:text-lg p-1 m-1 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-cyan-700"
+          <div
+            class="relative z-10 flex h-11 shrink-0 items-center justify-between bg-transparent px-4"
+          >
+            <a
+              href="https://github.com/marciniuk/marciniuk.github.io"
+              class="flex items-center gap-2 text-sm text-cyan-100/70 transition-all duration-300 hover:text-cyan-100"
+              aria-label="Repozytorium Website"
             >
-              Pliki strony, na której właśnie się znajdujesz. Wszystko pod
-              <a
-                href="https://choosealicense.com/licenses/isc/"
-                class="text-cyan-400 hover:text-cyan-600 whitespace-nowrap transition-all duration-300 ease-out"
-                ><i class="fad fa-link"></i> <b>licencją ISC</b></a
-              >. W skrócie: kopiowanie dozwolone, o ile zostanę oznaczony jako
-              autor oryginału ;D
-            </div>
-          </div>
-        </div>
-      </div>
+              <i class="fas fa-github text-sm"></i>
+              GitHub
+            </a>
 
-      <!-- KROFFT -->
-      <div class="bg-krofft-1 card-projekt hover:shadow-krofft-1/75">
-        <div class="flex flex-row w-full rounded-lg">
-          <div class="left-projekt shrink-0 p-2 -ml-1 flex flex-col h-full">
-            <div class="flex-1 flex items-center justify-center">
-              <img
-                src="/assets/img/projekty/krofft.png"
-                class="w-full aspect-square object-contain"
-                alt="KROFFT"
-              />
-            </div>
-            <div
-              class="flex flex-row justify-evenly w-full text-[#494bd8] hover:text-[#595cff]"
+            <a
+              href="/"
+              class="flex items-center gap-2 text-sm font-medium text-cyan-300 transition-all duration-300 hover:text-cyan-200"
             >
-              <a
-                class="icon-projekt"
-                href="https://github.com/marciniuk/krofft"
-                aria-label="Repozytorium KROFFT"
+              Zobacz
+              <i
+                class="fad fa-link text-[10px] transition-transform duration-300 group-hover:translate-x-0.5"
+              ></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- KROFFT -->
+        <article
+          class="group relative flex min-h-82.5 flex-col overflow-hidden rounded-xl border border-indigo-300/12 bg-white/[0.018] shadow-[0_8px_32px_oklch(0 0 0 / 0.18)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1 hover:border-indigo-300/25 hover:bg-white/2.5 hover:shadow-[0_16px_45px_oklch(0.68 0.17 275 / 0.08)]"
+        >
+          <div
+            class="pointer-events-none absolute -inset-16 overflow-visible blur-3xl"
+          >
+            <div
+              class="absolute -left-20 top-8 h-88 w-88 rounded-full bg-radial-[at_50%_50%] from-indigo-400/16 from-0% via-indigo-400/12 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute -right-16 top-0 h-72 w-72 rounded-full bg-radial-[at_50%_50%] from-violet-400/12 from-0% via-violet-400/9 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute left-1/4 -bottom-20 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-indigo-300/10 from-0% via-indigo-300/7 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute right-1/3 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-radial-[at_50%_50%] from-violet-300/7 from-0% via-violet-300/5 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- under the logo -->
+            <div
+              class="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-radial-[at_50%_50%] from-indigo-400/13 from-0% via-violet-400/10 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- bottom right -->
+            <div
+              class="absolute -right-10 -bottom-16 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-violet-400/12 from-0% via-fuchsia-400/9 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- left side -->
+            <div
+              class="absolute -left-16 top-[38%] h-64 w-64 rounded-full bg-radial-[at_50%_50%] from-fuchsia-400/10 from-0% via-indigo-400/7 via-68% to-transparent to-100%"
+            ></div>
+          </div>
+
+          <div class="relative z-10 flex flex-1 flex-col p-4 pb-2">
+            <div class="-mt-1">
+              <span
+                class="rounded border border-indigo-300/20 bg-indigo-300/[0.07] px-2 py-0.5 text-[11px] font-medium text-indigo-200"
               >
-                <i
-                  class="fas fa-github transition-all duration-300 ease-out hover:text-[120%]"
-                ></i>
-              </a>
-              <a
-                class="icon-projekt"
-                href="https://krofft.pl"
-                aria-label="KROFFT Website"
+                2025
+              </span>
+            </div>
+
+            <div class="flex flex-1 flex-col -mt-6">
+              <div class="relative flex h-32 items-center justify-center py-3">
+                <div
+                  class="pointer-events-none absolute h-28 w-28 rounded-full bg-indigo-400/25 blur-2xl transition-all duration-500 group-hover:bg-indigo-400/35 group-hover:blur-3xl"
+                ></div>
+
+                <img
+                  src="/assets/img/projekty/krofft.png"
+                  class="relative z-10 h-full w-auto max-w-37.5 object-contain transition-transform duration-500 group-hover:scale-105"
+                  alt="KROFFT"
+                />
+              </div>
+
+              <h2
+                class="mt-1 text-xl font-semibold tracking-tight text-slate-100"
               >
-                <i
-                  class="fad fa-link transition-all duration-300 ease-out hover:text-[120%]"
-                ></i>
-              </a>
+                KROFFT
+              </h2>
+
+              <p class="mt-1 text-sm leading-[1.45] text-slate-400">
+                Najnowszy projekt, strona dla zaprzyjaźnionej firmy tworzącej
+                najlepsze meble na wymiar w Polsce! Wcale nie kazali mi tego
+                napisać. Numer konta do przelewu wyślę mailem.
+              </p>
+
+              <div class="mt-2 flex flex-wrap gap-1">
+                <span
+                  class="rounded bg-indigo-400/10 px-2 py-0.5 text-[11px] font-medium text-indigo-300"
+                >
+                  Web
+                </span>
+                <span
+                  class="rounded bg-indigo-400/10 px-2 py-0.5 text-[11px] font-medium text-indigo-300"
+                >
+                  Tailwind CSS
+                </span>
+                <span
+                  class="rounded bg-indigo-400/10 px-2 py-0.5 text-[11px] font-medium text-indigo-300"
+                >
+                  JavaScript
+                </span>
+              </div>
             </div>
           </div>
 
-          <div class="opis-projekt">
-            <div class="absolute pl-2 italic text-lg lg:text-xl text-krofft-2">
-              2025
-            </div>
-            <div class="bg-krofft-1 title-projekt">
-              <div class="-mt-1.5">KROFFT</div>
-            </div>
-            <div
-              class="text-sm xs:text-base 2xl:text-lg p-1 m-1 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-krofft-1"
+          <div
+            class="relative z-10 flex h-11 shrink-0 items-center justify-between bg-transparent px-4"
+          >
+            <a
+              href="https://github.com/marciniuk/krofft"
+              class="flex items-center gap-2 text-sm text-indigo-100/70 transition-all duration-300 hover:text-indigo-100"
+              aria-label="Repozytorium KROFFT"
             >
-              Najnowszy projekt, strona dla zaprzyjaźnionej firmy tworzącej
-              najlepsze meble na wymiar w Polsce! Wcale nie kazali mi tego
-              napisać. Numer konta do przelewu wyślę mailem.
-            </div>
-          </div>
-        </div>
-      </div>
+              <i class="fas fa-github text-sm"></i>
+              GitHub
+            </a>
 
-      <!-- GZG -->
-      <div class="bg-emerald-700 card-projekt hover:shadow-green-900/75">
-        <div class="flex flex-row w-full rounded-lg">
-          <div class="left-projekt shrink-0 p-2 -ml-1 flex flex-col h-full">
-            <div class="flex-1 flex items-center justify-center">
-              <img
-                src="/assets/img/projekty/gzg2.png"
-                class="w-full aspect-square object-contain"
-                alt="GrandZoneGaming"
-              />
-            </div>
-            <div
-              class="flex flex-row justify-evenly w-full text-emerald-500 hover:text-emerald-300"
+            <a
+              href="https://krofft.pl"
+              class="flex items-center gap-2 text-sm font-medium text-indigo-300 transition-all duration-300 hover:text-indigo-200"
             >
-              <a
-                class="icon-projekt"
-                href="https://github.com/marciniuk/GrandZoneGaming"
-                aria-label="Repozytorium GrandZoneGaming"
-              >
-                <i
-                  class="fas fa-github transition-all duration-300 ease-out hover:text-[120%]"
-                ></i>
-              </a>
-              <a
-                class="icon-projekt"
-                href="https://gzg.netlify.app"
-                aria-label="GrandZoneGaming Website"
-              >
-                <i
-                  class="fad fa-link transition-all duration-300 ease-out hover:text-[120%]"
-                ></i>
-              </a>
-            </div>
+              Zobacz
+              <i
+                class="fad fa-link text-[10px] transition-transform duration-300 group-hover:translate-x-0.5"
+              ></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- GrandZoneGaming -->
+        <article
+          class="group relative flex min-h-82.5 flex-col overflow-hidden rounded-xl border border-emerald-300/12 bg-white/[0.018] shadow-[0_8px_32px_oklch(0 0 0 / 0.18)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1 hover:border-emerald-300/25 hover:bg-white/2.5 hover:shadow-[0_16px_45px_oklch(0.70 0.17 160 / 0.08)]"
+        >
+          <div
+            class="pointer-events-none absolute -inset-16 overflow-visible blur-3xl"
+          >
+            <div
+              class="absolute -left-20 top-8 h-88 w-88 rounded-full bg-radial-[at_50%_50%] from-emerald-400/16 from-0% via-emerald-400/12 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute -right-16 top-0 h-72 w-72 rounded-full bg-radial-[at_50%_50%] from-teal-400/12 from-0% via-teal-400/9 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute left-1/4 -bottom-20 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-emerald-300/10 from-0% via-emerald-300/7 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute right-1/3 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-radial-[at_50%_50%] from-teal-300/7 from-0% via-teal-300/5 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- under the logo -->
+            <div
+              class="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-radial-[at_50%_50%] from-emerald-400/13 from-0% via-teal-400/10 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- bottom right -->
+            <div
+              class="absolute -right-10 -bottom-16 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-teal-400/12 from-0% via-lime-400/9 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- left side -->
+            <div
+              class="absolute -left-16 top-[38%] h-64 w-64 rounded-full bg-radial-[at_50%_50%] from-lime-400/10 from-0% via-emerald-400/7 via-68% to-transparent to-100%"
+            ></div>
           </div>
 
-          <div class="opis-projekt">
-            <div
-              class="absolute pl-2 italic text-lg lg:text-xl text-emerald-200"
-            >
-              2020
+          <div class="relative z-10 flex flex-1 flex-col p-4 pb-2">
+            <div class="-mt-1">
+              <span
+                class="rounded border border-emerald-300/20 bg-emerald-300/[0.07] px-2 py-0.5 text-[11px] font-medium text-emerald-200"
+              >
+                2020
+              </span>
             </div>
-            <div class="bg-emerald-700 title-projekt">
-              <div class="-mt-1.5">GrandZoneGaming</div>
-            </div>
-            <div
-              class="text-sm xs:text-base 2xl:text-lg p-1 m-1 overflow-y-auto overflow-x-hidden scrollbar scrollbar-track-transparent scrollbar-thumb-emerald-700"
-            >
-              Moja pierwsza większa komercyjna praca. Kod do dupy, ale zebrane
-              doświadczenie podczas
-              <span class="whitespace-nowrap">10-miesięcznej</span> współpracy
-              przydało się w kolejnych projektach. Oprócz strony zrobiłem
-              również czat dla GZG
-              <span class="whitespace-nowrap"
-                >(<a
+
+            <div class="flex flex-1 flex-col -mt-6">
+              <div class="relative flex h-32 items-center justify-center py-3">
+                <div
+                  class="pointer-events-none absolute h-28 w-28 rounded-full bg-emerald-400/25 blur-2xl transition-all duration-500 group-hover:bg-emerald-400/35 group-hover:blur-3xl"
+                ></div>
+
+                <img
+                  src="/assets/img/projekty/gzg2.png"
+                  class="relative z-10 h-full w-auto max-w-37.5 object-contain transition-transform duration-500 group-hover:scale-105"
+                  alt="GrandZoneGaming"
+                />
+              </div>
+
+              <h2
+                class="mt-1 text-xl font-semibold tracking-tight text-slate-100"
+              >
+                GrandZoneGaming
+              </h2>
+
+              <p class="mt-1 text-sm leading-[1.45] text-slate-400">
+                Moja pierwsza większa komercyjna praca. Kod do dupy, ale zebrane
+                doświadczenie podczas
+                <span class="whitespace-nowrap">10-miesięcznej</span>
+                współpracy przydało się w kolejnych projektach. Oprócz strony
+                zrobiłem również czat dla GZG (<a
                   href="https://github.com/marciniuk/gzgsend"
-                  class="text-emerald-300 hover:text-emerald-600 whitespace-nowrap transition-all duration-300 ease-out"
-                  ><i class="fad fa-link"></i> <b>GZGsend</b></a
-                >)</span
-              >, w backendzie był
-              <a
-                href="https://matrix.org/"
-                class="text-emerald-300 hover:text-emerald-600 whitespace-nowrap transition-all duration-300 ease-out"
-                ><i class="fad fa-link"></i> <b>Matrix</b></a
-              >, na froncie zmodyfikowany
-              <a
-                href="https://fluffy.chat/"
-                class="text-emerald-300 hover:text-emerald-600 whitespace-nowrap transition-all duration-300 ease-out"
-                ><i class="fad fa-link"></i> <b>FluffyChat</b></a
-              >.
+                  class="text-emerald-300 hover:text-emerald-200"
+                  >GZGsend</a
+                >), w backendzie był
+                <a
+                  href="https://matrix.org/"
+                  class="text-emerald-300 hover:text-emerald-200"
+                  >Matrix</a
+                >, na froncie zmodyfikowany
+                <a
+                  href="https://fluffy.chat/"
+                  class="text-emerald-300 hover:text-emerald-200"
+                  >FluffyChat</a
+                >.
+              </p>
+
+              <div class="mt-2 flex flex-wrap gap-1">
+                <span
+                  class="rounded bg-emerald-400/10 px-2 py-0.5 text-[11px] font-medium text-emerald-300"
+                >
+                  Web
+                </span>
+                <span
+                  class="rounded bg-emerald-400/10 px-2 py-0.5 text-[11px] font-medium text-emerald-300"
+                >
+                  Node.js
+                </span>
+                <span
+                  class="rounded bg-emerald-400/10 px-2 py-0.5 text-[11px] font-medium text-emerald-300"
+                >
+                  Matrix
+                </span>
+                <span
+                  class="rounded bg-emerald-400/10 px-2 py-0.5 text-[11px] font-medium text-emerald-300"
+                >
+                  FluffyChat
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- BlackArrow -->
-      <div class="bg-blue-800 card-projekt hover:shadow-blue-800/75">
-        <div class="flex flex-row w-full rounded-lg">
-          <div class="left-projekt shrink-0 p-2 -ml-1 flex flex-col h-full">
-            <div class="flex-1 flex items-center justify-center">
-              <img
-                src="/assets/img/projekty/ba.png"
-                class="w-full aspect-square object-contain"
-                alt="BlackArrow"
-              />
-            </div>
-            <div
-              class="flex flex-row justify-evenly w-full text-blue-600 hover:text-blue-500"
+          <div
+            class="relative z-10 flex h-11 shrink-0 items-center justify-between bg-transparent px-4"
+          >
+            <a
+              href="https://github.com/marciniuk/GrandZoneGaming"
+              class="flex items-center gap-2 text-sm text-emerald-100/70 transition-all duration-300 hover:text-emerald-100"
+              aria-label="Repozytorium GrandZoneGaming"
             >
-              <a
-                class="icon-projekt"
-                href="https://github.com/marciniuk/blackarrow"
-                aria-label="Repozytorium BlackArrow"
+              <i class="fas fa-github text-sm"></i>
+              GitHub
+            </a>
+
+            <a
+              href="https://gzg.netlify.app"
+              class="flex items-center gap-2 text-sm font-medium text-emerald-300 transition-all duration-300 hover:text-emerald-200"
+            >
+              Zobacz
+              <i
+                class="fad fa-link text-[10px] transition-transform duration-300 group-hover:translate-x-0.5"
+              ></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- BlackArrow -->
+        <article
+          class="group relative flex min-h-82.5 flex-col overflow-hidden rounded-xl border border-blue-300/12 bg-white/[0.018] shadow-[0_8px_32px_oklch(0 0 0 / 0.18)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1 hover:border-blue-300/25 hover:bg-white/2.5 hover:shadow-[0_16px_45px_oklch(0.62 0.20 255 / 0.08)]"
+        >
+          <div
+            class="pointer-events-none absolute -inset-16 overflow-visible blur-3xl"
+          >
+            <div
+              class="absolute -left-20 top-8 h-88 w-88 rounded-full bg-radial-[at_50%_50%] from-blue-400/16 from-0% via-blue-400/12 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute -right-16 top-0 h-72 w-72 rounded-full bg-radial-[at_50%_50%] from-indigo-400/12 from-0% via-indigo-400/9 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute left-1/4 -bottom-20 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-blue-300/10 from-0% via-blue-300/7 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute right-1/3 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-radial-[at_50%_50%] from-indigo-300/7 from-0% via-indigo-300/5 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- under the logo -->
+            <div
+              class="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-radial-[at_50%_50%] from-blue-400/13 from-0% via-sky-400/10 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- bottom right -->
+            <div
+              class="absolute -right-10 -bottom-16 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-sky-400/12 from-0% via-indigo-400/9 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- left side -->
+            <div
+              class="absolute -left-16 top-[38%] h-64 w-64 rounded-full bg-radial-[at_50%_50%] from-indigo-400/10 from-0% via-blue-400/7 via-68% to-transparent to-100%"
+            ></div>
+          </div>
+
+          <div class="relative z-10 flex flex-1 flex-col p-4 pb-2">
+            <div class="-mt-1">
+              <span
+                class="rounded border border-blue-300/20 bg-blue-300/[0.07] px-2 py-0.5 text-[11px] font-medium text-blue-200"
               >
-                <i
-                  class="fas fa-github transition-all duration-300 ease-out hover:text-[120%]"
-                ></i>
-              </a>
+                2019-2025
+              </span>
             </div>
-          </div>
 
-          <div class="opis-projekt">
-            <div class="absolute pl-2 italic text-lg lg:text-xl text-blue-100">
-              2019-2025
-            </div>
-            <div class="bg-blue-800 title-projekt">
-              <div class="-mt-1.5">BlackArrow</div>
-            </div>
-            <div
-              class="text-sm xs:text-base 2xl:text-lg p-1 m-1 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-blue-800"
-            >
-              Repozytorium z moim configiem Arch Linuxa. Niestety dawno nie było
-              aktualizowane, bo wróciłem do Windowsa. Tak, wiem, formularz
-              kontaktowy po tym wyznaniu zacznie płonąć.
-            </div>
-          </div>
-        </div>
-      </div>
+            <div class="flex flex-1 flex-col -mt-6">
+              <div class="relative flex h-32 items-center justify-center py-3">
+                <div
+                  class="pointer-events-none absolute h-28 w-28 rounded-full bg-blue-400/25 blur-2xl transition-all duration-500 group-hover:bg-blue-400/35 group-hover:blur-3xl"
+                ></div>
 
-      <!-- ScreenShots Script -->
-      <div class="bg-amber-700 card-projekt hover:shadow-yellow-900/75">
-        <div class="flex flex-row w-full rounded-lg">
-          <div class="left-projekt shrink-0 p-2 -ml-1 flex flex-col h-full">
-            <div class="flex-1 flex items-center justify-center">
-              <img
-                src="/assets/img/projekty/sss.png"
-                class="w-full aspect-square object-contain"
-                alt="ScreenShots Script"
-              />
-            </div>
-            <div
-              class="flex flex-row justify-evenly w-full text-amber-500 hover:text-amber-300"
-            >
-              <a
-                class="icon-projekt"
-                href="https://github.com/marciniuk/ScreenShots-Scripts"
-                aria-label="Repozytorium ScreenShots Script"
+                <img
+                  src="/assets/img/projekty/ba.png"
+                  class="relative z-10 h-full w-auto max-w-37.5 object-contain transition-transform duration-500 group-hover:scale-105"
+                  alt="BlackArrow"
+                />
+              </div>
+
+              <h2
+                class="mt-1 text-xl font-semibold tracking-tight text-slate-100"
               >
-                <i
-                  class="fas fa-github transition-all duration-300 ease-out hover:text-[120%]"
-                ></i>
-              </a>
+                BlackArrow
+              </h2>
+
+              <p class="mt-1 text-sm leading-[1.45] text-slate-400">
+                Repozytorium z moim configiem Arch Linuxa. Niestety dawno nie
+                było aktualizowane, bo wróciłem do Windowsa. Tak, wiem,
+                formularz kontaktowy po tym wyznaniu zacznie płonąć.
+              </p>
+
+              <div class="mt-2 flex flex-wrap gap-1">
+                <span
+                  class="rounded bg-blue-400/10 px-2 py-0.5 text-[11px] font-medium text-blue-300"
+                >
+                  Arch Linux
+                </span>
+                <span
+                  class="rounded bg-blue-400/10 px-2 py-0.5 text-[11px] font-medium text-blue-300"
+                >
+                  Dotfiles
+                </span>
+              </div>
             </div>
           </div>
 
-          <div class="opis-projekt">
-            <div class="absolute pl-2 italic text-lg lg:text-xl text-amber-100">
-              2019-2020
-            </div>
-            <div class="bg-amber-700 title-projekt">
-              <div class="-mt-1.5">SSS</div>
-            </div>
-            <div
-              class="text-sm xs:text-base 2xl:text-lg p-1 m-1 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-amber-700"
+          <div
+            class="relative z-10 flex h-11 shrink-0 items-center bg-transparent px-4"
+          >
+            <a
+              href="https://github.com/marciniuk/blackarrow"
+              class="flex items-center gap-2 text-sm text-blue-100/70 transition-all duration-300 hover:text-blue-100"
+              aria-label="Repozytorium BlackArrow"
             >
-              Tłumacząc nazwę, jest to ScreenShot Script. Tak, wiem,
-              oryginalnie. Dodam tylko, że do działania potrzebuje
-              <a
-                href="https://github.com/marciniuk/dmenu"
-                class="text-amber-300 hover:text-amber-600 whitespace-nowrap transition-all duration-300 ease-out"
-                ><i class="fad fa-link"></i> <b>dmenu</b></a
-              >
-              i
-              <a
-                href="https://github.com/naelstrof/maim"
-                class="text-amber-300 hover:text-amber-600 whitespace-nowrap transition-all duration-300 ease-out"
-                ><i class="fad fa-link"></i> <b>maim</b>'a</a
-              >. Oraz że zrobienie go zajęło mi baaardzo dużo czasu. Ale efekt
-              przerósł moje oczekiwania.
-            </div>
+              <i class="fas fa-github text-sm"></i>
+              GitHub
+            </a>
           </div>
-        </div>
-      </div>
+        </article>
 
-      <!-- COVID-19 -->
-      <div class="bg-rose-700 card-projekt hover:shadow-red-900/75">
-        <div class="flex flex-row w-full rounded-lg">
-          <div class="left-projekt shrink-0 p-2 -ml-1 flex flex-col h-full">
-            <div class="flex-1 flex items-center justify-center">
-              <img
-                src="/assets/img/projekty/covid.png"
-                class="w-full aspect-square object-contain"
-                alt="COVID-19 Script"
-              />
-            </div>
+        <!-- SSS -->
+        <article
+          class="group relative flex min-h-82.5 flex-col overflow-hidden rounded-xl border border-amber-300/12 bg-white/[0.018] shadow-[0_8px_32px_oklch(0 0 0 / 0.18)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1 hover:border-amber-300/25 hover:bg-white/2.5 hover:shadow-[0_16px_45px_oklch(0.78 0.17 80 / 0.08)]"
+        >
+          <div
+            class="pointer-events-none absolute -inset-16 overflow-visible blur-3xl"
+          >
             <div
-              class="flex flex-row justify-evenly w-full text-rose-400 hover:text-rose-300"
-            >
-              <a
-                class="icon-projekt"
-                href="https://github.com/marciniuk/covid-19-script"
-                aria-label="Repozytorium COVID-19 Script"
-              >
-                <i
-                  class="fas fa-github transition-all duration-300 ease-out hover:text-[120%]"
-                ></i>
-              </a>
-            </div>
+              class="absolute -left-20 top-8 h-88 w-88 rounded-full bg-radial-[at_50%_50%] from-amber-400/16 from-0% via-amber-400/12 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute -right-16 top-0 h-72 w-72 rounded-full bg-radial-[at_50%_50%] from-orange-400/12 from-0% via-orange-400/9 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute left-1/4 -bottom-20 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-amber-300/10 from-0% via-amber-300/7 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute right-1/3 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-radial-[at_50%_50%] from-orange-300/7 from-0% via-orange-300/5 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- under the logo -->
+            <div
+              class="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-radial-[at_50%_50%] from-amber-400/13 from-0% via-orange-400/10 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- bottom right -->
+            <div
+              class="absolute -right-10 -bottom-16 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-orange-400/12 from-0% via-yellow-400/9 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- left side -->
+            <div
+              class="absolute -left-16 top-[38%] h-64 w-64 rounded-full bg-radial-[at_50%_50%] from-yellow-400/10 from-0% via-amber-400/7 via-68% to-transparent to-100%"
+            ></div>
           </div>
 
-          <div class="opis-projekt">
-            <div class="absolute pl-2 italic text-lg lg:text-xl text-rose-300">
-              2019-2020
-            </div>
-            <div class="bg-rose-700 title-projekt">
-              <div class="-mt-1.5">C19 Script</div>
-            </div>
-            <div
-              class="text-sm xs:text-base 2xl:text-lg p-1 m-1 overflow-y-auto scrollbar scrollbar-track-transparent scrollbar-thumb-rose-700"
-            >
-              Prosty skrypt do umieszczenia np. w
-              <a
-                href="https://github.com/polybar/polybar/"
-                class="text-rose-400 hover:text-rose-600 whitespace-nowrap transition-all duration-300 ease-out"
-                ><i class="fad fa-link"></i> <b>Polybarze</b></a
+          <div class="relative z-10 flex flex-1 flex-col p-4 pb-2">
+            <div class="-mt-1">
+              <span
+                class="rounded border border-amber-300/20 bg-amber-300/[0.07] px-2 py-0.5 text-[11px] font-medium text-amber-200"
               >
-              dający dane z wybranych krajów. Dosyć duża konfiguracja. Stworzony
-              z nadzieją wstrzelenia się "chodliwy" temat i zdobycia kilku
-              followersów na GitHubie. Nie udało się.
+                2019-2020
+              </span>
+            </div>
+
+            <div class="flex flex-1 flex-col -mt-6">
+              <div class="relative flex h-32 items-center justify-center py-3">
+                <div
+                  class="pointer-events-none absolute h-28 w-28 rounded-full bg-amber-400/25 blur-2xl transition-all duration-500 group-hover:bg-amber-400/35 group-hover:blur-3xl"
+                ></div>
+
+                <img
+                  src="/assets/img/projekty/sss.png"
+                  class="relative z-10 h-full w-auto max-w-37.5 object-contain transition-transform duration-500 group-hover:scale-105"
+                  alt="ScreenShots Script"
+                />
+              </div>
+
+              <h2
+                class="mt-1 text-xl font-semibold tracking-tight text-slate-100"
+              >
+                SSS
+              </h2>
+
+              <p class="mt-1 text-sm leading-[1.45] text-slate-400">
+                Tłumacząc nazwę, jest to ScreenShot Script. Tak, wiem,
+                oryginalnie. Do działania potrzebuje
+                <a
+                  href="https://github.com/marciniuk/dmenu"
+                  class="text-amber-300 hover:text-amber-200"
+                  >dmenu</a
+                >
+                i
+                <a
+                  href="https://github.com/naelstrof/maim"
+                  class="text-amber-300 hover:text-amber-200"
+                  >maim</a
+                >'a. Zrobienie go zajęło mi baaardzo dużo czasu.
+              </p>
+
+              <div class="mt-2 flex flex-wrap gap-1">
+                <span
+                  class="rounded bg-amber-400/10 px-2 py-0.5 text-[11px] font-medium text-amber-300"
+                >
+                  Bash
+                </span>
+                <span
+                  class="rounded bg-amber-400/10 px-2 py-0.5 text-[11px] font-medium text-amber-300"
+                >
+                  Linux
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+
+          <div
+            class="relative z-10 flex h-11 shrink-0 items-center bg-transparent px-4"
+          >
+            <a
+              href="https://github.com/marciniuk/ScreenShots-Scripts"
+              class="flex items-center gap-2 text-sm text-amber-100/70 transition-all duration-300 hover:text-amber-100"
+              aria-label="Repozytorium ScreenShots Script"
+            >
+              <i class="fas fa-github text-sm"></i>
+              GitHub
+            </a>
+          </div>
+        </article>
+
+        <!-- C19 -->
+        <article
+          class="group relative flex min-h-82.5 flex-col overflow-hidden rounded-xl border border-rose-300/12 bg-white/[0.018] shadow-[0_8px_32px_oklch(0 0 0 / 0.18)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1 hover:border-rose-300/25 hover:bg-white/2.5 hover:shadow-[0_16px_45px_oklch(0.62 0.22 20 / 0.08)]"
+        >
+          <div
+            class="pointer-events-none absolute -inset-16 overflow-visible blur-3xl"
+          >
+            <div
+              class="absolute -left-20 top-8 h-88 w-88 rounded-full bg-radial-[at_50%_50%] from-rose-400/16 from-0% via-rose-400/12 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute -right-16 top-0 h-72 w-72 rounded-full bg-radial-[at_50%_50%] from-pink-400/12 from-0% via-pink-400/9 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute left-1/4 -bottom-20 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-rose-300/10 from-0% via-rose-300/7 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute right-1/3 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-radial-[at_50%_50%] from-pink-300/7 from-0% via-pink-300/5 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- under the logo -->
+            <div
+              class="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-radial-[at_50%_50%] from-rose-400/13 from-0% via-pink-400/10 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- bottom right -->
+            <div
+              class="absolute -right-10 -bottom-16 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-pink-400/12 from-0% via-fuchsia-400/9 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- left side -->
+            <div
+              class="absolute -left-16 top-[38%] h-64 w-64 rounded-full bg-radial-[at_50%_50%] from-fuchsia-400/10 from-0% via-rose-400/7 via-68% to-transparent to-100%"
+            ></div>
+          </div>
+
+          <div class="relative z-10 flex flex-1 flex-col p-4 pb-2">
+            <div class="-mt-1">
+              <span
+                class="rounded border border-rose-300/20 bg-rose-300/[0.07] px-2 py-0.5 text-[11px] font-medium text-rose-200"
+              >
+                2019-2020
+              </span>
+            </div>
+
+            <div class="flex flex-1 flex-col -mt-6">
+              <div class="relative flex h-32 items-center justify-center py-3">
+                <div
+                  class="pointer-events-none absolute h-28 w-28 rounded-full bg-rose-400/25 blur-2xl transition-all duration-500 group-hover:bg-rose-400/35 group-hover:blur-3xl"
+                ></div>
+
+                <img
+                  src="/assets/img/projekty/covid.png"
+                  class="relative z-10 h-full w-auto max-w-37.5 object-contain transition-transform duration-500 group-hover:scale-105"
+                  alt="COVID-19 Script"
+                />
+              </div>
+
+              <h2
+                class="mt-1 text-xl font-semibold tracking-tight text-slate-100"
+              >
+                C19 Script
+              </h2>
+
+              <p class="mt-1 text-sm leading-[1.45] text-slate-400">
+                Prosty skrypt do umieszczenia np. w
+                <a
+                  href="https://github.com/polybar/polybar/"
+                  class="text-rose-300 hover:text-rose-200"
+                  >Polybarze</a
+                >
+                dający dane z wybranych krajów. Dosyć duża konfiguracja.
+                Stworzony z nadzieją wstrzelenia się w "chodliwy" temat i
+                zdobycia kilku followersów na GitHubie. Nie udało się.
+              </p>
+
+              <div class="mt-2 flex flex-wrap gap-1">
+                <span
+                  class="rounded bg-rose-400/10 px-2 py-0.5 text-[11px] font-medium text-rose-300"
+                >
+                  Shell
+                </span>
+                <span
+                  class="rounded bg-rose-400/10 px-2 py-0.5 text-[11px] font-medium text-rose-300"
+                >
+                  Polybar
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="relative z-10 flex h-11 shrink-0 items-center bg-transparent px-4"
+          >
+            <a
+              href="https://github.com/marciniuk/covid-19-script"
+              class="flex items-center gap-2 text-sm text-rose-100/70 transition-all duration-300 hover:text-rose-100"
+              aria-label="Repozytorium COVID-19 Script"
+            >
+              <i class="fas fa-github text-sm"></i>
+              GitHub
+            </a>
+          </div>
+        </article>
+      </section>
     </main>
 
     <!-- FOOTER -->
