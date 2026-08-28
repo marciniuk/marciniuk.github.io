@@ -198,7 +198,7 @@
 
     <!-- MAIN -->
     <main
-      class="z-10 mx-auto w-full max-w-400 px-4 py-6 sm:px-6 lg:px-8 mt-1.5"
+      class="z-10 mx-auto flex min-h-full w-full max-w-400 flex-col justify-center px-4 py-6 sm:px-6 lg:px-8 md:mt-1.5"
     >
       <section
         class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:gap-4 xl:grid-cols-3"
@@ -208,6 +208,7 @@
         <article
           class="group relative flex min-h-82.5 flex-col overflow-hidden rounded-xl border border-cyan-300/12 bg-white/[0.018] shadow-[0_8px_32px_oklch(0 0 0 / 0.18)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/2.5 hover:shadow-[0_16px_45px_oklch(0.78 0.16 195 / 0.08)]"
         >
+          <!-- Background Radial Gradients -->
           <div
             class="pointer-events-none absolute -inset-16 overflow-visible blur-3xl"
           >
@@ -243,6 +244,7 @@
             ></div>
           </div>
 
+          <!-- Content -->
           <div class="relative z-10 flex flex-1 flex-col p-4 pb-2">
             <div class="-mt-1">
               <span
@@ -277,12 +279,17 @@
                   href="https://choosealicense.com/licenses/isc/"
                   class="text-cyan-300 transition-colors hover:text-cyan-200"
                 >
-                  <i class="fad fa-link"></i> licencją ISC </a
-                >. W skrócie: kopiowanie dozwolone, o ile zostanę oznaczony jako
-                autor oryginału ;D
+                  <i class="fad fa-link"></i> licencją ISC</a
+                >. Nie ponoszę odpowiedzialności za szkody powstałe w wyniku
+                czytania commitów.
               </p>
 
               <div class="mt-2 flex flex-wrap gap-1">
+                <span
+                  class="rounded bg-cyan-400/10 px-2 py-0.5 text-[11px] font-medium text-cyan-300"
+                >
+                  Web
+                </span>
                 <span
                   class="rounded bg-cyan-400/10 px-2 py-0.5 text-[11px] font-medium text-cyan-300"
                 >
@@ -293,15 +300,11 @@
                 >
                   JavaScript
                 </span>
-                <span
-                  class="rounded bg-cyan-400/10 px-2 py-0.5 text-[11px] font-medium text-cyan-300"
-                >
-                  PWA
-                </span>
               </div>
             </div>
           </div>
 
+          <!-- Footer with links -->
           <div
             class="relative z-10 flex h-11 shrink-0 items-center justify-between bg-transparent px-4"
           >
@@ -326,10 +329,136 @@
           </div>
         </article>
 
+        <!-- Tools -->
+        <article
+          class="group relative flex min-h-82.5 flex-col overflow-hidden rounded-xl border border-rose-300/12 bg-white/[0.018] shadow-[0_8px_32px_oklch(0 0 0 / 0.18)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1 hover:border-rose-300/25 hover:bg-white/2.5 hover:shadow-[0_16px_45px_oklch(0.62 0.22 20 / 0.08)]"
+        >
+          <!-- Background Radial Gradients -->
+          <div
+            class="pointer-events-none absolute -inset-16 overflow-visible blur-3xl"
+          >
+            <div
+              class="absolute -left-20 top-8 h-88 w-88 rounded-full bg-radial-[at_50%_50%] from-rose-400/16 from-0% via-rose-400/12 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute -right-16 top-0 h-72 w-72 rounded-full bg-radial-[at_50%_50%] from-pink-400/12 from-0% via-pink-400/9 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute left-1/4 -bottom-20 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-rose-300/10 from-0% via-rose-300/7 via-70% to-transparent to-100%"
+            ></div>
+
+            <div
+              class="absolute right-1/3 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-radial-[at_50%_50%] from-pink-300/7 from-0% via-pink-300/5 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- under the logo -->
+            <div
+              class="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-radial-[at_50%_50%] from-rose-400/13 from-0% via-pink-400/10 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- bottom right -->
+            <div
+              class="absolute -right-10 -bottom-16 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-pink-400/12 from-0% via-fuchsia-400/9 via-68% to-transparent to-100%"
+            ></div>
+
+            <!-- left side -->
+            <div
+              class="absolute -left-16 top-[38%] h-64 w-64 rounded-full bg-radial-[at_50%_50%] from-fuchsia-400/10 from-0% via-rose-400/7 via-68% to-transparent to-100%"
+            ></div>
+          </div>
+
+          <!-- Content -->
+          <div class="relative z-10 flex flex-1 flex-col p-4 pb-2">
+            <div class="-mt-1">
+              <span
+                class="rounded border border-rose-300/20 bg-rose-300/[0.07] px-2 py-0.5 text-[11px] font-medium text-rose-200"
+              >
+                2025-2026
+              </span>
+            </div>
+
+            <div class="flex flex-1 flex-col -mt-6">
+              <div class="relative flex h-32 items-center justify-center py-3">
+                <div
+                  class="pointer-events-none absolute h-28 w-28 rounded-full bg-rose-400/25 blur-2xl transition-all duration-500 group-hover:bg-rose-400/35 group-hover:blur-3xl"
+                ></div>
+
+                <i
+                  class="fad fa-screwdriver-wrench relative z-10 text-[5rem] leading-none transition-transform duration-500 group-hover:scale-105"
+                ></i>
+              </div>
+
+              <h2
+                class="mt-1 text-xl font-semibold tracking-tight text-slate-100"
+              >
+                Narzędzia
+              </h2>
+
+              <p class="mt-1 text-sm leading-[1.45] text-slate-400">
+                Narzędzia, które stworzyłem dla siebie, bo w internecie nie
+                mogłem znaleźć niczego, co spełniałoby moje wymagania. Na razie
+                znajdziesz tu
+                <a
+                  href="/pl/narzedzia/qr-gen/"
+                  class="text-rose-300 hover:text-rose-200"
+                  >generator kodów QR</a
+                >
+                oraz
+                <a
+                  href="/pl/narzedzia/marlock/"
+                  class="text-rose-300 hover:text-rose-200"
+                  >MarLOCK</a
+                >
+                - fajne narzędzie szyfrujące pliki i tekst.
+              </p>
+
+              <div class="mt-2 flex flex-wrap gap-1">
+                <span
+                  class="rounded bg-rose-400/10 px-2 py-0.5 text-[11px] font-medium text-rose-300"
+                >
+                  PWA
+                </span>
+                <span
+                  class="rounded bg-rose-400/10 px-2 py-0.5 text-[11px] font-medium text-rose-300"
+                >
+                  JavaScript
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer with links -->
+          <div
+            class="relative z-10 flex h-11 shrink-0 items-center justify-between bg-transparent px-4"
+          >
+            <a
+              href="https://github.com/marciniuk/marciniuk.github.io/tree/main/pl/narzedzia"
+              class="flex items-center gap-2 text-sm text-rose-100/70 transition-all duration-300 hover:text-rose-100"
+              aria-label="Repozytorium Narzędzia"
+            >
+              <i class="fas fa-github text-sm"></i>
+              GitHub
+            </a>
+
+            <a
+              href="/pl/narzedzia/"
+              class="flex items-center gap-2 text-sm text-rose-100/70 transition-all duration-300 hover:text-rose-100"
+            >
+              Zobacz
+              <i
+                class="fad fa-link text-[10px] transition-transform duration-300 group-hover:translate-x-0.5"
+              ></i>
+            </a>
+          </div>
+        </article>
+
         <!-- KROFFT -->
         <article
           class="group relative flex min-h-82.5 flex-col overflow-hidden rounded-xl border border-indigo-300/12 bg-white/[0.018] shadow-[0_8px_32px_oklch(0 0 0 / 0.18)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1 hover:border-indigo-300/25 hover:bg-white/2.5 hover:shadow-[0_16px_45px_oklch(0.68 0.17 275 / 0.08)]"
         >
+          <!-- Background Radial Gradients -->
           <div
             class="pointer-events-none absolute -inset-16 overflow-visible blur-3xl"
           >
@@ -365,6 +494,7 @@
             ></div>
           </div>
 
+          <!-- Content -->
           <div class="relative z-10 flex flex-1 flex-col p-4 pb-2">
             <div class="-mt-1">
               <span
@@ -396,7 +526,7 @@
               <p class="mt-1 text-sm leading-[1.45] text-slate-400">
                 Najnowszy projekt, strona dla zaprzyjaźnionej firmy tworzącej
                 najlepsze meble na wymiar w Polsce! Wcale nie kazali mi tego
-                napisać. Numer konta do przelewu wyślę mailem.
+                napisać. Naprawdę.
               </p>
 
               <div class="mt-2 flex flex-wrap gap-1">
@@ -419,6 +549,7 @@
             </div>
           </div>
 
+          <!-- Footer with links -->
           <div
             class="relative z-10 flex h-11 shrink-0 items-center justify-between bg-transparent px-4"
           >
@@ -447,6 +578,7 @@
         <article
           class="group relative flex min-h-82.5 flex-col overflow-hidden rounded-xl border border-emerald-300/12 bg-white/[0.018] shadow-[0_8px_32px_oklch(0 0 0 / 0.18)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1 hover:border-emerald-300/25 hover:bg-white/2.5 hover:shadow-[0_16px_45px_oklch(0.70 0.17 160 / 0.08)]"
         >
+          <!-- Background Radial Gradients -->
           <div
             class="pointer-events-none absolute -inset-16 overflow-visible blur-3xl"
           >
@@ -482,6 +614,7 @@
             ></div>
           </div>
 
+          <!-- Content -->
           <div class="relative z-10 flex flex-1 flex-col p-4 pb-2">
             <div class="-mt-1">
               <span
@@ -511,8 +644,8 @@
               </h2>
 
               <p class="mt-1 text-sm leading-[1.45] text-slate-400">
-                Moja pierwsza większa komercyjna praca. Kod do dupy, ale zebrane
-                doświadczenie podczas
+                Moja pierwsza większa komercyjna praca. Zebrane doświadczenie
+                podczas
                 <span class="whitespace-nowrap">10-miesięcznej</span>
                 współpracy przydało się w kolejnych projektach. Oprócz strony
                 zrobiłem również czat dla GZG (<a
@@ -557,6 +690,7 @@
             </div>
           </div>
 
+          <!-- Footer with links -->
           <div
             class="relative z-10 flex h-11 shrink-0 items-center justify-between bg-transparent px-4"
           >
@@ -585,6 +719,7 @@
         <article
           class="group relative flex min-h-82.5 flex-col overflow-hidden rounded-xl border border-blue-300/12 bg-white/[0.018] shadow-[0_8px_32px_oklch(0 0 0 / 0.18)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1 hover:border-blue-300/25 hover:bg-white/2.5 hover:shadow-[0_16px_45px_oklch(0.62 0.20 255 / 0.08)]"
         >
+          <!-- Background Radial Gradients -->
           <div
             class="pointer-events-none absolute -inset-16 overflow-visible blur-3xl"
           >
@@ -620,6 +755,7 @@
             ></div>
           </div>
 
+          <!-- Content -->
           <div class="relative z-10 flex flex-1 flex-col p-4 pb-2">
             <div class="-mt-1">
               <span
@@ -669,6 +805,7 @@
             </div>
           </div>
 
+          <!-- Footer with links -->
           <div
             class="relative z-10 flex h-11 shrink-0 items-center bg-transparent px-4"
           >
@@ -687,6 +824,7 @@
         <article
           class="group relative flex min-h-82.5 flex-col overflow-hidden rounded-xl border border-amber-300/12 bg-white/[0.018] shadow-[0_8px_32px_oklch(0 0 0 / 0.18)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1 hover:border-amber-300/25 hover:bg-white/2.5 hover:shadow-[0_16px_45px_oklch(0.78 0.17 80 / 0.08)]"
         >
+          <!-- Background Radial Gradients -->
           <div
             class="pointer-events-none absolute -inset-16 overflow-visible blur-3xl"
           >
@@ -722,6 +860,7 @@
             ></div>
           </div>
 
+          <!-- Content -->
           <div class="relative z-10 flex flex-1 flex-col p-4 pb-2">
             <div class="-mt-1">
               <span
@@ -781,6 +920,7 @@
             </div>
           </div>
 
+          <!-- Footer with links -->
           <div
             class="relative z-10 flex h-11 shrink-0 items-center bg-transparent px-4"
           >
@@ -788,114 +928,6 @@
               href="https://github.com/marciniuk/ScreenShots-Scripts"
               class="flex items-center gap-2 text-sm text-amber-100/70 transition-all duration-300 hover:text-amber-100"
               aria-label="Repozytorium ScreenShots Script"
-            >
-              <i class="fas fa-github text-sm"></i>
-              GitHub
-            </a>
-          </div>
-        </article>
-
-        <!-- C19 -->
-        <article
-          class="group relative flex min-h-82.5 flex-col overflow-hidden rounded-xl border border-rose-300/12 bg-white/[0.018] shadow-[0_8px_32px_oklch(0 0 0 / 0.18)] backdrop-blur-xl transition-all duration-500 ease-out hover:-translate-y-1 hover:border-rose-300/25 hover:bg-white/2.5 hover:shadow-[0_16px_45px_oklch(0.62 0.22 20 / 0.08)]"
-        >
-          <div
-            class="pointer-events-none absolute -inset-16 overflow-visible blur-3xl"
-          >
-            <div
-              class="absolute -left-20 top-8 h-88 w-88 rounded-full bg-radial-[at_50%_50%] from-rose-400/16 from-0% via-rose-400/12 via-70% to-transparent to-100%"
-            ></div>
-
-            <div
-              class="absolute -right-16 top-0 h-72 w-72 rounded-full bg-radial-[at_50%_50%] from-pink-400/12 from-0% via-pink-400/9 via-70% to-transparent to-100%"
-            ></div>
-
-            <div
-              class="absolute left-1/4 -bottom-20 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-rose-300/10 from-0% via-rose-300/7 via-70% to-transparent to-100%"
-            ></div>
-
-            <div
-              class="absolute right-1/3 top-1/2 h-56 w-56 -translate-y-1/2 rounded-full bg-radial-[at_50%_50%] from-pink-300/7 from-0% via-pink-300/5 via-68% to-transparent to-100%"
-            ></div>
-
-            <!-- under the logo -->
-            <div
-              class="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-radial-[at_50%_50%] from-rose-400/13 from-0% via-pink-400/10 via-68% to-transparent to-100%"
-            ></div>
-
-            <!-- bottom right -->
-            <div
-              class="absolute -right-10 -bottom-16 h-80 w-80 rounded-full bg-radial-[at_50%_50%] from-pink-400/12 from-0% via-fuchsia-400/9 via-68% to-transparent to-100%"
-            ></div>
-
-            <!-- left side -->
-            <div
-              class="absolute -left-16 top-[38%] h-64 w-64 rounded-full bg-radial-[at_50%_50%] from-fuchsia-400/10 from-0% via-rose-400/7 via-68% to-transparent to-100%"
-            ></div>
-          </div>
-
-          <div class="relative z-10 flex flex-1 flex-col p-4 pb-2">
-            <div class="-mt-1">
-              <span
-                class="rounded border border-rose-300/20 bg-rose-300/[0.07] px-2 py-0.5 text-[11px] font-medium text-rose-200"
-              >
-                2019-2020
-              </span>
-            </div>
-
-            <div class="flex flex-1 flex-col -mt-6">
-              <div class="relative flex h-32 items-center justify-center py-3">
-                <div
-                  class="pointer-events-none absolute h-28 w-28 rounded-full bg-rose-400/25 blur-2xl transition-all duration-500 group-hover:bg-rose-400/35 group-hover:blur-3xl"
-                ></div>
-
-                <img
-                  src="/assets/img/projekty/covid.png"
-                  class="relative z-10 h-full w-auto max-w-37.5 object-contain transition-transform duration-500 group-hover:scale-105"
-                  alt="COVID-19 Script"
-                />
-              </div>
-
-              <h2
-                class="mt-1 text-xl font-semibold tracking-tight text-slate-100"
-              >
-                C19 Script
-              </h2>
-
-              <p class="mt-1 text-sm leading-[1.45] text-slate-400">
-                Prosty skrypt do umieszczenia np. w
-                <a
-                  href="https://github.com/polybar/polybar/"
-                  class="text-rose-300 hover:text-rose-200"
-                  >Polybarze</a
-                >
-                dający dane z wybranych krajów. Dosyć duża konfiguracja.
-                Stworzony z nadzieją wstrzelenia się w "chodliwy" temat i
-                zdobycia kilku followersów na GitHubie. Nie udało się.
-              </p>
-
-              <div class="mt-2 flex flex-wrap gap-1">
-                <span
-                  class="rounded bg-rose-400/10 px-2 py-0.5 text-[11px] font-medium text-rose-300"
-                >
-                  Shell
-                </span>
-                <span
-                  class="rounded bg-rose-400/10 px-2 py-0.5 text-[11px] font-medium text-rose-300"
-                >
-                  Polybar
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="relative z-10 flex h-11 shrink-0 items-center bg-transparent px-4"
-          >
-            <a
-              href="https://github.com/marciniuk/covid-19-script"
-              class="flex items-center gap-2 text-sm text-rose-100/70 transition-all duration-300 hover:text-rose-100"
-              aria-label="Repozytorium COVID-19 Script"
             >
               <i class="fas fa-github text-sm"></i>
               GitHub
