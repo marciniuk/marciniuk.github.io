@@ -93,6 +93,8 @@ function resetMode() {
 /* ===== UI MESSAGE ===== */
 const msgBox = document.getElementById("msg");
 const psswd = document.getElementById("psswd");
+const message = (polish, english) =>
+  document.documentElement.lang === "en" ? english : polish;
 
 function showMsg(text, type = "info") {
   const classes = {
@@ -184,7 +186,10 @@ async function encrypt() {
   const password = passEl.value;
 
   if (!text || !password) {
-    return showMsg("Brak tekstu lub hasła", "error");
+    return showMsg(
+      message("Brak tekstu lub hasła", "Text and password are required"),
+      "error",
+    );
   }
 
   try {
@@ -203,10 +208,10 @@ async function encrypt() {
     )}`;
 
     passEl.value = "";
-    showMsg("Tekst zaszyfrowany", "success");
+    showMsg(message("Tekst zaszyfrowany", "Text encrypted"), "success");
   } catch (err) {
     console.error(err);
-    showMsg("Błąd podczas szyfrowania", "error");
+    showMsg(message("Błąd podczas szyfrowania", "Encryption failed"), "error");
   }
 }
 
@@ -219,12 +224,18 @@ async function decrypt() {
   const password = passEl.value;
 
   if (!input || !password) {
-    return showMsg("Brak danych lub hasła", "error");
+    return showMsg(
+      message("Brak danych lub hasła", "Data and password are required"),
+      "error",
+    );
   }
 
   const parts = input.split(":");
   if (parts.length !== 4 || parts[0] !== "v1") {
-    return showMsg("Nieprawidłowy format danych", "error");
+    return showMsg(
+      message("Nieprawidłowy format danych", "Invalid data format"),
+      "error",
+    );
   }
 
   try {
@@ -241,9 +252,15 @@ async function decrypt() {
 
     textEl.value = dec.decode(decrypted);
     passEl.value = "";
-    showMsg("Tekst odszyfrowany", "success");
+    showMsg(message("Tekst odszyfrowany", "Text decrypted"), "success");
   } catch {
-    showMsg("Błędne hasło lub uszkodzone dane", "error");
+    showMsg(
+      message(
+        "Błędne hasło lub uszkodzone dane",
+        "Incorrect password or corrupted data",
+      ),
+      "error",
+    );
   }
 }
 
@@ -260,7 +277,10 @@ function downloadBlob(blob, filename) {
 async function encryptFile(file) {
   const password = document.getElementById("password").value;
   if (!file || !password) {
-    return showMsg("Brak pliku lub hasła", "error");
+    return showMsg(
+      message("Brak pliku lub hasła", "File and password are required"),
+      "error",
+    );
   }
 
   const data = new Uint8Array(await file.arrayBuffer());
@@ -283,7 +303,7 @@ async function encryptFile(file) {
   out.set(encrypted, 32);
 
   downloadBlob(new Blob([out]), file.name + ".marlock");
-  showMsg("Plik zaszyfrowany", "success");
+  showMsg(message("Plik zaszyfrowany", "File encrypted"), "success");
 }
 
 /* ===== FILE DECRYPT ===== */
@@ -291,18 +311,24 @@ function updateFileName(input) {
   const label = document.getElementById("fileName");
   label.textContent = input.files.length
     ? input.files[0].name
-    : "Nie wybrano pliku";
+    : message("Nie wybrano pliku", "No file selected");
 }
 
 async function decryptFile(file) {
   const password = document.getElementById("password").value;
   if (!file || !password) {
-    return showMsg("Brak pliku lub hasła", "error");
+    return showMsg(
+      message("Brak pliku lub hasła", "File and password are required"),
+      "error",
+    );
   }
 
   const data = new Uint8Array(await file.arrayBuffer());
   if (dec.decode(data.slice(0, 4)) !== "MAR1") {
-    return showMsg("Nieprawidłowy format pliku", "error");
+    return showMsg(
+      message("Nieprawidłowy format pliku", "Invalid file format"),
+      "error",
+    );
   }
 
   try {
@@ -318,9 +344,15 @@ async function decryptFile(file) {
     );
 
     downloadBlob(new Blob([decrypted]), file.name.replace(".marlock", ""));
-    showMsg("Plik odszyfrowany", "success");
+    showMsg(message("Plik odszyfrowany", "File decrypted"), "success");
   } catch {
-    showMsg("Błędne hasło lub uszkodzony plik", "error");
+    showMsg(
+      message(
+        "Błędne hasło lub uszkodzony plik",
+        "Incorrect password or corrupted file",
+      ),
+      "error",
+    );
   }
 }
 
@@ -329,12 +361,12 @@ function handleEncrypt() {
   if (currentMode === "text") encrypt();
   else if (currentMode === "file") {
     encryptFile(document.getElementById("fileInput").files[0]);
-  } else showMsg("Wybierz tryb", "error");
+  } else showMsg(message("Wybierz tryb", "Select a mode"), "error");
 }
 
 function handleDecrypt() {
   if (currentMode === "text") decrypt();
   else if (currentMode === "file") {
     decryptFile(document.getElementById("fileInput").files[0]);
-  } else showMsg("Wybierz tryb", "error");
+  } else showMsg(message("Wybierz tryb", "Select a mode"), "error");
 }
