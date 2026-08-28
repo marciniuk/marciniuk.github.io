@@ -16,7 +16,7 @@
       https://marcini.uk/en/
     </loc>
     <lastmod>
-      2026-08-26T11:55:25.036Z
+      2026-08-28T11:35:26.669Z
     </lastmod>
     <priority>
       0.8
@@ -71,18 +71,7 @@
       https://marcini.uk/en/projects/
     </loc>
     <lastmod>
-      2026-08-26T11:55:25.088Z
-    </lastmod>
-    <priority>
-      0.6
-    </priority>
-  </url>
-  <url>
-    <loc>
-      https://marcini.uk/en/qr-gen/
-    </loc>
-    <lastmod>
-      2026-08-26T11:55:25.107Z
+      2026-08-28T11:35:26.667Z
     </lastmod>
     <priority>
       0.6
@@ -94,6 +83,17 @@
     </loc>
     <lastmod>
       2026-08-26T11:55:25.119Z
+    </lastmod>
+    <priority>
+      0.6
+    </priority>
+  </url>
+  <url>
+    <loc>
+      https://marcini.uk/en/tools/
+    </loc>
+    <lastmod>
+      2026-08-28T11:25:37.316Z
     </lastmod>
     <priority>
       0.6
@@ -185,6 +185,28 @@
     </lastmod>
     <priority>
       0.6
+    </priority>
+  </url>
+  <url>
+    <loc>
+      https://marcini.uk/en/tools/marlock/
+    </loc>
+    <lastmod>
+      2026-08-28T11:26:48.425Z
+    </lastmod>
+    <priority>
+      0.5
+    </priority>
+  </url>
+  <url>
+    <loc>
+      https://marcini.uk/en/tools/qr-gen/
+    </loc>
+    <lastmod>
+      2026-08-28T11:25:39.792Z
+    </lastmod>
+    <priority>
+      0.5
     </priority>
   </url>
   <url>
