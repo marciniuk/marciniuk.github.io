@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en" class="overflow-x-clip scroll-smooth">
+  <head>
+    <!-- Main -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Adrian Marcini.uk</title>
+
+    <!-- SEO Description -->
+    <meta
+      name="description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta name="author" content="Adrian Marciniuk" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Assets -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/fonts.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
+    <script async src="/assets/fajs/fontawesome.js"></script>
+    <script async src="/assets/fajs/fa-cut.js"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://marcini.uk/en/tools/marlock/" />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrian Marciniuk",
+        "url": "https://marcini.uk/",
+        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
+        "sameAs": ["https://github.com/marciniuk"],
+        "jobTitle": "Frontend Developer",
+        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
+      }
+    </script>
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marcini.uk/en/tools/marlock/" />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/img/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/img/og/og-image.jpg"
+    />
+
+    <!-- Fade-in -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          document.body.classList.add("page-ready");
+        }, 150);
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- STARS -->
+    <stars></stars>
+
+    <link rel="stylesheet" href="/assets/css/matrix.css" />
+    <canvas id="matrix"></canvas>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
+    >
+      <div
+        class="h-20 w-full bg-linear-to-b from-blue-900 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+      ></div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="main-header"
+      class="xl:mb-4 h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-all duration-500 ease-in-out"
+    >
+      <div class="flex justify-between w-full items-center z-30">
+        <!-- LOGO -->
+        <a
+          href="/en/"
+          class="flex gap-2 text-3xl lg:text-4xl italic items-center"
+        >
+          <img src="/assets/img/logo.svg" alt="logo" class="h-8 lg:h-10" />
+          Marcini.uk
+        </a>
+
+        <!-- HAMBURGER -->
+        <button
+          type="button"
+          id="menu-toggle"
+          class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+          aria-label="Open menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+        </button>
+
+        <!-- MAIN MENU -->
+        <nav
+          id="mobile-menu"
+          class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+        >
+          <a href="/en/profiles/" class="nav-link hover:text-rose-400"
+            ><i class="fad fa-address-card"></i> Profiles</a
+          >
+          <a href="/en/projects/" class="nav-link hover:text-emerald-400"
+            ><i class="fad fa-diagram-project"></i> Projects</a
+          >
+          <a href="/en/setup/" class="nav-link hover:text-amber-400"
+            ><i class="fad fa-display-code"></i> Setup</a
+          >
+          <a href="/en/contact/" class="nav-link hover:text-sky-400"
+            ><i class="fad fa-envelope-open-text"></i> Contact</a
+          >
+        </nav>
+      </div>
+
+      <!-- VH FIX -->
+      <script>
+        (function () {
+          function setVh() {
+            document.documentElement.style.setProperty(
+              "--vh",
+              `${window.innerHeight * 0.01}px`,
+            );
+          }
+          setVh();
+          window.addEventListener("resize", setVh);
+        })();
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main class="max-w-5xl mx-auto px-4 py-10 flex place-items-center w-auto">
+      <section
+        class="relative bg-blue-700/20 border border-blue-600/50 rounded-2xl backdrop-blur-md shadow-xl p-3 md:p-5 lg:p-7 grid w-full min-w-70 xs:min-w-86 md:min-w-96 lg:min-w-120"
+      >
+        <!-- RESET MODE -->
+        <button
+          id="modeResetBtn"
+          onclick="resetMode()"
+          class="absolute top-2 right-2 hidden p-2 text-sm text-amber-200/70 hover:text-amber-200 transition-all duration-300 hover:rotate-180 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-200/50 rounded-lg"
+          aria-label="Change mode"
+        >
+          <i class="fad fa-arrows-rotate"></i>
+        </button>
+
+        <!-- HEADER -->
+        <header class="space-y-1 mb-4">
+          <h2 class="text-2xl md:text-3xl xl:text-4xl font-semibold">
+            <i class="fad fa-binary-lock text-amber-200"></i> MarLOCK
+          </h2>
+
+          <p class="text-blue-200/80">Local AES-GCM encryption</p>
+        </header>
+
+        <!-- MODE SELECT -->
+        <div
+          id="modeSelect"
+          class="anim anim-show flex flex-col xs:flex-row gap-4 justify-center w-full pt-2"
+        >
+          <!-- TEXT MODE -->
+          <button
+            onclick="setMode('text')"
+            class="group relative isolate flex items-center justify-center gap-2 w-full min-h-13 px-5 py-3 rounded-xl border border-blue-400/30 bg-blue-500/10 backdrop-blur-sm text-blue-100 font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-blue-300/70 hover:bg-blue-500/20 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+          >
+            <!-- SHINE -->
+            <span
+              class="absolute inset-0 -z-10 overflow-hidden rounded-xl pointer-events-none"
+            >
+              <span
+                class="absolute top-0 -left-full h-full w-1/2 -skew-x-12 bg-linear-to-r from-transparent via-white/10 to-transparent transition-all duration-500 group-hover:left-[120%]"
+              ></span>
+            </span>
+
+            <!-- INNER GLOW -->
+            <span
+              class="absolute inset-0 -z-20 rounded-xl bg-blue-400/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+
+            <i
+              class="fad fa-file-lines text-amber-200 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 group-active:scale-95"
+            ></i>
+
+            <span>Text</span>
+          </button>
+
+          <!-- FILE MODE -->
+          <button
+            onclick="setMode('file')"
+            class="group relative isolate flex items-center justify-center gap-2 w-full min-h-13 px-5 py-3 rounded-xl border border-blue-400/30 bg-blue-500/10 backdrop-blur-sm text-blue-100 font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-blue-300/70 hover:bg-blue-500/20 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+          >
+            <!-- SHINE -->
+            <span
+              class="absolute inset-0 -z-10 overflow-hidden rounded-xl pointer-events-none"
+            >
+              <span
+                class="absolute top-0 -left-full h-full w-1/2 -skew-x-12 bg-linear-to-r from-transparent via-white/10 to-transparent transition-all duration-500 group-hover:left-[120%]"
+              ></span>
+            </span>
+
+            <!-- INNER GLOW -->
+            <span
+              class="absolute inset-0 -z-20 rounded-xl bg-blue-400/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            ></span>
+
+            <i
+              class="fad fa-folder text-amber-200 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 group-active:scale-95"
+            ></i>
+
+            <span>File</span>
+          </button>
+        </div>
+
+        <!-- CONTENT WRAPPER -->
+        <div id="contentWrapper" class="anim anim-hidden">
+          <!-- TEXT MODE -->
+          <div id="textMode" class="space-y-4 hidden">
+            <label class="text-sm md:text-base xl:text-lg text-blue-200">
+              Content
+            </label>
+
+            <textarea
+              id="text"
+              rows="6"
+              placeholder="Remember your password — without it, you cannot recover your data!"
+              class="input-box"
+            ></textarea>
+          </div>
+
+          <!-- FILE MODE -->
+          <div id="fileMode" class="space-y-4 hidden">
+            <div class="space-y-2">
+              <label class="text-sm md:text-base xl:text-lg text-blue-200">
+                File
+              </label>
+
+              <div
+                class="flex flex-col-reverse md:flex-row items-center gap-3 w-full"
+              >
+                <!-- FILE BUTTON -->
+                <label
+                  for="fileInput"
+                  class="group relative isolate flex shrink-0 items-center justify-center cursor-pointer min-h-12 px-5 py-2 rounded-xl border border-blue-400/30 bg-blue-500/10 backdrop-blur-sm text-blue-100 text-sm md:text-base xl:text-lg font-medium transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-300/70 hover:bg-blue-500/20 active:translate-y-0 active:scale-[0.98] focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-300/60 w-full md:w-fit text-center"
+                >
+                  <!-- SHINE -->
+                  <span
+                    class="absolute inset-0 -z-10 overflow-hidden rounded-xl pointer-events-none"
+                  >
+                    <span
+                      class="absolute top-0 -left-full h-full w-1/2 -skew-x-12 bg-linear-to-r from-transparent via-white/10 to-transparent transition-all duration-500 group-hover:left-[120%]"
+                    ></span>
+                  </span>
+
+                  <i
+                    class="fad fa-folder text-amber-200 pr-1 transition-transform duration-300 group-hover:scale-110"
+                  ></i>
+
+                  Choose file
+                </label>
+
+                <span
+                  id="fileName"
+                  class="text-sm md:text-base xl:text-lg text-blue-200/70 truncate max-w-62.5 w-full text-center md:text-left"
+                >
+                  No file selected
+                </span>
+              </div>
+
+              <input
+                type="file"
+                id="fileInput"
+                class="hidden"
+                onchange="updateFileName(this)"
+              />
+            </div>
+          </div>
+
+          <!-- ACTIONS -->
+          <div id="actionSection" class="grid gap-4">
+            <!-- PASSWORD / MESSAGE -->
+            <div class="relative h-18 grid place-items-center">
+              <!-- MESSAGE -->
+              <div
+                id="msg"
+                class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-300 rounded-xl px-4 py-3 text-sm font-medium my-auto text-center"
+              ></div>
+
+              <!-- PASSWORD -->
+              <div
+                id="psswd"
+                class="absolute inset-0 transition-opacity duration-300"
+              >
+                <label class="text-sm md:text-base xl:text-lg text-blue-200">
+                  Password
+                </label>
+
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="dupa1234?"
+                  class="input-box h-10"
+                />
+              </div>
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div
+              class="flex flex-col xs:flex-row flex-wrap justify-evenly gap-3 text-base md:text-lg xl:text-xl"
+            >
+              <!-- ENCRYPT -->
+              <button
+                onclick="handleEncrypt()"
+                class="group relative isolate flex items-center justify-center gap-2 flex-1 min-w-0 min-h-13 px-6 py-3 rounded-xl border border-emerald-400/40 bg-emerald-500/10 backdrop-blur-sm text-emerald-100 font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-300/80 hover:bg-emerald-500/20 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+              >
+                <!-- SHINE -->
+                <span
+                  class="absolute inset-0 -z-10 overflow-hidden rounded-xl pointer-events-none"
+                >
+                  <span
+                    class="absolute top-0 -left-full h-full w-1/2 -skew-x-12 bg-linear-to-r from-transparent via-white/10 to-transparent transition-all duration-500 group-hover:left-[120%]"
+                  ></span>
+                </span>
+
+                <!-- INNER GLOW -->
+                <span
+                  class="absolute inset-0 -z-20 rounded-xl bg-emerald-400/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                ></span>
+
+                <i
+                  class="fad fa-lock text-amber-200 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6 group-active:scale-95"
+                ></i>
+
+                <span>Encrypt</span>
+              </button>
+
+              <!-- DECRYPT -->
+              <button
+                onclick="handleDecrypt()"
+                class="group relative isolate flex items-center justify-center gap-2 flex-1 min-w-0 min-h-13 px-6 py-3 rounded-xl border border-sky-400/40 bg-sky-500/10 backdrop-blur-sm text-sky-100 font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-sky-300/80 hover:bg-sky-500/20 active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+              >
+                <!-- SHINE -->
+                <span
+                  class="absolute inset-0 -z-10 overflow-hidden rounded-xl pointer-events-none"
+                >
+                  <span
+                    class="absolute top-0 -left-full h-full w-1/2 -skew-x-12 bg-linear-to-r from-transparent via-white/10 to-transparent transition-all duration-500 group-hover:left-[120%]"
+                  ></span>
+                </span>
+
+                <!-- INNER GLOW -->
+                <span
+                  class="absolute inset-0 -z-20 rounded-xl bg-sky-400/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                ></span>
+
+                <i
+                  class="fad fa-lock-open text-amber-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-active:scale-95"
+                ></i>
+
+                <span>Decrypt</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="z-50">
+      <div id="footer" class="bg-blue-700/60 md:mb-4 md:mx-3 md:rounded-full">
+        <div class="flex justify-center items-center">
+          2019-<full-year></full-year>
+          <i class="fad fa-copyright w-5 h-4"></i>
+          <strong>Adrian Marciniuk</strong>
+        </div>
+
+        <a href="/en/privacy-policy/" class="flex justify-center items-center"
+          ><i class="fad fa-user-secret w-5 h-4"></i> Privacy Policy</a
+        >
+      </div>
+      <!-- 100% privacy-first analytics -->
+      <script
+        data-collect-dnt="true"
+        async
+        src="https://scripts.simpleanalyticscdn.com/latest.js"
+      ></script>
+      <noscript
+        ><img
+          src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+          alt=""
+          referrerpolicy="no-referrer-when-downgrade"
+      /></noscript>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/marlock.js"></script>
+    <script src="/assets/js/matrix.js"></script>
+  </body>
+</html>
