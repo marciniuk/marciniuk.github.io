@@ -107,6 +107,8 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   width: 100%;
+  max-width: 1920px !important;
+  margin-inline: auto;
 
   @apply bg-blue-900 min-h-full max-w-full overflow-x-clip;
 }
