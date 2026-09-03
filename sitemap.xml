@@ -93,7 +93,7 @@
       https://marcini.uk/en/tools/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.662Z
+      2026-09-03T09:38:34.340Z
     </lastmod>
     <priority>
       0.6
@@ -126,7 +126,7 @@
       https://marcini.uk/pl/narzedzia/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.804Z
+      2026-09-03T09:36:50.673Z
     </lastmod>
     <priority>
       0.6
@@ -204,6 +204,17 @@
     </loc>
     <lastmod>
       2026-09-03T09:34:13.675Z
+    </lastmod>
+    <priority>
+      0.5
+    </priority>
+  </url>
+  <url>
+    <loc>
+      https://marcini.uk/en/tools/optimar/
+    </loc>
+    <lastmod>
+      2026-09-03T09:45:25.313Z
     </lastmod>
     <priority>
       0.5
