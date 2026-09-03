@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="pl" class="overflow-x-clip scroll-smooth">
+  <head>
+    <!-- Main -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Adrian Marcini.uk</title>
+
+    <!-- Opis dla SEO -->
+    <meta
+      name="description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta name="author" content="Adrian Marciniuk" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Linki do zasobów -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/fonts.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
+    <script async src="/assets/fajs/fontawesome.js"></script>
+    <script async src="/assets/fajs/fa-cut.js"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://marcini.uk/pl/narzedzia/" />
+
+    <!-- Dane strukturalne JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrian Marciniuk",
+        "url": "https://marcini.uk",
+        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
+        "sameAs": ["https://github.com/marciniuk"],
+        "jobTitle": "Frontend Developer",
+        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
+      }
+    </script>
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marcini.uk/pl/narzedzia/" />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/img/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/img/og/og-image.jpg"
+    />
+
+    <!-- Fadein body -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          document.body.classList.add("page-ready");
+        }, 150);
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- STARS -->
+    <stars></stars>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
+    >
+      <div
+        class="h-20 w-full bg-linear-to-b from-blue-900 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+      ></div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="main-header"
+      class="xl:mb-4 h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-all duration-500 ease-in-out"
+    >
+      <div class="flex justify-between w-full items-center z-30">
+        <!-- LOGO -->
+        <a
+          href="/pl/"
+          class="flex gap-2 text-3xl lg:text-4xl italic items-center"
+        >
+          <img src="/assets/img/logo.svg" alt="logo" class="h-8 lg:h-10" />
+          Marcini.uk
+        </a>
+
+        <!-- HAMBURGER -->
+        <button
+          type="button"
+          id="menu-toggle"
+          class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+          aria-label="Otwórz menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+        </button>
+
+        <!-- MENU -->
+        <nav
+          id="mobile-menu"
+          class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl 2xl:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+        >
+          <a href="/pl/profile/" class="nav-link hover:text-rose-400"
+            ><i class="fad fa-address-card"></i> Profile</a
+          >
+          <a href="/pl/projekty/" class="nav-link hover:text-emerald-400"
+            ><i class="fad fa-diagram-project"></i> Projekty</a
+          >
+          <a href="/pl/narzedzia/" class="nav-link hover:text-lime-400"
+            ><i class="fad fa-tools"></i> Narzędzia</a
+          >
+          <a href="/pl/setup/" class="nav-link hover:text-amber-400"
+            ><i class="fad fa-display-code"></i> Setup</a
+          >
+          <a href="/pl/kontakt/" class="nav-link hover:text-sky-400"
+            ><i class="fad fa-envelope-open-text"></i> Kontakt</a
+          >
+          <a href="/pl/polecajki/" class="nav-link hover:text-fuchsia-400"
+            ><i class="fad fa-heart"></i> Polecajki</a
+          >
+          <a href="/pl/ksiazki/" class="nav-link hover:text-indigo-400"
+            ><i class="fad fa-books"></i> Książki</a
+          >
+        </nav>
+      </div>
+
+      <!-- VH FIX -->
+      <script>
+        (function () {
+          function setVh() {
+            document.documentElement.style.setProperty(
+              "--vh",
+              `${window.innerHeight * 0.01}px`,
+            );
+          }
+          setVh();
+          window.addEventListener("resize", setVh);
+        })();
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main class="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <section class="mx-auto max-w-6xl">
+        <!-- Header -->
+        <header class="mb-8">
+          <div class="flex items-center gap-3">
+            <div
+              class="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/15 bg-blue-400/[0.07] shadow-[0_0_30px_rgba(59,130,246,0.10)]"
+            >
+              <span class="font-mono text-sm font-bold text-blue-300">
+                &lt;/&gt;
+              </span>
+            </div>
+
+            <div>
+              <h1
+                class="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl"
+              >
+                MAR<span
+                  class="bg-linear-to-r from-cyan-300 via-sky-400 to-blue-400 bg-clip-text text-transparent"
+                  >nify</span
+                >
+              </h1>
+              <p class="mt-1 text-sm text-zinc-400">
+                Minimalizuj i formatuj CSS & JavaScript
+              </p>
+            </div>
+          </div>
+        </header>
+
+        <!-- Input -->
+        <section
+          class="overflow-hidden rounded-2xl border border-white/10 bg-slate-900/25 shadow-[0_20px_70px_rgba(0,0,0,0.28)] backdrop-blur-2xl"
+        >
+          <!-- Section header -->
+          <div
+            class="flex h-12 items-center justify-between border-b border-white/8 px-4"
+          >
+            <div class="flex items-center gap-2.5">
+              <span
+                class="h-1.5 w-1.5 rounded-full bg-blue-400 shadow-[0_0_9px_rgba(96,165,250,0.55)]"
+              ></span>
+
+              <span
+                class="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-300"
+              >
+                Kod wejściowy
+              </span>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <!-- Detection -->
+              <div
+                id="marnify-detection"
+                class="flex items-center gap-1.5 rounded-lg border border-white/8 bg-white/[0.035] px-2.5 py-1.5 text-[9px] font-medium uppercase tracking-[0.12em] text-zinc-500 transition-all duration-200"
+                title="Wykryty typ kodu"
+              >
+                <span
+                  id="marnify-detection-dot"
+                  class="h-1.5 w-1.5 rounded-full bg-zinc-600 transition-all duration-200"
+                ></span>
+
+                <span id="marnify-detection-text"> Wykrywanie </span>
+              </div>
+
+              <!-- Clear -->
+              <button
+                id="marnify-clear"
+                type="button"
+                class="rounded-lg px-2.5 py-1.5 text-[10px] font-medium text-zinc-400 transition hover:bg-white/6 hover:text-zinc-100"
+              >
+                Wyczyść
+              </button>
+            </div>
+          </div>
+
+          <div class="p-4">
+            <!-- Input textarea -->
+            <textarea
+              id="marnify-input"
+              class="block min-h-80 w-full resize-y rounded-xl border border-white/9 bg-slate-950/40 p-4 font-mono text-sm leading-relaxed text-zinc-200 outline-none transition placeholder:text-zinc-600 focus:border-blue-400/30 focus:bg-slate-950/60"
+              placeholder="Wklej tutaj kod CSS lub JavaScript..."
+              spellcheck="false"
+            ></textarea>
+
+            <!-- File upload -->
+            <div class="mt-4">
+              <input
+                id="marnify-file"
+                type="file"
+                class="hidden"
+                accept=".css,.js,.mjs,.cjs"
+              />
+
+              <label
+                for="marnify-file"
+                id="marnify-dropzone"
+                class="group flex cursor-pointer flex-col items-center justify-center rounded-xl border border-dashed border-white/12 bg-white/2 px-6 py-3 text-center transition-all duration-200 hover:border-blue-400/30 hover:bg-blue-400/[0.035]"
+              >
+                <div
+                  class="mb-3 flex h-10 w-10 items-center justify-center rounded-xl border border-white/8 bg-white/[0.035] text-zinc-400 shadow-inner transition group-hover:border-blue-400/20 group-hover:bg-blue-400/6 group-hover:text-blue-300"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                  >
+                    <path d="M12 16V4" />
+                    <path d="m7 9 5-5 5 5" />
+                    <path d="M5 20h14" />
+                  </svg>
+                </div>
+
+                <span class="text-sm font-medium text-zinc-300">
+                  Wybierz plik lub przeciągnij go tutaj
+                </span>
+
+                <span id="marnify-file-hint" class="mt-1 text-xs text-zinc-500">
+                  CSS lub JavaScript
+                </span>
+              </label>
+            </div>
+
+            <!-- Actions -->
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <span
+                id="marnify-status"
+                class="text-xs text-zinc-400"
+                aria-live="polite"
+              ></span>
+
+              <div class="flex items-center gap-2">
+                <button
+                  id="marnify-beautify"
+                  type="button"
+                  class="rounded-xl border border-white/10 bg-white/[0.035] px-5 py-2.5 text-sm font-semibold text-zinc-300 shadow-[0_5px_20px_rgba(0,0,0,0.12)] transition hover:border-white/16 hover:bg-white/[0.07] hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  Formatuj
+                </button>
+
+                <button
+                  id="marnify-minify"
+                  type="button"
+                  class="rounded-xl border border-blue-400/25 bg-blue-500/10 px-5 py-2.5 text-sm font-semibold text-blue-300 shadow-[0_5px_25px_rgba(59,130,246,0.10)] transition hover:border-blue-400/40 hover:bg-blue-500/16 hover:text-blue-200 hover:shadow-[0_5px_30px_rgba(59,130,246,0.16)] disabled:cursor-not-allowed disabled:opacity-40"
+                >
+                  Minimalizuj
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stats -->
+        <section
+          id="marnify-stats"
+          class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3"
+          aria-label="Statystyki"
+        >
+          <div
+            class="rounded-xl border border-white/9 bg-slate-900/45 p-4 shadow-[0_10px_35px_rgba(0,0,0,0.18)] backdrop-blur-xl"
+          >
+            <div
+              class="text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500"
+            >
+              Oryginalny
+            </div>
+
+            <div
+              id="marnify-original-size"
+              class="mt-1 text-lg font-semibold text-zinc-200"
+            >
+              0 B
+            </div>
+          </div>
+
+          <div
+            class="rounded-xl border border-white/9 bg-slate-900/45 p-4 shadow-[0_10px_35px_rgba(0,0,0,0.18)] backdrop-blur-xl"
+          >
+            <div
+              class="text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500"
+            >
+              Wynik
+            </div>
+
+            <div
+              id="marnify-minified-size"
+              class="mt-1 text-lg font-semibold text-zinc-200"
+            >
+              0 B
+            </div>
+          </div>
+
+          <div
+            class="rounded-xl border border-blue-400/12 bg-blue-500/[0.035] p-4 shadow-[0_10px_35px_rgba(0,0,0,0.18)] backdrop-blur-xl"
+          >
+            <div
+              class="text-[10px] font-semibold uppercase tracking-[0.16em] text-blue-300/70"
+            >
+              Różnica
+            </div>
+
+            <div
+              id="marnify-saved"
+              class="mt-1 text-lg font-semibold text-blue-300"
+            >
+              0%
+            </div>
+          </div>
+        </section>
+
+        <!-- Output -->
+        <section
+          class="mt-4 overflow-hidden rounded-2xl border border-white/10 bg-slate-900/25 shadow-[0_20px_70px_rgba(0,0,0,0.28)] backdrop-blur-2xl"
+        >
+          <!-- Section header -->
+          <div
+            class="flex h-12 items-center justify-between border-b border-white/8 px-4"
+          >
+            <div class="flex items-center gap-2.5">
+              <span
+                class="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_9px_rgba(52,211,153,0.55)]"
+              ></span>
+
+              <span
+                class="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-300"
+              >
+                Wynik
+              </span>
+            </div>
+
+            <div class="flex gap-2">
+              <button
+                id="marnify-copy"
+                type="button"
+                class="rounded-lg border border-white/8 bg-white/2.5 px-3 py-1.5 text-[10px] font-medium text-zinc-400 transition hover:border-white/13 hover:bg-white/6 hover:text-zinc-100 disabled:cursor-not-allowed disabled:opacity-30"
+                disabled
+              >
+                Kopiuj
+              </button>
+
+              <button
+                id="marnify-download"
+                type="button"
+                class="rounded-lg border border-white/8 bg-white/2.5 px-3 py-1.5 text-[10px] font-medium text-zinc-400 transition hover:border-white/13 hover:bg-white/6 hover:text-zinc-100 disabled:cursor-not-allowed disabled:opacity-30"
+                disabled
+              >
+                Pobierz
+              </button>
+            </div>
+          </div>
+
+          <div class="p-4">
+            <textarea
+              id="marnify-output"
+              class="block min-h-80 w-full resize-y rounded-xl border border-white/9 bg-slate-950/40 p-4 font-mono text-sm leading-relaxed text-zinc-200 outline-none placeholder:text-zinc-600"
+              placeholder="Sformatowany lub zminimalizowany kod pojawi się tutaj..."
+              spellcheck="false"
+              readonly
+            ></textarea>
+          </div>
+        </section>
+
+        <!-- Local processing -->
+        <div
+          class="mt-5 flex items-center justify-center gap-2 text-center text-[10px] font-medium uppercase leading-none tracking-[0.14em] text-zinc-600"
+        >
+          <span
+            class="h-1 w-1 shrink-0 rounded-full bg-emerald-400/80 shadow-[0_0_6px_rgba(52,211,153,0.5)]"
+          ></span>
+
+          <span class="leading-none">
+            Wszystko jest przetwarzane lokalnie w Twojej przeglądarce!
+          </span>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="z-50">
+      <div id="footer" class="bg-blue-700/60 md:mb-4 md:mx-3 md:rounded-full">
+        <div class="flex justify-center items-center">
+          2019-<full-year></full-year>
+          <i class="fad fa-copyright w-5 h-4"></i>
+          <strong>Adrian Marciniuk</strong>
+        </div>
+
+        <a
+          href="/pl/polityka-prywatnosci/"
+          class="flex justify-center items-center"
+          ><i class="fad fa-user-secret w-5 h-4"></i> Polityka prywatności</a
+        >
+      </div>
+      <!-- 100% privacy-first analytics -->
+      <script
+        data-collect-dnt="true"
+        async
+        src="https://scripts.simpleanalyticscdn.com/latest.js"
+      ></script>
+      <noscript
+        ><img
+          src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+          alt=""
+          referrerpolicy="no-referrer-when-downgrade"
+      /></noscript>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="/assets/js/main.js"></script>
+    <script type="module" src="/assets/js/tools/marnify.bundle.js"></script>
+  </body>
+</html>
