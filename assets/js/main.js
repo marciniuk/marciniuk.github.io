@@ -1,5 +1,5 @@
 /* ===============================================
-    🧭 NAWIGACJA — MENU, BLUR I ANIMACJE HEADERA
+    NAWIGACJA — MENU, BLUR I ANIMACJE HEADERA
    =============================================== */
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.getElementById("main-header");
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ===============================================
-    📅 STOPKA — AKTUALNY ROK
+    STOPKA — AKTUALNY ROK
    =============================================== */
 class YearElement extends HTMLElement {
   connectedCallback() {
@@ -166,3 +166,90 @@ class YearElement extends HTMLElement {
 }
 
 customElements.define("full-year", YearElement);
+
+/* =============================================== 
+    Console
+   =============================================== */
+
+(() => {
+  const lang = document.documentElement.lang?.startsWith("en") ? "en" : "pl";
+
+  const messages = {
+    pl: {
+      greeting: "No hej, hakier! xD",
+      text: [
+        "Fajnie, że zaglądasz do konsoli.",
+        "Skoro już tu jesteś, to pewnie wiesz, co robić ;P",
+      ],
+    },
+
+    en: {
+      greeting: "Well hello there, hacker! xD",
+      text: [
+        "It's nice that you're checking the console.",
+        "Since you're here, you probably know what to do ;P",
+      ],
+    },
+  };
+
+  const message = messages[lang];
+
+  /* ======== Banner ======== */
+
+  const WIDTH = 56;
+  const SPACE = "\u00A0";
+
+  const GREEN = "color:#22c55e;font-family:monospace;font-size:12px;";
+  const YELLOW = "color:#facc15;font-family:monospace;font-size:12px;";
+  const TEXT = "color:#94a3b8;font-family:monospace;font-size:12px;";
+
+  const center = (text) => {
+    const padding = WIDTH - text.length;
+    const left = Math.floor(padding / 2);
+    const right = padding - left;
+
+    return `${SPACE.repeat(left)}${text}${SPACE.repeat(right)}`;
+  };
+
+  const row = (text, style) => `%c│%c${center(text)}%c│`;
+
+  const line = "─".repeat(WIDTH);
+
+  const output = [
+    `%c╭${line}╮`,
+    row("", GREEN),
+    row(message.greeting, YELLOW),
+    row("", GREEN),
+    row(message.text[0], TEXT),
+    row(message.text[1], TEXT),
+    row("", GREEN),
+    `%c╰${line}╯`,
+  ].join("\n");
+
+  console.log(
+    output,
+
+    GREEN,
+
+    GREEN,
+    GREEN,
+    GREEN,
+    GREEN,
+    YELLOW,
+    GREEN,
+    GREEN,
+    GREEN,
+    GREEN,
+    GREEN,
+    TEXT,
+    GREEN,
+    GREEN,
+    TEXT,
+    GREEN,
+    GREEN,
+    GREEN,
+    GREEN,
+
+    GREEN,
+  );
+})();
