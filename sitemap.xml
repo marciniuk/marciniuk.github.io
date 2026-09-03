@@ -101,6 +101,28 @@
   </url>
   <url>
     <loc>
+      https://marcini.uk/node_modules/tslib/tslib.es6.html
+    </loc>
+    <lastmod>
+      2026-09-03T20:02:53.537Z
+    </lastmod>
+    <priority>
+      0.6
+    </priority>
+  </url>
+  <url>
+    <loc>
+      https://marcini.uk/node_modules/tslib/tslib.html
+    </loc>
+    <lastmod>
+      2026-09-03T20:02:53.541Z
+    </lastmod>
+    <priority>
+      0.6
+    </priority>
+  </url>
+  <url>
+    <loc>
       https://marcini.uk/pl/kontakt/
     </loc>
     <lastmod>
@@ -266,10 +288,21 @@
   </url>
   <url>
     <loc>
+      https://marcini.uk/pl/narzedzia/marnify/
+    </loc>
+    <lastmod>
+      2026-09-03T22:16:52.543Z
+    </lastmod>
+    <priority>
+      0.5
+    </priority>
+  </url>
+  <url>
+    <loc>
       https://marcini.uk/pl/narzedzia/optimar/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.841Z
+      2026-09-03T21:30:48.770Z
     </lastmod>
     <priority>
       0.5
