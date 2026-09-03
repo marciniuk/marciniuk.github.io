@@ -1100,7 +1100,7 @@ is not a problem with esbuild. You need to fix your environment instead.
           }
           start(null);
         };
-        let formatMessages2 = ({ callName, refs, messages, options, callback }) => {
+        let formatMessages2 = ({ callName, refs, messages: messages2, options, callback }) => {
           if (!options) throw new Error(`Missing second argument in ${callName}() call`);
           let keys = {};
           let kind = getFlag(options, keys, "kind", mustBeString);
@@ -1112,7 +1112,7 @@ is not a problem with esbuild. You need to fix your environment instead.
           if (kind !== "error" && kind !== "warning") throw new Error(`Expected "kind" to be "error" or "warning" in ${callName}() call`);
           let request = {
             command: "format-msgs",
-            messages: sanitizeMessages(messages, "messages", null, "", terminalWidth),
+            messages: sanitizeMessages(messages2, "messages", null, "", terminalWidth),
             isWarning: kind === "warning"
           };
           if (color !== void 0) request.color = color;
@@ -1804,11 +1804,11 @@ ${file}:${line}:${column}: ERROR: ${pluginText}${e.text}`;
         }
         return error;
       }
-      function replaceDetailsInMessages(messages, stash) {
-        for (const message of messages) {
+      function replaceDetailsInMessages(messages2, stash) {
+        for (const message of messages2) {
           message.detail = stash.load(message.detail);
         }
-        return messages;
+        return messages2;
       }
       function sanitizeLocation(location2, where, terminalWidth) {
         if (location2 == null) return null;
@@ -1840,10 +1840,10 @@ ${file}:${line}:${column}: ERROR: ${pluginText}${e.text}`;
           suggestion: suggestion || ""
         };
       }
-      function sanitizeMessages(messages, property, stash, fallbackPluginName, terminalWidth) {
+      function sanitizeMessages(messages2, property, stash, fallbackPluginName, terminalWidth) {
         let messagesClone = [];
         let index = 0;
-        for (const message of messages) {
+        for (const message of messages2) {
           let keys = {};
           let id = getFlag(message, keys, "id", mustBeString);
           let pluginName = getFlag(message, keys, "pluginName", mustBeString);
@@ -1929,7 +1929,7 @@ ${file}:${line}:${column}: ERROR: ${pluginText}${e.text}`;
       var build = (options) => ensureServiceIsRunning().build(options);
       var context = (options) => ensureServiceIsRunning().context(options);
       var transform2 = (input2, options) => ensureServiceIsRunning().transform(input2, options);
-      var formatMessages = (messages, options) => ensureServiceIsRunning().formatMessages(messages, options);
+      var formatMessages = (messages2, options) => ensureServiceIsRunning().formatMessages(messages2, options);
       var analyzeMetafile = (metafile, options) => ensureServiceIsRunning().analyzeMetafile(metafile, options);
       var buildSync = () => {
         throw new Error(`The "buildSync" API only works in node`);
@@ -2738,12 +2738,12 @@ ${file}:${line}:${column}: ERROR: ${pluginText}${e.text}`;
               callback: (err, res) => err ? reject(err) : resolve(res)
             });
           }),
-          formatMessages: (messages, options) => new Promise((resolve, reject) => {
+          formatMessages: (messages2, options) => new Promise((resolve, reject) => {
             rejectAllPromise.then(reject);
             service.formatMessages({
               callName: "formatMessages",
               refs: null,
-              messages,
+              messages: messages2,
               options,
               callback: (err, res) => err ? reject(err) : resolve(res)
             });
@@ -22355,6 +22355,39 @@ var currentType = null;
 var currentFileName = null;
 var resultCode = "";
 var esbuildReady = false;
+var messages = document.documentElement.lang === "en" ? {
+  detecting: "Detecting",
+  engineStarting: "Starting engine...",
+  invalidCode: "Could not determine the code type.",
+  pasteCode: "Paste or load code.",
+  unsupportedCode: "Could not detect CSS or JavaScript.",
+  minifying: "Minifying...",
+  formatting: "Formatting...",
+  done: "Done.",
+  error: "Error",
+  unsupportedFile: "Unsupported file type.",
+  fileLoaded: "File loaded.",
+  copied: "Copied.",
+  copyFailed: "Could not copy.",
+  downloaded: "Downloaded",
+  fileHint: "CSS or JavaScript"
+} : {
+  detecting: "Wykrywanie",
+  engineStarting: "Uruchamianie silnika...",
+  invalidCode: "Nie uda\u0142o si\u0119 okre\u015Bli\u0107 typu kodu.",
+  pasteCode: "Wklej lub wczytaj kod.",
+  unsupportedCode: "Nie uda\u0142o si\u0119 rozpozna\u0107 CSS ani JavaScript.",
+  minifying: "Minimalizowanie...",
+  formatting: "Formatowanie...",
+  done: "Gotowe.",
+  error: "B\u0142\u0105d",
+  unsupportedFile: "Nieobs\u0142ugiwany typ pliku.",
+  fileLoaded: "Plik wczytany.",
+  copied: "Skopiowano.",
+  copyFailed: "Nie uda\u0142o si\u0119 skopiowa\u0107.",
+  downloaded: "Pobrano",
+  fileHint: "CSS lub JavaScript"
+};
 function formatBytes(bytes) {
   if (!bytes) return "0 B";
   const units = ["B", "KB", "MB", "GB"];
@@ -22388,7 +22421,7 @@ function updateButtons() {
 }
 function setDetection(type) {
   if (!type) {
-    detectionText.textContent = "Wykrywanie";
+    detectionText.textContent = messages.detecting;
     detectionDot.className = "h-1.5 w-1.5 rounded-full bg-zinc-600 transition-all duration-200";
     detection.className = "flex items-center gap-1.5 rounded-lg border border-white/[0.08] bg-white/[0.035] px-2.5 py-1.5 text-[9px] font-medium uppercase tracking-[0.12em] text-zinc-500 transition-all duration-200";
     return;
@@ -22439,7 +22472,7 @@ function setType(type) {
 }
 async function initEsbuild() {
   if (esbuildReady) return;
-  setStatus("Uruchamianie silnika...");
+  setStatus(messages.engineStarting);
   await esbuild.initialize({
     wasmURL: "/assets/js/tools/marnify/esbuild.wasm",
     worker: true
@@ -22470,7 +22503,7 @@ async function minifyCode(code) {
   if (currentType === "js") {
     return minifyJS(code);
   }
-  throw new Error("Nie uda\u0142o si\u0119 okre\u015Bli\u0107 typu kodu.");
+  throw new Error(messages.invalidCode);
 }
 async function beautifyCSS(code) {
   return Jn(code, {
@@ -22498,35 +22531,35 @@ async function beautifyCode(code) {
   if (currentType === "js") {
     return beautifyJS(code);
   }
-  throw new Error("Nie uda\u0142o si\u0119 okre\u015Bli\u0107 typu kodu.");
+  throw new Error(messages.invalidCode);
 }
 async function handleMinify() {
   const code = input.value;
   if (!code.trim()) {
-    setStatus("Wklej lub wczytaj kod.");
+    setStatus(messages.pasteCode);
     return;
   }
   const detected = detectAndUpdate();
   if (!detected) {
-    setStatus("Nie uda\u0142o si\u0119 rozpozna\u0107 CSS ani JavaScript.");
+    setStatus(messages.unsupportedCode);
     return;
   }
   minifyButton.disabled = true;
   beautifyButton.disabled = true;
   try {
-    setStatus("Minimalizowanie...");
+    setStatus(messages.minifying);
     const result = await minifyCode(code);
     resultCode = result;
     output.value = result;
     updateStats(code, result);
     updateButtons();
-    setStatus("Gotowe.");
+    setStatus(messages.done);
   } catch (error) {
     console.error(error);
     resultCode = "";
     output.value = "";
     updateButtons();
-    setStatus(`B\u0142\u0105d: ${error.message}`);
+    setStatus(`${messages.error}: ${error.message}`);
   } finally {
     updateButtons();
   }
@@ -22534,30 +22567,30 @@ async function handleMinify() {
 async function handleBeautify() {
   const code = input.value;
   if (!code.trim()) {
-    setStatus("Wklej lub wczytaj kod.");
+    setStatus(messages.pasteCode);
     return;
   }
   const detected = detectAndUpdate();
   if (!detected) {
-    setStatus("Nie uda\u0142o si\u0119 rozpozna\u0107 CSS ani JavaScript.");
+    setStatus(messages.unsupportedCode);
     return;
   }
   minifyButton.disabled = true;
   beautifyButton.disabled = true;
   try {
-    setStatus("Formatowanie...");
+    setStatus(messages.formatting);
     const result = await beautifyCode(code);
     resultCode = result;
     output.value = result;
     updateStats(code, result);
     updateButtons();
-    setStatus("Gotowe.");
+    setStatus(messages.done);
   } catch (error) {
     console.error(error);
     resultCode = "";
     output.value = "";
     updateButtons();
-    setStatus(`B\u0142\u0105d: ${error.message}`);
+    setStatus(`${messages.error}: ${error.message}`);
   } finally {
     updateButtons();
   }
@@ -22576,7 +22609,7 @@ async function loadFile(file) {
   if (!file) return;
   const type = detectFileType(file);
   if (!type) {
-    setStatus("Nieobs\u0142ugiwany typ pliku.");
+    setStatus(messages.unsupportedFile);
     return;
   }
   const code = await file.text();
@@ -22592,19 +22625,19 @@ async function loadFile(file) {
   minifiedSize.textContent = "0 B";
   savedSize.textContent = "0%";
   updateButtons();
-  setStatus("Plik wczytany.");
+  setStatus(messages.fileLoaded);
 }
 async function copyOutput() {
   if (!resultCode) return;
   try {
     await navigator.clipboard.writeText(resultCode);
-    setStatus("Skopiowano.");
+    setStatus(messages.copied);
     setTimeout(() => {
       setStatus("");
     }, 2e3);
   } catch (error) {
     console.error(error);
-    setStatus("Nie uda\u0142o si\u0119 skopiowa\u0107.");
+    setStatus(messages.copyFailed);
   }
 }
 function getOutputFilename() {
@@ -22641,7 +22674,7 @@ function downloadOutput() {
   link.click();
   link.remove();
   URL.revokeObjectURL(url);
-  setStatus(`Pobrano ${filename}.`);
+  setStatus(`${messages.downloaded} ${filename}.`);
 }
 function clearAll() {
   input.value = "";
@@ -22650,7 +22683,7 @@ function clearAll() {
   currentType = null;
   currentFileName = null;
   resultCode = "";
-  fileHint.textContent = "CSS lub JavaScript";
+  fileHint.textContent = messages.fileHint;
   originalSize.textContent = "0 B";
   minifiedSize.textContent = "0 B";
   savedSize.textContent = "0%";

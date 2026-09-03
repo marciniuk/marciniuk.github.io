@@ -43,6 +43,43 @@ let currentFileName = null;
 let resultCode = "";
 let esbuildReady = false;
 
+const messages =
+  document.documentElement.lang === "en"
+    ? {
+        detecting: "Detecting",
+        engineStarting: "Starting engine...",
+        invalidCode: "Could not determine the code type.",
+        pasteCode: "Paste or load code.",
+        unsupportedCode: "Could not detect CSS or JavaScript.",
+        minifying: "Minifying...",
+        formatting: "Formatting...",
+        done: "Done.",
+        error: "Error",
+        unsupportedFile: "Unsupported file type.",
+        fileLoaded: "File loaded.",
+        copied: "Copied.",
+        copyFailed: "Could not copy.",
+        downloaded: "Downloaded",
+        fileHint: "CSS or JavaScript",
+      }
+    : {
+        detecting: "Wykrywanie",
+        engineStarting: "Uruchamianie silnika...",
+        invalidCode: "Nie udało się określić typu kodu.",
+        pasteCode: "Wklej lub wczytaj kod.",
+        unsupportedCode: "Nie udało się rozpoznać CSS ani JavaScript.",
+        minifying: "Minimalizowanie...",
+        formatting: "Formatowanie...",
+        done: "Gotowe.",
+        error: "Błąd",
+        unsupportedFile: "Nieobsługiwany typ pliku.",
+        fileLoaded: "Plik wczytany.",
+        copied: "Skopiowano.",
+        copyFailed: "Nie udało się skopiować.",
+        downloaded: "Pobrano",
+        fileHint: "CSS lub JavaScript",
+      };
+
 /* =========================================================
    Utilities
    ========================================================= */
@@ -97,7 +134,7 @@ function updateButtons() {
 
 function setDetection(type) {
   if (!type) {
-    detectionText.textContent = "Wykrywanie";
+    detectionText.textContent = messages.detecting;
     detectionDot.className =
       "h-1.5 w-1.5 rounded-full bg-zinc-600 transition-all duration-200";
 
@@ -202,7 +239,7 @@ function setType(type) {
 async function initEsbuild() {
   if (esbuildReady) return;
 
-  setStatus("Uruchamianie silnika...");
+  setStatus(messages.engineStarting);
 
   await esbuild.initialize({
     wasmURL: "/assets/js/tools/marnify/esbuild.wasm",
@@ -247,7 +284,7 @@ async function minifyCode(code) {
     return minifyJS(code);
   }
 
-  throw new Error("Nie udało się określić typu kodu.");
+  throw new Error(messages.invalidCode);
 }
 
 /* =========================================================
@@ -284,7 +321,7 @@ async function beautifyCode(code) {
     return beautifyJS(code);
   }
 
-  throw new Error("Nie udało się określić typu kodu.");
+  throw new Error(messages.invalidCode);
 }
 
 /* =========================================================
@@ -295,14 +332,14 @@ async function handleMinify() {
   const code = input.value;
 
   if (!code.trim()) {
-    setStatus("Wklej lub wczytaj kod.");
+    setStatus(messages.pasteCode);
     return;
   }
 
   const detected = detectAndUpdate();
 
   if (!detected) {
-    setStatus("Nie udało się rozpoznać CSS ani JavaScript.");
+    setStatus(messages.unsupportedCode);
     return;
   }
 
@@ -310,7 +347,7 @@ async function handleMinify() {
   beautifyButton.disabled = true;
 
   try {
-    setStatus("Minimalizowanie...");
+    setStatus(messages.minifying);
 
     const result = await minifyCode(code);
 
@@ -320,7 +357,7 @@ async function handleMinify() {
     updateStats(code, result);
     updateButtons();
 
-    setStatus("Gotowe.");
+    setStatus(messages.done);
   } catch (error) {
     console.error(error);
 
@@ -329,7 +366,7 @@ async function handleMinify() {
 
     updateButtons();
 
-    setStatus(`Błąd: ${error.message}`);
+    setStatus(`${messages.error}: ${error.message}`);
   } finally {
     updateButtons();
   }
@@ -343,14 +380,14 @@ async function handleBeautify() {
   const code = input.value;
 
   if (!code.trim()) {
-    setStatus("Wklej lub wczytaj kod.");
+    setStatus(messages.pasteCode);
     return;
   }
 
   const detected = detectAndUpdate();
 
   if (!detected) {
-    setStatus("Nie udało się rozpoznać CSS ani JavaScript.");
+    setStatus(messages.unsupportedCode);
     return;
   }
 
@@ -358,7 +395,7 @@ async function handleBeautify() {
   beautifyButton.disabled = true;
 
   try {
-    setStatus("Formatowanie...");
+    setStatus(messages.formatting);
 
     const result = await beautifyCode(code);
 
@@ -368,7 +405,7 @@ async function handleBeautify() {
     updateStats(code, result);
     updateButtons();
 
-    setStatus("Gotowe.");
+    setStatus(messages.done);
   } catch (error) {
     console.error(error);
 
@@ -377,7 +414,7 @@ async function handleBeautify() {
 
     updateButtons();
 
-    setStatus(`Błąd: ${error.message}`);
+    setStatus(`${messages.error}: ${error.message}`);
   } finally {
     updateButtons();
   }
@@ -407,7 +444,7 @@ async function loadFile(file) {
   const type = detectFileType(file);
 
   if (!type) {
-    setStatus("Nieobsługiwany typ pliku.");
+    setStatus(messages.unsupportedFile);
     return;
   }
 
@@ -432,7 +469,7 @@ async function loadFile(file) {
 
   updateButtons();
 
-  setStatus("Plik wczytany.");
+  setStatus(messages.fileLoaded);
 }
 
 /* =========================================================
@@ -445,14 +482,14 @@ async function copyOutput() {
   try {
     await navigator.clipboard.writeText(resultCode);
 
-    setStatus("Skopiowano.");
+    setStatus(messages.copied);
 
     setTimeout(() => {
       setStatus("");
     }, 2000);
   } catch (error) {
     console.error(error);
-    setStatus("Nie udało się skopiować.");
+    setStatus(messages.copyFailed);
   }
 }
 
@@ -529,7 +566,7 @@ function downloadOutput() {
 
   URL.revokeObjectURL(url);
 
-  setStatus(`Pobrano ${filename}.`);
+  setStatus(`${messages.downloaded} ${filename}.`);
 }
 
 /* =========================================================
@@ -546,7 +583,7 @@ function clearAll() {
   currentFileName = null;
   resultCode = "";
 
-  fileHint.textContent = "CSS lub JavaScript";
+  fileHint.textContent = messages.fileHint;
 
   originalSize.textContent = "0 B";
   minifiedSize.textContent = "0 B";
