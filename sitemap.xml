@@ -16,7 +16,7 @@
       https://marcini.uk/en/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.579Z
+      2026-09-03T22:44:47.274Z
     </lastmod>
     <priority>
       0.8
@@ -27,7 +27,7 @@
       https://marcini.uk/pl/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.720Z
+      2026-09-03T22:44:47.284Z
     </lastmod>
     <priority>
       0.8
@@ -38,7 +38,7 @@
       https://marcini.uk/en/contact/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.570Z
+      2026-09-03T22:44:47.273Z
     </lastmod>
     <priority>
       0.6
@@ -49,7 +49,7 @@
       https://marcini.uk/en/privacy-policy/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.591Z
+      2026-09-03T22:44:47.275Z
     </lastmod>
     <priority>
       0.6
@@ -60,7 +60,7 @@
       https://marcini.uk/en/profiles/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.608Z
+      2026-09-03T22:44:47.276Z
     </lastmod>
     <priority>
       0.6
@@ -71,7 +71,7 @@
       https://marcini.uk/en/projects/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.625Z
+      2026-09-03T22:44:47.277Z
     </lastmod>
     <priority>
       0.6
@@ -82,7 +82,7 @@
       https://marcini.uk/en/setup/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.637Z
+      2026-09-03T22:44:47.278Z
     </lastmod>
     <priority>
       0.6
@@ -93,7 +93,7 @@
       https://marcini.uk/en/tools/
     </loc>
     <lastmod>
-      2026-09-03T09:38:34.340Z
+      2026-09-03T23:05:39.363Z
     </lastmod>
     <priority>
       0.6
@@ -126,7 +126,7 @@
       https://marcini.uk/pl/kontakt/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.733Z
+      2026-09-03T22:44:47.285Z
     </lastmod>
     <priority>
       0.6
@@ -137,7 +137,7 @@
       https://marcini.uk/pl/ksiazki/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.758Z
+      2026-09-03T22:44:47.288Z
     </lastmod>
     <priority>
       0.6
@@ -148,7 +148,7 @@
       https://marcini.uk/pl/narzedzia/
     </loc>
     <lastmod>
-      2026-09-03T09:36:50.673Z
+      2026-09-03T23:02:56.412Z
     </lastmod>
     <priority>
       0.6
@@ -159,7 +159,7 @@
       https://marcini.uk/pl/polecajki/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.858Z
+      2026-09-03T22:44:47.294Z
     </lastmod>
     <priority>
       0.6
@@ -170,7 +170,7 @@
       https://marcini.uk/pl/polityka-prywatnosci/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.877Z
+      2026-09-03T22:44:58.180Z
     </lastmod>
     <priority>
       0.6
@@ -181,7 +181,7 @@
       https://marcini.uk/pl/profile/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.887Z
+      2026-09-03T22:44:47.296Z
     </lastmod>
     <priority>
       0.6
@@ -192,7 +192,7 @@
       https://marcini.uk/pl/projekty/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.904Z
+      2026-09-03T22:44:47.297Z
     </lastmod>
     <priority>
       0.6
@@ -203,7 +203,7 @@
       https://marcini.uk/pl/setup/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.915Z
+      2026-09-03T22:44:47.298Z
     </lastmod>
     <priority>
       0.6
@@ -214,7 +214,7 @@
       https://marcini.uk/en/tools/adqr/
     </loc>
     <lastmod>
-      2026-09-03T22:29:37.012Z
+      2026-09-03T22:44:47.279Z
     </lastmod>
     <priority>
       0.5
@@ -225,7 +225,18 @@
       https://marcini.uk/en/tools/marlock/
     </loc>
     <lastmod>
-      2026-09-03T22:29:18.291Z
+      2026-09-03T22:44:47.281Z
+    </lastmod>
+    <priority>
+      0.5
+    </priority>
+  </url>
+  <url>
+    <loc>
+      https://marcini.uk/en/tools/marnify/
+    </loc>
+    <lastmod>
+      2026-09-03T22:50:46.655Z
     </lastmod>
     <priority>
       0.5
@@ -236,7 +247,7 @@
       https://marcini.uk/en/tools/optimar/
     </loc>
     <lastmod>
-      2026-09-03T22:27:13.526Z
+      2026-09-03T22:44:47.282Z
     </lastmod>
     <priority>
       0.5
@@ -247,7 +258,7 @@
       https://marcini.uk/pl/ksiazki/historia/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.750Z
+      2026-09-03T22:44:47.286Z
     </lastmod>
     <priority>
       0.5
@@ -258,7 +269,7 @@
       https://marcini.uk/pl/ksiazki/recenzje/
     </loc>
     <lastmod>
-      2026-09-03T09:34:13.768Z
+      2026-09-03T22:44:47.288Z
     </lastmod>
     <priority>
       0.5
@@ -269,7 +280,7 @@
       https://marcini.uk/pl/narzedzia/adqr/
     </loc>
     <lastmod>
-      2026-09-03T22:29:51.997Z
+      2026-09-03T22:44:47.290Z
     </lastmod>
     <priority>
       0.5
@@ -280,7 +291,7 @@
       https://marcini.uk/pl/narzedzia/marlock/
     </loc>
     <lastmod>
-      2026-09-03T22:30:00.353Z
+      2026-09-03T22:44:58.113Z
     </lastmod>
     <priority>
       0.5
@@ -291,7 +302,7 @@
       https://marcini.uk/pl/narzedzia/marnify/
     </loc>
     <lastmod>
-      2026-09-03T22:27:13.517Z
+      2026-09-03T22:52:15.683Z
     </lastmod>
     <priority>
       0.5
@@ -302,7 +313,7 @@
       https://marcini.uk/pl/narzedzia/optimar/
     </loc>
     <lastmod>
-      2026-09-03T22:27:13.509Z
+      2026-09-03T22:44:58.147Z
     </lastmod>
     <priority>
       0.5
