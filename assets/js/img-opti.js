@@ -5,6 +5,9 @@ import { encode as encodeJXL } from "@jsquash/jxl";
 import { optimise as optimisePNG } from "@jsquash/oxipng";
 import JSZip from "jszip";
 
+const isEnglish = document.documentElement.lang === "en";
+const text = (polish, english) => (isEnglish ? english : polish);
+
 /* =========================================================
    ELEMENTS
    ========================================================= */
@@ -414,7 +417,9 @@ async function encodeImage(file, settings = {}) {
 
   if (!ctx) {
     bitmap.close();
-    throw new Error("Nie udało się utworzyć Canvas.");
+    throw new Error(
+      text("Nie udało się utworzyć Canvas.", "Could not create the canvas."),
+    );
   }
 
   ctx.drawImage(bitmap, 0, 0, targetWidth, targetHeight);
@@ -469,7 +474,7 @@ async function encodeImage(file, settings = {}) {
   }
 
   if (!outputBuffer) {
-    throw new Error("Nieobsługiwany format.");
+    throw new Error(text("Nieobsługiwany format.", "Unsupported format."));
   }
 
   return new Blob([outputBuffer], {
@@ -551,11 +556,11 @@ async function optimizeSingle() {
     }
 
     if (optimizedSize) {
-      optimizedSize.textContent = "Błąd";
+      optimizedSize.textContent = text("Błąd", "Error");
     }
 
     if (statsOptimized) {
-      statsOptimized.textContent = "Błąd";
+      statsOptimized.textContent = text("Błąd", "Error");
     }
 
     if (saving) {
@@ -577,7 +582,7 @@ function updateDownloadButton() {
 
   button.innerHTML = `
     <i class="fad fa-download mr-2"></i>
-    Pobierz ${getExtension().toUpperCase()}
+    ${text("Pobierz", "Download")} ${getExtension().toUpperCase()}
   `;
 }
 
@@ -1078,12 +1083,14 @@ function renderBatchList() {
   batchList.innerHTML = "";
 
   batchCount.textContent =
-    batchFiles.length === 1 ? "1 zdjęcie" : `${batchFiles.length} zdjęć`;
+    batchFiles.length === 1
+      ? text("1 zdjęcie", "1 image")
+      : text(`${batchFiles.length} zdjęć`, `${batchFiles.length} images`);
 
   if (!batchFiles.length) {
     batchList.innerHTML = `
       <div class="py-10 text-center text-sm text-white/30">
-        Nie dodano jeszcze żadnych zdjęć
+        ${text("Nie dodano jeszcze żadnych zdjęć", "No images added yet")}
       </div>
     `;
 
@@ -1121,7 +1128,7 @@ function renderBatchList() {
           class="batch-file-status mt-1 text-xs text-white/25"
           data-index="${index}"
         >
-          Oczekuje
+          ${text("Oczekuje", "Pending")}
         </div>
       </div>
 
@@ -1129,7 +1136,7 @@ function renderBatchList() {
         type="button"
         class="batch-remove h-8 w-8 shrink-0 rounded-lg text-white/30 transition hover:bg-red-400/10 hover:text-red-300"
         data-index="${index}"
-        title="Usuń"
+        title="${text("Usuń", "Remove")}"
       >
         <i class="fad fa-xmark"></i>
       </button>
@@ -1172,7 +1179,7 @@ batchOptimize?.addEventListener("click", async () => {
   batchDownload.classList.add("hidden");
   batchProgress.classList.remove("hidden");
   batchProgressBar.style.width = "0%";
-  batchStatus.textContent = `Optymalizowanie 0 / ${batchFiles.length}`;
+  batchStatus.textContent = `${text("Optymalizowanie", "Optimizing")} 0 / ${batchFiles.length}`;
 
   batchResults = [];
   batchZipBlob = null;
@@ -1185,7 +1192,7 @@ batchOptimize?.addEventListener("click", async () => {
     );
 
     if (status) {
-      status.textContent = "Przetwarzanie...";
+      status.textContent = text("Przetwarzanie...", "Processing...");
       status.className = "batch-file-status mt-1 text-xs text-blue-300";
     }
 
@@ -1205,14 +1212,17 @@ batchOptimize?.addEventListener("click", async () => {
       });
 
       if (status) {
-        status.textContent = `Gotowe · ${formatBytes(blob.size)}`;
+        status.textContent = `${text("Gotowe", "Done")} · ${formatBytes(blob.size)}`;
         status.className = "batch-file-status mt-1 text-xs text-emerald-300";
       }
     } catch (error) {
-      console.error(`Błąd optymalizacji ${file.name}:`, error);
+      console.error(
+        `${text("Błąd optymalizacji", "Optimization error")} ${file.name}:`,
+        error,
+      );
 
       if (status) {
-        status.textContent = "Błąd";
+        status.textContent = text("Błąd", "Error");
         status.className = "batch-file-status mt-1 text-xs text-red-300";
       }
     }
@@ -1220,18 +1230,21 @@ batchOptimize?.addEventListener("click", async () => {
     const progress = ((i + 1) / batchFiles.length) * 100;
 
     batchProgressBar.style.width = `${progress}%`;
-    batchStatus.textContent = `Optymalizowanie ${i + 1} / ${batchFiles.length}`;
+    batchStatus.textContent = `${text("Optymalizowanie", "Optimizing")} ${i + 1} / ${batchFiles.length}`;
   }
 
   if (!batchResults.length) {
-    batchStatus.textContent = "Nie udało się zoptymalizować plików.";
+    batchStatus.textContent = text(
+      "Nie udało się zoptymalizować plików.",
+      "The files could not be optimized.",
+    );
 
     batchOptimize.disabled = false;
 
     return;
   }
 
-  batchStatus.textContent = `Gotowe · ${batchResults.length} / ${batchFiles.length}`;
+  batchStatus.textContent = `${text("Gotowe", "Done")} · ${batchResults.length} / ${batchFiles.length}`;
 
   await createBatchZip();
 
@@ -1249,7 +1262,7 @@ async function createBatchZip() {
     zip.file(result.name, result.blob);
   }
 
-  batchStatus.textContent = "Tworzenie ZIP...";
+  batchStatus.textContent = text("Tworzenie ZIP...", "Creating ZIP...");
 
   batchZipBlob = await zip.generateAsync({
     type: "blob",
@@ -1259,7 +1272,7 @@ async function createBatchZip() {
     },
   });
 
-  batchStatus.textContent = `Gotowe · ${batchResults.length} plików`;
+  batchStatus.textContent = `${text("Gotowe", "Done")} · ${batchResults.length} ${text("plików", "files")}`;
 
   batchDownload.classList.remove("hidden");
 }
