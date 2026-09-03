@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 
-const outputDir = path.join(root, "assets", "js");
+const outputDir = path.join(root, "assets", "js", "tools", "optimar");
 
 const wasmFiles = [
   // WebP

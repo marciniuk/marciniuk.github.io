@@ -205,7 +205,7 @@ async function initEsbuild() {
   setStatus("Uruchamianie silnika...");
 
   await esbuild.initialize({
-    wasmURL: "/assets/js/tools/esbuild.wasm",
+    wasmURL: "/assets/js/tools/marnify/esbuild.wasm",
     worker: true,
   });
 

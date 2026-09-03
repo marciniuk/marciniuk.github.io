@@ -2767,7 +2767,7 @@ ${file}:${line}:${column}: ERROR: ${pluginText}${e.text}`;
   }
 });
 
-// assets/js/tools/marnify.js
+// assets/js/tools/marnify/marnify.js
 var esbuild = __toESM(require_browser(), 1);
 
 // node_modules/prettier/standalone.mjs
@@ -22332,7 +22332,7 @@ var zy = { ...Zs3, parse: vl2 };
 var jy = { ...Zs3, parse: xl2 };
 var Hy = { postcss: Ei3 };
 
-// assets/js/tools/marnify.js
+// assets/js/tools/marnify/marnify.js
 var input = document.querySelector("#marnify-input");
 var output = document.querySelector("#marnify-output");
 var fileInput = document.querySelector("#marnify-file");
@@ -22441,7 +22441,7 @@ async function initEsbuild() {
   if (esbuildReady) return;
   setStatus("Uruchamianie silnika...");
   await esbuild.initialize({
-    wasmURL: "/assets/js/tools/esbuild.wasm",
+    wasmURL: "/assets/js/tools/marnify/esbuild.wasm",
     worker: true
   });
   esbuildReady = true;

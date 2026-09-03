@@ -6,7 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const source = path.resolve(
   __dirname,
-  "../../../node_modules/esbuild-wasm/esbuild.wasm",
+  "../../../../node_modules/esbuild-wasm/esbuild.wasm",
 );
 
 const destination = path.resolve(__dirname, "esbuild.wasm");

@@ -17105,7 +17105,7 @@ async function optimise3(data, options = {}) {
   return optimise4(new Uint8Array(data), _options.level, _options.interlace, _options.optimiseAlpha).buffer;
 }
 
-// assets/js/img-opti.js
+// assets/js/tools/optimar/img-opti.js
 var import_jszip = __toESM(require_jszip_min(), 1);
 var isEnglish = document.documentElement.lang === "en";
 var text = (polish, english) => isEnglish ? english : polish;
