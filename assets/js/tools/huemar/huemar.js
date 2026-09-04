@@ -303,6 +303,46 @@ function rgbToHsv(r, g, b) {
   };
 }
 
+function hsvToRgb(h, s, v) {
+  h = ((h % 360) + 360) % 360;
+  s = clamp(s, 0, 100) / 100;
+  v = clamp(v, 0, 100) / 100;
+
+  const chroma = v * s;
+  const sector = h / 60;
+  const second = chroma * (1 - Math.abs((sector % 2) - 1));
+  const match = v - chroma;
+  let red = 0;
+  let green = 0;
+  let blue = 0;
+
+  if (sector < 1) {
+    red = chroma;
+    green = second;
+  } else if (sector < 2) {
+    red = second;
+    green = chroma;
+  } else if (sector < 3) {
+    green = chroma;
+    blue = second;
+  } else if (sector < 4) {
+    green = second;
+    blue = chroma;
+  } else if (sector < 5) {
+    red = second;
+    blue = chroma;
+  } else {
+    red = chroma;
+    blue = second;
+  }
+
+  return {
+    r: Math.round((red + match) * 255),
+    g: Math.round((green + match) * 255),
+    b: Math.round((blue + match) * 255),
+  };
+}
+
 /* =========================================================
    OKLab / OKLCH
    ========================================================= */
@@ -354,6 +394,50 @@ function oklabToOklch(lab) {
     L: lab.L,
     C,
     h,
+  };
+}
+
+function linearToSrgb(value) {
+  return value <= 0.0031308
+    ? value * 12.92
+    : 1.055 * value ** (1 / 2.4) - 0.055;
+}
+
+function oklchToRgb(L, C, h) {
+  const angle = (h * Math.PI) / 180;
+  const a = C * Math.cos(angle);
+  const b = C * Math.sin(angle);
+
+  const lRoot = L + 0.3963377774 * a + 0.2158037573 * b;
+  const mRoot = L - 0.1055613458 * a - 0.0638541728 * b;
+  const sRoot = L - 0.0894841775 * a - 1.291485548 * b;
+
+  const l = lRoot ** 3;
+  const m = mRoot ** 3;
+  const s = sRoot ** 3;
+
+  return {
+    r: Math.round(
+      clamp(
+        linearToSrgb(4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s),
+        0,
+        1,
+      ) * 255,
+    ),
+    g: Math.round(
+      clamp(
+        linearToSrgb(-1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s),
+        0,
+        1,
+      ) * 255,
+    ),
+    b: Math.round(
+      clamp(
+        linearToSrgb(-0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s),
+        0,
+        1,
+      ) * 255,
+    ),
   };
 }
 
@@ -418,6 +502,58 @@ function parseHsl(value) {
 
   return {
     ...rgb,
+    a: clamp(alpha, 0, 1),
+  };
+}
+
+function parseHsv(value) {
+  if (!value) {
+    return null;
+  }
+
+  const match = value.match(
+    /hsva?\(\s*([\d.+-]+)\s*[, ]\s*([\d.+-]+)%\s*[, ]\s*([\d.+-]+)%(?:\s*[,/]\s*([\d.+-]+%?))?\s*\)/i,
+  );
+
+  if (!match) {
+    return null;
+  }
+
+  const alpha =
+    match[4] === undefined
+      ? color.a
+      : match[4].endsWith("%")
+        ? Number(match[4].replace("%", "")) / 100
+        : Number(match[4]);
+
+  return {
+    ...hsvToRgb(Number(match[1]), Number(match[2]), Number(match[3])),
+    a: clamp(alpha, 0, 1),
+  };
+}
+
+function parseOklch(value) {
+  if (!value) {
+    return null;
+  }
+
+  const match = value.match(
+    /oklch\(\s*([\d.+-]+)\s+([\d.+-]+)\s+([\d.+-]+)(?:\s*\/\s*([\d.+-]+%?))?\s*\)/i,
+  );
+
+  if (!match) {
+    return null;
+  }
+
+  const alpha =
+    match[4] === undefined
+      ? color.a
+      : match[4].endsWith("%")
+        ? Number(match[4].replace("%", "")) / 100
+        : Number(match[4]);
+
+  return {
+    ...oklchToRgb(Number(match[1]), Number(match[2]), Number(match[3])),
     a: clamp(alpha, 0, 1),
   };
 }
@@ -772,6 +908,26 @@ rgbInput?.addEventListener("change", () => {
 
 hslInput?.addEventListener("change", () => {
   const rgb = parseHsl(hslInput.value);
+
+  if (rgb) {
+    setColor(rgb);
+  } else {
+    updateInputs();
+  }
+});
+
+hsvInput?.addEventListener("change", () => {
+  const rgb = parseHsv(hsvInput.value);
+
+  if (rgb) {
+    setColor(rgb);
+  } else {
+    updateInputs();
+  }
+});
+
+oklchInput?.addEventListener("change", () => {
+  const rgb = parseOklch(oklchInput.value);
 
   if (rgb) {
     setColor(rgb);
