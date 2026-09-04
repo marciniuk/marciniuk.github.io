@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="en" class="overflow-x-clip scroll-smooth">
+  <head>
+    <!-- Main -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Adrian Marcini.uk</title>
+
+    <!-- SEO Description -->
+    <meta
+      name="description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta name="author" content="Adrian Marciniuk" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Assets -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/fonts.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
+    <script async src="/assets/fajs/fontawesome.js"></script>
+    <script async src="/assets/fajs/fa-cut.js"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://marcini.uk/en/tools/huemar/" />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrian Marciniuk",
+        "url": "https://marcini.uk/",
+        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
+        "sameAs": ["https://github.com/marciniuk"],
+        "jobTitle": "Frontend Developer",
+        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
+      }
+    </script>
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marcini.uk/en/tools/huemar/" />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/img/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/img/og/og-image.jpg"
+    />
+
+    <!-- Fade-in -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          document.body.classList.add("page-ready");
+        }, 150);
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- STARS -->
+    <stars></stars>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
+    >
+      <div
+        class="h-20 w-full bg-linear-to-b from-blue-900 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+      ></div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="main-header"
+      class="xl:mb-4 h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-all duration-500 ease-in-out"
+    >
+      <div class="flex justify-between w-full items-center z-30">
+        <!-- LOGO -->
+        <a
+          href="/en/"
+          class="flex gap-2 text-3xl lg:text-4xl italic items-center"
+        >
+          <img src="/assets/img/logo.svg" alt="logo" class="h-8 lg:h-10" />
+          Marcini.uk
+        </a>
+
+        <!-- HAMBURGER -->
+        <button
+          type="button"
+          id="menu-toggle"
+          class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+          aria-label="Open menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+        </button>
+
+        <!-- MENU -->
+        <nav
+          id="mobile-menu"
+          class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+        >
+          <a href="/en/profiles/" class="nav-link hover:text-rose-400"
+            ><i class="fad fa-address-card"></i> Profiles</a
+          >
+          <a href="/en/projects/" class="nav-link hover:text-emerald-400"
+            ><i class="fad fa-diagram-project"></i> Projects</a
+          >
+          <a href="/en/tools/" class="nav-link hover:text-lime-400"
+            ><i class="fad fa-diagram-project"></i> Tools</a
+          >
+          <a href="/en/setup/" class="nav-link hover:text-amber-400"
+            ><i class="fad fa-display-code"></i> Setup</a
+          >
+          <a href="/en/contact/" class="nav-link hover:text-sky-400"
+            ><i class="fad fa-envelope-open-text"></i> Contact</a
+          >
+        </nav>
+      </div>
+
+      <!-- VH FIX -->
+      <script>
+        (function () {
+          function setVh() {
+            document.documentElement.style.setProperty(
+              "--vh",
+              `${window.innerHeight * 0.01}px`,
+            );
+          }
+          setVh();
+          window.addEventListener("resize", setVh);
+        })();
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 md:py-12">
+      <!-- HEADER -->
+      <header class="mb-6 text-center">
+        <h1
+          class="bg-linear-to-b from-white via-white to-white/50 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl"
+        >
+          <i class="fad fa-palette mr-2 text-sky-300"></i>
+          Hue<span
+            class="bg-linear-to-r from-cyan-300 via-blue-400 to-violet-400 bg-clip-text text-transparent"
+            >MAR</span
+          >
+        </h1>
+
+        <p
+          class="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/40 sm:text-base"
+        >
+          Choose, analyze, and convert colors
+        </p>
+      </header>
+
+      <!-- MAIN COLOR -->
+      <section
+        class="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] p-4 shadow-2xl shadow-black/20 backdrop-blur-2xl sm:p-5"
+      >
+        <div
+          class="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/15 to-transparent"
+        ></div>
+
+        <div class="grid gap-4 lg:grid-cols-[minmax(0,1fr)_280px]">
+          <!-- Preview -->
+          <div
+            id="color-marbox-preview"
+            class="group relative flex min-h-64 overflow-hidden rounded-2xl border border-white/10"
+          >
+            <!-- Checkerboard -->
+            <div
+              class="absolute inset-0 opacity-[0.08]"
+              style="
+                background-image:
+                  linear-gradient(45deg, #fff 25%, transparent 25%),
+                  linear-gradient(-45deg, #fff 25%, transparent 25%),
+                  linear-gradient(45deg, transparent 75%, #fff 75%),
+                  linear-gradient(-45deg, transparent 75%, #fff 75%);
+                background-size: 24px 24px;
+                background-position:
+                  0 0,
+                  0 12px,
+                  12px -12px,
+                  -12px 0;
+              "
+            ></div>
+
+            <!-- Color -->
+            <div
+              id="color-marbox-preview-color"
+              class="absolute inset-0 transition-colors duration-150"
+            ></div>
+
+            <!-- Overlay -->
+            <div
+              class="absolute inset-0 bg-linear-to-t from-black/35 via-transparent to-white/5"
+            ></div>
+
+            <!-- Info -->
+            <div class="relative z-10 mt-auto w-full p-5">
+              <div
+                class="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-black/20 px-4 py-3 shadow-xl backdrop-blur-xl"
+              >
+                <span
+                  id="color-marbox-current"
+                  class="h-10 w-10 shrink-0 rounded-xl border border-white/20 shadow-lg"
+                ></span>
+
+                <div>
+                  <div
+                    id="color-marbox-preview-hex"
+                    class="font-mono text-sm font-semibold text-white"
+                  >
+                    #38BDF8
+                  </div>
+
+                  <div
+                    id="color-marbox-current-value"
+                    class="mt-0.5 font-mono text-[10px] text-white/40"
+                  >
+                    RGB 56, 189, 248
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Picker -->
+          <div
+            class="flex flex-col rounded-2xl border border-white/[0.07] bg-black/10 p-4"
+          >
+            <div class="mb-3 flex items-center justify-between">
+              <div
+                class="text-[10px] font-semibold uppercase tracking-[0.15em] text-white/35"
+              >
+                Color
+              </div>
+
+              <span class="text-[10px] text-white/20"> PICKER </span>
+            </div>
+
+            <!-- Pretty color input -->
+            <div
+              class="relative flex-1 overflow-hidden rounded-2xl border border-white/10 bg-white/2.5 p-1.5 shadow-inner min-h-13"
+            >
+              <div
+                class="pointer-events-none absolute inset-1 rounded-xl opacity-[0.08]"
+                style="
+                  background-image:
+                    linear-gradient(45deg, #fff 25%, transparent 25%),
+                    linear-gradient(-45deg, #fff 25%, transparent 25%),
+                    linear-gradient(45deg, transparent 75%, #fff 75%),
+                    linear-gradient(-45deg, transparent 75%, #fff 75%);
+                  background-size: 16px 16px;
+                  background-position:
+                    0 0,
+                    0 8px,
+                    8px -8px,
+                    -8px 0;
+                "
+              ></div>
+
+              <div
+                id="color-marbox-picker-preview"
+                class="pointer-events-none absolute inset-1 rounded-xl"
+              ></div>
+
+              <div
+                class="pointer-events-none absolute inset-1 rounded-xl border border-white/15 transition group-hover:border-white/25"
+              ></div>
+
+              <input
+                id="color-marbox-picker"
+                type="color"
+                value="#38BDF8"
+                aria-label="Choose a color"
+                class="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+              />
+
+              <div
+                class="pointer-events-none absolute inset-x-0 bottom-3 flex justify-center"
+              >
+                <span
+                  class="rounded-full border border-white/10 bg-black/25 px-3 py-1 text-[10px] font-medium text-white/45 backdrop-blur-xl"
+                >
+                  Click to choose a color
+                </span>
+              </div>
+            </div>
+
+            <!-- Alpha -->
+            <div class="mt-5">
+              <div class="mb-2 flex items-center justify-between">
+                <label
+                  for="color-marbox-alpha"
+                  class="text-[10px] font-semibold uppercase tracking-[0.14em] text-white/35"
+                >
+                  Alpha
+                </label>
+
+                <span
+                  id="color-marbox-alpha-value"
+                  class="font-mono text-xs text-white/55"
+                >
+                  100%
+                </span>
+              </div>
+
+              <input
+                id="color-marbox-alpha"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+                class="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-blue-400"
+              />
+            </div>
+
+            <!-- Actions -->
+            <div class="mt-4 grid grid-cols-2 gap-2">
+              <button
+                id="color-marbox-eyedropper"
+                type="button"
+                class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/4 px-3 py-2.5 text-xs font-medium text-white/55 transition hover:border-white/20 hover:bg-white/8 hover:text-white"
+              >
+                <i class="fad fa-eye-dropper"></i>
+                Screen
+              </button>
+
+              <button
+                id="color-marbox-random"
+                type="button"
+                class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/4 px-3 py-2.5 text-xs font-medium text-white/55 transition hover:border-white/20 hover:bg-white/8 hover:text-white"
+              >
+                <i class="fad fa-dice"></i>
+                Random
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORMATS -->
+      <section
+        class="mt-4 rounded-3xl border border-white/10 bg-white/[0.035] p-4 shadow-2xl shadow-black/10 backdrop-blur-2xl sm:p-5"
+      >
+        <div class="mb-4">
+          <div class="flex items-center justify-between gap-3">
+            <h2 class="text-sm font-semibold text-white/85">Color formats</h2>
+
+            <span
+              class="hidden items-center gap-1.5 rounded-full border border-white/[0.07] bg-white/2.5 px-2.5 py-1 text-[9px] font-medium uppercase tracking-wider text-white/25 sm:flex"
+            >
+              <i class="fad fa-mouse-pointer text-[8px]"></i>
+              Editable
+            </span>
+          </div>
+
+          <p class="mt-1.5 text-xs text-white/30">
+            Click a value to edit it.
+            <span class="text-white/20">
+              Copy it using the icon on the right.
+            </span>
+          </p>
+        </div>
+
+        <div class="grid gap-2.5 sm:grid-cols-2">
+          <!-- HEX -->
+          <div
+            class="group flex min-w-0 items-center gap-3 rounded-2xl border border-white/[0.07] bg-black/15 px-3 py-2.5 transition-all duration-200 hover:border-white/13 hover:bg-white/4 hover:shadow-lg hover:shadow-black/10"
+          >
+            <span
+              class="shrink-0 rounded-lg bg-white/5 px-2 py-1 text-[9px] font-bold tracking-[0.14em] text-white/35 transition-colors group-hover:text-white/50"
+            >
+              HEX
+            </span>
+
+            <input
+              id="color-marbox-hex"
+              type="text"
+              spellcheck="false"
+              autocomplete="off"
+              class="min-w-0 flex-1 bg-transparent font-mono text-sm font-medium text-white/70 outline-none transition-colors placeholder:text-white/20 focus:text-white"
+            />
+
+            <button
+              type="button"
+              class="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-white/[0.07] bg-white/[0.035] text-white/25 transition-all duration-200 hover:border-blue-400/20 hover:bg-blue-400/8 hover:text-blue-300 active:scale-95"
+              data-copy="hex"
+              aria-label="Copy HEX"
+              title="Copy HEX"
+            >
+              <i class="fad fa-copy text-xs"></i>
+            </button>
+          </div>
+
+          <!-- RGB -->
+          <div
+            class="group flex min-w-0 items-center gap-3 rounded-2xl border border-white/[0.07] bg-black/15 px-3 py-2.5 transition-all duration-200 hover:border-white/13 hover:bg-white/4 hover:shadow-lg hover:shadow-black/10"
+          >
+            <span
+              class="shrink-0 rounded-lg bg-white/5 px-2 py-1 text-[9px] font-bold tracking-[0.14em] text-white/35 transition-colors group-hover:text-white/50"
+            >
+              RGB
+            </span>
+
+            <input
+              id="color-marbox-rgb"
+              type="text"
+              spellcheck="false"
+              autocomplete="off"
+              class="min-w-0 flex-1 bg-transparent font-mono text-sm font-medium text-white/70 outline-none transition-colors focus:text-white"
+            />
+
+            <button
+              type="button"
+              class="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-white/[0.07] bg-white/[0.035] text-white/25 transition-all duration-200 hover:border-blue-400/20 hover:bg-blue-400/8 hover:text-blue-300 active:scale-95"
+              data-copy="rgb"
+              aria-label="Copy RGB"
+              title="Copy RGB"
+            >
+              <i class="fad fa-copy text-xs"></i>
+            </button>
+          </div>
+
+          <!-- HSL -->
+          <div
+            class="group flex min-w-0 items-center gap-3 rounded-2xl border border-white/[0.07] bg-black/15 px-3 py-2.5 transition-all duration-200 hover:border-white/13 hover:bg-white/4 hover:shadow-lg hover:shadow-black/10"
+          >
+            <span
+              class="shrink-0 rounded-lg bg-white/5 px-2 py-1 text-[9px] font-bold tracking-[0.14em] text-white/35 transition-colors group-hover:text-white/50"
+            >
+              HSL
+            </span>
+
+            <input
+              id="color-marbox-hsl"
+              type="text"
+              spellcheck="false"
+              autocomplete="off"
+              class="min-w-0 flex-1 bg-transparent font-mono text-sm font-medium text-white/70 outline-none transition-colors focus:text-white"
+            />
+
+            <button
+              type="button"
+              class="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-white/[0.07] bg-white/[0.035] text-white/25 transition-all duration-200 hover:border-blue-400/20 hover:bg-blue-400/8 hover:text-blue-300 active:scale-95"
+              data-copy="hsl"
+              aria-label="Copy HSL"
+              title="Copy HSL"
+            >
+              <i class="fad fa-copy text-xs"></i>
+            </button>
+          </div>
+
+          <!-- HSV -->
+          <div
+            class="group flex min-w-0 items-center gap-3 rounded-2xl border border-white/[0.07] bg-black/15 px-3 py-2.5 transition-all duration-200 hover:border-white/13 hover:bg-white/4 hover:shadow-lg hover:shadow-black/10"
+          >
+            <span
+              class="shrink-0 rounded-lg bg-white/5 px-2 py-1 text-[9px] font-bold tracking-[0.14em] text-white/35 transition-colors group-hover:text-white/50"
+            >
+              HSV
+            </span>
+
+            <input
+              id="color-marbox-hsv"
+              type="text"
+              spellcheck="false"
+              autocomplete="off"
+              class="min-w-0 flex-1 bg-transparent font-mono text-sm font-medium text-white/70 outline-none transition-colors focus:text-white"
+            />
+
+            <button
+              type="button"
+              class="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-white/[0.07] bg-white/[0.035] text-white/25 transition-all duration-200 hover:border-blue-400/20 hover:bg-blue-400/8 hover:text-blue-300 active:scale-95"
+              data-copy="hsv"
+              aria-label="Copy HSV"
+              title="Copy HSV"
+            >
+              <i class="fad fa-copy text-xs"></i>
+            </button>
+          </div>
+
+          <!-- OKLCH -->
+          <div
+            class="group flex min-w-0 items-center gap-3 rounded-2xl border border-white/[0.07] bg-black/15 px-3 py-2.5 transition-all duration-200 hover:border-white/13 hover:bg-white/4 hover:shadow-lg hover:shadow-black/10 sm:col-span-2"
+          >
+            <span
+              class="shrink-0 rounded-lg bg-white/5 px-2 py-1 text-[9px] font-bold tracking-[0.14em] text-white/35 transition-colors group-hover:text-white/50"
+            >
+              OKLCH
+            </span>
+
+            <input
+              id="color-marbox-oklch"
+              type="text"
+              spellcheck="false"
+              autocomplete="off"
+              class="min-w-0 flex-1 bg-transparent font-mono text-sm font-medium text-white/70 outline-none transition-colors focus:text-white"
+            />
+
+            <button
+              type="button"
+              class="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-white/[0.07] bg-white/[0.035] text-white/25 transition-all duration-200 hover:border-blue-400/20 hover:bg-blue-400/8 hover:text-blue-300 active:scale-95"
+              data-copy="oklch"
+              aria-label="Copy OKLCH"
+              title="Copy OKLCH"
+            >
+              <i class="fad fa-copy text-xs"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTRAST -->
+      <section
+        class="mt-4 rounded-3xl border border-white/10 bg-white/[0.035] p-4 shadow-2xl shadow-black/10 backdrop-blur-2xl sm:p-5"
+      >
+        <div class="mb-5 flex items-center justify-between gap-4">
+          <div>
+            <h2 class="text-sm font-semibold text-white/85">
+              Contrast checker
+            </h2>
+
+            <p class="mt-1 text-xs text-white/30">
+              Check text readability against the background.
+            </p>
+          </div>
+
+          <button
+            id="color-marbox-swap"
+            type="button"
+            class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/4 px-3 py-2 text-xs font-medium text-white/50 transition hover:border-white/20 hover:bg-white/8 hover:text-white"
+          >
+            <i class="fad fa-arrows-left-right"></i>
+            Swap
+          </button>
+        </div>
+
+        <!-- FG / BG -->
+        <div class="grid gap-3 sm:grid-cols-2">
+          <!-- Foreground -->
+          <div class="rounded-2xl border border-white/[0.07] bg-black/10 p-3.5">
+            <div class="mb-3 flex items-center justify-between">
+              <span
+                class="text-[10px] font-semibold uppercase tracking-[0.14em] text-white/35"
+              >
+                Foreground
+              </span>
+
+              <span class="text-[10px] text-white/20"> Text </span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div
+                class="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-white/2.5 p-1"
+              >
+                <div
+                  class="pointer-events-none absolute inset-1 rounded-lg opacity-[0.08]"
+                  style="
+                    background-image:
+                      linear-gradient(45deg, #fff 25%, transparent 25%),
+                      linear-gradient(-45deg, #fff 25%, transparent 25%),
+                      linear-gradient(45deg, transparent 75%, #fff 75%),
+                      linear-gradient(-45deg, transparent 75%, #fff 75%);
+                    background-size: 10px 10px;
+                    background-position:
+                      0 0,
+                      0 5px,
+                      5px -5px,
+                      -5px 0;
+                  "
+                ></div>
+
+                <div
+                  id="color-marbox-foreground-preview"
+                  class="absolute inset-1 rounded-lg"
+                ></div>
+
+                <input
+                  id="color-marbox-foreground"
+                  type="color"
+                  value="#38BDF8"
+                  aria-label="Foreground color"
+                  class="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+                />
+              </div>
+
+              <input
+                id="color-marbox-foreground-hex"
+                type="text"
+                value="#38BDF8"
+                spellcheck="false"
+                autocomplete="off"
+                class="min-w-0 flex-1 bg-transparent font-mono text-sm text-white/75 outline-none"
+              />
+            </div>
+          </div>
+
+          <!-- Background -->
+          <div class="rounded-2xl border border-white/[0.07] bg-black/10 p-3.5">
+            <div class="mb-3 flex items-center justify-between">
+              <span
+                class="text-[10px] font-semibold uppercase tracking-[0.14em] text-white/35"
+              >
+                Background
+              </span>
+
+              <span class="text-[10px] text-white/20"> Background </span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div
+                class="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-white/2.5 p-1"
+              >
+                <div
+                  class="pointer-events-none absolute inset-1 rounded-lg opacity-[0.08]"
+                  style="
+                    background-image:
+                      linear-gradient(45deg, #fff 25%, transparent 25%),
+                      linear-gradient(-45deg, #fff 25%, transparent 25%),
+                      linear-gradient(45deg, transparent 75%, #fff 75%),
+                      linear-gradient(-45deg, transparent 75%, #fff 75%);
+                    background-size: 10px 10px;
+                    background-position:
+                      0 0,
+                      0 5px,
+                      5px -5px,
+                      -5px 0;
+                  "
+                ></div>
+
+                <div
+                  id="color-marbox-background-preview"
+                  class="absolute inset-1 rounded-lg"
+                ></div>
+
+                <input
+                  id="color-marbox-background"
+                  type="color"
+                  value="#FFFFFF"
+                  aria-label="Background color"
+                  class="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+                />
+              </div>
+
+              <input
+                id="color-marbox-background-hex"
+                type="text"
+                value="#FFFFFF"
+                spellcheck="false"
+                autocomplete="off"
+                class="min-w-0 flex-1 bg-transparent font-mono text-sm text-white/75 outline-none"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Contrast preview -->
+        <div
+          id="color-marbox-contrast-preview"
+          class="relative mt-4 overflow-hidden rounded-2xl border border-white/10 p-6 shadow-inner transition-colors duration-150"
+        >
+          <div
+            class="absolute inset-0 bg-linear-to-br from-white/5 via-transparent to-black/10"
+          ></div>
+
+          <div class="relative text-center">
+            <div
+              id="color-marbox-contrast-preview-text"
+              class="text-2xl font-bold"
+            >
+              Sample text
+            </div>
+
+            <div
+              id="color-marbox-contrast-preview-small"
+              class="mt-2 text-sm opacity-70"
+            >
+              This is how readable the selected color combination is.
+            </div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="mt-3 grid gap-3 sm:grid-cols-2">
+          <div class="rounded-2xl border border-white/[0.07] bg-black/10 p-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-white/35"> Normal text </span>
+
+              <span id="color-marbox-contrast-normal-status"></span>
+            </div>
+
+            <div
+              id="color-marbox-contrast-normal-ratio"
+              class="mt-2 font-mono text-xl font-semibold text-white/85"
+            >
+              4.50:1
+            </div>
+
+            <div class="mt-1 text-[10px] text-white/20">AA 4.5:1 · AAA 7:1</div>
+          </div>
+
+          <div class="rounded-2xl border border-white/[0.07] bg-black/10 p-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-white/35"> Large text </span>
+
+              <span id="color-marbox-contrast-large-status"></span>
+            </div>
+
+            <div
+              id="color-marbox-contrast-large-ratio"
+              class="mt-2 font-mono text-xl font-semibold text-white/85"
+            >
+              4.50:1
+            </div>
+
+            <div class="mt-1 text-[10px] text-white/20">AA 3:1 · AAA 4.5:1</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PALETTE -->
+      <section
+        class="mt-4 rounded-3xl border border-white/10 bg-white/[0.035] p-4 shadow-2xl shadow-black/10 backdrop-blur-2xl sm:p-5"
+      >
+        <div class="mb-4">
+          <h2 class="text-sm font-semibold text-white/85">Palette</h2>
+
+          <p class="mt-1 text-xs text-white/30">
+            Variants generated from the current color.
+          </p>
+        </div>
+
+        <div
+          id="color-marbox-palette"
+          class="grid grid-cols-2 gap-2.5 sm:grid-cols-4 lg:grid-cols-8"
+        ></div>
+      </section>
+
+      <!-- CSS -->
+      <section
+        class="mt-4 rounded-3xl border border-white/10 bg-white/[0.035] p-4 shadow-2xl shadow-black/10 backdrop-blur-2xl sm:p-5"
+      >
+        <div class="mb-4 flex items-center justify-between">
+          <div>
+            <h2 class="text-sm font-semibold text-white/85">CSS</h2>
+
+            <p class="mt-1 text-xs text-white/30">
+              Ready-to-use CSS variables.
+            </p>
+          </div>
+
+          <button
+            id="color-marbox-copy-css"
+            type="button"
+            class="rounded-xl border border-white/10 bg-white/4 px-3 py-2 text-xs font-medium text-white/50 transition hover:border-white/20 hover:bg-white/8 hover:text-white"
+          >
+            <i class="fad fa-copy mr-1.5"></i>
+            Copy
+          </button>
+        </div>
+
+        <pre
+          id="color-marbox-css"
+          class="overflow-x-auto rounded-2xl border border-white/[0.07] bg-black/20 p-4 font-mono text-xs leading-relaxed text-white/55"
+        ></pre>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="z-50">
+      <div id="footer" class="bg-blue-700/60 md:mb-4 md:mx-3 md:rounded-full">
+        <div class="flex justify-center items-center">
+          2019-<full-year></full-year>
+          <i class="fad fa-copyright w-5 h-4"></i>
+          <strong>Adrian Marciniuk</strong>
+        </div>
+
+        <a href="/en/privacy-policy/" class="flex justify-center items-center"
+          ><i class="fad fa-user-secret w-5 h-4"></i> Privacy Policy</a
+        >
+      </div>
+      <!-- 100% privacy-first analytics -->
+      <script
+        data-collect-dnt="true"
+        async
+        src="https://scripts.simpleanalyticscdn.com/latest.js"
+      ></script>
+      <noscript
+        ><img
+          src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+          alt=""
+          referrerpolicy="no-referrer-when-downgrade"
+      /></noscript>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/tools/huemar/huemar.js"></script>
+  </body>
+</html>
