@@ -93,7 +93,7 @@
       https://marcini.uk/en/tools/
     </loc>
     <lastmod>
-      2026-09-04T16:23:08.582Z
+      2026-09-04T21:17:21.689Z
     </lastmod>
     <priority>
       0.6
@@ -148,7 +148,7 @@
       https://marcini.uk/pl/narzedzia/
     </loc>
     <lastmod>
-      2026-09-04T16:23:32.089Z
+      2026-09-04T20:58:40.242Z
     </lastmod>
     <priority>
       0.6
@@ -233,6 +233,17 @@
   </url>
   <url>
     <loc>
+      https://marcini.uk/en/tools/infomar/
+    </loc>
+    <lastmod>
+      2026-09-04T21:32:23.081Z
+    </lastmod>
+    <priority>
+      0.5
+    </priority>
+  </url>
+  <url>
+    <loc>
       https://marcini.uk/en/tools/marlock/
     </loc>
     <lastmod>
@@ -303,6 +314,17 @@
     </loc>
     <lastmod>
       2026-09-04T16:32:18.703Z
+    </lastmod>
+    <priority>
+      0.5
+    </priority>
+  </url>
+  <url>
+    <loc>
+      https://marcini.uk/pl/narzedzia/infomar/
+    </loc>
+    <lastmod>
+      2026-09-04T21:13:26.065Z
     </lastmod>
     <priority>
       0.5
