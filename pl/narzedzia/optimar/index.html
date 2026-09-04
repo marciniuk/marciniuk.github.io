@@ -231,7 +231,7 @@
       <!-- Mode switch -->
       <div
         id="mode-select"
-        class="inline-flex w-full max-w-sm rounded-full border border-white/10 bg-white/[0.035] p-1.5 backdrop-blur-xl"
+        class="inline-flex w-full max-w-sm rounded-full border border-white/10 bg-blue-700/20 p-1.5 backdrop-blur-xl"
       >
         <!-- Single -->
         <button
@@ -257,7 +257,7 @@
           aria-pressed="false"
         >
           <span
-            class="flex h-7 w-7 items-center justify-center rounded-lg bg-white/[0.035] transition-colors duration-200 text-white/35"
+            class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-700/20 transition-colors duration-200 text-white/35"
           >
             <i class="fad fa-images text-xs"></i>
           </span>
@@ -271,7 +271,7 @@
         <!-- Dropzone -->
         <div
           id="single-dropzone"
-          class="group relative mx-auto flex min-h-72 w-full max-w-5xl cursor-pointer flex-col items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] p-8 backdrop-blur-2xl transition-all duration-500 hover:border-blue-300/25 hover:bg-white/5 sm:min-h-80"
+          class="group relative mx-auto flex min-h-72 w-full max-w-5xl cursor-pointer flex-col items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-blue-700/20 p-8 backdrop-blur-2xl transition-all duration-500 hover:border-blue-300/25 hover:bg-blue-600/20 sm:min-h-80"
         >
           <div
             class="absolute -top-32 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl transition-all duration-700 group-hover:bg-blue-400/20"
@@ -341,7 +341,7 @@
         <div id="single-tool" class="mx-auto mt-5 hidden w-full max-w-5xl">
           <!-- File bar -->
           <div
-            class="mb-5 flex flex-col items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[0.035] p-4 backdrop-blur-2xl sm:flex-row"
+            class="mb-5 flex flex-col items-center justify-between gap-4 rounded-2xl border border-white/10 bg-blue-700/20 p-4 backdrop-blur-2xl sm:flex-row"
           >
             <div class="flex min-w-0 w-full items-center gap-3">
               <div
@@ -375,7 +375,7 @@
           <!-- Previews -->
           <div class="grid gap-4 md:grid-cols-2">
             <div
-              class="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] backdrop-blur-lg"
+              class="overflow-hidden rounded-2xl border border-white/10 bg-blue-700/20 backdrop-blur-lg"
             >
               <div
                 class="flex items-center justify-between border-b border-white/[0.07] px-4 py-3.5"
@@ -427,7 +427,7 @@
 
           <!-- Settings -->
           <div
-            class="relative z-30 mt-4 rounded-2xl border border-white/10 bg-white/4 p-5 backdrop-blur-2xl sm:p-6"
+            class="relative z-30 mt-4 rounded-2xl border border-white/10 bg-blue-700/20 p-5 backdrop-blur-2xl sm:p-6"
           >
             <div class="grid gap-6 lg:grid-cols-2">
               <!-- Format -->
@@ -659,10 +659,8 @@
           </div>
 
           <!-- Stats -->
-          <div class="mt-4 grid gap-3 sm:grid-cols-3">
-            <div
-              class="rounded-2xl border border-white/10 bg-white/[0.035] p-4"
-            >
+          <div class="mt-4 grid gap-3 sm:grid-cols-3 backdrop-blur-2xl">
+            <div class="rounded-2xl border border-white/10 bg-blue-700/20 p-4">
               <span class="text-[11px] uppercase text-white/30">
                 Oryginał
               </span>
@@ -675,9 +673,7 @@
               </strong>
             </div>
 
-            <div
-              class="rounded-2xl border border-white/10 bg-white/[0.035] p-4"
-            >
+            <div class="rounded-2xl border border-white/10 bg-blue-700/20 p-4">
               <span class="text-[11px] uppercase text-white/30">Wynik</span>
 
               <strong
@@ -720,7 +716,7 @@
         <!-- Batch dropzone -->
         <div
           id="batch-dropzone"
-          class="group relative flex min-h-64 cursor-pointer flex-col items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-white/[0.035] p-8 text-center backdrop-blur-2xl transition-all duration-500 hover:border-blue-300/25 hover:bg-white/5"
+          class="group relative flex min-h-64 cursor-pointer flex-col items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-blue-700/20 p-8 text-center backdrop-blur-2xl transition-all duration-500 hover:border-blue-300/25 hover:bg-blue-600/20"
         >
           <div
             class="absolute -top-32 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl transition-all duration-700 group-hover:bg-blue-400/20"
@@ -751,7 +747,7 @@
 
         <!-- Batch list -->
         <div
-          class="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] backdrop-blur-2xl"
+          class="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-blue-700/20 backdrop-blur-2xl"
         >
           <div
             class="flex items-center justify-between border-b border-white/[0.07] px-5 py-4"
@@ -778,7 +774,7 @@
         <!-- Batch settings -->
         <div
           id="batch-settings"
-          class="relative z-30 mt-4 rounded-2xl border border-white/10 bg-white/4 p-5 backdrop-blur-2xl sm:p-6"
+          class="relative z-30 mt-4 rounded-2xl border border-white/10 bg-blue-700/20 p-5 backdrop-blur-2xl sm:p-6"
         >
           <div class="grid gap-6 lg:grid-cols-2">
             <!-- Format -->
@@ -1010,7 +1006,7 @@
         <!-- Batch progress -->
         <div
           id="batch-progress"
-          class="mt-4 hidden rounded-2xl border border-white/10 bg-white/[0.035] p-4 backdrop-blur-2xl"
+          class="mt-4 hidden rounded-2xl border border-white/10 bg-blue-700/20 p-4 backdrop-blur-2xl"
         >
           <div class="mb-2 flex justify-between text-xs">
             <span id="batch-status" class="text-white/45">

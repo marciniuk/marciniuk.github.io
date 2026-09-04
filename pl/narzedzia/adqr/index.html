@@ -202,7 +202,7 @@
     <!-- MAIN -->
     <main class="w-full h-full flex place-content-center items-center">
       <section
-        class="m-4 flex h-full w-auto flex-col gap-5 rounded-3xl border border-white/15 bg-blue-700/40 p-5 shadow-2xl shadow-blue-950/40 backdrop-blur-xl md:flex-row md:p-6"
+        class="m-4 flex h-full w-auto flex-col gap-5 rounded-3xl border border-white/15 bg-blue-700/20 p-5 shadow-2xl shadow-blue-950/40 backdrop-blur-xl md:flex-row md:p-6"
       >
         <!-- CONTROLS -->
         <div
@@ -215,7 +215,7 @@
 
           <input
             id="qr-text"
-            class="w-full rounded-2xl border border-white/15 bg-blue-950/30 px-4 py-2.5 text-sky-100 shadow-inner shadow-white/3 outline-none backdrop-blur-md transition-all duration-300 placeholder:text-sky-200/40 hover:border-white/25 hover:bg-blue-950/40 focus:border-sky-300/60 focus:bg-blue-950/50 focus:ring-2 focus:ring-sky-300/10"
+            class="w-full rounded-2xl border border-white/15 bg-blue-700/20 px-4 py-2.5 text-sky-100 shadow-inner shadow-white/3 outline-none backdrop-blur-md transition-all duration-300 placeholder:text-sky-200/40 hover:border-white/25 hover:bg-blue-500/20 focus:border-sky-300/60 focus:bg-blue-500/20 focus:ring-2 focus:ring-sky-300/10"
             placeholder="https://marcini.uk"
             value="https://marcini.uk"
           />
@@ -234,7 +234,7 @@
                 <input
                   id="fgPicker"
                   type="color"
-                  class="h-10 w-full cursor-pointer rounded-2xl border border-white/15 bg-white/6 p-1 shadow-inner shadow-white/4 backdrop-blur-md transition-all duration-300 hover:border-sky-300/50 hover:bg-white/10"
+                  class="h-10 w-full cursor-pointer rounded-2xl border border-white/15 bg-blue-500/10 p-1 shadow-inner shadow-white/4 backdrop-blur-md transition-all duration-300 hover:border-sky-300/50 hover:bg-blue-500/20"
                   onchange="setFG(this.value)"
                 />
               </div>
@@ -247,7 +247,7 @@
 
                 <div class="flex w-full gap-2">
                   <button
-                    class="group relative w-1/2 overflow-hidden rounded-2xl border border-white/15 bg-white/6 px-3 py-2 text-sm font-semibold text-sky-100 shadow-lg shadow-blue-950/20 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:shadow-xl hover:shadow-blue-950/30 active:translate-y-0 active:scale-95"
+                    class="group relative w-1/2 overflow-hidden rounded-2xl border border-white/15 bg-blue-500/10 px-3 py-2 text-sm font-semibold text-sky-100 shadow-lg shadow-blue-950/20 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-white/30 hover:bg-blue-500/20 hover:shadow-xl hover:shadow-blue-950/30 active:translate-y-0 active:scale-95"
                     onclick="setBG('transparent')"
                   >
                     <span class="relative z-10">Brak</span>
@@ -259,7 +259,7 @@
                   <input
                     id="bgPicker"
                     type="color"
-                    class="h-10 w-1/2 cursor-pointer rounded-2xl border border-white/15 bg-white/6 p-1 shadow-inner shadow-white/4 backdrop-blur-md transition-all duration-300 hover:border-sky-300/50 hover:bg-white/10"
+                    class="h-10 w-1/2 cursor-pointer rounded-2xl border border-white/15 bg-blue-500/10 p-1 shadow-inner shadow-white/4 backdrop-blur-md transition-all duration-300 hover:border-sky-300/50 hover:bg-blue-500/20"
                     onchange="setBG(this.value)"
                   />
                 </div>
@@ -320,7 +320,7 @@
             >
               <!-- GŁÓWNY PRZYCISK -->
               <button
-                class="dropdown-btn flex w-full items-center justify-between rounded-2xl border border-white/15 bg-white/6 px-4 py-2.5 shadow-xl shadow-blue-950/20 backdrop-blur-xl transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:shadow-blue-950/30"
+                class="dropdown-btn flex w-full items-center justify-between rounded-2xl border border-white/15 bg-blue-500/10 px-4 py-2.5 shadow-xl shadow-blue-950/20 backdrop-blur-xl transition-all duration-300 hover:border-white/30 hover:bg-blue-500/20 hover:shadow-blue-950/30"
               >
                 <span class="dropdown-label font-medium">Brak łączenia</span>
 
@@ -414,7 +414,7 @@
             <div id="finder-buttons" class="flex gap-3">
               <button
                 data-style="square"
-                class="finder-btn group flex items-center justify-center rounded-2xl border border-white/15 bg-white/6 p-3 shadow-lg shadow-blue-950/20 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-sky-300/50 hover:bg-sky-300/10 hover:shadow-xl hover:shadow-sky-950/30 active:translate-y-0 active:scale-95"
+                class="finder-btn group flex items-center justify-center rounded-2xl border border-white/15 bg-blue-500/10 p-3 shadow-lg shadow-blue-950/20 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-sky-300/50 hover:bg-blue-500/20 hover:shadow-xl hover:shadow-sky-950/30 active:translate-y-0 active:scale-95"
               >
                 <div
                   class="h-6 w-6 bg-sky-200 shadow-[0_0_15px_rgba(125,211,252,0.3)] transition-transform duration-300 group-hover:scale-110"
@@ -423,7 +423,7 @@
 
               <button
                 data-style="rounded"
-                class="finder-btn group flex items-center justify-center rounded-2xl border border-white/15 bg-white/6 p-3 shadow-lg shadow-blue-950/20 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-sky-300/50 hover:bg-sky-300/10 hover:shadow-xl hover:shadow-sky-950/30 active:translate-y-0 active:scale-95"
+                class="finder-btn group flex items-center justify-center rounded-2xl border border-white/15 bg-blue-500/10 p-3 shadow-lg shadow-blue-950/20 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-sky-300/50 hover:bg-blue-500/20 hover:shadow-xl hover:shadow-sky-950/30 active:translate-y-0 active:scale-95"
               >
                 <div
                   class="h-6 w-6 rounded-lg bg-sky-200 shadow-[0_0_15px_rgba(125,211,252,0.3)] transition-transform duration-300 group-hover:scale-110"
@@ -432,7 +432,7 @@
 
               <button
                 data-style="circle"
-                class="finder-btn group flex items-center justify-center rounded-2xl border border-white/15 bg-white/6 p-3 shadow-lg shadow-blue-950/20 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-sky-300/50 hover:bg-sky-300/10 hover:shadow-xl hover:shadow-sky-950/30 active:translate-y-0 active:scale-95"
+                class="finder-btn group flex items-center justify-center rounded-2xl border border-white/15 bg-blue-500/10 p-3 shadow-lg shadow-blue-950/20 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-sky-300/50 hover:bg-blue-500/20 hover:shadow-xl hover:shadow-sky-950/30 active:translate-y-0 active:scale-95"
               >
                 <div
                   class="h-6 w-6 rounded-full bg-sky-200 shadow-[0_0_15px_rgba(125,211,252,0.3)] transition-transform duration-300 group-hover:scale-110"
