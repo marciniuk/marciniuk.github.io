@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en" class="overflow-x-clip scroll-smooth">
+  <head>
+    <!-- Main -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Adrian Marcini.uk</title>
+
+    <!-- SEO Description -->
+    <meta
+      name="description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta name="author" content="Adrian Marciniuk" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Assets -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/fonts.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
+    <script async src="/assets/fajs/fontawesome.js"></script>
+    <script async src="/assets/fajs/fa-cut.js"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://marcini.uk/en/tools/infomar/" />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrian Marciniuk",
+        "url": "https://marcini.uk/",
+        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
+        "sameAs": ["https://github.com/marciniuk"],
+        "jobTitle": "Frontend Developer",
+        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
+      }
+    </script>
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://marcini.uk/en/tools/infomar/" />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/img/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="A website created under the influence of caffeine and far too much free time."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/img/og/og-image.jpg"
+    />
+
+    <!-- Fade-in -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          document.body.classList.add("page-ready");
+        }, 150);
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- STARS -->
+    <stars></stars>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
+    >
+      <div
+        class="h-20 w-full bg-linear-to-b from-blue-900 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+      ></div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="main-header"
+      class="xl:mb-4 h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-all duration-500 ease-in-out"
+    >
+      <div class="flex justify-between w-full items-center z-30">
+        <!-- LOGO -->
+        <a
+          href="/en/"
+          class="flex gap-2 text-3xl lg:text-4xl italic items-center"
+        >
+          <img src="/assets/img/logo.svg" alt="logo" class="h-8 lg:h-10" />
+          Marcini.uk
+        </a>
+
+        <!-- HAMBURGER -->
+        <button
+          type="button"
+          id="menu-toggle"
+          class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+          aria-label="Open menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+        </button>
+
+        <!-- MENU -->
+        <nav
+          id="mobile-menu"
+          class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl md:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+        >
+          <a href="/en/profiles/" class="nav-link hover:text-rose-400"
+            ><i class="fad fa-address-card"></i> Profiles</a
+          >
+          <a href="/en/projects/" class="nav-link hover:text-emerald-400"
+            ><i class="fad fa-diagram-project"></i> Projects</a
+          >
+          <a href="/en/tools/" class="nav-link hover:text-lime-400"
+            ><i class="fad fa-diagram-project"></i> Tools</a
+          >
+          <a href="/en/setup/" class="nav-link hover:text-amber-400"
+            ><i class="fad fa-display-code"></i> Setup</a
+          >
+          <a href="/en/contact/" class="nav-link hover:text-sky-400"
+            ><i class="fad fa-envelope-open-text"></i> Contact</a
+          >
+        </nav>
+      </div>
+
+      <!-- VH FIX -->
+      <script>
+        (function () {
+          function setVh() {
+            document.documentElement.style.setProperty(
+              "--vh",
+              `${window.innerHeight * 0.01}px`,
+            );
+          }
+          setVh();
+          window.addEventListener("resize", setVh);
+        })();
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 md:py-12">
+      <!-- HEADER -->
+      <header class="mb-6 text-center">
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+          <i class="fad fa-circle-info mr-2 text-cyan-300"></i>Info<span
+            class="bg-linear-to-r from-cyan-300 via-blue-400 to-violet-400 bg-clip-text text-transparent"
+            >MAR
+          </span>
+        </h1>
+
+        <p
+          class="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/40 sm:text-base"
+        >
+          Detailed information about the page, browser, and environment.
+          <span class="text-white/65"> Everything is read locally. </span>
+        </p>
+      </header>
+
+      <!-- ACTIONS -->
+      <section
+        class="mb-4 rounded-3xl border border-white/10 bg-blue-700/20 p-4 shadow-2xl shadow-blue-950/20 backdrop-blur-md sm:p-5"
+      >
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 class="text-sm font-semibold text-white/85">
+              Environment information
+            </h2>
+
+            <p class="mt-1 text-xs text-white/30">
+              Data is read directly from your browser.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            <button
+              id="infomar-hardware"
+              type="button"
+              class="inline-flex items-center gap-2 rounded-xl border-2 border-blue-400/20 bg-blue-400/10 px-3 py-2 text-xs font-medium text-blue-200 transition hover:border-blue-300/40 hover:bg-blue-400/15 hover:text-blue-100 active:scale-95"
+            >
+              <i class="fad fa-gauge-high"></i>
+              Hardware test
+            </button>
+
+            <button
+              id="infomar-ghosting"
+              type="button"
+              class="inline-flex items-center gap-2 rounded-xl border-2 border-blue-400/20 bg-blue-400/10 px-3 py-2 text-xs font-medium text-blue-200 transition hover:border-blue-300/40 hover:bg-blue-400/15 hover:text-blue-100 active:scale-95"
+            >
+              <i class="fad fa-eye"></i>
+              Ghosting test
+            </button>
+
+            <button
+              id="infomar-refresh"
+              type="button"
+              class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/4 px-3 py-2 text-xs font-medium text-white/55 transition hover:border-blue-400/30 hover:bg-blue-400/10 hover:text-blue-200 active:scale-95"
+            >
+              <i class="fad fa-arrows-rotate"></i>
+              Refresh
+            </button>
+
+            <button
+              id="infomar-copy"
+              type="button"
+              class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/4 px-3 py-2 text-xs font-medium text-white/55 transition hover:border-blue-400/30 hover:bg-blue-400/10 hover:text-blue-200 active:scale-95"
+            >
+              <i class="fad fa-copy"></i>
+              Copy report
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- INFO GRID -->
+      <div id="infomar-grid" class="grid gap-4 lg:grid-cols-2"></div>
+    </main>
+
+    <!-- HARDWARE TEST MODAL -->
+    <div
+      id="infomar-hardware-modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center p-4"
+      aria-hidden="true"
+    >
+      <div
+        id="infomar-modal-backdrop"
+        class="absolute inset-0 bg-black/70 backdrop-blur-md"
+      ></div>
+
+      <section
+        class="relative flex h-[min(720px,90vh)] w-full max-w-5xl flex-col overflow-hidden rounded-3xl border border-white/10 bg-blue-700/20 shadow-2xl shadow-blue-950/40 backdrop-blur-md"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="infomar-hardware-title"
+      >
+        <header
+          class="flex shrink-0 items-center justify-between border-b border-white/[0.07] px-5 py-4"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="flex h-9 w-9 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-400/10 text-blue-300"
+            >
+              <i class="fad fa-gauge-high"></i>
+            </div>
+
+            <div>
+              <h2
+                id="infomar-hardware-title"
+                class="text-sm font-semibold text-white/90"
+              >
+                Hardware test
+              </h2>
+              <p class="mt-0.5 text-[11px] text-white/30">
+                Measurement runs locally
+              </p>
+            </div>
+          </div>
+
+          <button
+            id="infomar-hardware-close"
+            type="button"
+            class="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/3 text-white/40 transition hover:border-white/20 hover:bg-white/[0.07] hover:text-white/80"
+            aria-label="Close"
+          >
+            <i class="fad fa-xmark"></i>
+          </button>
+        </header>
+
+        <div class="relative flex min-h-0 flex-1 flex-col">
+          <div
+            class="absolute left-4 top-4 z-10 w-64 rounded-2xl border border-white/10 bg-black/20 p-4 backdrop-blur-md sm:left-6 sm:top-6"
+          >
+            <div
+              class="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/40"
+            >
+              <i class="fad fa-display text-blue-300/70"></i>
+              Display
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex justify-between gap-4">
+                <span class="text-xs text-white/30">Resolution</span>
+                <span
+                  id="hardware-resolution"
+                  class="font-mono text-xs text-white/70"
+                  >—</span
+                >
+              </div>
+              <div class="flex justify-between gap-4">
+                <span class="text-xs text-white/30">Viewport</span>
+                <span
+                  id="hardware-viewport"
+                  class="font-mono text-xs text-white/70"
+                  >—</span
+                >
+              </div>
+              <div class="flex justify-between gap-4">
+                <span class="text-xs text-white/30">DPR</span>
+                <span id="hardware-dpr" class="font-mono text-xs text-white/70"
+                  >—</span
+                >
+              </div>
+              <div class="flex justify-between gap-4">
+                <span class="text-xs text-white/30">Refresh rate</span>
+                <span
+                  id="hardware-refresh-rate"
+                  class="font-mono text-xs text-blue-300"
+                  >—</span
+                >
+              </div>
+              <div class="flex justify-between gap-4">
+                <span class="text-xs text-white/30">Frame time</span>
+                <span
+                  id="hardware-frame-time"
+                  class="font-mono text-xs text-white/70"
+                  >—</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex min-h-0 flex-1 flex-col items-center justify-center px-5 py-24"
+          >
+            <div
+              class="mb-4 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/30"
+            >
+              <span
+                class="h-1.5 w-1.5 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.6)]"
+              ></span>
+              Mouse polling rate
+            </div>
+
+            <div
+              id="hardware-polling-rate"
+              class="font-mono text-6xl font-semibold tracking-tight text-white sm:text-8xl"
+            >
+              —
+            </div>
+            <div
+              id="hardware-polling-ms"
+              class="mt-2 font-mono text-sm text-white/30"
+            >
+              —
+            </div>
+            <p
+              id="hardware-polling-status"
+              class="mt-6 text-center text-xs text-white/35"
+            >
+              Move your mouse to start measuring
+            </p>
+
+            <div class="mt-8 grid w-full max-w-lg grid-cols-3 gap-2">
+              <div
+                class="rounded-2xl border border-white/[0.07] bg-white/2.5 px-3 py-3 text-center"
+              >
+                <div class="text-[10px] uppercase tracking-wider text-white/25">
+                  Average
+                </div>
+                <div
+                  id="hardware-polling-average"
+                  class="mt-1 font-mono text-sm text-white/65"
+                >
+                  —
+                </div>
+              </div>
+              <div
+                class="rounded-2xl border border-white/[0.07] bg-white/2.5 px-3 py-3 text-center"
+              >
+                <div class="text-[10px] uppercase tracking-wider text-white/25">
+                  Min
+                </div>
+                <div
+                  id="hardware-polling-min"
+                  class="mt-1 font-mono text-sm text-white/65"
+                >
+                  —
+                </div>
+              </div>
+              <div
+                class="rounded-2xl border border-white/[0.07] bg-white/2.5 px-3 py-3 text-center"
+              >
+                <div class="text-[10px] uppercase tracking-wider text-white/25">
+                  Max
+                </div>
+                <div
+                  id="hardware-polling-max"
+                  class="mt-1 font-mono text-sm text-white/65"
+                >
+                  —
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="absolute bottom-0 left-0 right-0 flex items-center justify-between border-t border-white/[0.07] bg-black/10 px-5 py-3 text-[10px] text-white/25 backdrop-blur-md sm:px-6"
+          >
+            <span
+              >Samples:
+              <span
+                id="hardware-polling-samples"
+                class="font-mono text-white/45"
+                >0</span
+              ></span
+            >
+            <span
+              >Mouse movement:
+              <span id="hardware-polling-state" class="text-white/45"
+                >Waiting</span
+              ></span
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="z-50">
+      <div id="footer" class="bg-blue-700/60 md:mb-4 md:mx-3 md:rounded-full">
+        <div class="flex justify-center items-center">
+          2019-<full-year></full-year><i class="fad fa-copyright w-5 h-4"></i
+          ><strong>Adrian Marciniuk</strong>
+        </div>
+        <a href="/en/privacy-policy/" class="flex justify-center items-center"
+          ><i class="fad fa-user-secret w-5 h-4"></i> Privacy Policy</a
+        >
+      </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/tools/infomar/infomar.js"></script>
+  </body>
+</html>

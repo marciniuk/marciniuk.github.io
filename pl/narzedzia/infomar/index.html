@@ -1,0 +1,1022 @@
+<!doctype html>
+<html lang="pl" class="overflow-x-clip scroll-smooth">
+  <head>
+    <!-- Main -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="supported-color-schemes" content="dark" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Adrian Marcini.uk</title>
+
+    <!-- Opis dla SEO -->
+    <meta
+      name="description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta name="author" content="Adrian Marciniuk" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Linki do zasobów -->
+    <link rel="preload" href="/assets/css/main.css" as="style" />
+    <link href="/assets/css/main.css" rel="stylesheet" />
+
+    <link rel="preload" href="/assets/js/stars.js" as="script" />
+    <script src="/assets/js/stars.js" defer></script>
+
+    <link rel="preload" href="/assets/js/main.js" as="script" />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/fonts.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
+    <script async src="/assets/fajs/fontawesome.js"></script>
+    <script async src="/assets/fajs/fa-cut.js"></script>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Marcini.uk" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://marcini.uk/pl/narzedzia/infomar/" />
+
+    <!-- Dane strukturalne JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Adrian Marciniuk",
+        "url": "https://marcini.uk",
+        "image": "https://marcini.uk/assets/img/og/og-image.jpg",
+        "sameAs": ["https://github.com/marciniuk"],
+        "jobTitle": "Frontend Developer",
+        "worksFor": { "@type": "Organization", "name": "Marcini.uk" }
+      }
+    </script>
+
+    <!-- Open Graph / Facebook / Discord -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://marcini.uk/pl/narzedzia/infomar/"
+    />
+    <meta property="og:title" content="Adrian Marcini.uk" />
+    <meta
+      property="og:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      property="og:image"
+      content="https://marcini.uk/assets/img/og/og-image.jpg"
+    />
+    <meta property="og:site_name" content="Marcini.uk" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@adrianmarciniuk" />
+    <meta name="twitter:creator" content="@adrianmarciniuk" />
+    <meta name="twitter:title" content="Adrian Marcini.uk" />
+    <meta
+      name="twitter:description"
+      content="Strona powstała pod wpływem kofeiny oraz zbyt dużej ilości wolnego czasu."
+    />
+    <meta
+      name="twitter:image"
+      content="https://marcini.uk/assets/img/og/og-image.jpg"
+    />
+
+    <!-- Fadein body -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          document.body.classList.add("page-ready");
+        }, 150);
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- STARS -->
+    <stars></stars>
+
+    <!-- OVERLAY -->
+    <div
+      id="overlay"
+      class="fixed inset-0 pointer-events-none transition-opacity duration-300 z-30"
+    >
+      <div
+        class="h-20 w-full bg-linear-to-b from-blue-900 via-blue-900/25 xl:via-blue-900/75 to-blue-900/0 absolute top-0 z-20"
+      ></div>
+    </div>
+
+    <!-- HEADER -->
+    <header
+      id="main-header"
+      class="xl:mb-4 h-11 lg:h-14 p-2 mr-0 bg-blue-700/60 border-b xl:border border-blue-600 backdrop-blur-md backdrop-brightness-75 flex items-center sticky z-40 transition-all duration-500 ease-in-out"
+    >
+      <div class="flex justify-between w-full items-center z-30">
+        <!-- LOGO -->
+        <a
+          href="/pl/"
+          class="flex gap-2 text-3xl lg:text-4xl italic items-center"
+        >
+          <img src="/assets/img/logo.svg" alt="logo" class="h-8 lg:h-10" />
+          Marcini.uk
+        </a>
+
+        <!-- HAMBURGER -->
+        <button
+          type="button"
+          id="menu-toggle"
+          class="z-50 xl:hidden h-6 w-8 flex flex-col justify-between cursor-pointer"
+          aria-label="Otwórz menu"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+          <span class="w-full h-1 bg-white rounded-full transition-all"></span>
+        </button>
+
+        <!-- MENU -->
+        <nav
+          id="mobile-menu"
+          class="fixed xl:static top-[2.7rem] right-0 bottom-0 w-48 md:w-56 xl:w-auto bg-blue-600 xl:bg-transparent flex flex-col xl:flex-row items-start xl:items-center gap-4 xl:gap-8 p-8 xl:p-0 text-xl 2xl:text-2xl transform translate-x-full xl:translate-x-0 transition-transform duration-500 ease-in-out overflow-hidden z-10 xl:px-5"
+        >
+          <a href="/pl/profile/" class="nav-link hover:text-rose-400"
+            ><i class="fad fa-address-card"></i> Profile</a
+          >
+          <a href="/pl/projekty/" class="nav-link hover:text-emerald-400"
+            ><i class="fad fa-diagram-project"></i> Projekty</a
+          >
+          <a href="/pl/narzedzia/" class="nav-link hover:text-lime-400"
+            ><i class="fad fa-tools"></i> Narzędzia</a
+          >
+          <a href="/pl/setup/" class="nav-link hover:text-amber-400"
+            ><i class="fad fa-display-code"></i> Setup</a
+          >
+          <a href="/pl/kontakt/" class="nav-link hover:text-sky-400"
+            ><i class="fad fa-envelope-open-text"></i> Kontakt</a
+          >
+          <a href="/pl/polecajki/" class="nav-link hover:text-fuchsia-400"
+            ><i class="fad fa-heart"></i> Polecajki</a
+          >
+          <a href="/pl/ksiazki/" class="nav-link hover:text-indigo-400"
+            ><i class="fad fa-books"></i> Książki</a
+          >
+        </nav>
+      </div>
+
+      <!-- VH FIX -->
+      <script>
+        (function () {
+          function setVh() {
+            document.documentElement.style.setProperty(
+              "--vh",
+              `${window.innerHeight * 0.01}px`,
+            );
+          }
+          setVh();
+          window.addEventListener("resize", setVh);
+        })();
+      </script>
+    </header>
+
+    <!-- MAIN -->
+    <main class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 md:py-12">
+      <!-- HEADER -->
+
+      <header class="mb-6 text-center">
+        <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+          <i class="fad fa-circle-info mr-2 text-cyan-300"></i>Info<span
+            class="bg-linear-to-r from-cyan-300 via-blue-400 to-violet-400 bg-clip-text text-transparent"
+            >MAR
+          </span>
+        </h1>
+
+        <p
+          class="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/40 sm:text-base"
+        >
+          Szczegółowe informacje o stronie, przeglądarce i środowisku.
+          <span class="text-white/65"> Wszystko odczytywane lokalnie. </span>
+        </p>
+      </header>
+
+      <!-- ACTIONS -->
+      <section
+        class="mb-4 rounded-3xl border border-white/10 bg-blue-700/20 p-4 shadow-2xl shadow-blue-950/20 backdrop-blur-md sm:p-5"
+      >
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <h2 class="text-sm font-semibold text-white/85">
+              Informacje środowiska
+            </h2>
+
+            <p class="mt-1 text-xs text-white/30">
+              Dane są pobierane bezpośrednio z Twojej przeglądarki.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            <button
+              id="infomar-hardware"
+              type="button"
+              class="inline-flex items-center gap-2 rounded-xl border-2 border-blue-400/20 bg-blue-400/10 px-3 py-2 text-xs font-medium text-blue-200 transition hover:border-blue-300/40 hover:bg-blue-400/15 hover:text-blue-100 active:scale-95"
+            >
+              <i class="fad fa-gauge-high"></i>
+              Testy sprzętu
+            </button>
+
+            <button
+              id="infomar-ghosting"
+              type="button"
+              class="inline-flex items-center gap-2 rounded-xl border-2 border-blue-400/20 bg-blue-400/10 px-3 py-2 text-xs font-medium text-blue-200 transition hover:border-blue-300/40 hover:bg-blue-400/15 hover:text-blue-100 active:scale-95"
+            >
+              <i class="fad fa-eye"></i>
+              Test smużenia
+            </button>
+
+            <button
+              id="infomar-refresh"
+              type="button"
+              class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/4 px-3 py-2 text-xs font-medium text-white/55 transition hover:border-blue-400/30 hover:bg-blue-400/10 hover:text-blue-200 active:scale-95"
+            >
+              <i class="fad fa-arrows-rotate"></i>
+              Odśwież
+            </button>
+
+            <button
+              id="infomar-copy"
+              type="button"
+              class="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/4 px-3 py-2 text-xs font-medium text-white/55 transition hover:border-blue-400/30 hover:bg-blue-400/10 hover:text-blue-200 active:scale-95"
+            >
+              <i class="fad fa-copy"></i>
+              Kopiuj raport
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- INFO GRID -->
+      <div id="infomar-grid" class="grid gap-4 lg:grid-cols-2"></div>
+    </main>
+
+    <!-- =========================================================
+     HARDWARE TEST MODAL
+     ========================================================= -->
+
+    <div
+      id="infomar-hardware-modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center p-4"
+      aria-hidden="true"
+    >
+      <!-- BACKDROP -->
+
+      <div
+        id="infomar-modal-backdrop"
+        class="absolute inset-0 bg-black/70 backdrop-blur-md"
+      ></div>
+
+      <!-- MODAL -->
+
+      <section
+        class="relative flex h-[min(720px,90vh)] w-full max-w-5xl flex-col overflow-hidden rounded-3xl border border-white/10 bg-blue-700/20 shadow-2xl shadow-blue-950/40 backdrop-blur-md"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="infomar-hardware-title"
+      >
+        <!-- TOP BAR -->
+
+        <header
+          class="flex shrink-0 items-center justify-between border-b border-white/[0.07] px-5 py-4"
+        >
+          <div class="flex items-center gap-3">
+            <div
+              class="flex h-9 w-9 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-400/10 text-blue-300"
+            >
+              <i class="fad fa-gauge-high"></i>
+            </div>
+
+            <div>
+              <h2
+                id="infomar-hardware-title"
+                class="text-sm font-semibold text-white/90"
+              >
+                Testy sprzętu
+              </h2>
+
+              <p class="mt-0.5 text-[11px] text-white/30">
+                Pomiar wykonywany lokalnie
+              </p>
+            </div>
+          </div>
+
+          <button
+            id="infomar-hardware-close"
+            type="button"
+            class="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/3 text-white/40 transition hover:border-white/20 hover:bg-white/[0.07] hover:text-white/80"
+            aria-label="Zamknij"
+          >
+            <i class="fad fa-xmark"></i>
+          </button>
+        </header>
+
+        <!-- TEST AREA -->
+
+        <div class="relative flex min-h-0 flex-1 flex-col">
+          <!-- DISPLAY INFO -->
+
+          <div
+            class="absolute left-4 top-4 z-10 w-64 rounded-2xl border border-white/10 bg-black/20 p-4 backdrop-blur-md sm:left-6 sm:top-6"
+          >
+            <div
+              class="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/40"
+            >
+              <i class="fad fa-display text-blue-300/70"></i>
+              Ekran
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex justify-between gap-4">
+                <span class="text-xs text-white/30"> Rozdzielczość </span>
+
+                <span
+                  id="hardware-resolution"
+                  class="font-mono text-xs text-white/70"
+                >
+                  —
+                </span>
+              </div>
+
+              <div class="flex justify-between gap-4">
+                <span class="text-xs text-white/30"> Viewport </span>
+
+                <span
+                  id="hardware-viewport"
+                  class="font-mono text-xs text-white/70"
+                >
+                  —
+                </span>
+              </div>
+
+              <div class="flex justify-between gap-4">
+                <span class="text-xs text-white/30"> DPR </span>
+
+                <span id="hardware-dpr" class="font-mono text-xs text-white/70">
+                  —
+                </span>
+              </div>
+
+              <div class="flex justify-between gap-4">
+                <span class="text-xs text-white/30"> Odświeżanie </span>
+
+                <span
+                  id="hardware-refresh-rate"
+                  class="font-mono text-xs text-blue-300"
+                >
+                  —
+                </span>
+              </div>
+
+              <div class="flex justify-between gap-4">
+                <span class="text-xs text-white/30"> Frame time </span>
+
+                <span
+                  id="hardware-frame-time"
+                  class="font-mono text-xs text-white/70"
+                >
+                  —
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- POLLING TEST -->
+
+          <div
+            class="flex min-h-0 flex-1 flex-col items-center justify-center px-5 py-24"
+          >
+            <div
+              class="mb-4 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/30"
+            >
+              <span
+                class="h-1.5 w-1.5 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.6)]"
+              ></span>
+
+              Polling Rate myszy
+            </div>
+
+            <div
+              id="hardware-polling-rate"
+              class="font-mono text-6xl font-semibold tracking-tight text-white sm:text-8xl"
+            >
+              —
+            </div>
+
+            <div
+              id="hardware-polling-ms"
+              class="mt-2 font-mono text-sm text-white/30"
+            >
+              —
+            </div>
+
+            <p
+              id="hardware-polling-status"
+              class="mt-6 text-center text-xs text-white/35"
+            >
+              Poruszaj myszką, aby rozpocząć pomiar
+            </p>
+
+            <!-- POLLING STATS -->
+
+            <div class="mt-8 grid w-full max-w-lg grid-cols-3 gap-2">
+              <div
+                class="rounded-2xl border border-white/[0.07] bg-white/2.5 px-3 py-3 text-center"
+              >
+                <div class="text-[10px] uppercase tracking-wider text-white/25">
+                  Średnia
+                </div>
+
+                <div
+                  id="hardware-polling-average"
+                  class="mt-1 font-mono text-sm text-white/65"
+                >
+                  —
+                </div>
+              </div>
+
+              <div
+                class="rounded-2xl border border-white/[0.07] bg-white/2.5 px-3 py-3 text-center"
+              >
+                <div class="text-[10px] uppercase tracking-wider text-white/25">
+                  Min
+                </div>
+
+                <div
+                  id="hardware-polling-min"
+                  class="mt-1 font-mono text-sm text-white/65"
+                >
+                  —
+                </div>
+              </div>
+
+              <div
+                class="rounded-2xl border border-white/[0.07] bg-white/2.5 px-3 py-3 text-center"
+              >
+                <div class="text-[10px] uppercase tracking-wider text-white/25">
+                  Max
+                </div>
+
+                <div
+                  id="hardware-polling-max"
+                  class="mt-1 font-mono text-sm text-white/65"
+                >
+                  —
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTTOM STATUS -->
+
+          <div
+            class="absolute bottom-0 left-0 right-0 flex items-center justify-between border-t border-white/[0.07] bg-black/10 px-5 py-3 text-[10px] text-white/25 backdrop-blur-md sm:px-6"
+          >
+            <span>
+              Próbki:
+              <span
+                id="hardware-polling-samples"
+                class="font-mono text-white/45"
+              >
+                0
+              </span>
+            </span>
+
+            <span>
+              Ruch myszy:
+              <span id="hardware-polling-state" class="text-white/45">
+                oczekiwanie
+              </span>
+            </span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =========================================================
+     GHOSTING TEST
+     ========================================================= -->
+
+    <div
+      id="infomar-ghosting-modal"
+      class="fixed inset-0 z-100 hidden items-center justify-center p-4"
+      aria-hidden="true"
+    >
+      <div
+        id="infomar-ghosting-backdrop"
+        class="absolute inset-0 bg-black/75 backdrop-blur-md"
+      ></div>
+
+      <section
+        class="relative z-10 flex h-[min(820px,calc(100vh-2rem))] w-full max-w-7xl flex-col overflow-hidden rounded-3xl border border-white/10 bg-blue-700/20 shadow-2xl shadow-black/50 backdrop-blur-md"
+      >
+        <!-- HEADER -->
+
+        <header
+          class="flex shrink-0 items-center justify-between border-b border-white/10 px-5 py-4"
+        >
+          <div>
+            <h2 class="text-sm font-semibold text-white/90">Test smużenia</h2>
+
+            <p class="mt-1 text-xs text-white/30">
+              Test ruchu i czasu reakcji matrycy
+            </p>
+          </div>
+
+          <button
+            id="infomar-ghosting-close"
+            type="button"
+            class="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/40 transition hover:bg-white/10 hover:text-white"
+            aria-label="Zamknij"
+          >
+            <i class="fad fa-xmark"></i>
+          </button>
+        </header>
+
+        <!-- CONTROLS -->
+
+        <div
+          class="flex shrink-0 flex-wrap items-center gap-2 border-b border-white/10 px-5 py-3"
+        >
+          <div class="flex items-center gap-1.5">
+            <span class="mr-1 text-xs text-white/25"> Tło </span>
+
+            <button
+              type="button"
+              data-ghosting-bg="black"
+              class="ghosting-control active"
+            >
+              Czarne
+            </button>
+
+            <button
+              type="button"
+              data-ghosting-bg="gray"
+              class="ghosting-control"
+            >
+              Szare
+            </button>
+
+            <button
+              type="button"
+              data-ghosting-bg="white"
+              class="ghosting-control"
+            >
+              Białe
+            </button>
+          </div>
+
+          <div class="mx-1 hidden h-5 w-px bg-white/10 lg:block"></div>
+
+          <div class="flex items-center gap-1.5">
+            <span class="mr-1 text-xs text-white/25"> Prędkość </span>
+
+            <button
+              type="button"
+              data-ghosting-speed="slow"
+              class="ghosting-control"
+            >
+              Wolna
+            </button>
+
+            <button
+              type="button"
+              data-ghosting-speed="medium"
+              class="ghosting-control active"
+            >
+              Średnia
+            </button>
+
+            <button
+              type="button"
+              data-ghosting-speed="fast"
+              class="ghosting-control"
+            >
+              Szybka
+            </button>
+          </div>
+
+          <div class="ml-auto flex items-center gap-2">
+            <button
+              id="infomar-ghosting-direction"
+              type="button"
+              class="ghosting-control"
+            >
+              <i class="fad fa-arrows-left-right mr-1"></i>
+              Kierunek
+            </button>
+
+            <button
+              id="infomar-ghosting-fullscreen"
+              type="button"
+              class="ghosting-control"
+            >
+              <i class="fad fa-expand"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- TEST AREA -->
+        <div
+          id="infomar-ghosting-stage"
+          class="relative min-h-0 flex-1 overflow-hidden bg-black"
+        >
+          <!-- INFO -->
+          <div
+            class="pointer-events-none absolute left-4 top-4 z-20 rounded-2xl border border-white/10 bg-black/30 px-4 py-3 font-mono text-xs text-white/50 backdrop-blur-md"
+          >
+            <div class="flex gap-4">
+              <span class="text-white/25"> Hz </span>
+
+              <span id="infomar-ghosting-hz" class="text-white/70"> — </span>
+            </div>
+
+            <div class="mt-1 flex gap-4">
+              <span class="text-white/25"> FPS </span>
+
+              <span id="infomar-ghosting-fps" class="text-white/70"> — </span>
+            </div>
+
+            <div class="mt-1 flex gap-4">
+              <span class="text-white/25"> Frame </span>
+
+              <span id="infomar-ghosting-frame" class="text-white/70"> — </span>
+            </div>
+          </div>
+
+          <!-- CENTER GUIDE -->
+          <div
+            class="pointer-events-none absolute inset-y-0 left-1/2 z-10 w-px -translate-x-1/2 bg-white/10"
+          ></div>
+
+          <!-- TEST LANES -->
+          <div
+            id="infomar-ghosting-lanes"
+            class="absolute inset-0 flex flex-col justify-center gap-10 px-4 sm:px-8"
+          >
+            <!-- SLOW -->
+            <div
+              class="relative h-20 w-full shrink-0 overflow-hidden border-y border-white/5"
+            >
+              <div
+                data-ghosting-object
+                data-lane-speed="0.55"
+                class="absolute left-0 top-1/2 h-12 w-32 -translate-y-1/2 rounded-xl bg-white shadow-[0_0_30px_rgba(255,255,255,0.18)]"
+              >
+                <div
+                  class="absolute inset-0 grid grid-cols-8 content-center justify-items-center gap-x-2.5 gap-y-2 p-2"
+                  aria-hidden="true"
+                >
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- MEDIUM -->
+            <div
+              class="relative h-20 w-full shrink-0 overflow-hidden border-y border-white/5"
+            >
+              <div
+                data-ghosting-object
+                data-lane-speed="1"
+                class="absolute left-0 top-1/2 h-12 w-32 -translate-y-1/2 rounded-xl bg-white shadow-[0_0_30px_rgba(255,255,255,0.18)]"
+              >
+                <div
+                  class="absolute inset-0 grid grid-cols-8 content-center justify-items-center gap-x-2.5 gap-y-2 p-2"
+                  aria-hidden="true"
+                >
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- FAST -->
+            <div
+              class="relative h-20 w-full shrink-0 overflow-hidden border-y border-white/5"
+            >
+              <div
+                data-ghosting-object
+                data-lane-speed="1.7"
+                class="absolute left-0 top-1/2 h-12 w-32 -translate-y-1/2 rounded-xl bg-white shadow-[0_0_30px_rgba(255,255,255,0.18)]"
+              >
+                <div
+                  class="absolute inset-0 grid grid-cols-8 content-center justify-items-center gap-x-2.5 gap-y-2 p-2"
+                  aria-hidden="true"
+                >
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                  <span
+                    data-ghosting-dot
+                    class="h-2.5 w-2.5 rounded-full bg-black/80"
+                  ></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTTOM HINT -->
+
+          <div
+            class="pointer-events-none absolute bottom-5 left-1/2 z-20 -translate-x-1/2 rounded-xl border border-white/10 bg-black/30 px-4 py-2 text-center text-xs text-white/30 backdrop-blur-md"
+          >
+            Obserwuj krawędzie poruszających się obiektów
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+
+        <footer
+          class="flex shrink-0 items-center justify-between gap-4 border-t border-white/10 px-5 py-3"
+        >
+          <p class="text-xs text-white/25">
+            Test wizualny – wynik zależy również od ustawień Overdrive monitora.
+          </p>
+
+          <div class="text-xs text-white/25">
+            <span class="text-white/15"> Aktualna prędkość: </span>
+
+            <span id="infomar-ghosting-speed-label" class="ml-1 text-white/50">
+              Średnia
+            </span>
+          </div>
+        </footer>
+      </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="z-50">
+      <div id="footer" class="bg-blue-700/60 md:mb-4 md:mx-3 md:rounded-full">
+        <div class="flex justify-center items-center">
+          2019-<full-year></full-year>
+          <i class="fad fa-copyright w-5 h-4"></i>
+          <strong>Adrian Marciniuk</strong>
+        </div>
+
+        <a
+          href="/pl/polityka-prywatnosci/"
+          class="flex justify-center items-center"
+          ><i class="fad fa-user-secret w-5 h-4"></i> Polityka prywatności</a
+        >
+      </div>
+      <!-- 100% privacy-first analytics -->
+      <script
+        data-collect-dnt="true"
+        async
+        src="https://scripts.simpleanalyticscdn.com/latest.js"
+      ></script>
+      <noscript
+        ><img
+          src="https://queue.simpleanalyticscdn.com/noscript.gif?collect-dnt=true"
+          alt=""
+          referrerpolicy="no-referrer-when-downgrade"
+      /></noscript>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/tools/infomar/infomar.js"></script>
+    <style>
+      .ghosting-control {
+        border: 1px solid rgb(255 255 255 / 0.08);
+        border-radius: 0.75rem;
+        background: rgb(255 255 255 / 0.04);
+        padding: 0.5rem 0.75rem;
+        font-size: 0.75rem;
+        color: rgb(255 255 255 / 0.45);
+        transition:
+          background-color 150ms ease,
+          border-color 150ms ease,
+          color 150ms ease;
+      }
+
+      .ghosting-control:hover {
+        border-color: rgb(255 255 255 / 0.16);
+        background: rgb(255 255 255 / 0.08);
+        color: rgb(255 255 255 / 0.8);
+      }
+
+      .ghosting-control.active {
+        border-color: rgb(96 165 250 / 0.25);
+        background: rgb(59 130 246 / 0.12);
+        color: rgb(147 197 253 / 1);
+      }</style
+    >>
+  </body>
+</html>
