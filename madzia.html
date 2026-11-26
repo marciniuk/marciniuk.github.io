@@ -240,6 +240,28 @@
         margin: 12px 0 0;
         color: #a51f70;
       }
+      .success-message {
+        padding: 22px 14px 8px;
+        animation: success-pop 0.45s ease-out;
+      }
+      .success-message h2 {
+        margin-bottom: 10px;
+      }
+      .success-message p {
+        margin: 0;
+        color: #642052;
+        font-size: 1.05rem;
+      }
+      @keyframes success-pop {
+        from {
+          opacity: 0;
+          transform: scale(0.85) rotate(-2deg);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) rotate(0);
+        }
+      }
       .send {
         background: linear-gradient(135deg, #a45cf2, #e52c91);
         box-shadow: 0 7px 0 #8736a6;
@@ -334,6 +356,14 @@
             </button>
             <p class="status" id="status" role="status" aria-live="polite"></p>
           </form>
+          <div
+            class="success-message hidden"
+            id="successMessage"
+            role="status"
+            aria-live="polite"
+          >
+            <p>Odpowiedź wysłana!</p>
+          </div>
         </section>
       </section>
     </main>
@@ -360,7 +390,7 @@
         selectedFood = food;
         $("headline").textContent =
           food === "mak" ? "Mak? Elegancko! 🍔" : "Kebsik? Perfekcyjnie! 🌯";
-        $("intro").textContent = "Dobra decyzja! 😎";
+        $("intro").textContent = "Dobra decyzja! 👌";
         choiceButtons.classList.add("hidden");
         escapeBtn.remove();
         $("formTitle").textContent = "To teraz: kiedy??? 🤩";
@@ -444,23 +474,45 @@
 
       dateInput.addEventListener("change", updateMessage);
 
-      $("dateForm").addEventListener("submit", (event) => {
+      $("dateForm").addEventListener("submit", async (event) => {
+        event.preventDefault();
         const status = $("status");
         if (!dateInput.value) {
-          event.preventDefault();
           status.textContent = "Wybierz datę 🙄";
           dateInput.focus();
           return;
         }
         const apiKey = $("apiKey").value.trim();
         if (!apiKey || apiKey === "WKLEJ_TUTAJ_KLUCZ_API") {
-          event.preventDefault();
           status.textContent =
             "Wklej najpierw klucz API StaticForms w kodzie strony.";
           return;
         }
         updateMessage();
+        const sendBtn = $("sendBtn");
+        sendBtn.disabled = true;
+        sendBtn.textContent = "Wysyłam...";
         status.textContent = "";
+
+        try {
+          const response = await fetch($("dateForm").action, {
+            method: "POST",
+            body: new FormData($("dateForm")),
+            headers: { Accept: "application/json" },
+          });
+
+          if (!response.ok) {
+            throw new Error("StaticForms rejected the submission");
+          }
+
+          $("dateForm").classList.add("hidden");
+          $("successMessage").classList.remove("hidden");
+          $("formTitle").textContent = "Ugadani! 😎";
+        } catch (error) {
+          sendBtn.disabled = false;
+          sendBtn.textContent = "✉️ Wyślij odpowiedź";
+          status.textContent = "Coś poszło nie tak 😢 Spróbuj jeszcze raz.";
+        }
       });
     </script>
   </body>
