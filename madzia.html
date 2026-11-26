@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ff4fa3" />
+    <title>Ważny wybór!</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap");
+      :root {
+        --pink: #ff4fa3;
+        --hot: #ff1685;
+        --plum: #8e2b83;
+        --cream: #fff8fc;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100svh;
+        overflow-x: hidden;
+        font-family: Nunito, system-ui, sans-serif;
+        color: #642052;
+        background:
+          radial-gradient(circle at 15% 15%, #fff 0 3px, transparent 4px),
+          radial-gradient(circle at 80% 25%, #fff8 0 2px, transparent 3px),
+          linear-gradient(135deg, #ffb6dc, #ffc5e9 35%, #e7c4ff 72%, #ffd2ec);
+        background-size:
+          90px 90px,
+          130px 130px,
+          cover;
+      }
+      body:before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.23;
+        background-image:
+          linear-gradient(45deg, #fff 25%, transparent 25%),
+          linear-gradient(-45deg, #fff 25%, transparent 25%);
+        background-size: 5px 5px;
+        mask-image: linear-gradient(to bottom, black, transparent);
+      }
+      .sparkles {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .sparkles span {
+        position: absolute;
+        color: #fff;
+        text-shadow: 0 0 12px #ff3d9b;
+        animation: twinkle 2.4s infinite ease-in-out;
+      }
+      @keyframes twinkle {
+        50% {
+          opacity: 0.25;
+          transform: scale(0.65) rotate(25deg);
+        }
+      }
+      main {
+        width: min(92vw, 720px);
+        margin: 0 auto;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding: 30px 0;
+        position: relative;
+      }
+      .card {
+        width: 100%;
+        text-align: center;
+        padding: clamp(25px, 6vw, 52px);
+        border: 3px solid #fff;
+        border-radius: 34px;
+        background: linear-gradient(145deg, #ffffffeb, #fff0f8e8);
+        box-shadow:
+          0 18px 0 #d94b9a33,
+          0 28px 70px #a32b7550,
+          inset 0 0 35px #fff;
+        position: relative;
+        overflow: hidden;
+      }
+      .card:before {
+        content: "";
+        position: absolute;
+        inset: 9px;
+        border: 1px dashed #ff77b9;
+        border-radius: 25px;
+        pointer-events: none;
+      }
+      .pill {
+        display: inline-block;
+        background: linear-gradient(90deg, #ff68b2, #c77bff);
+        color: white;
+        border: 2px solid white;
+        border-radius: 999px;
+        padding: 7px 17px;
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        box-shadow: 0 4px 12px #d84a9a44;
+      }
+      h1 {
+        font:
+          700 clamp(2.1rem, 7vw, 4rem)/1.05 Fredoka,
+          sans-serif;
+        margin: 18px 0 12px;
+        color: #e52c91;
+        text-shadow:
+          2px 3px 0 white,
+          4px 6px 0 #ffb2d7;
+      }
+      .subtitle {
+        font-size: 1.08rem;
+        font-weight: 800;
+        margin: 0 auto 27px;
+        max-width: 470px;
+      }
+      .buttons {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
+      }
+      button {
+        font:
+          900 1.05rem Nunito,
+          sans-serif;
+        border: 2px solid #fff;
+        border-radius: 18px;
+        padding: 14px 24px;
+        cursor: pointer;
+        color: white;
+        background: linear-gradient(135deg, #ff5cae, #ec248e);
+        box-shadow:
+          0 7px 0 #b91c70,
+          0 12px 20px #d52a8540;
+        transition:
+          transform 0.16s,
+          filter 0.16s;
+        touch-action: manipulation;
+      }
+      button:hover {
+        filter: saturate(1.2) brightness(1.05);
+        transform: translateY(-3px) rotate(-1deg);
+      }
+      button:active {
+        transform: translateY(3px);
+        box-shadow: 0 3px 0 #b91c70;
+      }
+      .kebs {
+        background: linear-gradient(135deg, #b879ff, #8e4edb);
+        box-shadow:
+          0 7px 0 #6731a6,
+          0 12px 20px #8e4edb40;
+      }
+      .escape {
+        background: linear-gradient(135deg, #ff8d9e, #ff4c67);
+        box-shadow:
+          0 7px 0 #c52b50,
+          0 12px 20px #d52a8540;
+        position: relative;
+      }
+      @keyframes bob {
+        50% {
+          transform: translateY(-8px) rotate(3deg);
+        }
+      }
+      .hidden {
+        display: none !important;
+      }
+      .form-area {
+        margin-top: 24px;
+        position: relative;
+        z-index: 2;
+      }
+      .form-area h2 {
+        font: 700 clamp(1.7rem, 5vw, 2.4rem) Fredoka;
+        color: #d92a8b;
+        margin: 0 0 8px;
+      }
+      .form-area p {
+        font-weight: 800;
+        margin: 0 0 20px;
+      }
+      label {
+        display: block;
+        text-align: left;
+        font-weight: 900;
+        margin: 0 auto 8px;
+        max-width: 420px;
+      }
+      input[type="date"],
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        max-width: 420px;
+        padding: 14px 16px;
+        border: 2px solid #f3a2cc;
+        border-radius: 15px;
+        background: #fff;
+        color: #642052;
+        font: 800 1rem Nunito;
+        outline: none;
+        box-shadow: inset 0 2px 5px #b42a7710;
+      }
+      textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+      input:focus,
+      textarea:focus {
+        border-color: #e52c91;
+        box-shadow: 0 0 0 4px #ff8bc833;
+      }
+      .never {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        margin: 16px auto 18px;
+        font-weight: 900;
+      }
+      .never input {
+        width: 19px;
+        height: 19px;
+        accent-color: #e52c91;
+      }
+      .status {
+        min-height: 27px;
+        font-weight: 900;
+        margin: 12px 0 0;
+        color: #a51f70;
+      }
+      .send {
+        background: linear-gradient(135deg, #a45cf2, #e52c91);
+        box-shadow: 0 7px 0 #8736a6;
+      }
+      .tiny {
+        font-size: 0.75rem;
+        color: #995c86;
+        margin-top: 18px;
+        font-weight: 800;
+      }
+      #escapeBtn {
+        z-index: 5;
+      }
+      @media (max-width: 560px) {
+        .buttons {
+          gap: 12px;
+        }
+        .buttons button {
+          min-width: 42%;
+          padding: 13px 17px;
+        }
+        .escape {
+          min-width: 55% !important;
+        }
+        .card {
+          padding: 28px 20px;
+        }
+        .subtitle {
+          font-size: 1rem;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sparkles" aria-hidden="true">
+      <span style="left: 8%; top: 12%">✦</span
+      ><span style="left: 89%; top: 18%; animation-delay: 0.5s">✧</span>
+      <span style="left: 17%; top: 77%; animation-delay: 1s">✦</span
+      ><span style="left: 82%; top: 83%; animation-delay: 0.8s">✧</span>
+      <span style="left: 50%; top: 8%; animation-delay: 1.3s">✧</span
+      ><span style="left: 94%; top: 56%; animation-delay: 0.3s">✦</span>
+    </div>
+    <main>
+      <section class="card">
+        <span class="pill">Achtung! Achtung! Wichtige Entscheidung!</span>
+        <h1 id="headline">No, to co wybierasz?</h1>
+        <p class="subtitle" id="intro">Mak czy kebs? ✨</p>
+
+        <div class="buttons" id="choiceButtons">
+          <button type="button" id="makBtn">🍔 mak</button>
+          <button type="button" class="kebs" id="kebsBtn">🌯 kebs</button>
+          <button type="button" class="escape" id="escapeBtn">
+            🏃 spierdalaj
+          </button>
+        </div>
+
+        <section class="form-area hidden" id="dateFormArea">
+          <h2 id="formTitle">Wspaniały wybór!</h2>
+          <form
+            id="dateForm"
+            action="https://api.staticforms.dev/submit"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              id="apiKey"
+              name="apiKey"
+              value="sf_86d552c20988a148dd39b35e"
+            />
+            <label for="date">Wybierz datę:</label>
+            <input type="date" id="date" name="date" required />
+            <label class="never"
+              ><input type="checkbox" id="never" name="never" /> Nigdy 🙃</label
+            >
+            <label for="message" class="hidden">Wiadomość:</label>
+            <textarea
+              class="hidden"
+              id="message"
+              name="message"
+              required
+            ></textarea>
+            <button class="send" type="submit" id="sendBtn">
+              ✉️ Wyślij odpowiedź
+            </button>
+            <p class="status" id="status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+      </section>
+    </main>
+    <script>
+      const $ = (id) => document.getElementById(id);
+      const escapeBtn = $("escapeBtn");
+      const choiceButtons = $("choiceButtons");
+      const formArea = $("dateFormArea");
+      const dateInput = $("date");
+      const never = $("never");
+      const messageInput = $("message");
+      let escapeAttempts = 0;
+      let selectedFood = "";
+
+      const today = new Date();
+      const localToday = new Date(
+        today.getTime() - today.getTimezoneOffset() * 60000,
+      )
+        .toISOString()
+        .slice(0, 10);
+      dateInput.min = localToday;
+
+      function choose(food) {
+        selectedFood = food;
+        $("headline").textContent =
+          food === "mak" ? "Mak? Elegancko! 🍔" : "Kebsik? Perfekcyjnie! 🌯";
+        $("intro").textContent = "Dobra decyzja! 😎";
+        choiceButtons.classList.add("hidden");
+        escapeBtn.remove();
+        $("formTitle").textContent = "To teraz: kiedy??? 🤩";
+        updateMessage();
+        formArea.classList.remove("hidden");
+        dateInput.focus();
+      }
+
+      function updateMessage() {
+        messageInput.value = `Wybór: ${selectedFood}\nData: ${dateInput.value || "nie wybrano"}\nNigdy: ${never.checked ? "tak (ale data i tak podana)" : "nie"}`;
+      }
+
+      $("makBtn").addEventListener("click", () => choose("mak"));
+      $("kebsBtn").addEventListener("click", () => choose("kebs"));
+
+      function moveEscapeButton() {
+        const btnRect = escapeBtn.getBoundingClientRect();
+        if (escapeBtn.parentElement !== document.body) {
+          const placeholder = document.createElement("span");
+          placeholder.style.cssText = `display:inline-block;width:${btnRect.width}px;height:${btnRect.height}px`;
+          escapeBtn.parentElement.insertBefore(placeholder, escapeBtn);
+          document.body.append(escapeBtn);
+          escapeBtn.style.width = `${btnRect.width}px`;
+          escapeBtn.style.height = `${btnRect.height}px`;
+        }
+
+        const margin = 12;
+        const maxX = Math.max(
+          margin,
+          window.innerWidth - btnRect.width - margin,
+        );
+        const maxY = Math.max(
+          margin,
+          window.innerHeight - btnRect.height - margin,
+        );
+        escapeBtn.style.position = "fixed";
+        escapeBtn.style.left = `${margin + Math.random() * (maxX - margin)}px`;
+        escapeBtn.style.top = `${margin + Math.random() * (maxY - margin)}px`;
+      }
+
+      escapeBtn.addEventListener(
+        "touchstart",
+        (event) => {
+          event.preventDefault();
+          escapeAttempts++;
+          if (escapeAttempts >= 5) {
+            $("headline").textContent = "SAMA SPIERDALAJ!";
+            $("intro").textContent = "";
+            escapeBtn.remove();
+            setTimeout(() => {
+              $("headline").textContent = "No to co wybierasz?";
+              $("intro").textContent = "Mak czy kebs? ✨";
+            }, 5000);
+          } else {
+            moveEscapeButton();
+          }
+        },
+        { passive: false },
+      );
+
+      // Komputer: ucieka, gdy kursor zbliża się do przycisku.
+      escapeBtn.addEventListener("pointerenter", (event) => {
+        if (event.pointerType === "mouse") moveEscapeButton();
+      });
+      escapeBtn.addEventListener("click", () => {
+        // Fallback dla urządzeń bez touchstart.
+        if (escapeAttempts < 5) moveEscapeButton();
+      });
+
+      never.addEventListener("change", () => {
+        if (never.checked) {
+          $("formTitle").textContent = "zabawne kurwa";
+          dateInput.required = true;
+          dateInput.value = "";
+          dateInput.focus();
+        } else {
+          $("formTitle").textContent = "To teraz: kiedy??? 🤩";
+        }
+        updateMessage();
+      });
+
+      dateInput.addEventListener("change", updateMessage);
+
+      $("dateForm").addEventListener("submit", (event) => {
+        const status = $("status");
+        if (!dateInput.value) {
+          event.preventDefault();
+          status.textContent = "Wybierz datę 🙄";
+          dateInput.focus();
+          return;
+        }
+        const apiKey = $("apiKey").value.trim();
+        if (!apiKey || apiKey === "WKLEJ_TUTAJ_KLUCZ_API") {
+          event.preventDefault();
+          status.textContent =
+            "Wklej najpierw klucz API StaticForms w kodzie strony.";
+          return;
+        }
+        updateMessage();
+        status.textContent = "";
+      });
+    </script>
+  </body>
+</html>
